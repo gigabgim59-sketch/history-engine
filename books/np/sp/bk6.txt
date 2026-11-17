@@ -1,0 +1,10 @@
+ n51:[['waresquiel','첫 복고 왕정'],['boudon','헌장과 왕정']],
+ n52:[['zamoyskiv','빈 회의'],['schroeder','빈 체제'],['kissinger','세력 균형']],
+ n53:[['waresquiel','독수리의 비상'],['englund','귀환']],
+ n54:[['waresquiel','추가법과 5월 광장'],['staelc','자유주의자의 시선']],
+ n55:[['hofschroer','워털루 원정'],['muir','웰링턴의 하루'],['chandler','마지막 전투']],
+ n56:[['resnick','백색 테러'],['waresquiel','두 번째 퇴위']],
+ n57:[['martineau','세인트헬레나'],['lascases','회상록']],
+ n58:[['hazareesingh','전설의 형성'],['lascases','회상록'],['tulard','구원자의 신화']],
+ n59:[['grab','유럽의 변화'],['broers','안쪽과 바깥의 제국'],['geyl','찬성과 반대']],
+ n60:[['hazareesingh','유해 귀환과 7월 왕정'],['thiers','티에르의 역사']]

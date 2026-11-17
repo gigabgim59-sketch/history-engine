@@ -1,0 +1,89 @@
+lincoln|에이브러햄 링컨|링컨|Abraham Lincoln|1809|1865|fed|일리노이의 변호사, 16대 대통령|켄터키의 통나무집에서 태어나 인디애나와 일리노이의 개척지에서 자랐다. 독학으로 변호사가 되어 휘그당의 하원 의원을 지냈고, 공화당의 대통령으로 연방을 지키고 노예를 해방했다. 암살당했다.|u17:대통령도 헌법을 해석할 수 있다고 믿었다.;u26:블랙호크 전쟁의 민병이었다.;u30:피가 흐른 지점을 밝히라는 결의안을 냈다.
+douglass|프레더릭 더글러스||Frederick Douglass|1818|1895|afr|노예제 폐지론자, 연설가|메릴랜드에서 노예로 태어나 몰래 글을 배우고 1838년 북부로 달아났다. 연설과 자서전, 신문으로 폐지 운동의 가장 큰 목소리가 되었고 여성의 권리를 지지했다.|u12:처음에는 헌법이 노예제를 승인했다고 보았다가 생각을 바꾸었다.;u27:낸터킷의 집회에서 처음 연설했다.;u29:여성의 투표권 결의를 지지했다.
+tallmadge|제임스 톨매지|톨매지|James Tallmadge Jr.|1778|1853|dem|뉴욕의 하원 의원||u21:미주리에 점진적 해방을 요구했다.
+tcobb|토머스 코브||Thomas W. Cobb|1784|1830|dem|조지아의 하원 의원||u21:바다의 물로도 끌 수 없는 불이라 했다.
+rking|루퍼스 킹||Rufus King|1755|1827|fed|뉴욕의 상원 의원||u21:노예제가 자연법에 어긋난다고 했다.
+jthomas|제시 토머스||Jesse B. Thomas|1777|1853|dem|일리노이의 상원 의원||u21:36도 30분 선을 냈다.
+jqadams|존 퀸시 애덤스|퀸시 애덤스|John Quincy Adams|1767|1848|fed|국무 장관, 6대 대통령||u21:비극의 제목 페이지라 썼다.;u22:먼로 독트린을 다듬었다.;u25:부패한 거래로 대통령이 되었다는 비난을 받았다.;u27:함구령과 싸웠다.
+vanburen|마틴 밴 뷰런|밴 뷰런|Martin Van Buren|1782|1862|dem|뉴욕의 정치가, 8대 대통령||u21:노예제를 정치에서 빼낼 전국 정당을 조직했다.;u25:민주당을 만들고 공황을 맞았다.;u30:텍사스 합병을 미루었다.
+bolivar|시몬 볼리바르|볼리바르|Simón Bolívar|1783|1830|for|남아메리카 독립의 지도자||u22:파나마에서 아메리카 회의를 열었다.
+sanmartin|호세 데 산마르틴||José de San Martín|1778|1850|for|남아메리카 독립의 지도자||u22:스페인군을 몰아냈다.
+canning|조지 캐닝|캐닝|George Canning|1770|1827|brt|영국의 외무 장관||u22:공동 선언을 제안했다.
+metternich|메테르니히|메테르니히|Klemens von Metternich|1773|1859|for|오스트리아의 재상||u22:무례한 선언이라 했다.
+tdroosevelt|시어도어 루스벨트||Theodore Roosevelt|1858|1919|fed|26대 대통령||u22:먼로 독트린에 계론을 덧붙였다.
+dclinton|드윗 클린턴||DeWitt Clinton|1769|1828|dem|뉴욕 주지사||u23:이리 운하를 팠다.
+fulton|로버트 풀턴|풀턴|Robert Fulton|1765|1815|biz|발명가||u23:증기선을 허드슨강에 띄웠다.
+fclowell|프랜시스 캐벗 로웰||Francis Cabot Lowell|1775|1817|biz|보스턴의 상인||u23:영국의 방직 기계를 외워 왔다.
+finney|찰스 그랜디슨 피니|피니|Charles Grandison Finney|1792|1875|rel|부흥 설교자||u24:로체스터에서 부흥을 이끌었다.;u27:그의 제자들이 폐지 운동을 이끌었다.
+hmann|호러스 맨||Horace Mann|1796|1859|ref|매사추세츠의 교육 개혁가||u24:공립 학교를 말했다.
+dix|도로시아 딕스||Dorothea Dix|1802|1887|ref|개혁가||u24:정신 질환자의 처지를 조사했다.
+jsmith|조지프 스미스||Joseph Smith|1805|1844|rel|후기 성도 교회의 창시자||u24:『모르몬경』을 냈다.
+byoung|브리검 영||Brigham Young|1801|1877|rel|후기 성도 교회의 지도자||u24:신자들을 솔트레이크로 이끌었다.
+noyes|존 험프리 노이스||John Humphrey Noyes|1811|1886|rel|오나이다 공동체의 창설자||u24:복합 결혼을 실험했다.
+miller|윌리엄 밀러||William Miller|1782|1849|rel|재림 설교자||u24:그리스도의 재림을 예언했다.
+emerson|랠프 월도 에머슨|에머슨|Ralph Waldo Emerson|1803|1882|phi|초월주의 사상가||u24:자기 신뢰를 말했다.;u30:멕시코가 우리를 중독시킬 것이라 썼다.
+thoreau|헨리 데이비드 소로|소로|Henry David Thoreau|1817|1862|phi|초월주의 작가||u24:월든 호숫가에서 살았다.;u30:세금을 거부하고 시민 불복종을 썼다.
+kent|제임스 켄트||James Kent|1763|1847|jus|뉴욕의 대법원장||u25:재산 없는 다수를 경고했다.
+rachel|레이철 잭슨||Rachel Jackson|1767|1828|peo|잭슨의 아내||u25:선거 뒤 죽었다.
+story|조지프 스토리||Joseph Story|1779|1845|jus|대법관||u25:폭민 왕의 치세라 했다.
+marcy|윌리엄 마시||William L. Marcy|1786|1857|dem|뉴욕의 정치가||u25:승리자에게 전리품이 간다고 했다.
+biddle|니컬러스 비들|비들|Nicholas Biddle|1786|1844|fed|제2합중국 은행장||u25:대출을 줄여 잭슨에게 맞섰다.
+webster|대니얼 웹스터|웹스터|Daniel Webster|1782|1852|fed|매사추세츠의 상원 의원||u25:휘그당을 만들었다.;u28:자유와 연방은 나눌 수 없다고 했다.
+tocqueville|알렉시 드 토크빌|토크빌|Alexis de Tocqueville|1805|1859|for|프랑스의 사상가||u25:『미국의 민주주의』를 썼다.;u26:미시시피강을 건너는 촉토를 보았다.
+bingham|조지 케일럽 빙엄||George Caleb Bingham|1811|1879|phi|화가||u25:선거일을 그렸다.
+sequoyah|세쿼야|세쿼야|Sequoyah|1770|1843|nat|체로키 문자의 창안자||u26:체로키 음절 문자를 만들었다.
+jross|존 로스||John Ross|1790|1866|nat|체로키의 수석 추장||u26:조약이 무효라고 청원하고 이주를 이끌었다.
+evarts|제러마이아 에버츠||Jeremiah Evarts|1781|1831|ref|선교 단체의 지도자||u26:윌리엄 펜으로 이주에 반대했다.
+frelinghuysen|시어도어 프릴링하이즌||Theodore Frelinghuysen|1787|1862|ref|뉴저지의 상원 의원||u26:여섯 시간 동안 연설했다.
+crockett|데이비 크로켓|크로켓|Davy Crockett|1786|1836|peo|테네시의 하원 의원||u26:이주법에 반대표를 던졌다.;u30:알라모에서 죽었다.
+worcester|새뮤얼 우스터||Samuel Worcester|1798|1859|rel|체로키 땅의 선교사||u26:그의 이름으로 판결이 났다.
+osceola|오세올라|오세올라|Osceola|1804|1838|nat|세미놀의 지도자||u26:이주에 맞서 싸웠다.
+blackhawk|블랙호크|블랙호크|Black Hawk|1767|1838|nat|소크족의 지도자||u26:옛 땅으로 돌아왔다가 학살되었다.
+mridge|메이저 리지||Major Ridge|1771|1839|nat|체로키의 지도자||u26:뉴에코타 조약에 서명하고 살해되었다.
+jridge|존 리지||John Ridge|1802|1839|nat|체로키의 지도자||u26:뉴에코타 조약에 서명하고 살해되었다.
+boudinot|엘리어스 부디노|부디노|Elias Boudinot|1802|1839|nat|『체로키 피닉스』의 편집자||u26:조약에 서명하고 살해되었다.
+wscott|윈필드 스콧||Winfield Scott|1786|1866|mil|미군 장군||u26:체로키를 몰아냈다.;u30:베라크루스에서 멕시코시티로 갔다.
+lindneux|로버트 린드노||Robert Lindneux|1871|1970|phi|화가||u26:눈물의 길을 그렸다.
+dwalker|데이비드 워커||David Walker|1796|1830|afr|보스턴의 폐지론자||u27:『호소』를 냈다.
+garrison|윌리엄 로이드 개리슨|개리슨|William Lloyd Garrison|1805|1879|ref|『해방자』의 편집자|보스턴의 인쇄공. 즉각적 해방을 외치며 35년 동안 『해방자』를 냈고, 여성의 권리를 지지하며 노예제를 지키는 헌법을 거부했다.|u12:헌법을 죽음과의 계약이라 불렀다.;u27:『해방자』를 내고 군중에게 끌려다녔다.;u29:런던에서 여성들과 함께 앉았다.
+lundy|벤저민 런디||Benjamin Lundy|1789|1839|ref|퀘이커 폐지론자||u27:개리슨과 일했다.
+nturner|냇 터너|터너|Nat Turner|1800|1831|afr|반란의 지도자||u27:사우샘프턴에서 일어났다.
+tgray|토머스 그레이||Thomas R. Gray|1800|1845|peo|변호사||u27:터너의 고백을 받아 적었다.
+tdew|토머스 듀||Thomas R. Dew|1802|1846|phi|윌리엄 앤드 메리 대학의 교수||u27:노예제를 변호했다.
+atappan|아서 태펀||Arthur Tappan|1786|1865|ref|뉴욕의 상인||u27:폐지 운동에 돈을 댔다.
+ltappan|루이스 태펀||Lewis Tappan|1788|1873|ref|뉴욕의 상인||u27:폐지 운동에 돈을 댔다.
+weld|시어도어 웰드|웰드|Theodore Weld|1803|1895|ref|폐지론 강연자||u27:서부를 돌며 사람을 모았다.
+lovejoy|일라이자 러브조이|러브조이|Elijah Lovejoy|1802|1837|ref|올턴의 편집자||u27:인쇄기를 지키다 죽었다.
+sgrimke|세라 그림케||Sarah Grimké|1792|1873|ref|폐지론자, 여성 권리 운동가||u27:노예제를 고발하며 연설했다.;u29:『성의 평등에 관한 편지』를 썼다.
+agrimke|앤젤리나 그림케||Angelina Grimké|1805|1879|ref|폐지론자||u27:남부 여성에게 호소했다.
+birney|제임스 버니||James G. Birney|1792|1857|ref|자유당의 후보||u27:대통령 후보가 되었다.
+vesey|덴마크 베시||Denmark Vesey|1767|1822|afr|찰스턴의 자유 흑인||u27:봉기를 준비하다 처형되었다.;u28:그의 계획이 찰스턴을 겁먹게 했다.
+hayne|로버트 헤인|헤인|Robert Y. Hayne|1791|1839|dem|사우스캐롤라이나의 상원 의원||u28:웹스터와 토론했다.
+peaton|페기 이턴||Peggy Eaton|1799|1879|peo|전쟁 장관의 아내||u28:따돌림을 받았다.
+poinsett|조엘 포인세트||Joel Poinsett|1779|1851|dem|찰스턴의 연방주의자||u28:무기를 모았다.
+healy|조지 피터 앨릭잰더 힐리||George P. A. Healy|1813|1894|phi|화가||u28:토론 장면을 그렸다.
+mott|루크리셔 모트|모트|Lucretia Mott|1793|1880|ref|퀘이커 설교자, 여성 권리 운동가||u29:스탠턴과 대회를 열었다.
+stanton|엘리자베스 케이디 스탠턴|스탠턴|Elizabeth Cady Stanton|1815|1902|ref|여성 권리 운동가||u29:『감정 선언』을 썼다.
+jmott|제임스 모트||James Mott|1788|1868|ref|루크리셔 모트의 남편||u29:대회를 주재했다.
+cwoodward|샬럿 우드워드||Charlotte Woodward|1829|1921|peo|장갑 직공||u29:선언에 서명했다.
+lstone|루시 스톤||Lucy Stone|1818|1893|ref|여성 권리 운동가||u29:운동에 들어왔다.
+anthony|수전 B. 앤서니|앤서니|Susan B. Anthony|1820|1906|ref|여성 참정권 운동가||u29:스탠턴과 만났다.
+struth|소저너 트루스||Sojourner Truth|1797|1883|afr|폐지론자, 여성 권리 운동가||u29:애크런에서 연설했다.
+fgage|프랜시스 게이지||Frances Dana Gage|1808|1884|ref|개혁가||u29:트루스의 연설을 다시 썼다.
+fuller|마거릿 풀러||Margaret Fuller|1810|1850|phi|초월주의 작가||u29:『19세기의 여성』을 썼다.
+jsmurray|주디스 사전트 머리||Judith Sargent Murray|1751|1820|phi|작가||u29:성의 평등을 말했다.
+saustin|스티븐 오스틴||Stephen F. Austin|1793|1836|peo|텍사스의 이주 지도자||u30:300가족을 데려왔다.
+santaanna|산타안나|산타안나|Antonio López de Santa Anna|1794|1876|for|멕시코의 장군, 대통령||u30:알라모를 치고 산하신토에서 사로잡혔다.
+travis|윌리엄 트래비스||William B. Travis|1809|1836|mil|알라모의 지휘관||u30:알라모에서 죽었다.
+bowie|짐 보위||Jim Bowie|1796|1836|mil|알라모의 수비대||u30:알라모에서 죽었다.
+houston|샘 휴스턴|휴스턴|Sam Houston|1793|1863|mil|텍사스의 장군, 대통령||u30:산하신토에서 이겼다.
+polk|제임스 포크|포크|James K. Polk|1795|1849|dem|11대 대통령||u22:먼로의 원칙을 다시 꺼냈다.;u30:텍사스와 오리건, 캘리포니아를 얻었다.
+tyler|존 타일러||John Tyler|1790|1862|dem|10대 대통령||u30:공동 결의로 텍사스를 합병했다.
+osullivan|존 오설리번||John L. O'Sullivan|1813|1895|dem|민주당의 편집자||u30:명백한 운명이라 썼다.
+ztaylor|재커리 테일러||Zachary Taylor|1784|1850|mil|미군 장군, 12대 대통령||u30:리오그란데로 가고 부에나비스타에서 싸웠다.
+kearny|스티븐 커니||Stephen W. Kearny|1794|1848|mil|미군 장군||u30:산타페를 차지했다.
+wilmot|데이비드 윌멋|윌멋|David Wilmot|1814|1868|dem|펜실베이니아의 하원 의원||u30:새 땅에 노예제를 금하자고 했다.
+grant|율리시스 S. 그랜트|그랜트|Ulysses S. Grant|1822|1885|mil|북군 총사령관, 18대 대통령|오하이오 출신의 웨스트포인트 졸업생. 군을 떠나 실패를 겪다가 남북 전쟁에서 빅스버그와 애퍼매톡스로 북군을 이겼다. 대통령으로 재건과 KKK 진압을 이끌었다.|u30:회고록에서 가장 부당한 전쟁이라 했다.
+rlee|로버트 E. 리|리 장군|Robert E. Lee|1807|1870|mil|남군 총사령관||u30:멕시코 전쟁에서 싸운 젊은 장교였다.
+mcclellan|조지 매클렐런|매클렐런|George B. McClellan|1826|1885|mil|북군 사령관||u30:멕시코 전쟁에서 싸운 젊은 장교였다.
+gast|존 개스트||John Gast|1842|1896|phi|화가||u30:「미국의 진보」를 그렸다.

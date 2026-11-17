@@ -1,0 +1,12 @@
+ s61:[['taubman','비밀 연설'],['khrushchev56','연설 원문'],['dobson','돌아온 사람들']],
+ s62:[['gati','1956년 헝가리']],
+ s63:[['siddiqi','우주 경쟁']],
+ s64:[['taubman','처녀지와 옥수수'],['hanson','전후 농업']],
+ s65:[['jones','해빙의 문화']],
+ s66:[['fursenko','쿠바 위기'],['zubok','냉전 속 소련']],
+ s67:[['baron','노보체르카스크'],['taubman','흐루쇼프의 실각']],
+ s68:[['hanson','정체의 경제'],['yurchak','마지막 소련 세대']],
+ s69:[['williams','프라하의 봄']],
+ s70:[['alexeyeva','반체제 운동'],['chronicle','시사 일지']],
+ s71:[['ledeneva','블라트'],['hanson','석유와 경제']],
+ s72:[['braithwaite','아프간치'],['zubok','침공 결정']]

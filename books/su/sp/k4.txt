@@ -1,0 +1,12 @@
+ s37:[['daviesrw','5개년 계획'],['kotkinmm','공업화의 현장']],
+ s38:[['viola','농민 저항'],['violauk','특별 정착지'],['daviesrw','집단화']],
+ s39:[['dwheat','기근의 문서'],['conquesth','테러-기근론'],['cameron','카자흐 기근'],['applebaumrf','우크라이나']],
+ s40:[['kotkinmm','마그니토고르스크']],
+ s41:[['applebaumg','굴라크의 역사'],['khlevniuk','굴라크의 형성']],
+ s42:[['clarkk','사회주의 리얼리즘 소설']],
+ s43:[['lenoe','키로프 암살'],['conquestgt','모스크바 재판']],
+ s44:[['conquestgt','대테러'],['getty','대테러의 문서'],['fitzes','공포 속의 일상']],
+ s45:[['polianp','강제 이주'],['kuhn','고려인 강제 이주 문서'],['martint','민족 작전']],
+ s46:[['fitzes','1930년대의 일상'],['kotkinmm','스탈린주의 문명']],
+ s47:[['haslam','집단 안보']],
+ s48:[['moorhouse','독소 조약'],['katyndoc','카틴 문서'],['snyderbl','피의 땅']]

@@ -1,0 +1,9 @@
+node_modules/
+package-lock.json
+package.json
+dist/
+library/build/
+library/dist/
+__pycache__/
+*.pyc
+shots/

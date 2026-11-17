@@ -1,0 +1,12 @@
+ s49:[['glantz','침공과 1941년'],['overy','전쟁 노력']],
+ s50:[['reidb','레닌그라드 봉쇄'],['blokadkniga','생존자 증언']],
+ s51:[['hellbeck','참전자의 목소리'],['beevor','스탈린그라드']],
+ s52:[['barber','후방의 경제와 사회'],['overy','무기 대여법']],
+ s53:[['polianp','민족 추방']],
+ s54:[['berkhoff','점령지 우크라이나'],['snyderbl','피의 땅']],
+ s55:[['glantz','베를린까지'],['krivosheev','인명 손실 통계'],['merridale','병사의 전쟁']],
+ s56:[['zubok','냉전의 소련'],['applebaumic','동유럽의 공산화'],['naimark','독일 점령']],
+ s57:[['zubkova','전후 사회']],
+ s58:[['holloway','원자폭탄']],
+ s59:[['brentnaumov','의사들의 음모'],['gorlizki','후기 스탈린 시대']],
+ s60:[['gorlizki','스탈린의 죽음과 권력 이양']]

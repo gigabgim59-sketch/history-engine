@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>__TITLE__</title>
+<meta name="description" content="__DESC__">
+<meta property="og:type" content="website">
+<meta property="og:title" content="__TITLE__">
+<meta property="og:description" content="__OGDESC__">
+<meta property="og:image" content="thumbnail.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f4f2ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121417" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23f3efe6'/%3E%3Crect x='6' y='8' width='4' height='17' fill='%23a0372b'/%3E%3Crect x='12' y='6' width='4' height='19' fill='%233a5a9c'/%3E%3Crect x='18' y='9' width='4' height='16' fill='%232c7062'/%3E%3Crect x='24' y='7' width='3' height='18' fill='%239a6a1c'/%3E%3C/svg%3E">
+<style id="libfonts">__LIBFONTS__</style>
+<style>
+:root{
+  --bg:#f4f2ee;--surface:#fffdf9;--ink:#1d1f24;--muted:#5f636b;--line:#dcd7cd;--soft:#ece7dd;--accent:#a0372b;
+  __COLORS_LIGHT__
+  --sans:"KRSans","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121417;--surface:#1a1d21;--ink:#e6e3dc;--muted:#a3a7ad;--line:#2e3238;--soft:#23272c;--accent:#ec8577;
+  __COLORS_DARK__color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121417;--surface:#1a1d21;--ink:#e6e3dc;--muted:#a3a7ad;--line:#2e3238;--soft:#23272c;--accent:#ec8577;
+  __COLORS_DARK__color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+a{color:var(--accent)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+/* 서재 */
+#lib{max-width:1080px;margin:0 auto;padding:0 16px calc(3rem + env(safe-area-inset-bottom,0px))}
+.hero{padding:3rem 0 1.2rem}
+.strata{display:flex;gap:4px;margin-bottom:1.1rem}
+.strata i{display:block;width:10px;height:44px;border-radius:2px}
+.strata i:nth-child(2){height:52px;margin-top:-8px}.strata i:nth-child(4){height:48px;margin-top:-4px}
+h1{font-size:clamp(2rem,6vw,2.8rem);line-height:1.2;margin:0 0 .4rem;letter-spacing:-.02em;font-weight:800}
+.sub{color:var(--muted);margin:0 0 1rem;font-size:1.05rem}
+.lede{max-width:44rem;text-align:justify;text-justify:inter-word;word-break:normal;line-break:normal;overflow-wrap:break-word}.card .d,.how p{text-align:justify;text-justify:inter-word;word-break:normal;line-break:normal;overflow-wrap:break-word}
+.tl .w{display:block}.tl .n{display:none}@media (max-width:600px){.tl .w{display:none}.tl .n{display:block}}
+.cont{display:inline-flex;align-items:center;gap:.6rem;margin-top:.6rem;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.35rem .5rem .35rem 1rem;text-decoration:none;color:var(--ink);font-size:.92rem}
+.cont[hidden]{display:none}.cont b{color:var(--accent)}
+.cont span{background:var(--ink);color:var(--bg);border-radius:999px;padding:.1rem .7rem;font-weight:700;font-size:.85rem}
+h2{font-size:1.2rem;margin:2.6rem 0 .9rem;padding-top:1rem;border-top:1px solid var(--line)}
+h2 small{font-weight:500;color:var(--muted);font-size:.85rem;margin-left:.4rem}
+.tl{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1rem 1rem .6rem;margin:1rem 0}
+.tl .lbl{font-size:.78rem;font-weight:700;color:var(--muted);letter-spacing:.04em;margin:0 0 .4rem}
+.tl svg{display:block;width:100%;height:auto;overflow:visible}
+.tl text{font-family:var(--sans)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+@media (max-width:720px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.1rem 1.15rem 1rem;border-top:6px solid var(--c);display:flex;flex-direction:column;min-width:0}
+.card .span{font-size:.8rem;font-weight:700;color:var(--c);letter-spacing:.02em}
+.card h3{font-size:1.45rem;line-height:1.3;margin:.2rem 0 .15rem;letter-spacing:-.01em;font-weight:800}
+.card .s{word-break:keep-all;color:var(--muted);margin:0 0 .6rem;font-size:.95rem;line-height:1.5}
+.card .d{font-size:.9rem;margin:0 0 .8rem;flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem;margin:0 0 .9rem}
+.chips span{font-size:.75rem;border:1px solid var(--line);border-radius:999px;padding:0 .55rem;color:var(--muted)}
+.acts{display:flex;gap:.5rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.35rem;min-height:2.6rem;padding:.4rem 1.05rem;border-radius:999px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:700;font-size:.92rem;text-decoration:none;color:var(--ink)}
+.btn.pri{background:var(--c,var(--ink));border-color:var(--c,var(--ink));color:#fff}
+:root[data-theme="dark"] .btn.pri{color:#121417}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.pri{color:#121417}}
+.btn[disabled]{opacity:.45;cursor:default}
+.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+@media (max-width:720px){.how{grid-template-columns:1fr}}
+.how div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.75rem .9rem;font-size:.9rem}
+.how div>b{display:block;margin-bottom:.15rem}
+.how p{margin:0;color:var(--muted)}
+.tbtn{position:absolute;top:1rem;right:16px}
+.libtop{position:relative;max-width:1080px;margin:0 auto}
+footer{color:var(--muted);font-size:.8rem;text-align:center;padding:2rem 16px 0}
+/* 책 보기 */
+#view{position:fixed;inset:0;display:flex;flex-direction:column;background:var(--bg);z-index:10}
+#view[hidden]{display:none}
+.vbar{flex:none;display:flex;align-items:center;gap:.5rem;min-height:44px;padding:.3rem 10px;padding-top:max(.3rem,env(safe-area-inset-top,0px));border-bottom:3px solid var(--c,var(--line));background:var(--surface)}
+.vbar .back{flex:none;border:0;background:transparent;cursor:pointer;font-weight:700;font-size:.9rem;padding:.35rem .5rem;border-radius:8px;white-space:nowrap}
+.vbar .back:hover{background:var(--soft)}
+.vbar .vt{flex:1;min-width:0;font-weight:800;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seg{flex:none;display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:2px;background:var(--bg)}
+.seg button{border:0;background:transparent;border-radius:999px;padding:.2rem .75rem;font-size:.82rem;font-weight:700;cursor:pointer;color:var(--muted);white-space:nowrap}
+.seg button.on{background:var(--ink);color:var(--bg)}
+.seg button[disabled]{display:none}
+.vbar select{flex:none;max-width:9.5rem;font:inherit;font-size:.82rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);padding:.25rem .3rem}
+@media (max-width:560px){.vbar select{display:none}.vbar .back span{display:none}}
+.frame{flex:1;position:relative;min-height:0}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--bg)}
+.load{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:.95rem;background:var(--bg)}
+.load[hidden]{display:none}
+.load i{display:block;width:44px;height:4px;margin:.8rem auto 0;border-radius:2px;background:linear-gradient(90deg,var(--c,var(--accent)) 40%,var(--line) 0);background-size:200% 100%;animation:sl 1s linear infinite}
+@keyframes sl{to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){.load i{animation:none}}
+.toast{position:fixed;left:50%;bottom:calc(1.2rem + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:.5rem 1rem;border-radius:999px;font-size:.88rem;z-index:30}
+.toast[hidden]{display:none}
+</style>
+</head>
+<body>
+<div id="lib">
+ <div class="libtop"><button class="btn tbtn" id="theme" type="button" aria-label="밝은 화면과 어두운 화면 바꾸기">◐</button></div>
+ <section class="hero">
+  <div class="strata" aria-hidden="true">__STRATA__</div>
+  <h1>__TITLE__</h1>
+  <p class="sub">__SUB__</p>
+  <p class="lede">__LEDE__</p>
+  <a class="cont" id="cont" href="#" hidden></a>
+ </section>
+ <div id="shelves">__SHELVES__</div>
+ <h2>이 파일을 쓰는 법</h2>
+ <div class="how">
+  <div><b>책 펼치기</b><p>카드의 <b>읽기</b>로 본문을, <b>읽는 법</b>으로 그 책의 안내를 엽니다. 위쪽 띠에서 본문과 읽는 법을 오가고 다른 책으로 건너갑니다.</p></div>
+  <div><b>주소로 다시 열기</b><p>읽는 자리는 주소 끝에 붙습니다. 그 주소를 즐겨찾기에 넣거나 다시 열면 같은 장으로 돌아옵니다. 뒤로가기도 그대로 쓸 수 있습니다.</p></div>
+  <div><b>밑줄과 책갈피</b><p>책마다 따로 이 기기의 브라우저에 저장됩니다. 서로 섞이지 않고, 서버로 보내지는 것은 없습니다.</p></div>
+ </div>
+ <footer>__FOOTER__</footer>
+</div>
+<div id="view" hidden>
+ <div class="vbar">
+  <button class="back" id="back" type="button" aria-label="서재로 돌아가기">← <span>서재</span></button>
+  <div class="vt" id="vt"></div>
+  <div class="seg" role="group" aria-label="본문과 읽는 법"><button type="button" data-v="i">본문</button><button type="button" data-v="g">읽는 법</button></div>
+  <select id="sw" aria-label="다른 책으로"></select>
+ </div>
+ <div class="frame" id="frame"><div class="load" id="load" hidden><div>책을 펼치는 중…<i></i></div></div></div>
+</div>
+<div class="toast" id="toast" hidden></div>
+<script>
+const LIBTITLE=__LIBTITLE__;
+const META=__META__;
+const PDF=__PDF__;
+const COL=__COL__;
+const M=Object.fromEntries(META.map(b=>[b.id,b]));
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const store={get(k){try{return JSON.parse(localStorage.getItem('lib-'+k))}catch(e){return null}},set(k,v){try{localStorage.setItem('lib-'+k,JSON.stringify(v))}catch(e){}}};
+// 화면 밝기
+(function(){const t=store.get('theme');if(t)document.documentElement.dataset.theme=t;
+ $('#theme').onclick=()=>{const dark=matchMedia('(prefers-color-scheme: dark)').matches;const cur=document.documentElement.dataset.theme||(dark?'dark':'light');const n=cur==='dark'?'light':'dark';document.documentElement.dataset.theme=n;store.set('theme',n);};})();
+// 서가
+function shelves(){
+ const groups=[...new Set(META.map(b=>b.grp))];
+ if(!$('#shelves').children.length)$('#shelves').innerHTML=groups.map(g=>`<h2>${esc(g)}<small>${META.filter(b=>b.grp===g).length}권</small></h2><div class="grid">${META.filter(b=>b.grp===g).map(b=>`
+  <article class="card" style="--c:${COL[b.id]}"><div class="span">${esc(b.span)}</div><h3>${esc(b.t)}</h3><p class="s">${esc(b.sub)}</p><p class="d">${esc(b.desc)}</p>
+  <div class="chips"><span>${b.parts}부</span><span>${b.ev}장</span>${b.guide?'<span>읽는 법 포함</span>':''}</div>
+  <div class="acts"><a class="btn pri" href="#${b.id}.i">읽기</a>${b.guide?`<a class="btn" href="#${b.id}.g">읽는 법</a>`:''}${PDF[b.id]?`<a class="btn" href="${PDF[b.id]}" download title="줄글만 담은 A4 인쇄본">PDF</a>`:''}</div></article>`).join('')}</div>`).join('');
+ const last=store.get('last');const c=$('#cont');
+ if(last&&M[last.id]){c.hidden=false;c.href='#'+last.h;c.style.setProperty('--c',COL[last.id]);c.innerHTML=`마지막에 펼친 책 <b>${esc(M[last.id].t)}</b><span>이어 펼치기 →</span>`;}
+}
+// 책 문서 풀기
+const cache=new Map();
+async function docHTML(key){
+ if(cache.has(key))return cache.get(key);
+ const el=document.getElementById('d-'+key);if(!el)return null;
+ if(!('DecompressionStream' in window))throw new Error('nods');
+ const bin=Uint8Array.from(atob(el.textContent.trim()),c=>c.charCodeAt(0));
+ const txt=await new Response(new Blob([bin]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
+ const html=txt.replace('<!--__LIBFONTS__-->','<style>'+document.getElementById('libfonts').textContent+'</style>');
+ cache.set(key,html);return html;
+}
+// 주소: #id.v~안쪽주소
+function parse(h){const m=/^#?([a-z]{2})\.([ig])(?:~(.*))?$/.exec(h||'');return m&&M[m[1]]?{id:m[1],v:m[2],inner:m[3]?'#'+decodeURI(m[3]):''}:null;}
+function enc(st){return '#'+st.id+'.'+st.v+(st.inner&&st.inner!=='#'?'~'+encodeURI(st.inner.slice(1)):'');}
+let cur=null,ifr=null;const FR=new Map();
+function toast(t){const e=$('#toast');e.textContent=t;e.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>e.hidden=true,2400);}
+async function show(st){
+ if(!st){cur=null;$('#view').hidden=true;$('#load').hidden=true;$('#lib').hidden=false;document.title=LIBTITLE;shelves();return;}
+ if(st.v==='g'&&!M[st.id].guide)st.v='i';
+ const b=M[st.id];$('#lib').hidden=true;const v=$('#view');v.hidden=false;v.style.setProperty('--c',COL[b.id]);
+ $('#vt').textContent=b.t+(st.v==='g'?' · 읽는 법':'');document.title=(st.v==='g'?'읽는 법 · ':'')+b.t;
+ document.querySelectorAll('.seg button').forEach(x=>{x.classList.toggle('on',x.dataset.v===st.v);x.disabled=x.dataset.v==='g'&&!b.guide;});
+ $('#sw').value=b.id;
+ // 펼친 문서는 지우지 않고 남겨 둔다(최근 4개). 문서를 지우면 그 문서 안에서 쌓인 기록 칸이
+ // 주인 없는 칸이 되어, 뒤로가기를 눌러도 아무 일도 일어나지 않는 칸이 생기기 때문이다.
+ const key=st.id+'.'+st.v;
+ const setInner=(f,h)=>{try{const w=f.contentWindow;const want=h||'#';if((w.location.hash||'#')!==want)w.location.replace(w.location.href.split('#')[0]+want);}catch(e){}};
+ const reveal=f=>{FR.forEach((x,k)=>{x.style.visibility=x===f?'visible':'hidden';x.setAttribute('aria-hidden',x===f?'false':'true');x.tabIndex=x===f?0:-1;});ifr=f;};
+ cur=st;store.set('last',{id:st.id,h:enc(st).slice(1)});
+ if(FR.has(key)){const f=FR.get(key);const same=f===ifr;FR.delete(key);FR.set(key,f);reveal(f);$('#load').hidden=true;
+  if(same)setTimeout(()=>{if(cur===st)setInner(f,st.inner)},150);else setInner(f,st.inner);return;}
+ const ld=$('#load');ld.hidden=false;
+ let html;try{html=await docHTML(key);}catch(e){ld.hidden=true;toast('이 브라우저에서는 책을 풀 수 없습니다. 최신 Chrome·Safari·Edge·Firefox로 열어 주세요.');return;}
+ if(cur!==st)return;
+ while(FR.size>=4){const [k0,f0]=FR.entries().next().value;FR.delete(k0);f0.remove();}
+ const f=document.createElement('iframe');f.title=b.t;f.setAttribute('allow','clipboard-write');
+ const inner=st.inner||'';
+ f.addEventListener('load',()=>{if(ifr===f)ld.hidden=true;setInner(f,inner);
+  try{if(ifr===f)f.contentWindow.focus()}catch(e){}},{once:true});
+ if(inner)f.setAttribute('data-inner',inner);f.srcdoc=html;FR.set(key,f);$('#frame').appendChild(f);reveal(f);
+}
+function go(st,push){const h=st?enc(st):location.pathname+location.search;if(push)history.pushState(null,'',st?h:h);else history.replaceState(null,'',st?h:h);show(st);}
+addEventListener('popstate',()=>show(parse(location.hash)));
+addEventListener('hashchange',()=>{const st=parse(location.hash);if(!st||!cur||st.id!==cur.id||st.v!==cur.v)show(st);});
+addEventListener('message',e=>{const m=e.data;if(!m||!m.lib||!cur||!ifr||e.source!==ifr.contentWindow)return;
+ if(m.go){if(m.go==='g'&&!M[cur.id].guide){toast('이 책에는 읽는 법이 따로 없습니다.');return;}go({id:cur.id,v:m.go,inner:m.hash||''},true);return;}
+ if(typeof m.hash==='string'){cur={...cur,inner:m.hash};history.replaceState(null,'',enc(cur));store.set('last',{id:cur.id,h:enc(cur).slice(1)});}});
+$('#back').onclick=()=>go(null,true);
+document.querySelectorAll('.seg button').forEach(x=>x.onclick=()=>{if(cur&&x.dataset.v!==cur.v)go({id:cur.id,v:x.dataset.v,inner:''},true);});
+$('#sw').innerHTML=META.map(b=>`<option value="${b.id}">${esc(b.t)}</option>`).join('');
+$('#sw').onchange=e=>go({id:e.target.value,v:'i',inner:''},true);
+addEventListener('DOMContentLoaded',()=>{show(parse(location.hash));});
+</script>
+__BLOBS__</body>
+</html>

@@ -1,0 +1,81 @@
+sdouglas|스티븐 A. 더글러스|더글러스 판사,스티븐 더글러스|Stephen A. Douglas|1813|1861|dem|일리노이의 상원 의원|일리노이의 민주당 지도자. 주민 주권으로 노예제의 다툼을 의회에서 빼내려 했고, 1858년 링컨과 논쟁해 이겼지만 1860년 대통령 선거에서 졌다.|u31:법안을 다섯 개로 나누어 1850년 타협을 통과시켰다.;u33:캔자스-네브래스카법을 만들었다.;u34:링컨과 일곱 번 논쟁하고 프리포트 원칙을 말했다.;u36:북부 민주당의 후보가 되었다.;u37:링컨을 지지하고 죽었다.
+fillmore|밀러드 필모어|필모어|Millard Fillmore|1800|1874|fed|13대 대통령||u31:테일러가 죽은 뒤 대통령이 되었다.;u33:노우낫싱의 후보가 되었다.
+jmason|제임스 메이슨||James M. Mason|1798|1871|dem|버지니아의 상원 의원||u31:캘훈의 연설을 대신 읽었다.;u37:트렌트호에서 붙잡혔다.
+seward|윌리엄 수어드|수어드|William H. Seward|1801|1872|fed|뉴욕의 상원 의원, 국무 장관||u31:헌법보다 높은 법을 말했다.;u36:대통령 후보가 되지 못했다.;u38:승리를 기다리라고 했다.;u40:암살의 밤 칼에 찔렸다.
+minkins|섀드랙 민킨스||Shadrach Minkins|1814|1875|afr|도망 노예||u31:보스턴의 흑인들이 그를 빼내 캐나다로 보냈다.
+aburns|앤서니 번스||Anthony Burns|1834|1862|afr|도망 노예||u31:군대의 호송 속에 남부로 돌려보내졌다.
+aalawrence|에이머스 A. 로런스||Amos Adams Lawrence|1814|1886|biz|보스턴의 섬유 상인||u31:아침에 미친 폐지론자가 되어 일어났다고 썼다.;u33:캔자스의 로런스가 그의 이름을 땄다.
+whittier|존 그린리프 휘티어||John Greenleaf Whittier|1807|1892|phi|시인||u31:웹스터의 변절을 애도하는 시를 썼다.
+tubman|해리엇 터브먼|터브먼|Harriet Tubman|1822|1913|afr|지하 철도의 안내자||u32:열세 번 남부로 돌아가 70명 남짓을 데려왔다.;u35:브라운을 도우려 했다.
+wstill|윌리엄 스틸||William Still|1821|1902|afr|필라델피아의 자유 흑인||u32:도망 노예들의 이야기를 적었다.
+stowe|해리엇 비처 스토|스토|Harriet Beecher Stowe|1811|1896|ref|작가|코네티컷의 목사 집안에서 태어나 신시내티에서 노예제를 가까이 보았다. 도망 노예법에 분노해 『톰 아저씨의 오두막』을 썼다.|u31:도망 노예법이 그녀에게 소설을 쓰게 했다.;u32:『톰 아저씨의 오두막』을 썼다.
+lbeecher|라이먼 비처||Lyman Beecher|1775|1863|rel|목사||u32:스토의 아버지였다.
+northup|솔로몬 노섭||Solomon Northup|1807|1864|afr|뉴욕의 자유 흑인||u32:납치되어 12년 동안 노예로 살았다.
+hjacobs|해리엇 제이컵스||Harriet Jacobs|1813|1897|afr|작가||u32:노예 여성의 삶을 썼다.
+baldwin|제임스 볼드윈||James Baldwin|1924|1987|phi|작가||u32:스토의 소설을 비판했다.
+spchase|새먼 체이스|체이스 장관|Salmon P. Chase|1808|1873|fed|오하이오의 상원 의원, 재무 장관, 대법원장||u33:「독립 민주당원의 호소」를 썼다.
+sumner|찰스 섬너|섬너|Charles Sumner|1811|1874|fed|매사추세츠의 상원 의원||u33:「캔자스에 대한 범죄」를 말하고 지팡이에 맞았다.
+pierce|프랭클린 피어스|피어스|Franklin Pierce|1804|1869|dem|14대 대통령||u33:캔자스-네브래스카법에 서명했다.;u34:링컨이 그를 집을 지은 이로 꼽았다.
+hwbeecher|헨리 워드 비처||Henry Ward Beecher|1813|1887|rel|브루클린의 목사||u33:캔자스에 소총을 보내자고 했다.
+atchison|데이비드 애치슨||David Rice Atchison|1807|1886|dem|미주리의 상원 의원||u33:국경의 무뢰한들을 이끌었다.
+abutler|앤드루 버틀러||Andrew Butler|1796|1857|dem|사우스캐롤라이나의 상원 의원||u33:섬너에게 모욕당했다.
+pbrooks|프레스턴 브룩스|브룩스|Preston Brooks|1819|1857|dem|사우스캐롤라이나의 하원 의원||u33:섬너를 지팡이로 내리쳤다.
+jbrown|존 브라운|브라운|John Brown|1800|1859|ref|노예제 폐지론자|코네티컷의 칼뱅주의 집안에서 태어나 사업에 거듭 실패했다. 노예제를 무력으로 끝내려 캔자스에서 사람을 죽이고 하퍼스 페리를 습격했다가 처형되었다.|u33:포타와토미에서 다섯 명을 죽였다.;u35:하퍼스 페리를 습격하고 처형되었다.;u36:링컨이 그와 거리를 두었다.;u37:그의 노래가 전투 찬가가 되었다.
+fremont|존 C. 프리몬트|프리몬트|John C. Frémont|1813|1890|fed|탐험가, 공화당의 첫 대통령 후보||u33:자유 토지, 자유 노동, 자유인을 외쳤다.
+buchanan|제임스 뷰캐넌|뷰캐넌|James Buchanan|1791|1868|dem|15대 대통령||u33:대통령이 되었다.;u34:판결을 압박하고 르컴프턴 헌법을 지지했다.;u36:주를 강제할 권한이 없다고 했다.
+magee|존 L. 머길||John L. Magee|1820|1895|phi|만화가||u33:섬너 폭행을 그렸다.
+dredscott|드레드 스콧||Dred Scott|1799|1858|afr|자유를 구한 노예||u34:자유를 구하는 소송을 냈다.
+hscott|해리엇 스콧||Harriet Robinson Scott|1820|1876|afr|드레드 스콧의 아내||u34:남편과 함께 소송을 냈다.
+emerson_j|존 에머슨||John Emerson|1802|1843|peo|군의관||u34:스콧을 자유의 땅으로 데려갔다.
+sanford|존 샌퍼드||John F. A. Sanford|1806|1857|peo|에머슨 부인의 남동생||u34:소송의 상대가 되었다.
+taney|로저 태니|태니|Roger B. Taney|1777|1864|jus|대법원장|메릴랜드의 법률가. 잭슨의 재무 장관으로 은행의 예금을 빼냈고, 28년 동안 대법원장으로 있으며 드레드 스콧 판결을 썼다.|u34:흑인은 시민이 아니라고 판결했다.;u37:메리먼 사건에서 링컨에 맞섰다.
+grier|로버트 그리어||Robert Cooper Grier|1794|1870|jus|대법관||u34:뷰캐넌의 압박을 받았다.
+curtis|벤저민 커티스||Benjamin R. Curtis|1809|1874|jus|대법관||u34:반대 의견을 썼다.
+smithg|게릿 스미스||Gerrit Smith|1797|1874|ref|뉴욕의 대지주||u35:브라운에게 돈을 댔다.
+parker|시어도어 파커||Theodore Parker|1810|1860|rel|보스턴의 목사||u35:브라운에게 돈을 댔다.;u39:인민의 정부를 비슷한 말로 말했다.
+higginson|토머스 웬트워스 히긴슨||Thomas Wentworth Higginson|1823|1911|ref|목사||u35:브라운에게 돈을 댔다.
+howe_sg|새뮤얼 그리들리 하우||Samuel Gridley Howe|1801|1876|ref|의사||u35:브라운에게 돈을 댔다.
+sanborn|프랭클린 샌번||Franklin Sanborn|1831|1917|ref|교사||u35:브라운에게 돈을 댔다.
+stearns|조지 스턴스||George Luther Stearns|1809|1867|ref|상인||u35:브라운에게 돈을 댔다.
+lwashington|루이스 워싱턴||Lewis Washington|1812|1871|peo|워싱턴의 증손자||u35:인질로 잡혔다.
+shepherd|헤이워드 셰퍼드||Heyward Shepherd|1825|1859|afr|기차역의 짐꾼||u35:습격의 첫 희생자가 되었다.
+stonewall|스톤월 잭슨|토머스 J. 잭슨|Thomas J. "Stonewall" Jackson|1824|1863|mil|남군 장군||u35:생도들을 이끌고 처형장에 있었다.;u37:불런에서 돌벽처럼 버텼다.;u39:챈슬러스빌에서 자기 병사들의 총에 맞아 죽었다.
+booth|존 윌크스 부스|부스|John Wilkes Booth|1838|1865|peo|배우, 암살자||u35:처형장에 있었다.;u40:링컨을 암살했다.
+oanderson|오즈번 앤더슨||Osborne Perry Anderson|1830|1872|afr|습격대원||u35:살아남아 기록을 남겼다.
+curry|존 스튜어트 커리||John Steuart Curry|1897|1946|phi|화가||u35:브라운의 벽화를 그렸다.
+dubois|W. E. B. 듀보이스|듀보이스|W. E. B. Du Bois|1868|1963|afr|사회학자, NAACP의 창립자||u35:브라운의 전기를 썼다.
+breckinridge|존 브레킨리지||John C. Breckinridge|1821|1875|dem|부통령, 남부 민주당의 후보||u36:남부 민주당의 후보가 되었다.
+bell|존 벨||John Bell|1796|1869|fed|헌법연합당의 후보||u36:헌법연합당의 후보가 되었다.
+jdavis|제퍼슨 데이비스|데이비스|Jefferson Davis|1808|1889|dem|남부 연합의 대통령||u36:남부 연합의 대통령이 되었다.;u38:한 나라를 만들었다는 말을 들었다.;u40:사로잡혔다.
+stephens|알렉산더 스티븐스|스티븐스|Alexander H. Stephens|1812|1883|dem|남부 연합의 부통령||u36:주춧돌 연설을 했다.
+crittenden|존 크리텐든||John J. Crittenden|1787|1863|fed|켄터키의 상원 의원||u36:타협을 냈다.
+randerson|로버트 앤더슨|앤더슨 소령|Robert Anderson|1805|1871|mil|섬터 요새의 지휘관||u37:섬터로 옮기고 항복했다.
+beauregard|피에르 보리가드|보리가드|P. G. T. Beauregard|1818|1893|mil|남군 장군||u37:섬터를 포격했다.
+merryman|존 메리먼||John Merryman|1824|1881|peo|메릴랜드의 분리 지지자||u37:재판 없이 갇혔다.
+farragut|데이비드 패러것||David Farragut|1801|1870|mil|해군 장성||u37:뉴올리언스를 차지했다.
+jwhowe|줄리아 워드 하우||Julia Ward Howe|1819|1910|ref|작가||u35:그녀의 노래가 브라운의 곡조에서 나왔다.;u37:「공화국 전투 찬가」를 썼다.
+bbutler|벤저민 버틀러||Benjamin Butler|1818|1893|mil|북군 장군||u37:달아난 노예를 전쟁 밀수품이라 했다.
+gardner|알렉산더 가드너||Alexander Gardner|1821|1882|phi|사진가||u37:앤티텀의 주검을 찍었다.
+greeley|호러스 그릴리|그릴리|Horace Greeley|1811|1872|fed|뉴욕의 편집자||u38:링컨을 비판하는 편지를 썼다.
+shaw|로버트 굴드 쇼||Robert Gould Shaw|1837|1863|mil|제54매사추세츠 연대장||u38:와그너 요새에서 죽었다.
+gladstone|글래드스턴|글래드스턴|William Ewart Gladstone|1809|1898|brt|영국의 재무 장관||u38:데이비스가 한 나라를 만들었다고 했다.
+sgaudens|오거스터스 세인트고든스||Augustus Saint-Gaudens|1848|1907|phi|조각가||u38:쇼와 제54연대의 기념비를 만들었다.
+hooker|조지프 후커|후커|Joseph Hooker|1814|1879|mil|북군 사령관||u39:챈슬러스빌에서 졌다.
+meade|조지 미드|미드|George G. Meade|1815|1872|mil|북군 사령관||u39:게티즈버그에서 이겼다.
+buford|존 뷰퍼드||John Buford|1826|1863|mil|북군 기병 장군||u39:첫날 남부군을 막았다.
+chamberlain|조슈아 체임벌린|체임벌린|Joshua Chamberlain|1828|1914|mil|메인 제20연대장||u39:리틀 라운드 톱에서 총검 돌격을 명했다.;u40:항복하는 남부군에게 경례하게 했다.
+longstreet|제임스 롱스트리트|롱스트리트|James Longstreet|1821|1904|mil|남군 장군||u39:돌격에 반대했다.
+pickett|조지 피킷|피킷|George Pickett|1825|1875|mil|남군 장군||u39:그의 사단이 돌격했다.
+everett|에드워드 에버렛|에버렛|Edward Everett|1794|1865|fed|웅변가||u39:두 시간 동안 연설했다.
+jwade|제니 웨이드||Jennie Wade|1843|1863|peo|게티즈버그의 주민||u39:전투에서 죽은 유일한 민간인이었다.
+dwills|데이비드 윌스||David Wills|1831|1894|peo|게티즈버그의 변호사||u39:묘지를 만들었다.
+saunders|윌리엄 손더스||William Saunders|1822|1900|phi|조경가||u39:무덤을 반원으로 배치했다.
+tosullivan|티머시 오설리번||Timothy H. O'Sullivan|1840|1882|phi|사진가||u39:「죽음의 수확」을 찍었다.
+shaara|마이클 샤라||Michael Shaara|1928|1988|phi|소설가||u39:『킬러 엔젤스』를 썼다.
+wtsherman|윌리엄 T. 셔먼|셔먼|William T. Sherman|1820|1891|mil|북군 장군||u40:애틀랜타를 차지하고 바다로 행군했다.
+ajohnson|앤드루 존슨||Andrew Johnson|1808|1875|dem|17대 대통령||u40:부통령이 되었다가 대통령이 되었다.
+mclean|윌머 매클린||Wilmer McLean|1814|1882|peo|애퍼매톡스의 주민||u40:그의 집에서 리가 항복했다.
+estanton|에드윈 스탠턴|스탠턴 장관|Edwin Stanton|1814|1869|fed|전쟁 장관||u40:이제 그는 세월에 속한다고 했다.
+msurratt|메리 서랫||Mary Surratt|1823|1865|peo|공모자||u40:연방이 처형한 첫 여성이 되었다.
+granger|고든 그레인저||Gordon Granger|1821|1876|mil|북군 장군||u40:갤버스턴에서 해방을 알렸다.
+whitman|월트 휘트먼|휘트먼|Walt Whitman|1819|1892|phi|시인||u40:링컨을 애도하는 시를 썼다.

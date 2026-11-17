@@ -1,0 +1,10 @@
+ n41:[['zamoyski12','니에멘에서 스몰렌스크까지'],['lieven','러시아의 전략']],
+ n42:[['mikaberidze','보로디노'],['zamoyski12','모스크바 앞의 들판']],
+ n43:[['zamoyski12','불타는 모스크바'],['caulaincourtm','모스크바의 다섯 주']],
+ n44:[['mikaberidzeb','베레지나'],['caulaincourtm','썰매의 귀환']],
+ n45:[['lentz','말레의 쿠데타'],['englund','제국의 취약성']],
+ n46:[['leggiere','1813년 북독일'],['hagemann','민족과 군대와 성별'],['clark','해방 전쟁']],
+ n47:[['lieven','라이프치히'],['chandler','여러 민족의 전투']],
+ n48:[['muir','비토리아'],['esdaile','스페인의 끝']],
+ n49:[['lieven','파리로 가는 길'],['chandler','1814년 원정']],
+ n50:[['lentz14','퐁텐블로의 스무 날'],['caulaincourtm','퇴위의 곁에서']]

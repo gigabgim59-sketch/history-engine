@@ -1,0 +1,12 @@
+ s13:[['hasegawa','2월 혁명의 전개'],['sukhanov','소비에트의 안쪽'],['figes','이중 권력']],
+ s14:[['lenin1917','4월 테제 원문'],['rabinowitch','볼셰비키의 성장']],
+ s15:[['rabinowitch','7월 사태와 그 뒤'],['pipes','코르닐로프 사건']],
+ s16:[['rabinowitch','10월의 권력 장악'],['smithre','10월 혁명의 해석']],
+ s17:[['radkey','제헌의회 선거'],['leggett','체카']],
+ s18:[['wheelerb','브레스트 강화'],['smithre','강화와 그 대가']],
+ s19:[['mawdsley','내전'],['denikin','백군의 논리'],['figes','내전의 사회']],
+ s20:[['lih','곡물과 권력'],['mawdsley','전시 경제']],
+ s21:[['pipesfor','제국의 해체와 재정복'],['suny','캅카스와 민족']],
+ s22:[['daviesn','소련-폴란드 전쟁'],['smithre','세계 혁명의 기대']],
+ s23:[['getzler','크론시타트'],['radkeyg','탐보프 봉기']],
+ s24:[['patenaude','1921년 기근과 구호'],['figes','기근과 교회']]

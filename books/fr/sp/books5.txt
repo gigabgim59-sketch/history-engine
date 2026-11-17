@@ -1,0 +1,10 @@
+ {id:'tackett15',lang:'en',t:'The Coming of the Terror in the French Revolution',a:'Timothy Tackett',o:'2015',role:'혁명가들의 편지와 일기로 두려움과 의심이 공포정치로 이어진 길을 그린 연구.',warn:'—'},
+ {id:'gueniffey',lang:'fr',t:'La Politique de la Terreur',a:'Patrice Gueniffey',o:'2000',role:'공포정치를 혁명의 정치 논리에서 설명한 연구.',warn:'—'},
+ {id:'vovelle',lang:'fr',t:'Piété baroque et déchristianisation en Provence au XVIIIe siècle',a:'Michel Vovelle',o:'1973',role:'유언장의 문구로 신앙의 변화를 분석한 연구.',warn:'—'},
+ {id:'ozouf',lang:'fr',t:'La Fête révolutionnaire, 1789–1799',a:'Mona Ozouf',o:'1976',role:'혁명의 축제가 새 공동체와 신성함을 만들려 한 방식을 분석한 고전.',warn:'—'},
+ {id:'secher',lang:'fr',t:'Le Génocide franco-français: la Vendée-Vengé',a:'Reynald Secher',o:'1986',role:'방데의 진압을 제노사이드로 부른 논쟁적 연구.',warn:'용어와 숫자는 큰 논쟁을 불렀다.'},
+ {id:'huntfr',lang:'en',t:'The Family Romance of the French Revolution',a:'Lynn Hunt',o:'1992',role:'왕과 왕비, 혁명의 이미지를 가족의 이야기로 분석한 연구.',warn:'—'},
+ {id:'lynn',lang:'en',t:'The Bayonets of the Republic',a:'John A. Lynn',o:'1984',role:'북부군의 사기와 전술을 분석한 연구.',warn:'—'},
+ {id:'scurr',lang:'en',t:'Fatal Purity: Robespierre and the French Revolution',a:'Ruth Scurr',o:'2006',role:'로베스피에르의 생애와 혁명을 그린 전기.',warn:'—'},
+ {id:'mathiezd',lang:'fr',t:'Autour de Danton',a:'Albert Mathiez',o:'1926',role:'당통의 부패를 고발한 마티에의 논고.',warn:'로베스피에르 편에서 쓴 글이다.'},
+ {id:'baczko',lang:'fr',t:'Comment sortir de la Terreur',a:'Bronisław Baczko',o:'1989',role:'테르미도르파가 공포정치에서 벗어나려 한 정치와 기억을 분석한 연구.',warn:'—'}

@@ -1,0 +1,73 @@
+hamilton|알렉산더 해밀턴|해밀턴|Alexander Hamilton|1755|1804|fed|초대 재무 장관, 연방파의 지도자|서인도의 네비스섬에서 태어난 사생아로, 재능 하나로 워싱턴의 부관과 재무 장관이 되었다. 국채와 은행, 제조업의 미국을 설계했고 결투로 죽었다.|u11:아나폴리스에서 필라델피아 회의를 제안했다.;u12:영국 헌정을 본뜬 종신 대통령과 상원을 제안했다.;u13:『연방주의자 논집』의 51편을 썼다.;u14:권리장전이 위험하다고 했다.;u15:국채와 부채 인수, 합중국 은행을 만들었다.;u16:고별사를 다듬고 새 군대를 이끌었다.;u17:버보다 제퍼슨을 고르게 하고 결투로 죽었다.
+shays|대니얼 셰이스|셰이스|Daniel Shays|1747|1825|peo|대륙군 대위, 반란의 지도자||u11:스프링필드의 무기고로 갔다가 흩어졌다.
+bowdoin|제임스 보든||James Bowdoin|1726|1790|fed|매사추세츠 총독||u11:반란을 진압할 군대를 모았다.
+blincoln|벤저민 링컨||Benjamin Lincoln|1733|1810|mil|대륙군 장군||u11:상인의 돈으로 꾸린 군대로 반란자들을 흩었다.
+shepard|윌리엄 셰퍼드||William Shepard|1737|1817|mil|매사추세츠 민병 장군||u11:무기고 앞에서 대포를 쏘았다.
+rmorris|로버트 모리스||Robert Morris|1734|1806|pat|필라델피아 상인, 연합의 재정 감독관||u11:연합에 관세의 권한을 달라고 했다.
+knox|헨리 녹스|녹스|Henry Knox|1750|1806|fed|전쟁 장관||u11:워싱턴에게 반란을 과장해 썼다.
+gardoqui|디에고 데 가르도키||Diego de Gardoqui|1735|1798|for|스페인 공사||u11:제이와 미시시피강을 두고 협상했다.
+erandolph|에드먼드 랜돌프|랜돌프|Edmund Randolph|1753|1813|fed|버지니아 총독, 초대 법무 장관||u12:버지니아 안을 내고 서명하지 않았다.
+paterson|윌리엄 패터슨|패터슨|William Paterson|1745|1806|fed|뉴저지의 대표||u12:뉴저지 안을 냈다.
+gmorris|거버너 모리스||Gouverneur Morris|1752|1816|fed|펜실베이니아의 대표||u12:노예제를 하늘의 저주라 하고 전문을 썼다.
+ellsworth|올리버 엘즈워스|엘즈워스|Oliver Ellsworth|1745|1807|fed|코네티컷의 대표||u12:셔먼과 함께 대타협을 냈다.
+bedford|거닝 베드퍼드||Gunning Bedford Jr.|1747|1812|fed|델라웨어의 대표||u12:작은 주들이 외국의 동맹을 찾으리라 했다.
+gerry|엘브리지 게리|게리|Elbridge Gerry|1744|1814|dem|매사추세츠의 대표||u12:서명하지 않았다.
+christy|하워드 챈들러 크리스티||Howard Chandler Christy|1873|1952|phi|화가||u12:서명 장면을 그렸다.
+yates|로버트 예이츠||Robert Yates|1738|1801|dem|뉴욕의 판사||u13:브루투스로 추정된다.
+sbryan|새뮤얼 브라이언||Samuel Bryan|1759|1821|dem|펜실베이니아의 필자||u13:센티널로 썼다.
+msmith|멜랑크턴 스미스||Melancton Smith|1744|1798|dem|뉴욕의 반연방주의자||u13:대표가 인민을 닮아야 한다고 했다가 비준으로 돌아섰다.
+mowarren|머시 오티스 워런||Mercy Otis Warren|1728|1814|dem|극작가, 역사가||u13:콜럼비아의 애국자로 헌법에 반대했다.
+gclinton|조지 클린턴||George Clinton|1739|1812|dem|뉴욕 주지사||u13:비준에 반대했다.
+brush|벤저민 러시|러시|Benjamin Rush|1746|1813|pat|필라델피아의 의사||u13:대연방 행진을 기록했다.
+monroe|제임스 먼로|먼로|James Monroe|1758|1831|dem|버지니아의 정치가, 5대 대통령||u14:하원 선거에서 매디슨과 맞섰다.;u18:특사로 루이지애나를 샀다.;u19:가브리엘의 음모를 진압했다.
+marshall|존 마셜|마셜|John Marshall|1755|1835|jus|대법원장|버지니아의 법률가이자 독립 전쟁의 장교. 34년 동안 대법원장으로 있으며 위헌 심사와 연방의 권한을 세웠다.|u14:평가세에 찬성했다.;u17:마버리 판결을 썼다.
+necker|자크 네케르||Jacques Necker|1732|1804|for|프랑스의 재무 장관||u15:해밀턴이 그의 재정을 공부했다.
+neville|존 네빌||John Neville|1731|1803|fed|위스키 세금 징수 감독관||u15:집이 불탔다.
+miranda|린마누엘 미란다||Lin-Manuel Miranda|1980|null|phi|작곡가, 배우||u15:뮤지컬 「해밀턴」을 만들었다.
+genet|에드몽 주네|주네|Edmond-Charles Genêt|1763|1834|for|프랑스 공사||u16:미국 땅에서 사략선을 무장했다.
+freneau|필립 프레노||Philip Freneau|1752|1832|dem|시인, 언론인||u16:『국민 신문』을 냈다.
+fenno|존 페노||John Fenno|1751|1798|fed|언론인||u16:『합중국 신문』을 냈다.
+talleyrand|탈레랑|탈레랑|Charles-Maurice de Talleyrand|1754|1838|for|프랑스의 외무 장관||u16:대리인들이 뇌물을 요구했다.;u18:루이지애나 전체를 팔겠다고 했다.
+lyon|매슈 라이언||Matthew Lyon|1749|1822|dem|버몬트의 하원 의원||u16:선동법으로 갇혀 감옥에서 다시 당선되었다.
+bache|벤저민 프랭클린 베이치||Benjamin Franklin Bache|1769|1798|dem|필라델피아의 편집자||u16:재판을 기다리다 죽었다.
+lbaldwin|루서 볼드윈||Luther Baldwin|null|null|peo|뉴저지의 선원||u16:대통령을 놀린 농담으로 벌금을 냈다.
+fries|존 프리스|프리스|John Fries|1750|1818|peo|펜실베이니아의 경매인||u16:직접세에 맞선 반란을 이끌었다.
+burr|에런 버|버|Aaron Burr|1756|1836|dem|3대 부통령||u17:제퍼슨과 같은 표를 얻고 해밀턴을 결투로 죽였다.
+callender|제임스 캘린더||James Callender|1758|1803|dem|언론인||u17:애덤스를 비방하고 감옥에 갔다.
+ccpinckney|찰스 코츠워스 핑크니||Charles Cotesworth Pinckney|1746|1825|fed|사우스캐롤라이나의 연방파||u17:64표를 얻었다.
+bayard|제임스 베이어드||James A. Bayard|1767|1815|fed|델라웨어의 하원 의원||u17:36번째 투표에서 기권했다.
+gallatin|앨버트 갤러틴|갤러틴|Albert Gallatin|1761|1849|dem|재무 장관||u17:세금을 없애고 빚을 갚았다.
+marbury|윌리엄 마버리||William Marbury|1762|1835|fed|메릴랜드의 사업가||u17:전달되지 않은 임명장으로 소송을 냈다.
+chase|새뮤얼 체이스|체이스|Samuel Chase|1741|1811|jus|대법관||u17:탄핵되었다가 무죄가 되었다.
+napoleon|나폴레옹|나폴레옹|Napoléon Bonaparte|1769|1821|for|프랑스의 제1통령, 황제||u18:생도맹그를 잃고 루이지애나를 팔았다.;u19:노예제를 되살리려 군대를 보냈다.;u20:그의 패배로 영국군이 미국으로 왔다.
+toussaint|투생 루베르튀르|투생|Toussaint Louverture|1743|1803|afr|생도맹그 혁명의 지도자||u18:섬을 다스리다 붙잡혀 죽었다.;u19:노예들의 군대를 이끌었다.
+leclerc|샤를 르클레르|르클레르|Charles Leclerc|1772|1802|for|프랑스군 사령관||u18:생도맹그에서 황열병으로 죽었다.
+lewis|메리웨더 루이스|루이스|Meriwether Lewis|1774|1809|mil|탐험가, 제퍼슨의 비서||u18:발견 군단을 이끌었다.
+wclark|윌리엄 클라크|클라크|William Clark|1770|1838|mil|탐험가||u18:루이스와 함께 탐험대를 이끌었다.
+york|요크|요크|York|1770|1832|afr|클라크의 노예||u18:탐험대와 함께 태평양까지 갔다.
+charbonneau|투생 샤르보노|샤르보노|Toussaint Charbonneau|1767|1843|peo|프랑스계 캐나다인 상인||u18:통역으로 합류했다.
+sacagawea|사카자위아||Sacagawea|1788|1812|nat|레미 쇼쇼니족의 여성||u18:통역으로 탐험대와 함께 갔다.
+whharrison|윌리엄 헨리 해리슨|해리슨|William Henry Harrison|1773|1841|mil|인디애나 준주 총독, 9대 대통령||u18:제퍼슨에게서 원주민의 빚에 대한 지시를 받았다.;u20:티피카누에서 싸웠다.
+princehall|프린스 홀||Prince Hall|1735|1807|afr|보스턴의 자유 흑인 지도자||u19:노예 해방의 청원에 서명했다.
+benezet|앤서니 베네제||Anthony Benezet|1713|1784|rel|필라델피아의 퀘이커 교사||u19:노예제를 죄라 했다.
+woolman|존 울먼||John Woolman|1720|1772|rel|퀘이커 설교자||u19:노예제를 죄라 했다.
+mumbett|엘리자베스 프리먼||Elizabeth Freeman|1744|1829|afr|멈 벳으로 불린 노예||u19:주 헌법을 근거로 자유를 얻었다.
+cushing|윌리엄 쿠싱||William Cushing|1732|1810|jus|매사추세츠 대법원장||u19:노예제가 주 헌법과 맞지 않는다고 했다.
+rcarter|로버트 카터 3세||Robert Carter III|1728|1804|peo|버지니아의 농장주||u19:노예 수백 명을 해방했다.
+banneker|벤저민 배너커||Benjamin Banneker|1731|1806|afr|메릴랜드의 수학자||u19:제퍼슨에게 역서와 편지를 보냈다.
+dessalines|장자크 데살린||Jean-Jacques Dessalines|1758|1806|afr|아이티의 초대 통치자||u19:아이티의 독립을 선언했다.
+gabriel|가브리엘|가브리엘|Gabriel|1776|1800|afr|리치먼드의 대장장이 노예||u19:봉기를 준비하다 목매달렸다.
+ajones|앱설럼 존스||Absalom Jones|1746|1818|afr|필라델피아의 목사||u19:노예무역 금지를 감사하는 설교를 했다.
+rallen|리처드 앨런||Richard Allen|1760|1831|afr|감리교 목사||u19:자유 아프리카인 협회를 만들었다.
+ewhitney|엘리 휘트니||Eli Whitney|1765|1825|biz|발명가||u19:조면기를 만들었다.
+tecumseh|테쿰세|테쿰세|Tecumseh|1768|1813|nat|쇼니족의 지도자||u20:원주민의 연합을 이끌다 템스강에서 죽었다.
+tenskwatawa|텐스콰타와||Tenskwatawa|1775|1836|nat|쇼니족의 예언자||u20:옛 방식으로 돌아가라고 설교했다.
+clay|헨리 클레이|클레이|Henry Clay|1777|1852|dem|켄터키의 하원 의장||u20:전쟁 매파를 이끌었다.
+calhoun|존 C. 캘훈|캘훈|John C. Calhoun|1782|1850|dem|사우스캐롤라이나의 정치가||u20:전쟁 매파였다.
+perry|올리버 해저드 페리||Oliver Hazard Perry|1785|1819|mil|해군 장교||u20:이리호에서 이겼다.
+jackson|앤드루 잭슨|잭슨|Andrew Jackson|1767|1845|mil|테네시의 장군, 7대 대통령|캐롤라이나의 국경에서 태어나 테네시의 법률가와 농장주가 되었다. 크리크 전쟁과 뉴올리언스로 영웅이 되고, 대통령으로서 은행과 원주민에 맞섰다.|u20:호스슈 벤드와 뉴올리언스에서 이겼다.
+dolley|돌리 매디슨||Dolley Madison|1768|1849|peo|영부인||u20:워싱턴의 초상화를 지키게 했다.
+pjennings|폴 제닝스||Paul Jennings|1799|1874|afr|매디슨의 노예||u20:초상화를 지킨 이들 가운데 있었다.
+fskey|프랜시스 스콧 키||Francis Scott Key|1779|1843|peo|볼티모어의 변호사||u20:맥헨리 요새를 보고 시를 썼다.
+pakenham|에드워드 패컨햄|패컨햄|Edward Pakenham|1778|1815|brt|영국군 사령관||u20:뉴올리언스에서 죽었다.
+tbirch|토머스 버치||Thomas Birch|1779|1851|phi|화가||u20:해전을 그렸다.

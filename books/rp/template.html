@@ -1,0 +1,1414 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>__TITLE__</title>
+<meta name="description" content="__DESC__">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="__TITLE__">
+<meta property="og:title" content="__TITLE__ — __SUB__">
+<meta property="og:description" content="__DESC__">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="thumbnail.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f4f2ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121417" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23f3efe6'/%3E%3Crect x='7' y='7' width='18' height='18' rx='2' fill='none' stroke='%23a0372b' stroke-width='3'/%3E%3Crect x='12' y='12' width='8' height='8' fill='%23a0372b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap">
+<!--__FONTS__-->
+<style>
+:root{
+  --bg:#f4f2ee;--surface:#fffdf9;--ink:#1d1f24;--muted:#5f636b;--line:#dcd7cd;--soft:#ece7dd;
+  --accent:#8a3b22;--accent-soft:#f3e6df;
+  --p1:#9a6a1c;--p2:#7b3f78;--p3:#2c7062;--p4:#3a5a9c;--p5:#a0372b;--p6:#5d6b1f;
+  --land:#ebe4d4;--landline:#b9ad94;--border:#b5a98f;--sea:#dfe8ec;--grat:#cdd8dd;--river:#6f9cbf;
+  --hl:#fff0b0;--warn:#8a5a00;--warn-soft:#fbf1dc;
+  --sans:"KRSans","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:var(--sans);
+  --fs:17px;--measure:44rem;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121417;--surface:#1a1d21;--ink:#e6e3dc;--muted:#a3a7ad;--line:#2e3238;--soft:#23272c;
+  --accent:#e59a7b;--accent-soft:#33241f;
+  --p1:#d9a650;--p2:#c98ac5;--p3:#6cc2ad;--p4:#8fa9e6;--p5:#ec8577;--p6:#b7c46a;
+  --land:#262a2f;--landline:#4a4f56;--border:#565c64;--sea:#15191d;--grat:#22282e;--river:#4f7896;
+  --hl:#5b4b10;--warn:#e8b45a;--warn-soft:#2c2414;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121417;--surface:#1a1d21;--ink:#e6e3dc;--muted:#a3a7ad;--line:#2e3238;--soft:#23272c;
+  --accent:#e59a7b;--accent-soft:#33241f;
+  --p1:#d9a650;--p2:#c98ac5;--p3:#6cc2ad;--p4:#8fa9e6;--p5:#ec8577;--p6:#b7c46a;
+  --land:#262a2f;--landline:#4a4f56;--border:#565c64;--sea:#15191d;--grat:#22282e;--river:#4f7896;
+  --hl:#5b4b10;--warn:#e8b45a;--warn-soft:#2c2414;color-scheme:dark}
+*{box-sizing:border-box}
+html{font-size:var(--fs)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.75;word-break:keep-all;overflow-wrap:break-word;-webkit-text-size-adjust:100%}
+h1{font-weight:800}
+svg text{font-family:var(--sans)}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+h1,h2,h3{line-height:1.35;letter-spacing:-.01em;text-wrap:balance}
+[hidden]{display:none!important}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* 상단 막대 */
+.bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar1{display:flex;align-items:center;gap:.4rem;padding:.4rem 16px}
+.brand{font-weight:800;color:var(--ink);white-space:nowrap;font-family:var(--serif)}
+.brand:hover{text-decoration:none}
+.sp{flex:1}
+.ib{flex:none;width:2.1rem;height:2.1rem;display:grid;place-items:center;border:0;background:transparent;border-radius:8px;cursor:pointer}
+.ib:hover{background:var(--accent-soft)}
+.ib svg{width:1.2rem;height:1.2rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sbox{display:flex;align-items:center;gap:.35rem;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.1rem .6rem;flex:0 1 14rem;min-width:0}
+.sbox svg{width:1rem;height:1rem;fill:none;stroke:var(--muted);stroke-width:2;flex:none}
+.sbox input{border:0;background:transparent;color:var(--ink);font:inherit;font-size:.86rem;width:100%;min-width:0;padding:.25rem 0;outline:none}
+.tabs{display:flex;gap:.2rem;padding:0 12px .35rem;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{flex:none;font-size:.86rem;color:var(--muted);padding:.25rem .7rem;border-radius:999px}
+.tabs a:hover{text-decoration:none;background:var(--soft);color:var(--ink)}
+.tabs a.on{background:var(--ink);color:var(--bg);font-weight:700}
+@media (max-width:640px){.sbox{flex:1;min-width:5.5rem}.brand{flex:none;font-size:.86rem;line-height:1.2;white-space:normal;width:7.4em;word-break:keep-all}}
+@media (max-width:350px){.sbox{min-width:2.6rem}.brand{width:6.6em;font-size:.8rem}.bar1{gap:.2rem;padding:.4rem 10px}}
+
+/* 서랍 차례 */
+.scrim{position:fixed;inset:0;background:rgb(0 0 0/.35);z-index:30}
+.drawer{position:fixed;top:0;bottom:0;left:0;width:min(22rem,88vw);background:var(--surface);z-index:31;overflow:auto;padding:1rem 1rem 2rem;border-right:1px solid var(--line)}
+.dh{display:flex;justify-content:space-between;align-items:center}
+.pill{border:1px solid var(--line);background:transparent;border-radius:999px;padding:.12rem .7rem;font-size:.8rem;cursor:pointer;color:var(--ink)}
+.pill:hover{background:var(--soft)}
+.pill.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.toc{list-style:none;margin:0;padding:0}
+.toc .tp{font-size:.76rem;color:var(--muted);margin:1rem 0 .2rem;font-weight:700}
+.toc a{display:flex;gap:.55rem;padding:.25rem .4rem;border-radius:6px;color:var(--ink);font-size:.88rem;line-height:1.45}
+.toc a:hover{background:var(--soft);text-decoration:none}
+.toc a.on{background:var(--accent-soft);color:var(--accent);font-weight:700}
+.n{flex:none;width:2.1em;text-align:right;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.rd{flex:none;width:.45rem;height:.45rem;border-radius:50%;margin-top:.55rem;background:transparent}
+.rd.on{background:var(--p3)}
+
+/* 검색 결과, 용어 상자 */
+.results{position:fixed;z-index:25;top:6.2rem;left:50%;transform:translateX(-50%);width:min(44rem,calc(100vw - 32px));max-height:70vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px rgb(0 0 0/.16);padding:.5rem}
+.results ol{list-style:none;margin:0;padding:0}
+.results li a{display:block;padding:.45rem .6rem;border-radius:8px;color:var(--ink)}
+.results li a:hover{background:var(--soft);text-decoration:none}
+.results small{color:var(--muted);display:block;font-size:.8rem;line-height:1.5}
+.results mark,.hit{background:var(--hl);color:inherit;border-radius:2px}
+.pop{position:fixed;z-index:40;max-width:min(22rem,calc(100vw - 32px));background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 10px 28px rgb(0 0 0/.18);padding:.7rem .85rem;font-size:.9rem;line-height:1.6}
+.pop b{display:block;margin-bottom:.15rem}
+/* 용어는 글줄 속 인라인 요소로 둔다(단추로 두면 통째로 넘어가 양쪽 정렬에서 낱말 사이가 크게 벌어짐) */
+.term{display:inline;color:inherit;border-bottom:1px dotted var(--accent);cursor:help;-webkit-box-decoration-break:clone;box-decoration-break:clone;-webkit-tap-highlight-color:transparent}
+.term:focus-visible{outline:2px solid var(--accent);outline-offset:1px;border-radius:2px}
+
+/* 읽기 기둥 */
+main{padding:0 16px 5rem}
+.col{max-width:var(--measure);margin:0 auto}
+.wide{max-width:1180px;margin:0 auto}
+.eyebrow{font-size:.8rem;color:var(--muted);letter-spacing:.03em;margin:2rem 0 .2rem;font-weight:600}
+.hero h1{font-family:var(--serif);font-size:2.1rem;margin:.2rem 0 .4rem}
+.lede{font-size:1.05rem;color:var(--ink)}
+.sub{color:var(--muted);margin:0}
+h2.sh{font-size:1.15rem;margin:2.4rem 0 .6rem;padding-top:.6rem;border-top:1px solid var(--line)}
+.lbl{font-size:.78rem;color:var(--muted);font-weight:700;letter-spacing:.04em;margin:0 0 .3rem}
+.grid{display:grid;gap:.75rem;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr))}
+.card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.85rem 1rem;color:var(--ink)}
+a.card:hover{text-decoration:none;border-color:var(--muted)}
+.card h3{font-size:1rem;margin:0 0 .2rem}
+.card p{margin:0;font-size:.9rem;color:var(--muted);line-height:1.6}
+.chip{display:inline-flex;align-items:center;gap:.3rem;font-size:.78rem;border:1px solid var(--line);border-radius:999px;padding:.05rem .55rem;color:var(--muted);background:var(--surface);white-space:nowrap}
+a.chip:hover{text-decoration:none;color:var(--ink);border-color:var(--muted)}
+.chip i{width:.55rem;height:.55rem;border-radius:50%;display:inline-block}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem}
+
+/* 부 목록 */
+.part{margin-top:1.6rem}
+.part h3{font-size:1.05rem;margin:0;display:flex;gap:.6rem;align-items:baseline;flex-wrap:wrap}
+.part h3 em{font-style:normal;color:var(--muted);font-size:.82rem;font-weight:500}
+.clist{list-style:none;margin:.5rem 0 0;padding:0;border-top:1px solid var(--line)}
+.clist a{display:flex;gap:.6rem;align-items:baseline;padding:.42rem .2rem;border-bottom:1px solid var(--line);color:var(--ink)}
+.clist a:hover{background:var(--soft);text-decoration:none}
+.clist .t{flex:1;min-width:0}
+@media (max-width:640px){.tbl.cmp{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}.tbl.cmp th,.tbl.cmp td{min-width:9rem}}
+.clist small{color:var(--muted);font-size:.8rem;white-space:nowrap}
+.pbar{display:inline-block;width:.6rem;height:.6rem;border-radius:2px;flex:none}
+.meter{height:.5rem;background:var(--soft);border-radius:999px;overflow:hidden;display:flex}
+.meter i{display:block;height:100%}
+
+/* 장 */
+.chead h1{font-family:var(--serif);font-size:1.75rem;margin:.1rem 0}
+.chead .cn{display:block;font-size:.85rem;color:var(--muted);font-family:var(--sans);font-weight:600}
+.period{color:var(--muted);margin:.1rem 0 .5rem}
+.q{font-family:var(--serif);font-size:1.12rem;border-left:3px solid var(--accent);padding:.1rem 0 .1rem .9rem;margin:1rem 0}
+.keys{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+.keys p{margin:0}
+.keys.guide{background:transparent;border-style:dashed}.keys.guide .rh p{margin:.5rem 0 0}.keys.guide .rh h4{margin:.8rem 0 .2rem;font-size:.95rem}
+.slot{margin:1.6rem 0}
+.slot h2{font-size:1.1rem;margin:0 0 .3rem}
+.todo{border:1px dashed var(--line);border-radius:10px;padding:.55rem .8rem;color:var(--muted);font-size:.88rem;background:transparent}
+.todo b{color:var(--warn);font-weight:700;margin-right:.35rem}
+.box{border-radius:12px;padding:.8rem 1rem;margin:1.4rem 0}
+.box.deb{background:var(--warn-soft)}
+.box.myth{background:var(--accent-soft)}
+.tbl{width:100%;border-collapse:collapse;font-size:.9rem}
+.tbl th,.tbl td{text-align:left;padding:.4rem .5rem;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{color:var(--muted);font-weight:600;font-size:.8rem}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links ul{list-style:none;margin:0;padding:0}
+.links li a{display:block;padding:.3rem .5rem;border-radius:8px;border:1px solid var(--line);margin-bottom:.35rem;background:var(--surface);color:var(--ink);font-size:.9rem;line-height:1.45}
+.links li a:hover{text-decoration:none;border-color:var(--muted)}
+.links small{color:var(--muted)}
+.minimap{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:var(--sea)}
+.go{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0}
+.pn{display:flex;justify-content:space-between;gap:1rem;margin-top:2.5rem;border-top:1px solid var(--line);padding-top:1rem}
+.pn a{max-width:48%;color:var(--ink)}
+.pn small{display:block;color:var(--muted);font-size:.78rem}
+.pn .next{text-align:right;margin-left:auto}
+.bg5{display:grid;gap:.6rem;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));margin-top:.6rem}
+.bg5 .card{border-top:3px solid var(--line)}
+.bg5 .pe{border-style:dashed}
+.bg5 .card{display:flex;flex-direction:column}.bg5 .card>p{flex:1}.bg5 .rgo{margin:.5rem 0 0!important}.bg5 .rgo .pill{font-size:.8rem}
+
+/* 지도 */
+.stage{position:relative;background:var(--sea);border:1px solid var(--line);border-radius:14px;overflow:hidden;touch-action:none}
+.stage svg{display:block;width:100%;height:auto;user-select:none;-webkit-user-select:none}
+.zoom{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:4px}
+.zoom button{width:2rem;height:2rem;border-radius:8px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:700}
+.mk{cursor:pointer}
+.mk circle{stroke:var(--surface);stroke-width:1.5}
+.mk text{font-size:9px;font-weight:700;fill:#fff;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.mk.dim{opacity:.18}
+.mk.sel circle{stroke:var(--ink);stroke-width:2.5}
+.bd{stroke:var(--border);stroke-width:.55;stroke-linejoin:round;opacity:.7}
+.noborders .bd{display:none}
+.pv{stroke:var(--landline);stroke-width:.45;stroke-dasharray:2 2;opacity:.55}
+.rv{stroke:var(--river);stroke-width:.8;opacity:.75;stroke-linecap:round;stroke-linejoin:round}
+.lk{fill:var(--sea);stroke:var(--river);stroke-width:.4;opacity:.9}
+.noprov .pv,.norivers .rv,.norivers .lk{display:none}
+.lay-ports circle{fill:var(--surface);stroke:#8a3b22;stroke-width:1.4;vector-effect:non-scaling-stroke}
+.lay-ports text,.lay-lease text,.lay-city text{fill:var(--ink);paint-order:stroke;stroke:var(--land);stroke-width:2.5px;stroke-linejoin:round;font-weight:600}
+.lay-ports .yr{fill:#8a3b22;font-weight:700}
+.lay-lease rect{fill:#7b3f78;opacity:.85;vector-effect:non-scaling-stroke}
+.lay-city circle{fill:var(--ink);opacity:.6}
+.noports .lay-ports,.nolease .lay-lease{display:none}
+.mleg .sw2{display:inline-block;width:.7rem;height:.7rem;margin-right:.3rem;vertical-align:-1px}
+.lbl-sea{font-size:12px;fill:var(--muted);font-style:italic;text-anchor:middle;opacity:.8}
+.lbl-reg{font-size:15px;font-weight:800;fill:var(--muted);text-anchor:middle;opacity:.35;letter-spacing:.1em}
+.ctrl{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin:.8rem 0}
+.ctrl .lb{font-size:.8rem;color:var(--muted);margin-right:.2rem}
+.info{margin-top:.8rem}
+.note{font-size:.84rem;color:var(--muted)}
+
+/* 연표 */
+.scroller{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.scroller svg{display:block}
+.ln-name{font-size:12px;font-weight:700;fill:var(--ink)}
+.tick{font-size:10.5px;fill:var(--muted);text-anchor:middle}
+.dot{cursor:pointer}
+.dot text{font-size:9px;font-weight:700;fill:#fff;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.dot.dim{opacity:.2}
+.dot.sel circle{stroke:var(--ink);stroke-width:2.5}
+.arc{fill:none;stroke:var(--muted);stroke-width:1;opacity:.18}
+.arc.on{stroke:var(--accent);stroke-width:2;opacity:.95}
+.arc.in{stroke:var(--p4);stroke-width:2;opacity:.95}
+
+/* 연결망 */
+.nd{cursor:pointer}
+.nd rect{fill:var(--surface);stroke:var(--line);stroke-width:1.2}
+.nd.c rect{stroke:var(--accent);stroke-width:2.5;fill:var(--accent-soft)}
+.nd text{font-size:11.5px;fill:var(--ink)}
+.nd .yy{font-size:10px;fill:var(--muted)}
+.ed{fill:none;stroke:var(--muted);stroke-width:1.2;opacity:.55}
+@media (max-width:560px){.clist a{gap:.45rem}.clist small{white-space:normal;text-align:right;flex:0 1 6.5rem;min-width:0;line-height:1.35}}
+.chip{max-width:100%;white-space:normal}
+@media (max-width:560px){.tbl th,.tbl td{padding:.35rem .3rem;overflow-wrap:anywhere}}
+/* 지역별 이어 읽기 */
+.trail{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin:1.2rem 0 -.6rem;padding:.5rem .8rem;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.trail .tt{color:var(--ink);font-weight:700;line-height:1.3}.trail .tt small{display:block;font-weight:400;color:var(--muted);font-size:.72rem}
+.trail .tk{font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.trail .meter{flex:1;min-width:6rem;margin:0}
+.trail .tx{font-size:.8rem}
+.meter{height:.4rem;border-radius:999px;background:var(--soft);overflow:hidden;margin:.6rem 0 .2rem}
+.meter i{display:block;height:100%;background:var(--accent);border-radius:999px}
+.tg{display:inline-block;margin-left:.4rem;font-size:.7rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:0 .4rem;vertical-align:2px}
+/* 공통: 화면 제목과 연결 이유 */
+.vt{font-family:var(--serif);font-size:1.55rem;margin:.2rem 0 .3rem}
+.vsub{margin:.1rem 0 .4rem;max-width:52rem}
+.why{display:block;font-size:.82rem;color:var(--muted);margin-top:.15rem;line-height:1.55}
+.links li a .n,.mlist .n{display:inline-grid;place-items:center;min-width:1.55rem;height:1.55rem;padding:0 .3rem;border-radius:999px;color:#fff;font-size:.72rem;font-weight:700;margin-right:.2rem;vertical-align:1px}
+.links.one{display:block}
+.links.one .lbl{margin-top:.9rem}
+i.ln{display:inline-block;width:1.1rem;height:0;border-top:2.5px solid;vertical-align:middle;margin-right:.35rem}
+i.ln.in{border-color:var(--p4)}i.ln.out{border-color:var(--accent)}
+.sel{font:inherit;font-size:.85rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.2rem .7rem;max-width:min(100%,24rem)}
+.pill[disabled]{opacity:.4;cursor:default}
+/* 연결망 범주 */
+.netcat{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:.5rem .7rem;margin:.2rem 0 .6rem}
+.nc-row{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center}
+.nc-row .lb{font-size:.8rem;color:var(--muted);margin-right:.2rem}
+.nc-m{margin-top:.45rem;padding-top:.45rem;border-top:1px dashed var(--line)}
+.nc-m .pill small{color:var(--muted);margin-left:.15rem}.nc-m .pill.on small{color:inherit;opacity:.8}
+.nc-m .sw{display:inline-block;width:.55rem;height:.55rem;border-radius:2px;margin-right:.3rem}
+.nc-x{margin-left:auto}
+.nc-d{font-size:.84rem;color:var(--muted);margin:.5rem 0 .3rem}
+.nc-list{position:relative;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(15rem,100%),1fr));gap:.25rem .6rem;max-height:11.5rem;overflow:auto}
+.nc-list a{display:flex;gap:.45rem;align-items:baseline;padding:.15rem .35rem;border-radius:6px;color:var(--ink);font-size:.86rem;line-height:1.4}
+.nc-list a:hover{background:var(--soft);text-decoration:none}
+.nc-list a.on{background:var(--accent-soft);color:var(--accent);font-weight:700}
+.nc-list .n{width:2.1em}
+.nc-pos{font-size:.8rem;color:var(--accent);font-weight:700}
+.nd.cout{opacity:.38}.nd.cin rect:first-child{stroke:var(--ink);stroke-width:1.6}
+/* 연결망 */
+.netbar{gap:.45rem}
+.edg{cursor:pointer}
+.edhit{fill:none;stroke:transparent;stroke-width:12}
+.edg.core .ed{stroke:var(--accent);opacity:.75;stroke-width:1.6}
+.edg:hover .ed,.edg.on .ed{stroke:var(--accent);opacity:1;stroke-width:2.6}
+.edinfo{margin:.6rem 0;padding:.6rem .9rem;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 10px 10px 0;min-height:2.6rem}
+.edinfo p{margin:0}.edinfo .lbl{margin-bottom:.15rem}
+.netcols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:1rem;align-items:start;margin-top:.6rem}
+@media (max-width:820px){.netcols{grid-template-columns:1fr}}
+/* 지도 */
+.seg .pill{display:inline-flex;align-items:center;gap:.3rem}
+.seg .sw{width:.6rem;height:.6rem;border-radius:2px;display:inline-block}
+.seg .pt{color:inherit;opacity:.75}
+@media (max-width:900px){.seg .pt{display:none}}
+.mapwrap{display:grid;grid-template-columns:minmax(0,1fr) 21rem;gap:1rem;align-items:start}
+.mside{max-height:min(78vh,44rem);overflow:auto;padding-right:.2rem}
+@media (max-width:900px){.mapwrap{grid-template-columns:1fr}.mside{max-height:none}.stage .mleg{position:static;border:0;border-top:1px solid var(--line);border-radius:0}}
+.mside .st{margin:.1rem 0 .2rem;font-size:1.1rem}
+.mside .back{margin-bottom:.6rem}
+.mlist{list-style:none;margin:.5rem 0 0;padding:0}
+.mlist button{display:flex;gap:.55rem;align-items:flex-start;width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--line);padding:.45rem .2rem;cursor:pointer;line-height:1.4}
+.mlist button:hover{background:var(--soft)}
+.mlist b{display:block;font-size:.9rem}
+.mlist small{color:var(--muted);font-size:.78rem}
+.mlist .n{flex:none;margin-top:.1rem}
+.mk.hov circle{stroke:var(--ink)}
+.mk.ext circle{stroke-dasharray:none}
+.mtip{position:absolute;transform:translate(-50%,-100%);background:var(--ink);color:var(--bg);padding:.3rem .6rem;border-radius:8px;font-size:.8rem;line-height:1.35;pointer-events:none;max-width:16rem;z-index:2}
+.mtip b{display:block}.mtip small{opacity:.8}
+.mleg{position:absolute;left:10px;top:10px;display:flex;flex-wrap:wrap;gap:.7rem;background:color-mix(in srgb,var(--surface) 88%,transparent);border:1px solid var(--line);border-radius:8px;padding:.25rem .6rem;font-size:.75rem;color:var(--muted)}
+.mleg span,.mleg label{display:inline-flex;align-items:center}
+.bdt{gap:.25rem;cursor:pointer;color:var(--ink)}.bdt input{margin:0;accent-color:var(--accent)}
+.mleg .ring{display:inline-block;width:.75rem;height:.75rem;border-radius:50%;border:2px solid var(--muted);margin-right:.3rem}
+/* 정체성 변화 */
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin:1rem 0}
+.how button{text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.7rem .85rem;cursor:pointer;line-height:1.45}
+.how button:hover{border-color:var(--muted)}
+.how b{display:block;font-size:.95rem}.how span{font-size:.82rem;color:var(--muted)}
+@media (max-width:640px){.how{grid-template-columns:1fr}}
+.gcards .card{display:flex;flex-direction:column;gap:.35rem}
+.gcards .card:hover{text-decoration:none;border-color:var(--muted)}
+.gcards .meta{font-size:.78rem}
+.axbar{display:flex;height:.45rem;border-radius:999px;overflow:hidden;gap:2px;background:var(--soft)}
+.ax-sov{background:#3f7fa6}.ax-cit{background:#b08a2a}.ax-con{background:#8a4f7d}.ax-lib{background:#4c8a5a}.ax-nat{background:#9a5a3c}
+.axkey{display:flex;flex-wrap:wrap;gap:.8rem}.axkey span{display:inline-flex;align-items:center;gap:.3rem}
+.axkey i,.dotk,.axt i{display:inline-block;width:.6rem;height:.6rem;border-radius:2px}
+.dotk{margin-right:.35rem}
+.axt{display:inline-flex;align-items:center;gap:.25rem;font-size:.72rem;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:0 .45rem;vertical-align:1px;margin-right:.25rem}
+.heat th small{display:block;font-weight:400;font-size:.7rem;color:var(--muted)}
+.heat td.v button{width:100%;font-weight:700;background:transparent;border:0;cursor:pointer;padding:.2rem 0;border-radius:6px}
+.heat td.v button:hover,.heat td.v button.on{outline:2px solid var(--ink)}
+.cellbox{margin:.8rem 0}
+.gstrip{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.6rem .7rem}
+.gdot text{font-size:9px;font-weight:700;fill:#fff;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.gdot circle{stroke:var(--surface);stroke-width:1.5}
+.gdot:hover circle{stroke:var(--ink)}
+.sh .segs{float:right;display:inline-flex;gap:.3rem;font-weight:400}
+.tline{list-style:none;margin:.4rem 0;padding:0 0 0 .4rem;border-left:2px solid var(--line)}
+.tline li{position:relative;display:grid;grid-template-columns:7rem 1fr;gap:.6rem;padding:.45rem 0 .45rem .9rem}
+.tline li::before{content:"";position:absolute;left:-.48rem;top:.85rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--c);border:2px solid var(--bg)}
+.tline .yr{color:var(--muted);font-size:.8rem;line-height:1.5;padding-top:.15rem}
+.tline b{font-weight:600}
+.tline a{display:block;font-size:.8rem;margin-top:.1rem}
+@media (max-width:560px){.tline li{grid-template-columns:1fr;gap:0}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ax-sov{background:#6fa8cc}:root:not([data-theme="light"]) .ax-cit{background:#d4b45a}:root:not([data-theme="light"]) .ax-con{background:#b77fa9}:root:not([data-theme="light"]) .ax-lib{background:#78b586}:root:not([data-theme="light"]) .ax-nat{background:#c98a6a}}
+:root[data-theme="dark"] .ax-sov{background:#6fa8cc}:root[data-theme="dark"] .ax-cit{background:#d4b45a}:root[data-theme="dark"] .ax-con{background:#b77fa9}:root[data-theme="dark"] .ax-lib{background:#78b586}:root[data-theme="dark"] .ax-nat{background:#c98a6a}
+.colh{font-size:11px;fill:var(--muted);text-anchor:middle;font-weight:700}
+
+/* 정체성 */
+.heat td.v{text-align:center;font-variant-numeric:tabular-nums;font-weight:700}
+.axrow{display:grid;grid-template-columns:6.5rem 1fr;gap:.6rem;padding:.55rem 0;border-bottom:1px solid var(--line)}
+.axrow h4{margin:0;font-size:.9rem}
+.axrow h4 small{display:block;color:var(--muted);font-weight:400;font-size:.75rem;line-height:1.4}
+.chg{display:flex;flex-direction:column;gap:.25rem}
+.chg a{display:flex;gap:.5rem;font-size:.88rem;color:var(--ink);line-height:1.5}
+.chg a:hover{text-decoration:none;background:var(--soft);border-radius:6px}
+.chg .yr{flex:none;width:6.5rem;color:var(--muted);font-size:.8rem}
+@media (max-width:560px){.axrow{grid-template-columns:1fr}.chg .yr{width:5rem}}
+/* 본문 줄 정리(참고: 국제정치사 핵심본) — 양쪽 정렬. keep-all로 두면 낱말 사이가 벌어지므로
+   본문에 한해 음절 단위로 끊어 줄을 채운다. 제목·차례·단추·표는 낱말을 끊지 않는다. */
+.keys p,.card p,.lede,.q,.rh p,.part>p,.todo,.pop,.evc p,.note{text-align:justify;text-justify:inter-word;word-break:normal;line-break:normal;overflow-wrap:break-word}
+.rh p{margin:.7rem 0}
+.rh .ref{font-size:.82em;white-space:nowrap}
+.wt{display:inline-block;font-size:.72rem;font-weight:700;border-radius:999px;padding:0 .5rem;margin-left:.35rem;vertical-align:.12em;white-space:nowrap}
+.wt.w1{background:var(--accent);color:var(--surface)}.wt.w2{border:1px solid var(--line);color:var(--muted)}.wt.w3{border:1px dashed var(--line);color:var(--muted)}
+.clist a.w1 .t{font-weight:700}
+.flag{font-size:.72rem;color:var(--warn);border:1px solid currentColor;border-radius:4px;padding:0 .3rem;margin-left:.3rem;white-space:nowrap}
+.rh h4{font-family:var(--serif);font-size:1.08rem;margin:1.4rem 0 .3rem;color:var(--ink)}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}.cmp{min-width:720px}.cmp td,.cmp th{vertical-align:top;font-size:.92rem}.cmp thead th{text-align:left}
+.thr{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--line);}
+.thr li{position:relative;padding:.2rem 0 1rem 1.1rem}.thr li::before{content:"";position:absolute;left:-7px;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--c);border:2px solid var(--surface)}
+.thr a{display:block;color:var(--ink)}.thr .ty{display:block;font-size:.8rem;color:var(--muted)}.thr p{margin:.25rem 0 0;text-align:justify;text-justify:inter-word;word-break:normal;line-break:normal;overflow-wrap:break-word}
+.wall .gw{fill:none;stroke:#8a5a2b;stroke-width:3;stroke-linejoin:round;vector-effect:non-scaling-stroke;opacity:.85}
+.wall .silk{fill:none;stroke:#b0893f;stroke-width:1.6;stroke-dasharray:5 4;vector-effect:non-scaling-stroke;opacity:.8}
+.wall circle{fill:#8a5a2b}.wall text{font-size:9px;fill:var(--muted);paint-order:stroke;stroke:var(--sea);stroke-width:2.5px}.wall .wl{font-size:11px;font-weight:700;fill:#8a5a2b}
+.f3{display:grid;gap:.8rem}.f3 .card p{text-align:justify;text-justify:inter-word;word-break:normal;line-break:normal;overflow-wrap:break-word}
+/* 읽기 도구 */
+.fabs{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:25;display:flex;flex-direction:column;align-items:flex-end;gap:8px;pointer-events:none;transition:transform .28s ease,opacity .28s ease}
+.fab{pointer-events:auto;display:inline-flex;align-items:center;gap:.35rem;font:inherit;font-size:.82rem;font-weight:700;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.45rem .85rem;box-shadow:0 2px 10px rgb(0 0 0/.14);cursor:pointer}
+.fab:hover{border-color:var(--muted)}
+.fab.fb-back{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+html.fab-away .fabs{transform:translateY(calc(100% + 30px));opacity:0}
+.toast{position:fixed;left:50%;bottom:calc(76px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;background:var(--ink);color:var(--bg);padding:.45rem .9rem;border-radius:999px;font-size:.85rem;box-shadow:0 4px 14px rgb(0 0 0/.2)}
+main{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+.secbar{position:sticky;top:var(--barh,92px);z-index:15;display:flex;align-items:center;gap:.6rem;margin:.6rem 0 -.2rem;padding:.35rem .2rem;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid transparent}
+.secbar.stuck{border-bottom-color:var(--line)}
+.sb-cur{display:inline-flex;align-items:center;gap:.35rem;font:inherit;font-size:.82rem;font-weight:700;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.2rem .7rem;cursor:pointer;max-width:60%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sb-lab{overflow:hidden;text-overflow:ellipsis}
+.sb-prog{flex:1;height:3px;border-radius:999px;background:var(--soft);overflow:hidden}.sb-prog i{display:block;height:100%;width:0;background:var(--accent)}
+.secmenu{position:absolute;left:0;top:calc(100% + 4px);list-style:none;margin:0;padding:.35rem;min-width:14rem;max-width:min(22rem,92vw);max-height:60vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgb(0 0 0/.16)}
+.secmenu button{display:block;width:100%;text-align:left;font:inherit;font-size:.86rem;color:var(--ink);background:transparent;border:0;border-radius:8px;padding:.35rem .6rem;cursor:pointer}
+.secmenu button:hover{background:var(--soft)}.secmenu button.on{color:var(--accent);font-weight:700}
+.sec-anchor{scroll-margin-top:calc(var(--barh,92px) + 56px)}
+.ctools{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+.tb{font:inherit;font-size:.8rem;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:999px;padding:.2rem .75rem;cursor:pointer}
+.tb:hover{background:var(--soft)}.tb[aria-pressed="true"]{color:var(--accent);border-color:var(--accent);font-weight:700}
+.shelf{display:grid;gap:.6rem;margin:1rem 0 .4rem}
+.resume{display:flex;align-items:center;gap:.8rem;padding:.7rem 1rem;border:1px solid var(--accent);border-radius:12px;background:var(--accent-soft);color:var(--ink)}
+.resume:hover{text-decoration:none}.resume small{display:block;color:var(--accent);font-weight:700;font-size:.75rem}.resume b{flex:1}
+.resume .rs{flex:1;min-width:0}.resume .rs b{display:block}.resume>span:last-child{color:var(--accent);font-weight:700}
+.shelf .marks{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center}.shelf .marks .lb{font-size:.8rem;color:var(--muted);margin-right:.2rem}
+@media (pointer:coarse){.sbox input{font-size:16px}}
+@media (max-width:680px){.fab{font-size:.78rem;padding:.4rem .75rem}.fabs{right:12px}}
+@media print{.bar,.fabs,.secbar,.drawer,.scrim,.toast,.ctools,.go,.pn{display:none!important}main{padding:0}}
+@media (prefers-reduced-motion:reduce){.fabs{transition:none}}
+
+/* 요소별 변천 */
+.lncats{margin:1rem 0 .2rem}
+.shs{display:block;font-size:.8rem;font-weight:400;color:var(--muted);margin-top:.15rem}
+.lncards{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.lncards .card{display:flex;flex-direction:column;gap:.4rem}
+.lncards .card:hover{text-decoration:none;border-color:var(--muted)}
+.lncards h3{margin:0}.lncards .lnd{margin:0;font-size:.88rem;color:var(--muted)}
+.lnchain{margin:.1rem 0 0;font-size:.84rem;line-height:1.65;color:var(--ink)}
+.lnchain span{white-space:nowrap}.lnchain b{color:var(--accent);font-weight:400;margin:0 .3rem}
+.lncards .meta{margin:0;font-size:.76rem;color:var(--muted)}
+.lstrip{position:relative;height:12px;margin:.3rem 0 .1rem}
+.lstrip .lsb{position:absolute;top:5px;height:2px;opacity:.35}
+.lstrip .lsl{position:absolute;top:5px;height:2px;background:var(--ink);opacity:.55}
+.lstrip i{position:absolute;top:2px;width:8px;height:8px;border-radius:50%;border:1.5px solid var(--surface);box-sizing:content-box;margin-left:-1.5px}
+.lstrip.big{height:22px;margin:.7rem 0 .2rem}.lstrip.big .lsb,.lstrip.big .lsl{top:10px;height:3px}
+.lstrip.big i{top:4px;width:12px;height:12px;cursor:pointer;border:2px solid var(--bg)}
+.lnkey{display:flex;flex-wrap:wrap;gap:.2rem .8rem;font-size:.74rem}.lnkey span{display:inline-flex;align-items:center;gap:.3rem}.lnkey i{width:.9rem;height:3px;border-radius:2px;display:inline-block}
+.lnglance{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem .6rem;margin:1rem 0 1.4rem}
+.lnglance .lbl{margin:0 0 .5rem}
+#lnglance{border-top:0;padding-top:0;margin-top:1.6rem}#lnglance+.lnglance .lbl{display:none}
+.lnflow{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem .2rem;align-items:stretch}
+.lnflow li{display:flex;align-items:center}
+.lnflow li+li::before{content:"→";color:var(--muted);margin:0 .25rem 0 .05rem;font-size:.85rem}
+.lnflow a{display:flex;flex-direction:column;border:1px solid var(--line);border-left:3px solid var(--c);border-radius:8px;padding:.25rem .55rem;color:var(--ink);background:var(--bg);line-height:1.35;max-width:15rem}
+.lnflow a:hover{text-decoration:none;border-color:var(--muted);border-left-color:var(--c)}
+.lnflow small{font-size:.68rem;color:var(--muted)}.lnflow b{font-size:.86rem;font-weight:600}
+.lnsteps{list-style:none;margin:0;padding:0;position:relative}
+.lnsteps::before{content:"";position:absolute;left:.95rem;top:.6rem;bottom:.6rem;width:2px;background:var(--line)}
+.lnsteps li{position:relative;display:grid;grid-template-columns:2rem 1fr;gap:.8rem;padding:.2rem 0 1.3rem;scroll-margin-top:5rem;border-radius:10px;transition:background .4s}
+.lnsteps li.flash{background:var(--accent-soft)}
+.lnsteps .k{position:relative;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--c);color:#fff;font-size:.82rem;font-weight:700;display:flex;align-items:center;justify-content:center;border:3px solid var(--bg);box-sizing:border-box}
+.lnsteps .ly{margin:.15rem 0 0;font-size:.78rem;color:var(--muted)}
+.lnsteps h3{margin:.05rem 0 .25rem;font-family:var(--serif);font-size:1.08rem}
+.lnsteps p{margin:0;text-align:justify;text-justify:inter-word;word-break:normal;line-break:normal;overflow-wrap:break-word}
+.lnsteps .lref{display:inline-block;margin-top:.35rem;font-size:.82rem}
+#lnsel{flex:1;min-width:0;max-width:22rem}
+.lncards .lnchain{text-align:left;word-break:keep-all}
+@media (max-width:560px){.lnglance{padding:.7rem .75rem .5rem}
+ .lnflow{flex-direction:column;gap:0;flex-wrap:nowrap;position:relative;padding-left:.15rem}
+ .lnflow li{display:block}.lnflow li+li::before{content:none}
+ .lnflow a{flex-direction:row;align-items:baseline;gap:.6rem;max-width:none;border:0;border-left:3px solid var(--c);border-radius:0;background:none;padding:.28rem .2rem .28rem .65rem}
+ .lnflow small{flex:none;width:6.6rem;font-size:.7rem;line-height:1.35}.lnflow b{font-size:.9rem}}
+/* 인물 */
+.person{border-bottom-style:solid;border-bottom-color:color-mix(in srgb,var(--pc,var(--accent)) 70%,transparent)}
+.fdot{display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:var(--pc);flex:none}
+.fchip{display:inline-flex;align-items:center;gap:.3rem;font-size:.74rem;font-weight:700;color:var(--pc);border:1px solid color-mix(in srgb,var(--pc) 45%,transparent);border-radius:999px;padding:0 .5rem;white-space:nowrap;background:var(--surface)}
+.plist{list-style:none;margin:.4rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr));gap:.45rem}
+.plist a{display:grid;grid-template-columns:auto 1fr;gap:.1rem .55rem;align-items:baseline;padding:.45rem .65rem;border:1px solid var(--line);border-left:3px solid var(--pc);border-radius:9px;background:var(--surface);color:var(--ink);line-height:1.45}
+.plist a:hover{text-decoration:none;border-color:var(--muted);border-left-color:var(--pc)}
+.plist b{font-size:.92rem}.plist small{color:var(--muted);font-size:.74rem;font-weight:400;margin-left:.3rem}
+.plist .pr{grid-column:1/-1;font-size:.82rem;color:var(--muted)}
+.pbox{margin:1.4rem 0}.pbox>.lbl{display:flex;justify-content:space-between;align-items:baseline}
+.pbox details summary{cursor:pointer;font-size:.82rem;color:var(--accent);margin-top:.4rem}
+.pop .fchip{margin:.15rem 0 .3rem}.pop .pat{margin:.3rem 0;padding:.3rem .5rem;background:var(--soft);border-radius:6px;font-size:.84rem}
+.pop .chips{margin-top:.35rem}.pop .chip{font-size:.72rem}
+.lifebox{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);-webkit-overflow-scrolling:touch}
+.lifebox svg{display:block}
+.lf text{font-size:11px;fill:var(--ink)}.lf .yr{font-size:10px;fill:var(--muted)}
+.lf a:hover rect.bar{opacity:1}
+.ptl{list-style:none;margin:.6rem 0;padding:0 0 0 .4rem;border-left:2px solid var(--line)}
+.ptl li{position:relative;padding:.35rem 0 .6rem 1rem}
+.ptl li::before{content:"";position:absolute;left:-.5rem;top:.75rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--c);border:2px solid var(--bg)}
+.ptl a{color:var(--ink);font-weight:700}.ptl .yr{display:block;font-size:.78rem;color:var(--muted)}.ptl p{margin:.15rem 0 0}
+/* 밑줄 */
+mark.ul{background:none;color:inherit;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--accent) 75%,transparent);text-decoration-thickness:.14em;text-underline-offset:.2em;text-decoration-skip-ink:none;box-shadow:inset 0 -.42em 0 color-mix(in srgb,var(--accent) 13%,transparent);cursor:pointer;-webkit-box-decoration-break:clone;box-decoration-break:clone;border-radius:1px;transition:background .4s}
+mark.ul.flash{background:color-mix(in srgb,var(--accent) 28%,transparent)}
+.ulbar{position:fixed;z-index:45;display:flex;gap:.3rem;background:var(--ink);border-radius:999px;padding:.25rem;box-shadow:0 6px 18px rgb(0 0 0/.22)}
+.ulbar.dock{left:50%;transform:translateX(-50%);bottom:calc(18px + env(safe-area-inset-bottom,0px));top:auto}
+.ulbar button{font:inherit;font-size:.86rem;background:transparent;color:var(--bg);border:0;border-radius:999px;padding:.45rem .95rem;cursor:pointer;white-space:nowrap}
+.ulbar button:hover,.ulbar button:focus-visible{background:color-mix(in srgb,var(--bg) 18%,transparent)}
+.ulbar button+button{border-left:1px solid color-mix(in srgb,var(--bg) 25%,transparent);border-radius:0 999px 999px 0}
+.ullist{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.ullist li{display:grid;grid-template-columns:1fr auto;gap:.2rem .6rem;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.6rem .8rem}
+.ullist li>a{grid-column:1;color:var(--ink);line-height:1.7}.ullist li>a:hover{text-decoration:none}
+.ullist .ulm{grid-column:1;font-size:.74rem;color:var(--muted)}
+.ullist .ul-x{grid-column:2;grid-row:1/span 2;align-self:center;font-size:.76rem}
+.gori{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;margin:.45rem 0 0;font-size:.8rem}
+.gori .lb{color:var(--muted);margin-right:.2rem}
+.gch{display:inline-block;padding:.05rem .55rem;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-weight:600}
+.gch.g-idea{border-color:#5d6b1f;color:#5d6b1f}.gch.g-assoc{border-color:#2c7062;color:#2c7062}.gch.g-crisis{border-color:#a0372b;color:#a0372b}.gch.g-inst{border-color:#3a5a9c;color:#3a5a9c}.gch.g-spread{border-color:#7b3f78;color:#7b3f78}
+:root[data-theme="dark"] .gch{filter:brightness(1.5)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .gch{filter:brightness(1.5)}}
+.ga{color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="bar">
+ <div class="bar1">
+  <button class="ib" id="bToc" aria-label="차례 열기" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg></button>
+  <a class="brand" href="#/">__TITLE__</a>
+  <span class="sp"></span>
+  <label class="sbox"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><span class="vh">찾기</span><input id="q" type="search" placeholder="장, 인물, 용어 찾기" autocomplete="off"></label>
+  <button class="ib" id="bFont" aria-label="글자 크기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l5-12 5 12M5.8 14h6.4M15 18l3-7.5 3 7.5M15.9 16h4.2"/></svg></button>
+  <button class="ib" id="bTheme" aria-label="밝기 전환"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+ </div>
+ <nav class="tabs" id="tabs" aria-label="화면">
+  <a href="#/" data-v="home">읽기</a><a href="#/map" data-v="map">지도</a><a href="#/lanes" data-v="lanes">무대 연표</a><a href="#/net" data-v="net">사건 연결망</a><a href="#/pp" data-v="pp">인물</a><a href="#/id" data-v="id">사람들의 변화</a><a href="#/ln" data-v="ln">요소별 변천</a><a href="#/t" data-v="t">줄기</a><a href="#/books" data-v="books">서가</a><a href="#/terms" data-v="terms">용어</a>
+ </nav>
+</header>
+<div class="scrim" id="scrim" hidden></div>
+<nav class="drawer" id="drawer" aria-label="차례" hidden><div class="dh"><b>차례</b><button class="pill" id="dclose">닫기</button></div><ol class="toc" id="toc"></ol></nav>
+<div class="results" id="results" hidden></div>
+<div class="pop" id="pop" hidden></div>
+<main id="main"></main>
+<script>
+(function(){
+'use strict';
+/*__DATA__*/
+const $=s=>document.querySelector(s), main=$('#main');
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const mem={};
+const store={get(k,v){try{const x=localStorage.getItem('rp-'+k);return x===null?v:JSON.parse(x)}catch(e){return k in mem?mem[k]:v}},
+             set(k,v){mem[k]=v;try{localStorage.setItem('rp-'+k,JSON.stringify(v))}catch(e){}}};
+
+// ── 색인
+const E={},P={},G={},B={},R={},AX={};
+DATA.events.forEach(e=>{E[e.id]=e;e.pv=[];});
+DATA.events.forEach(e=>e.nx.forEach(n=>E[n].pv.push(e.id)));
+DATA.parts.forEach((p,i)=>{P[p.id]=p;p.i=i;p.ev=DATA.events.filter(e=>e.p===p.id);});
+DATA.groups.forEach(g=>G[g.id]=g);DATA.books.forEach(b=>{B[b.id]=b;b.ev=[];});
+DATA.events.forEach(e=>e.bk.forEach(([b,ch])=>{if(!B[b].ev.find(x=>x[0]===e.id))B[b].ev.push([e.id,ch]);}));
+DATA.regions.forEach(r=>R[r.id]=r);DATA.axes.forEach(a=>AX[a.id]=a);
+const PE={},PN={},FC={};DATA.people.forEach(p=>{PE[p.id]=p;[p.n,...(p.al||[])].forEach(n=>PN[n]=p.id);});DATA.facts.forEach(f=>FC[f[0]]=f);
+const pcol=p=>FC[p.f][2];
+const plife=p=>`${p.life[0]??'?'}–${p.life[1]??''}`;
+const fchip=p=>`<span class="fchip" style="--pc:${pcol(p)}"><i class="fdot"></i>${esc(FC[p.f][1])}</span>`;
+const chOf={};DATA.groups.forEach(g=>g.ch.forEach(([ev,ax,t])=>(chOf[ev]=chOf[ev]||[]).push({g:g.id,ax,t})));
+const pc=id=>`var(--${id})`;
+const ECOL=e=>pc(e.p);
+const WN={1:'핵심',2:'주요',3:'보조'},WL={1:'약 5천 자',2:'약 2,500자',3:'약 1,500자'};
+const yfmt=y=>y<0?`기원전 ${-y}`:String(y);
+
+// ── 읽은 장
+let READ=store.get('read',{});
+const markRead=id=>{if(!READ[id]){READ[id]=Date.now();store.set('read',READ);}};
+
+// ── 용어 자동 연결: 한 덩어리 글에서 용어마다 처음 한 번만
+const TERM_RE=new RegExp('('+[...DATA.terms.map(t=>t[0]),...Object.keys(PN)].filter(t=>!/[()]/.test(t)).sort((a,b)=>b.length-a.length).map(s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')','g');
+const TDEF=Object.fromEntries(DATA.terms);
+function rich(text){return linky(text.replace(/\[\[(\w+)\]\]/g,'\u0001$1\u0002')).replace(/\u0001(\w+)\u0002/g,(m,id)=>E[id]?`<a class="ref" href="#/e/${id}">(${E[id].no}장)</a>`:'');}
+const HG=/[가-힣]/;
+// 짧은 용어 뒤에 붙은 말이 조사(들)로만 이루어지고 거기서 낱말이 끝날 때만 연결 (샤를마뉴·업적·알리가르 같은 경우를 걸러 냄)
+const PTC=/^(?:으로서|으로써|으로|로서|로써|에서|에게서|에게|한테|까지|부터|처럼|보다|마다|조차|이나|이라는|이라|라는|이었다|이었|이며|이고|이자|이다|였다|였|에는|은|는|이|가|을|를|의|에|와|과|로|도|만|들|께|라|란|인)+(?![가-힣])/;
+// 같은 글자가 다른 사람·뜻으로 쓰이는 자리: [왼쪽 문맥, 오른쪽 문맥]
+const TERM_DENY={
+ ...Object.fromEntries(Object.entries(DATA.pdeny).map(([k,[l,r]])=>[k,[l&&new RegExp(l),r&&new RegExp(r)]])),
+ '위원':[/(상무|중앙|정치국|군사)\s*$/,/^(장|회)/],
+ '신사':[null,/^(층의|층이|층은|층을|층)/]
+};
+let PSEEN=null;
+function linky(text){const seen=PSEEN||new Set();return esc(text).replace(TERM_RE,(m,_g,off,str)=>{if(seen.has(m))return m;
+ const pv=str[off-1]||'',nx=str.slice(off+m.length);
+ if(m.length<=3){if(pv&&HG.test(pv))return m;if(nx&&HG.test(nx[0])&&!PTC.test(nx))return m;}
+ const dn=TERM_DENY[m];if(dn){const L=str.slice(Math.max(0,off-16),off);if((dn[0]&&dn[0].test(L))||(dn[1]&&dn[1].test(nx)))return m;}
+ seen.add(m);if(PN[m]){const p=PE[PN[m]];return `<span class="term person" style="--pc:${pcol(p)}" role="button" tabindex="0" data-p="${p.id}">${m}</span>`;}return `<span class="term" role="button" tabindex="0" data-t="${esc(m)}">${m}</span>`;});}
+
+// ── 공통 조각
+const regChips=e=>e.r.map(r=>`<a class="chip" href="#/rr/${r}">${esc(R[r].n)}</a>`).join('');
+const btitle=b=>b.lang==='en'?'<i>'+esc(b.t)+'</i>':'『'+esc(b.t)+'』';
+const evLink=(id,extra)=>{const e=E[id];return `<a href="#/e/${id}"><span class="n">${e.no}</span> ${esc(e.t)} <small>${esc(e.y)}${extra?' · '+esc(extra):''}</small></a>`;};
+const statusMeter=()=>{const n=DATA.events.length;return `<div class="meter" aria-hidden="true"><i style="width:100%;background:var(--line)"></i></div><p class="note">사건 장 ${n}개 모두 <b>${esc(DATA.status)}</b> 단계입니다. 요지·연결·근거 도서·정체성 변화는 채워져 있고, 본문 서술 칸은 집필 예정입니다.</p>`;};
+
+// ── 차례 서랍
+function buildToc(cur){
+  $('#toc').innerHTML=DATA.parts.map(p=>`<li class="tp">${esc(p.no)} ${esc(p.t)}</li><li><a href="#/p/${p.id}" class="${cur===p.id?'on':''}"><span class="n">序</span><span>배경: ${esc(p.y)}</span></a></li>`+
+    p.ev.map(e=>`<li><a href="#/e/${e.id}" class="${cur===e.id?'on':''}"><span class="n">${e.no}</span><span style="flex:1">${esc(e.t)}</span><span class="rd ${READ[e.id]?'on':''}"></span></a></li>`).join('')).join('')+
+    `<li class="tp">맺음과 부록</li><li><a href="#/end"><span class="n">結</span><span>맺음: 생각에서 체제로</span></a></li>`;
+}
+function openDrawer(o){$('#drawer').hidden=!o;$('#scrim').hidden=!o;$('#bToc').setAttribute('aria-expanded',String(o));}
+$('#bToc').onclick=()=>openDrawer(true);$('#dclose').onclick=()=>openDrawer(false);$('#scrim').onclick=()=>openDrawer(false);
+$('#toc').addEventListener('click',e=>{if(e.target.closest('a'))openDrawer(false);});
+
+// ── 설정
+let theme=store.get('theme','auto'),fs=store.get('fs',17);
+const applyTheme=()=>{if(theme==='auto')document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme',theme);};
+const isDark=()=>theme==='dark'||(theme==='auto'&&matchMedia('(prefers-color-scheme: dark)').matches);
+$('#bTheme').onclick=()=>{theme=isDark()?'light':'dark';store.set('theme',theme);applyTheme();};
+const applyFs=()=>document.documentElement.style.setProperty('--fs',fs+'px');
+$('#bFont').onclick=()=>{fs=fs>=20?15:fs+1;store.set('fs',fs);applyFs();};
+applyTheme();applyFs();
+
+// ── 지도 바탕
+const NS='http://www.w3.org/2000/svg';
+const base=(cls)=>`<path d="${DATA.grat}" fill="none" stroke="var(--grat)" stroke-width=".6" vector-effect="non-scaling-stroke"/><path d="${DATA.land}" fill="var(--land)" stroke="var(--landline)" stroke-width=".7" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path class="pv" d="${DATA.prov}" fill="none" vector-effect="non-scaling-stroke"/><path class="lk" d="${DATA.lakes}" vector-effect="non-scaling-stroke"/><path class="rv" d="${DATA.rivers}" fill="none" vector-effect="non-scaling-stroke"/><path class="bd" d="${DATA.borders}" fill="none" vector-effect="non-scaling-stroke"/>`;
+const curve=(a,b,bend)=>{const mx=(a.mx+b.mx)/2,my=(a.my+b.my)/2,dx=b.mx-a.mx,dy=b.my-a.my,k=bend||.18;return `M${a.mx},${a.my} Q${mx-dy*k},${my+dx*k} ${b.mx},${b.my}`;};
+
+// ════════ 화면들
+function viewHome(){
+  const n=DATA.events.length,M=DATA.meta,done=DATA.events.filter(e=>DATA.body[e.id]).length;
+  main.innerHTML=`<div class="col hero"><p class="eyebrow">${esc(M.eyebrow)} · ${esc(M.span)}</p>
+  <h1>${esc(M.title)}</h1><p class="sub">${esc(M.sub)}</p>
+  ${M.guide?`<p class="note"><a href="guide.html" target="_blank" rel="noopener">처음이라면 「읽는 법」부터 →</a> 읽는 길과 화면·도구 사용법을 사진과 함께 안내합니다.</p>`:''}
+  ${done<n?`<div class="keys"><p class="lbl">집필 중</p><p>${n}장 가운데 ${done}장의 본문이 쓰였습니다. 나머지 장은 물음과 핵심 요약, 앞뒤 장과의 연결이 먼저 채워져 있고, 본문은 부 단위로 이어서 씁니다.</p><div class="meter"><i style="width:${done/n*100}%"></i></div></div>`:''}
+  ${M.intro.map(x=>`<p class="lede">${x}</p>`).join('')}
+  <h2 class="sh">${esc(M.engn)}</h2>
+  <p class="lede">${M.engines}</p>
+  <div class="f3">${DATA.engines.map(([k,nm,d])=>`<div class="card"><h3>${esc(nm)}</h3><p>${esc(d)}</p></div>`).join('')}</div>
+  <h2 class="sh">이 책을 읽는 여덟 가지 길</h2>
+  <div class="grid">
+   <a class="card" href="#/p/p1"><h3>읽기</h3><p>부마다 배경 장으로 시대의 다섯 무대를 훑고, 사건 장을 차례로 읽습니다.</p></a>
+   <a class="card" href="#/map"><h3>지도</h3><p>사건이 일어난 자리와, 원인과 결과가 파리에서 유럽 곳곳으로 넘나드는 길을 봅니다.</p></a>
+   <a class="card" href="#/lanes"><h3>무대 연표</h3><p>다섯 무대를 가로 레인으로 놓고 사건 사이의 화살표를 따라갑니다. 무대를 고르면 그 무대의 장만 이어 읽을 수 있습니다.</p></a>
+   <a class="card" href="#/net/r01"><h3>사건 연결망</h3><p>한 장씩, 그 사건을 낳은 원인과 그 사건이 낳은 결과를 이유와 함께 따라갑니다.</p></a>
+   <a class="card" href="#/id"><h3>사람들의 변화</h3><p>도시 민중, 노동자, 농민, 부르주아의 무엇이 어느 사건에서 바뀌었는지 모아 봅니다.</p></a>
+   <a class="card" href="#/ln"><h3>요소별 변천</h3><p>개념·상징·인물·도시·사람들 하나를 골라 그것이 거쳐 온 모습을 한 줄로 봅니다.</p></a>
+   <a class="card" href="#/t"><h3>줄기</h3><p>인민 주권의 길, 투표하는 시민, 공화국의 수출과 모방, 혁명과 질서의 네 줄기를 시대를 건너 따라갑니다.</p></a>
+   <a class="card" href="#/books"><h3>서가</h3><p>이 책이 기댄 책들과, 각 책이 받치는 장을 봅니다.</p></a>
+  </div>
+  <h2 class="sh">${esc(M.axn)}</h2>
+  <p>장마다 ‘영향’에서 무엇이 바뀌었는지를 다섯 겹으로 나누어 적습니다.</p>
+  <table class="tbl"><tbody>${DATA.axes.map(a=>`<tr><th style="width:7rem"><span class="axt"><i class="ax-${a.id}"></i>${esc(a.n)}</span></th><td>${esc(a.d)}</td></tr>`).join('')}</tbody></table>
+  <h2 class="sh">다섯 무대</h2>
+  <table class="tbl"><tbody>${DATA.regions.map(r=>`<tr><th style="width:7rem"><a href="#/rr/${r.id}">${esc(r.n)}</a></th><td>${esc(r.d)}</td></tr>`).join('')}</tbody></table>
+  <h2 class="sh">중요도와 분량</h2>
+  <p class="lede">모든 사건에 같은 지면을 나누지 않습니다. 공화정의 여러 겹을 한꺼번에 바꾸었거나 뒤의 사건을 여럿 낳은 사건을 핵심으로 두고 가장 길게 씁니다.</p>
+  <table class="tbl"><tbody><tr><th style="width:7rem"><span class="wt w1">핵심</span></th><td>본문 약 5천 자 · ${DATA.events.filter(e=>e.w===1).length}개</td></tr><tr><th><span class="wt w2">주요</span></th><td>본문 약 2,500자 · ${DATA.events.filter(e=>e.w===2).length}개</td></tr><tr><th><span class="wt w3">보조</span></th><td>본문 약 1,500자 · ${DATA.events.filter(e=>e.w===3).length}개</td></tr></tbody></table>
+  <h2 class="sh">차례</h2>
+  ${DATA.parts.map(p=>`<section class="part"><h3><span class="pbar" style="background:${pc(p.id)}"></span>${esc(p.no)} ${esc(p.t)}<em>${esc(p.y)}</em></h3>
+   <ol class="clist"><li><a href="#/p/${p.id}"><span class="n">序</span><span class="t">배경: 이 시대의 다섯 무대</span></a></li>
+   ${p.ev.map(e=>`<li><a href="#/e/${e.id}" class="w${e.w}"><span class="n">${e.no}</span><span class="t">${esc(e.t)}${e.w===1?'<span class="wt w1">핵심</span>':''}${DATA.body[e.id]?'':'<span class="tg">집필 예정</span>'}</span><small>${esc(e.y)}</small><span class="rd ${READ[e.id]?'on':''}"></span></a></li>`).join('')}</ol></section>`).join('')}
+  <section class="part"><h3>맺음</h3><ol class="clist"><li><a href="#/end"><span class="n">結</span><span class="t">생각에서 체제로</span></a></li></ol></section></div>`;
+}
+
+function viewPart(id){
+  const p=P[id];if(!p)return viewHome();PSEEN=new Set();try{viewPart0(id);}finally{PSEEN=null;}}
+function viewPart0(id){
+  const p=P[id];
+  const prev=DATA.parts[p.i-1],first=p.ev[0];
+  main.innerHTML=`<article class="col"><header class="chead"><p class="eyebrow">${esc(p.no)} · 배경 장</p><h1>${esc(p.t)}</h1><p class="period">${esc(p.y)}</p></header>
+  <div class="keys"><p class="lbl">이 시대의 큰 그림</p><p>${linky(p.lead)}</p></div>
+  ${p.f?`<h2 class="sh">이 시대의 ${esc(DATA.meta.engn)}</h2><div class="f3">${DATA.engines.map(([k,n])=>`<div class="card"><h3>${esc(n)}</h3><p>${linky(p.f[k])}</p></div>`).join('')}</div><div class="keys"><p class="lbl">고리들이 맞물리는 곳</p><p>${linky(p.f.meet)}</p></div>`:''}
+  ${p.bg?`<h2 class="sh">이 시대의 다섯 무대</h2>
+  <div class="bg5">${DATA.regions.map(r=>`<div class="card"><h3>${esc(r.n)}</h3><p>${linky(p.bg[r.id])}</p><div class="go rgo"><a class="pill" href="#/rr/${r.id}">${esc(r.n)}의 장만 이어 읽기 →</a></div></div>`).join('')}
+   <div class="card pe"><h3>세계 <span class="note">유럽 밖에서는</span></h3><p>${linky(p.bg.pe)}</p></div></div>`:''}
+  ${(()=>{const cnt={};p.ev.forEach(e=>e.pp.forEach(x=>{if(PE[x].at&&PE[x].at[e.id])cnt[x]=(cnt[x]||0)+1;}));const ids=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]||(PE[a].life[0]||0)-(PE[b].life[0]||0)).slice(0,18);
+    return ids.length?`<h2 class="sh">이 부의 주요 인물</h2><p class="note">이 부의 장에서 행적이 기록된 사람들입니다. 많이 나오는 순서이며, 이름을 누르면 장별 행적을 볼 수 있습니다.</p><ul class="plist">${ids.map(x=>{const q=PE[x];return `<li><a href="#/pp/${q.id}" style="--pc:${pcol(q)}"><i class="fdot"></i><b>${esc(q.n)}<small>${plife(q)}</small></b><span class="pr">${esc(FC[q.f][1])} · ${esc(q.role)} · ${cnt[x]}개 장</span></a></li>`;}).join('')}</ul>`:'';})()}
+  <h2 class="sh">이 부의 사건 ${p.ev.length}개</h2>
+  ${partMap(p)}
+  <ol class="clist">${p.ev.map(e=>`<li><a href="#/e/${e.id}"><span class="n">${e.no}</span><span class="t">${esc(e.t)}</span><small>${esc(e.y)}</small></a></li>`).join('')}</ol>
+  <div class="slot"><h2>기초 배경 서술</h2>${p.bgx?`<div class="rh">${rhHtml(p.bgx)}</div>`:`<div class="todo"><b>집필 예정</b>이 시대를 읽는 데 필요한 국가와 사회의 바탕을 풀어 쓴다.</div>`}</div>
+  ${p.sum?`<section class="slot"><h2>이 부에서 바뀐 것</h2><div class="rh">${rhHtml(p.sum)}</div></section>`:''}
+  <nav class="pn">${prev?`<a class="prev" href="#/e/${prev.ev.at(-1).id}"><small>이전</small>${esc(prev.ev.at(-1).t)}</a>`:'<span></span>'}<a class="next" href="#/e/${first.id}"><small>다음</small>${first.no}. ${esc(first.t)}</a></nav></article>`;
+}
+function partMap(p){
+  const ev=p.ev,xs=ev.map(e=>e.mx),ys=ev.map(e=>e.my);
+  let x0=Math.min(...xs)-60,x1=Math.max(...xs)+60,y0=Math.min(...ys)-50,y1=Math.max(...ys)+50;
+  let w=Math.max(x1-x0,320),h=Math.max(y1-y0,200);if(w/h<1.6){const nw=h*1.6;x0-=(nw-w)/2;w=nw;}else{const nh=w/1.6;y0-=(nh-h)/2;h=nh;}
+  const k=w/600;
+  const arcs=ev.flatMap(e=>e.nx.filter(n=>E[n].p===p.id).map(n=>`<path d="${curve(e,E[n])}" fill="none" stroke="var(--muted)" stroke-width="${1.2*k}" opacity=".5"/>`)).join('');
+  return `<svg class="minimap" viewBox="${x0} ${y0} ${w} ${h}" role="img" aria-label="${esc(p.t)}의 사건 지도">${base()}${arcs}${ev.map(e=>`<a href="#/e/${e.id}"><circle cx="${e.mx}" cy="${e.my}" r="${9*k}" fill="${ECOL(e)}" stroke="var(--surface)" stroke-width="${1.5*k}"/><text x="${e.mx}" y="${e.my}" font-size="${8.5*k}" font-weight="700" fill="#fff" text-anchor="middle" dominant-baseline="central">${e.no}</text></a>`).join('')}</svg>`;
+}
+
+const SLOTS=[
+ ['배경','이 사건을 이해하는 데 필요한 지리, 생활양식, 앞선 시대의 상황.'],
+ ['원인','구조적 원인(기후·경제·인구·제도)과 직접적 계기를 나누어 적는다.'],
+ ['주체','움직인 집단·왕조·개인. 그들이 스스로를 무엇이라 불렀는지.'],
+ ['전개','무슨 일이 어떤 순서로 일어났는가. 짧게.'],
+];
+function pcard(q,cid){const at=cid&&q.at&&q.at[cid];return `<li><a href="#/pp/${q.id}" style="--pc:${pcol(q)}"><i class="fdot"></i><b>${esc(q.n)}<small>${plife(q)}</small></b><span class="pr">${esc(FC[q.f][1])} · ${esc(at||q.role)}</span></a></li>`;}
+function pbox(e){const ps=e.pp.map(x=>PE[x]);if(!ps.length)return '';const main=ps.filter(q=>q.at&&q.at[e.id]),rest=ps.filter(q=>!(q.at&&q.at[e.id]));
+  const all=[...main,...rest],top=all.slice(0,6),more=all.slice(6);
+  return `<section class="pbox"><p class="lbl"><span>이 장의 인물</span><a href="#/pp" class="note">인물 사전 →</a></p><ul class="plist">${top.map(q=>pcard(q,e.id)).join('')}</ul>${more.length?`<details><summary>${more.length}명 더 보기</summary><ul class="plist">${more.map(q=>pcard(q,e.id)).join('')}</ul></details>`:''}</section>`;}
+function viewEvent(id,rid){
+  const e=E[id];if(!e)return viewHome();PSEEN=new Set();try{viewEvent0(id,rid);}finally{PSEEN=null;}}
+function viewEvent0(id,rid){
+  const e=E[id];
+  const tr=rid&&R[rid]&&regSeq(rid).includes(e)?regSeq(rid):null;
+  const BD=k=>(DATA.body&&DATA.body[id]||{})[k];
+  markRead(id);
+  const p=P[e.p],i=DATA.events.indexOf(e),prev=DATA.events[i-1],next=DATA.events[i+1];
+  const chs=chOf[id]||[];
+  const mini=(()=>{const pts=[e,...e.pv.map(x=>E[x]),...e.nx.map(x=>E[x])];
+    let x0=Math.min(...pts.map(q=>q.mx))-50,x1=Math.max(...pts.map(q=>q.mx))+50,y0=Math.min(...pts.map(q=>q.my))-40,y1=Math.max(...pts.map(q=>q.my))+40;
+    let w=Math.max(x1-x0,260),h=Math.max(y1-y0,130);if(w/h<2.2){const nw=h*2.2;x0-=(nw-w)/2;w=nw;}else{const nh=w/2.2;y0-=(nh-h)/2;h=nh;}
+    const k=w/600,dot=(q,c)=>`<a href="#/e/${q.id}"><circle cx="${q.mx}" cy="${q.my}" r="${(q===e?11:8)*k}" fill="${c?ECOL(q):'var(--surface)'}" stroke="${ECOL(q)}" stroke-width="${2*k}"/><text x="${q.mx}" y="${q.my}" font-size="${(q===e?9:7.5)*k}" font-weight="700" fill="${c?'#fff':'var(--ink)'}" text-anchor="middle" dominant-baseline="central">${q.no}</text></a>`;
+    return `<svg class="minimap" viewBox="${x0} ${y0} ${w} ${h}" role="img" aria-label="${esc(e.pl[0])}와 앞뒤 사건의 위치">${base()}
+     ${e.pv.map(x=>`<path d="${curve(E[x],e)}" fill="none" stroke="var(--p4)" stroke-width="${1.6*k}" opacity=".7"/>`).join('')}
+     ${e.nx.map(x=>`<path d="${curve(e,E[x])}" fill="none" stroke="var(--accent)" stroke-width="${1.6*k}" opacity=".8"/>`).join('')}
+     ${pts.slice(1).map(q=>dot(q,false)).join('')}${dot(e,true)}
+     <text x="${e.mx}" y="${e.my-16*k}" font-size="${11*k}" font-weight="700" fill="var(--ink)" text-anchor="middle" stroke="var(--sea)" stroke-width="${3*k}" paint-order="stroke">${esc(e.pl[0])}</text></svg>`;})();
+  main.innerHTML=`<article class="col">${tr?trailBar(e,rid,tr):''}<header class="chead"><p class="eyebrow">${esc(p.no)} ${esc(p.t)}</p>
+   <h1><span class="cn">제${e.no}장</span>${esc(e.t)}</h1><p class="period">${esc(e.y)} · ${esc(e.pl[0])}</p><div class="chips">${regChips(e)}<span class="wt w${e.w}" style="margin-left:0">${WN[e.w]} · 분량 ${WL[e.w]}</span></div>${e.g&&e.g.length?`<p class="gori"><span class="lb">고리</span>${e.g.map(k=>{const en=DATA.engines.find(x=>x[0]===k);return en?`<span class="gch g-${k}" title="${esc(en[2])}">${esc(en[1])}</span>`:'';}).join('<span class="ga">→</span>')}</p>`:''}</header>
+   <p class="q">${esc(e.q)}</p>
+   <section class="keys"><p class="lbl">이 장의 핵심</p><p>${linky(e.s)}</p></section>
+   ${BD('안내')?`<section class="keys guide"><p class="lbl">먼저 알아 둘 것</p><div class="rh">${rhHtml(BD('안내'))}</div></section>`:''}
+   ${pbox(e)}
+   ${mini}<p class="note">파란 선은 이 사건을 낳은 앞선 고리, 붉은 선은 이 사건이 낳은 다음 고리입니다.</p>
+   ${SLOTS.filter(([h])=>BD(h)||!DATA.body[id]).map(([h,d])=>`<section class="slot"><h2>${h}</h2>${BD(h)?`<div class="rh">${rhHtml(BD(h))}</div>`:`<div class="todo"><b>집필 예정</b>${esc(d)}</div>`}</section>`).join('')}
+   <section class="slot"><h2>영향: 무엇이 바뀌었나</h2>
+   ${BD('영향')?`<div class="rh">${rhHtml(BD('영향'))}</div>`:`<div class="todo" style="margin-top:.6rem"><b>집필 예정</b>정치·사회에 남은 결과를 공화정의 다섯 겹으로 나누어 풀어 쓴다.</div>`}
+   ${e.axc&&e.axc.length?`<p class="lbl" style="margin-top:1rem">${esc(DATA.meta.axn)}</p><table class="tbl"><tbody>${e.axc.map(([a,t])=>`<tr><th style="width:7rem"><span class="axt"><i class="ax-${a}"></i>${esc(AX[a].n)}</span></th><td>${esc(t)}</td></tr>`).join('')}</tbody></table>`:''}
+   ${chs.length?`<p class="lbl" style="margin-top:1rem">사람들의 변화</p><table class="tbl"><thead><tr><th>집단</th><th>겹</th><th>변화</th></tr></thead><tbody>${chs.map(c=>`<tr><td><a href="#/id/${c.g}">${esc(G[c.g].n)}</a></td><td>${esc(AX[c.ax].n)}</td><td>${esc(c.t)}</td></tr>`).join('')}</tbody></table>`:''}</section>
+   <aside class="box deb"><p class="lbl">해석의 갈림</p>${BD('갈림')?`<div class="rh">${rhHtml(BD('갈림'))}</div>`:`<div class="todo"><b>집필 예정</b>책마다, 학설마다 다르게 보는 지점.</div>`}</aside>
+   <aside class="box myth"><p class="lbl">흔한 오해</p>${BD('오해')?`<div class="rh">${rhHtml(BD('오해'))}</div>`:`<div class="todo"><b>집필 예정</b>널리 퍼진 잘못된 이해와 그 교정.</div>`}</aside>
+   <section class="slot"><h2>고리</h2><div class="links">
+    <div><p class="lbl">앞선 고리 (원인)</p><ul>${e.pv.length?whyList(e.pv,x=>why(x,id)):'<li class="note">이 책의 범위에서는 출발점입니다.</li>'}</ul></div>
+    <div><p class="lbl">다음 고리 (영향)</p><ul>${e.nx.length?whyList(e.nx,x=>why(id,x)):'<li class="note">이 책의 범위에서는 이어지는 사건을 따로 두지 않았습니다.</li>'}</ul></div></div>
+    <div class="go"><a class="pill" href="#/net/${id}">연결망에서 보기</a><a class="pill" href="#/lanes/${id}">연표에서 보기</a><a class="pill" href="#/map/${id}">지도에서 보기</a></div></section>
+   <section class="slot"><h2>근거 도서</h2>${e.bk.length?`<table class="tbl"><tbody>${e.bk.map(([b,ch])=>`<tr><td><a href="#/books/${b}">${btitle(B[b])}</a></td><td>${esc(ch)}</td></tr>`).join('')}</tbody></table>`:`<div class="todo"><b>집필 예정</b>본문을 쓸 때 기댄 책과 그 부분을 적는다.</div>`}</section>
+   ${tr?trailNav(e,rid,tr):`<nav class="pn">${prev&&prev.p===e.p?`<a class="prev" href="#/e/${prev.id}"><small>이전</small>${prev.no}. ${esc(prev.t)}</a>`:`<a class="prev" href="#/p/${e.p}"><small>이전</small>${esc(p.no)} 배경</a>`}
+   ${next?(next.p===e.p?`<a class="next" href="#/e/${next.id}"><small>다음</small>${next.no}. ${esc(next.t)}</a>`:`<a class="next" href="#/p/${next.p}"><small>다음</small>${esc(P[next.p].no)} ${esc(P[next.p].t)}</a>`):`<a class="next" href="#/end"><small>다음</small>맺음</a>`}</nav>`}</article>`;
+}
+
+function viewEnd(){
+  main.innerHTML=`<article class="col"><header class="chead"><p class="eyebrow">맺음</p><h1>${esc(DATA.meta.title)}</h1></header>
+  <h2 class="sh">${esc(DATA.meta.axn)}: 시대별 분포</h2>${heat()}
+  <p class="note">수치는 이 책의 ‘사람들의 변화’ 표에 기록된 항목 수입니다.</p>
+  ${DATA.concl?`<div class="rh">${rhHtml(DATA.concl)}</div>`:`<div class="todo"><b>집필 예정</b>여섯 부를 마친 뒤, 공화정이 생각에서 체제가 되기까지의 길을 다섯 겹으로 다시 정리한다.</div>`}</article>`;
+}
+
+// ── 지도 화면: 왼쪽 지도, 오른쪽 목록·설명. 시대를 고르면 그 무대로 다가간다
+let mapState={part:null,sel:null,vb:null};
+const MAPLAY=[['rivers','강'],['bd','현재 국경']];
+const why=(a,b)=>(DATA.why||{})[a+'>'+b]||'';
+const whyList=(ids,fn)=>ids.map(x=>`<li><a href="#/e/${x}"><span class="n" style="background:${ECOL(E[x])}">${E[x].no}</span> ${esc(E[x].t)} <small>${esc(E[x].y)}</small>${fn(x)?`<span class="why">${esc(fn(x))}</span>`:''}</a></li>`).join('');
+function viewMap(sel){
+  if(sel&&E[sel]){if(mapState.sel!==sel)mapState.vb=null;mapState.sel=sel;if(mapState.part!=='all'&&mapState.part!==E[sel].p){mapState.part=E[sel].p;}}
+  if(!mapState.part)mapState.part=DATA.parts[0].id;
+  const W=DATA.W,H=DATA.H;
+  main.innerHTML=`<div class="wide"><p class="eyebrow">지도</p><h1 class="vt">사건은 어디에서 일어났나</h1>
+  <p class="note vsub">시대를 고르면 그 부의 사건만 남고 지도가 그 무대로 다가갑니다. 번호를 누르면 그 사건을 낳은 원인(파란 선)과 그 사건이 낳은 결과(붉은 선)가 이어지고, 지도 옆 목록에 연결의 이유가 나옵니다.</p>
+  <div class="ctrl seg" role="group" aria-label="시대 고르기">${DATA.parts.map(p=>`<button class="pill" data-pt="${p.id}"><i class="sw" style="background:${pc(p.id)}"></i>${esc(p.no)} <span class="pt">${esc(p.t)}</span></button>`).join('')}<button class="pill" data-pt="all">전체 ${DATA.events.length}장</button></div>
+  <div class="ctrl" role="group" aria-label="겹쳐 볼 것"><span class="lb">겹쳐 보기</span>${MAPLAY.map(([k,n])=>`<button class="pill" data-lay="${k}">${n}</button>`).join('')}</div>
+  <div class="mapwrap"><div class="stage" id="stage"><svg id="msvg" viewBox="0 0 ${W} ${H}" role="img" aria-label="사건 지도">
+   <defs>${['in','out'].map(k=>`<marker id="ar-${k}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="${k==='in'?'var(--p4)':'var(--accent)'}"/></marker>`).join('')}</defs>
+   <rect x="-2000" y="-2000" width="5000" height="5000" fill="var(--sea)"/>${base()}
+   <g id="mlay"></g>
+   <g id="mlab">${DATA.regions.map(r=>`<text class="lbl-reg" x="${r.xy[0]}" y="${r.xy[1]}">${esc(r.n)}</text>`).join('')}${DATA.seas.map(s=>`<text class="lbl-sea" x="${s.xy[0]}" y="${s.xy[1]}">${esc(s.n)}</text>`).join('')}</g>
+   <g id="mlead"></g><g id="marcs"></g><g id="mks"></g></svg>
+   <div class="zoom"><button id="zi" aria-label="확대">+</button><button id="zo" aria-label="축소">−</button><button id="zr" aria-label="이 시대 전체 보기" title="이 시대 전체 보기">⟲</button></div>
+   <div class="mtip" id="mtip" hidden></div>
+   <div class="mleg"><span><i class="ln in"></i>원인</span><span><i class="ln out"></i>결과</span><span><i class="ring"></i>다른 시대의 연결 사건</span></div></div>
+   <aside class="mside" id="mside"></aside></div>
+  <p class="note">바탕은 Natural Earth 자료로 그렸습니다. 회색 선은 오늘의 국경으로, 위치를 가늠하라고 희미하게 넣었습니다. 18~19세기의 국경은 지금과 크게 달랐습니다. 미국과 아이티의 사건은 지도 왼쪽 끝 ‘대서양 건너’ 자리에 모아 표시했습니다. 같은 곳에 몰린 번호는 서로 비켜 놓았고, 가는 선이 실제 자리를 가리킵니다.</p></div>`;
+  const svg=$('#msvg'),stage=$('#stage'),tip=$('#mtip');
+  let lay=store.get('maplay',{bd:true,prov:true,rivers:true,ports:true,lease:true});
+  const paintLay=()=>{MAPLAY.forEach(([k])=>{stage.classList.toggle('no'+(k==='bd'?'borders':k),!lay[k]);});document.querySelectorAll('[data-lay]').forEach(b=>b.classList.toggle('on',!!lay[b.dataset.lay]));};
+  document.querySelectorAll('[data-lay]').forEach(b=>b.onclick=()=>{lay[b.dataset.lay]=!lay[b.dataset.lay];store.set('maplay',lay);paintLay();});
+  paintLay();
+  const inPart=e=>mapState.part==='all'||e.p===mapState.part;
+  const fit=list=>{if(!list.length)return [0,0,W,H];let x0=Math.min(...list.map(e=>e.mx)),x1=Math.max(...list.map(e=>e.mx)),y0=Math.min(...list.map(e=>e.my)),y1=Math.max(...list.map(e=>e.my));
+    let w=Math.max(x1-x0+140,W/5),h=Math.max(y1-y0+110,H/5);const cx=(x0+x1)/2,cy=(y0+y1)/2;if(w/h>W/H)h=w*H/W;else w=h*W/H;if(w>W){w=W;h=H;}return clampVB([cx-w/2,cy-h/2,w,h]);};
+  const clampVB=([x,y,w,h])=>[Math.max(-w*.2,Math.min(W-w*.8,x)),Math.max(-h*.2,Math.min(H-h*.8,y)),w,h];
+  const home=()=>mapState.part==='all'?[0,0,W,H]:fit(DATA.events.filter(inPart));
+  if(!mapState.vb){const s=mapState.sel&&E[mapState.sel];mapState.vb=s?fit([s,...s.pv.map(x=>E[x]),...s.nx.map(x=>E[x])]):home();}
+  const paintSeg=()=>document.querySelectorAll('[data-pt]').forEach(b=>b.classList.toggle('on',b.dataset.pt===mapState.part));
+  document.querySelectorAll('[data-pt]').forEach(b=>b.onclick=()=>{mapState.part=b.dataset.pt;mapState.sel=null;setH('#/map');mapState.vb=home();paintSeg();setVB();});
+  paintSeg();
+  function setVB(){svg.setAttribute('viewBox',mapState.vb.join(' '));drawMarks();}
+  function side(){
+    const s=mapState.sel?E[mapState.sel]:null;
+    if(s){$('#mside').innerHTML=`<button class="pill back" id="mback">← ${mapState.part==='all'?'전체':esc(P[mapState.part].no)} 목록</button>
+      <div class="card evc"><p class="lbl">${esc(P[s.p].no)} · 제${s.no}장 · ${esc(s.y)} · ${esc(s.pl[0])}</p><h3>${esc(s.t)}</h3><p>${esc(s.s)}</p>
+      <div class="go"><a class="pill on" href="#/e/${s.id}">본문 읽기</a><a class="pill" href="#/net/${s.id}">연결망</a><a class="pill" href="#/lanes/${s.id}">연표</a></div></div>
+      <div class="links one"><p class="lbl"><i class="ln in"></i>앞선 고리: 왜 이 사건이 일어났나</p><ul>${s.pv.length?whyList(s.pv,x=>why(x,s.id)):'<li class="note">이 책의 범위에서는 출발점입니다.</li>'}</ul>
+      <p class="lbl"><i class="ln out"></i>다음 고리: 이 사건이 무엇을 낳았나</p><ul>${s.nx.length?whyList(s.nx,x=>why(s.id,x)):'<li class="note">이 책의 마지막 장입니다.</li>'}</ul></div>`;
+      $('#mback').onclick=()=>{mapState.sel=null;setH('#/map');mapState.vb=home();setVB();};}
+    else{const list=DATA.events.filter(inPart),p=P[mapState.part];
+      $('#mside').innerHTML=`${p?`<p class="lbl">${esc(p.no)} · ${esc(p.y)}</p><h3 class="st">${esc(p.t)}</h3>`:`<h3 class="st">전체 ${DATA.events.length}장</h3>`}<p class="note">${list.length}개 사건. 이름을 누르면 지도에서 찾아 줍니다.</p>
+      <ol class="mlist">${list.map(e=>`<li><button data-go="${e.id}"><span class="n" style="background:${ECOL(e)}">${e.no}</span><span><b>${esc(e.t)}</b><small>${esc(e.y)} · ${esc(e.pl[0])}</small></span></button></li>`).join('')}</ol>`;
+      $('#mside').querySelectorAll('[data-go]').forEach(b=>{b.onclick=()=>pick(b.dataset.go,true);b.onmouseenter=()=>hl(b.dataset.go,true);b.onmouseleave=()=>hl(b.dataset.go,false);});}
+  }
+  function hl(id,on){const g=$('#mks').querySelector(`[data-id="${id}"]`);if(g)g.classList.toggle('hov',on);}
+  function pick(id,move){mapState.sel=id;setH('#/map/'+id);if(move){const s=E[id];mapState.vb=fit([s,...s.pv.map(x=>E[x]),...s.nx.map(x=>E[x])]);}setVB();$('#mside').scrollTop=0;}
+  let PS={};
+  function drawMarks(){
+    const k=mapState.vb[2]/W*Math.min(2.2,Math.max(1,W/Math.max(1,svg.clientWidth))),sel=mapState.sel?E[mapState.sel]:null,r=11*k;
+    const own=DATA.events.filter(inPart),ext=sel?[...sel.pv,...sel.nx].map(x=>E[x]).filter(e=>!inPart(e)):[];
+    const list=[...own,...ext.filter((e,i,a)=>a.indexOf(e)===i)];
+    const pts=list.map(e=>({e,x:e.mx,y:e.my}));
+    for(let it=0;it<60;it++){let mv=0;for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const a=pts[i],b=pts[j];let dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy);const m=2.15*r;if(d<m){if(d<1e-6){dx=Math.cos(i+j);dy=Math.sin(i+j);d=1;}const f=(m-d)/2/d;a.x-=dx*f;a.y-=dy*f;b.x+=dx*f;b.y+=dy*f;mv++;}}
+      pts.forEach(p=>{p.x+=(p.e.mx-p.x)*.04;p.y+=(p.e.my-p.y)*.04;});if(!mv)break;}
+    PS={};pts.forEach(p=>PS[p.e.id]=p);
+    $('#mlead').innerHTML=pts.filter(p=>Math.hypot(p.x-p.e.mx,p.y-p.e.my)>r*.7).map(p=>`<line x1="${p.e.mx}" y1="${p.e.my}" x2="${p.x}" y2="${p.y}" stroke="var(--muted)" stroke-width="${.8*k}" opacity=".7"/><circle cx="${p.e.mx}" cy="${p.e.my}" r="${1.8*k}" fill="var(--muted)"/>`).join('');
+    const arc=(a,b,cls)=>{const A=PS[a.id],B=PS[b.id];if(!A||!B)return '';const q={mx:A.x,my:A.y},t={mx:B.x,my:B.y};const dx=t.mx-q.mx,dy=t.my-q.my,d=Math.hypot(dx,dy)||1;const t2={mx:t.mx-dx/d*r*1.15,my:t.my-dy/d*r*1.15};
+      return `<path d="${curve(q,t2)}" fill="none" stroke="var(${cls==='in'?'--p4':'--accent'})" stroke-width="${2*k}" opacity=".9" marker-end="url(#ar-${cls})"/>`;};
+    $('#marcs').innerHTML=sel?[...sel.pv.map(x=>arc(E[x],sel,'in')),...sel.nx.map(x=>arc(sel,E[x],'out'))].join(''):'';
+    const rel=sel?new Set([sel.id,...sel.pv,...sel.nx]):null;
+    $('#mks').innerHTML=pts.map(p=>{const e=p.e,isx=!inPart(e),isS=sel===e,dim=rel&&!rel.has(e.id);
+      return `<g class="mk ${isS?'sel':''} ${dim?'dim':''} ${isx?'ext':''}" data-id="${e.id}" tabindex="0" role="button" aria-label="${e.no}. ${esc(e.t)}"><circle cx="${p.x}" cy="${p.y}" r="${(isS?14:11)*k}" fill="${isx?'var(--surface)':ECOL(e)}" style="stroke-width:${(isS?2.6:1.5)*k}px;${isx?`stroke:${ECOL(e)}`:''}"/><text x="${p.x}" y="${p.y}" style="font-size:${10*k}px;${isx?`fill:${ECOL(e)}`:''}">${e.no}</text></g>`;}).join('');
+    const kz=mapState.vb[2]/W;document.querySelectorAll('#mlab .lbl-reg').forEach(t=>t.style.fontSize=Math.max(15*kz,5)+'px');document.querySelectorAll('#mlab .lbl-sea').forEach(t=>t.style.fontSize=Math.max(12*kz,4)+'px');
+    const yEnd=mapState.part==='all'?9999:P[mapState.part].y1,yBeg=mapState.part==='all'?0:P[mapState.part].y0;
+    const pr=DATA.ports.filter(q=>q.y<=yEnd),ls=DATA.leases.filter(q=>q.y<=yEnd&&q.until>=yBeg);
+    $('#mlay').innerHTML=`<g class="lay-ports">${pr.map(q=>`<circle cx="${q.xy[0]}" cy="${q.xy[1]}" r="${3.2*kz}"><title>${esc(q.n)} · ${q.y}년 개항${q.d?' · '+esc(q.d):''}</title></circle>${kz<.8?`<text x="${q.xy[0]+5*kz}" y="${q.xy[1]+3.5*kz}" style="font-size:${8.5*kz}px">${esc(q.n)} <tspan class="yr">${q.y}</tspan></text>`:''}`).join('')}</g>
+     <g class="lay-lease">${ls.map(q=>`<rect x="${q.xy[0]-3.6*kz}" y="${q.xy[1]-3.6*kz}" width="${7.2*kz}" height="${7.2*kz}"><title>${esc(q.n)} · ${esc(q.who)} · ${q.y}–${q.until>2100?'':q.until}</title></rect>${kz<.8?`<text x="${q.xy[0]+6*kz}" y="${q.xy[1]-5*kz}" style="font-size:${8.5*kz}px">${esc(q.n)}(${esc(q.who)})</text>`:''}`).join('')}</g>`;
+    side();
+  }
+  const showTip=g=>{const e=E[g.dataset.id],c=g.querySelector('circle').getBoundingClientRect(),s=stage.getBoundingClientRect();
+    tip.innerHTML=`<b>${e.no}. ${esc(e.t)}</b><small>${esc(e.y)} · ${esc(e.pl[0])}</small>`;tip.hidden=false;
+    const x=c.left-s.left+c.width/2,y=c.top-s.top;tip.style.left=Math.min(Math.max(x,90),s.width-90)+'px';tip.style.top=Math.max(y-6,4)+'px';};
+  $('#mks').addEventListener('pointerover',ev=>{const g=ev.target.closest('.mk');if(g)showTip(g);});
+  $('#mks').addEventListener('pointerout',ev=>{if(ev.target.closest('.mk'))tip.hidden=true;});
+  $('#mks').addEventListener('click',ev=>{const g=ev.target.closest('.mk');if(!g)return;tip.hidden=true;if(mapState.sel===g.dataset.id){mapState.sel=null;setH('#/map');drawMarks();return;}pick(g.dataset.id,false);});
+  $('#mks').addEventListener('keydown',ev=>{if(ev.key==='Enter'){const g=ev.target.closest('.mk');if(g)pick(g.dataset.id,false);}});
+  const zoomAt=(f,cx,cy)=>{let [x,y,w,h]=mapState.vb;const nw=Math.min(W,Math.max(W/10,w*f)),nh=nw*H/W;cx=cx==null?x+w/2:cx;cy=cy==null?y+h/2:cy;
+    x=cx-(cx-x)*nw/w;y=cy-(cy-y)*nh/h;mapState.vb=clampVB([x,y,nw,nh]);setVB();};
+  $('#zi').onclick=()=>zoomAt(.7);$('#zo').onclick=()=>zoomAt(1/.7);$('#zr').onclick=()=>{mapState.vb=home();setVB();};
+  const pt=ev=>{const r=svg.getBoundingClientRect(),[x,y,w,h]=mapState.vb;return [x+(ev.clientX-r.left)/r.width*w,y+(ev.clientY-r.top)/r.height*h];};
+  svg.addEventListener('wheel',ev=>{ev.preventDefault();const [cx,cy]=pt(ev);zoomAt(ev.deltaY>0?1.15:1/1.15,cx,cy);},{passive:false});
+  let drag=null;
+  svg.addEventListener('pointerdown',ev=>{if(ev.target.closest('.mk'))return;drag={x:ev.clientX,y:ev.clientY,vb:mapState.vb.slice()};svg.setPointerCapture(ev.pointerId);});
+  svg.addEventListener('pointermove',ev=>{if(!drag)return;const r=svg.getBoundingClientRect(),s=drag.vb[2]/r.width;mapState.vb=clampVB([drag.vb[0]-(ev.clientX-drag.x)*s,drag.vb[1]-(ev.clientY-drag.y)*s,drag.vb[2],drag.vb[3]]);svg.setAttribute('viewBox',mapState.vb.join(' '));});
+  svg.addEventListener('pointerup',()=>{if(drag){drag=null;drawMarks();}});svg.addEventListener('pointercancel',()=>{drag=null;});
+  setVB();
+}
+
+function evCard(e,rid){const tr=rid&&e.r.includes(rid);
+  return `<div class="card evc"><p class="lbl">${esc(P[e.p].no)} · 제${e.no}장 · ${esc(e.y)} · ${esc(e.pl[0])}</p><h3>${esc(e.t)}</h3><p>${esc(e.s)}</p>
+  <div class="go"><a class="pill on" href="#/e/${e.id}${tr?'/'+rid:''}">${tr?esc(R[rid].n)+' 이어 읽기로 본문 읽기':'본문 읽기'}</a><a class="pill" href="#/net/${e.id}">연결망</a><a class="pill" href="#/lanes/${e.id}">연표</a><a class="pill" href="#/map/${e.id}">지도</a></div></div>`;
+}
+
+// ── 지역 연표: 시간축은 사건 밀도에 맞춰 늘리고 줄인다(사건 사이 간격을 고르게)
+const YS=[...new Set(DATA.events.map(e=>e.yr))].sort((a,b)=>a-b);
+const STEP=30,LX=120;
+function X(y){if(y<=YS[0])return LX+(y-YS[0])/400*STEP;if(y>=YS.at(-1))return LX+(YS.length-1)*STEP+(y-YS.at(-1))/40*STEP;
+  let i=0;while(YS[i+1]<y)i++;return LX+(i+(y-YS[i])/(YS[i+1]-YS[i]))*STEP;}
+let laneState={sel:null,all:false,only:null};
+function viewLanes(sel){
+  if(sel&&E[sel])laneState.sel=sel;
+  const LH=78,TOP=56,W=Math.ceil(X(YS.at(-1))+60),H=TOP+LH*5+34;
+  const ly=r=>TOP+DATA.regions.findIndex(x=>x.id===r)*LH+LH/2;
+  // 레인 안에서 겹치는 점은 위아래로 비켜 놓는다
+  const pos={};const last={};
+  DATA.events.forEach(e=>{pos[e.id]={};e.r.forEach(r=>{const x=X(e.yr);const L=last[r]||[];let off=0;const near=L.filter(q=>Math.abs(q.x-x)<22);if(near.length){const used=near.map(q=>q.off);off=[0,-20,20,-10,10].find(o=>!used.includes(o))??0;}
+    const p={x,y:ly(r)+off,off};L.push(p);last[r]=L.filter(q=>x-q.x<40);pos[e.id][r]=p;});});
+  const P0=id=>pos[id][E[id].r[0]];
+  const bands=DATA.parts.map((p,i)=>{const xs=p.ev.map(e=>X(e.yr));return {p,x0:Math.min(...xs)-14,x1:Math.max(...xs)+14,i};});
+  const ticks=DATA.meta.ticks;
+  let lastx=-99;const tk=ticks.filter(t=>{const x=X(t);if(x-lastx<56||x<LX-5)return false;lastx=x;return true;});
+  const arcs=[];DATA.events.forEach(e=>e.nx.forEach(n=>{const a=P0(e.id),b=P0(n);const dy=b.y-a.y,dx=b.x-a.x;
+    const d=Math.abs(dy)<4?`M${a.x},${a.y} C${a.x+dx/3},${a.y-28} ${b.x-dx/3},${b.y-28} ${b.x},${b.y}`:`M${a.x},${a.y} C${a.x+dx*.5},${a.y} ${b.x-dx*.5},${b.y} ${b.x},${b.y}`;
+    arcs.push(`<path class="arc" data-a="${e.id}" data-b="${n}" d="${d}"/>`);}));
+  main.innerHTML=`<div class="wide"><p class="eyebrow">무대 연표</p>
+  <div class="ctrl"><span class="lb">무대만 보기</span><button class="pill" data-only="">모두</button>${DATA.regions.map(r=>`<button class="pill" data-only="${r.id}">${esc(r.n)}</button>`).join('')}
+   <a class="pill on" id="ltrail" hidden></a><span class="sp" style="flex:1"></span><button class="pill" id="allarc">모든 연결 ${laneState.all?'숨기기':'보기'}</button></div>
+  <div class="scroller" id="lsc"><svg id="lsvg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="무대별 사건 연표">
+   ${bands.map(b=>`<rect x="${b.x0}" y="22" width="${b.x1-b.x0}" height="${H-40}" fill="${pc(b.p.id)}" opacity="${b.i%2?.06:.1}" rx="6"/><text x="${b.x0+6}" y="36" font-size="11" font-weight="700" fill="${pc(b.p.id)}">${esc(b.p.no)} ${esc(b.p.t)}</text>`).join('')}
+   ${DATA.regions.map(r=>`<line x1="${LX-10}" x2="${W-10}" y1="${ly(r.id)}" y2="${ly(r.id)}" stroke="var(--line)"/>`).join('')}
+   ${tk.map(t=>`<text class="tick" x="${X(t)}" y="${H-10}">${t<0?'BC '+(-t):t}</text><line x1="${X(t)}" x2="${X(t)}" y1="${H-24}" y2="${H-20}" stroke="var(--muted)"/>`).join('')}
+   <g id="larcs">${arcs.join('')}</g>
+   <g id="ldots">${DATA.events.map(e=>{const pr=P0(e.id);const sec=e.r.slice(1).map(r=>pos[e.id][r]);
+     return `<g class="dot" data-id="${e.id}" data-r="${e.r.join(' ')}" tabindex="0" role="button" aria-label="${e.no}. ${esc(e.t)}">${sec.map(s=>`<line x1="${pr.x}" x2="${s.x}" y1="${pr.y}" y2="${s.y}" stroke="${ECOL(e)}" stroke-dasharray="2 3" opacity=".6"/><circle cx="${s.x}" cy="${s.y}" r="5" fill="var(--surface)" stroke="${ECOL(e)}" stroke-width="1.5"/>`).join('')}
+     <circle cx="${pr.x}" cy="${pr.y}" r="10" fill="${ECOL(e)}" stroke="var(--surface)" stroke-width="1.5"/><text x="${pr.x}" y="${pr.y}">${e.no}</text><title>${e.no}. ${esc(e.t)} (${esc(e.y)})</title></g>`;}).join('')}</g>
+   <g id="lnames">${DATA.regions.map((r,i)=>`<rect x="0" y="${TOP+i*LH+LH/2-13}" width="${LX-26}" height="26" rx="6" fill="var(--surface)" opacity=".92"/><text class="ln-name" x="10" y="${ly(r.id)+4}">${esc(r.n)}</text>`).join('')}</g>
+  </svg></div>
+  <div class="info" id="linfo"></div>
+  <p class="note">큰 점은 사건의 중심 무대, 작은 빈 점은 함께 걸린 무대입니다. 가로축은 사건 사이 간격을 고르게 하려고 시대마다 늘리고 줄였습니다. 사건을 누르면 원인(파란 선)과 결과(붉은 선)가 드러납니다.</p></div>`;
+  const paint=()=>{const s=laneState.sel,o=laneState.only;
+    document.querySelectorAll('#larcs .arc').forEach(a=>{a.classList.toggle('on',s&&a.dataset.a===s);a.classList.toggle('in',s&&a.dataset.b===s);a.style.display=(laneState.all||(s&&(a.dataset.a===s||a.dataset.b===s)))?'':'none';});
+    document.querySelectorAll('#ldots .dot').forEach(d=>{d.classList.toggle('sel',d.dataset.id===s);d.classList.toggle('dim',!!o&&!d.dataset.r.split(' ').includes(o));});
+    document.querySelectorAll('[data-only]').forEach(b=>b.classList.toggle('on',b.dataset.only===(o||'')));const lt=$('#ltrail');lt.hidden=!o;if(o){lt.href='#/rr/'+o;lt.textContent=`${R[o].n}의 장만 이어 읽기 (${DATA.events.filter(e=>e.r.includes(o)).length}장) →`;}
+    $('#linfo').innerHTML=s?evCard(E[s],o):(o?regionMini(o):'<p class="note">사건을 하나 눌러 보세요.</p>');};
+  $('#ldots').addEventListener('click',ev=>{const g=ev.target.closest('.dot');if(!g)return;laneState.sel=g.dataset.id;setH('#/lanes/'+g.dataset.id);paint();});
+  $('#ldots').addEventListener('keydown',ev=>{if(ev.key==='Enter'){const g=ev.target.closest('.dot');if(g){laneState.sel=g.dataset.id;paint();}}});
+  document.querySelectorAll('[data-only]').forEach(b=>b.onclick=()=>{laneState.only=b.dataset.only||null;laneState.sel=null;paint();});
+  $('#allarc').onclick=()=>{laneState.all=!laneState.all;$('#allarc').textContent='모든 연결 '+(laneState.all?'숨기기':'보기');paint();};
+  const sc=$('#lsc');sc.addEventListener('scroll',()=>$('#lnames').setAttribute('transform',`translate(${sc.scrollLeft},0)`));
+  paint();
+  if(laneState.sel){const p=P0(laneState.sel);$('#lsc').scrollLeft=Math.max(0,p.x-$('#lsc').clientWidth/2);}
+}
+function regionMini(r){const n=DATA.events.filter(e=>e.r.includes(r)).length;return `<div class="card"><p class="lbl">${esc(R[r].h)}</p><h3>${esc(R[r].n)}</h3><p>${esc(R[r].d)}</p><div class="go"><a class="pill on" href="#/rr/${r}">이 무대의 장만 이어 읽기 (${n}장)</a></div></div>`;}
+// ── 지역별 이어 읽기: 한 지역에 걸린 장만 책의 순서대로 모아 읽는다
+const trailMode=()=>store.get('trailMode','all');
+const regSeq=rid=>DATA.events.filter(e=>trailMode()==='core'?e.r[0]===rid:e.r.includes(rid));
+function trailBar(e,rid,seq){const k=seq.indexOf(e);
+  return `<div class="trail"><a class="tt" href="#/rr/${rid}"><small>무대별 이어 읽기</small>${esc(R[rid].n)}</a><span class="tk">${k+1} / ${seq.length}장</span><div class="meter"><i style="width:${(k+1)/seq.length*100}%"></i></div><a class="tx" href="#/e/${e.id}" title="이 장부터 책 전체의 순서로 읽기">전체 순서로</a></div>`;}
+function trailNav(e,rid,seq){const k=seq.indexOf(e),pv=seq[k-1],nx=seq[k+1];
+  const lab=(q,dir)=>`<small>${dir}${q.p!==e.p?` · ${esc(P[q.p].no)}로 ${dir==='다음'?'넘어갑니다':'돌아갑니다'}`:''}${Math.abs(q.no-e.no)>1?` · ${Math.abs(q.no-e.no)-1}개 장 건너뜀`:''}</small>${q.no}. ${esc(q.t)}`;
+  return `<nav class="pn">${pv?`<a class="prev" href="#/e/${pv.id}/${rid}">${lab(pv,'이전')}</a>`:`<a class="prev" href="#/rr/${rid}"><small>처음</small>${esc(R[rid].n)} 장 목록</a>`}
+   ${nx?`<a class="next" href="#/e/${nx.id}/${rid}">${lab(nx,'다음')}</a>`:`<a class="next" href="#/rr/${rid}"><small>${esc(R[rid].n)}의 마지막 장입니다</small>장 목록으로</a>`}</nav>`;}
+function viewTrail(rid){
+  const r=R[rid]||DATA.regions[0];rid=r.id;const mode=trailMode(),seq=regSeq(rid);
+  const nAll=DATA.events.filter(e=>e.r.includes(rid)).length,nCore=DATA.events.filter(e=>e.r[0]===rid).length;
+  const nread=seq.filter(e=>READ[e.id]).length,resume=seq.find(e=>!READ[e.id]);
+  main.innerHTML=`<div class="col"><p class="eyebrow"><a href="#/lanes">무대 연표</a> · 무대별 이어 읽기</p>
+  <div class="ctrl">${DATA.regions.map(x=>`<a class="pill ${x.id===rid?'on':''}" href="#/rr/${x.id}">${esc(x.n)}</a>`).join('')}</div>
+  <h1 class="vt">${esc(r.n)}의 장 이어 읽기</h1><p class="sub">${esc(r.h)}</p>
+  <p>이 책은 다섯 무대를 시대순으로 번갈아 다룹니다. 여기서는 ${esc(r.n)}에 걸린 장만 골라 책의 순서대로 이어 읽습니다. 장을 열면 맨 아래의 ‘다음’이 이 무대의 다음 장으로 이어지고, 맨 위 띠에서 언제든 책 전체의 순서로 돌아갈 수 있습니다.</p>
+  <div class="ctrl"><span class="lb">범위</span><button class="pill ${mode==='all'?'on':''}" data-tm="all">이 무대가 걸린 모든 장 · ${nAll}장</button><button class="pill ${mode==='core'?'on':''}" data-tm="core">이 무대가 중심인 장만 · ${nCore}장</button></div>
+  <div class="go"><a class="pill on" href="#/e/${seq[0].id}/${rid}">처음부터 읽기 (${seq[0].no}장)</a>${nread&&resume?`<a class="pill" href="#/e/${resume.id}/${rid}">읽지 않은 곳부터 (${resume.no}장)</a>`:''}<a class="pill" href="#/lanes">연표로 돌아가기</a></div>
+  <div class="meter"><i style="width:${nread/seq.length*100}%"></i></div><p class="note">${seq.length}장 가운데 ${nread}장을 읽었습니다. ‘함께’ 표시는 이 무대가 중심은 아니지만 함께 걸린 장입니다.</p>
+  ${DATA.parts.map(p=>{const ev=seq.filter(e=>e.p===p.id);if(!ev.length)return '';return `<section class="part"><h3><span class="pbar" style="background:${pc(p.id)}"></span>${esc(p.no)} ${esc(p.t)}<em>${ev.length}장</em></h3>
+   <ol class="clist">${ev.map(e=>`<li><a href="#/e/${e.id}/${rid}" class="w${e.w}"><span class="n">${e.no}</span><span class="t">${esc(e.t)}${e.w===1?'<span class="wt w1">핵심</span>':''}${e.r[0]!==rid?'<span class="tg">함께</span>':''}</span><small>${esc(e.y)}</small><span class="rd ${READ[e.id]?'on':''}"></span></a></li>`).join('')}</ol></section>`;}).join('')}</div>`;
+  document.querySelectorAll('[data-tm]').forEach(b=>b.onclick=()=>{store.set('trailMode',b.dataset.tm);viewTrail(rid);});
+}
+
+
+// ── 사건 연결망: 고른 사건을 가운데 두고 원인과 결과의 사슬을 펼친다. 처음에는 제1장에서 시작
+let netDepth=store.get('netDepth',2);
+// 연결망을 범주별로 고르기: 부·무대·줄기·겹·집단·중요도
+const NETCAT=(()=>{const ord=a=>[...new Set(a)].filter(x=>E[x]).sort((x,y)=>E[x].no-E[y].no);
+  const axEv={};DATA.groups.forEach(g=>g.ch.forEach(([ev,ax])=>(axEv[ax]=axEv[ax]||[]).push(ev)));
+  return [
+   {k:'part',n:'부',d:'다섯 시대',m:DATA.parts.map(p=>({id:p.id,n:p.no,s:p.t,c:pc(p.id),ev:ord(DATA.events.filter(e=>e.p===p.id).map(e=>e.id))}))},
+   {k:'region',n:'무대',d:'다섯 무대',m:DATA.regions.map(r=>({id:r.id,n:r.n,ev:ord(DATA.events.filter(e=>e.r.includes(r.id)).map(e=>e.id))}))},
+   {k:'thread',n:'줄기',d:'시대를 건너는 흐름',m:DATA.threads.map(t=>({id:t.id,n:t.n,s:t.d,ev:ord(t.ev)}))},
+   {k:'axis',n:'겹',d:'무엇이 바뀌었나',m:DATA.axes.map(a=>({id:a.id,n:a.n,s:a.d,ev:ord(axEv[a.id]||[])}))},
+   {k:'group',n:'집단',d:'누가 바뀌었나',m:DATA.groups.map(g=>({id:g.id,n:g.n,s:g.d,ev:ord(g.ch.map(c=>c[0]))}))},
+   {k:'weight',n:'중요도',d:'핵심·주요·보조',m:[1,2,3].map(w=>({id:String(w),n:WN[w],ev:ord(DATA.events.filter(e=>e.w===w).map(e=>e.id))}))}
+  ];})();
+let netCat=store.get('netCat',{k:null,m:null});
+function viewNet(id){
+  id=E[id]?id:DATA.events[0].id;const c=E[id],DP=netDepth;
+  const depth={[id]:0};
+  let fr=[id];for(let d=1;d<=DP;d++){const nf=[];fr.forEach(x=>E[x].pv.forEach(y=>{if(!(y in depth)){depth[y]=-d;nf.push(y);}}));fr=nf;}
+  fr=[id];for(let d=1;d<=DP;d++){const nf=[];fr.forEach(x=>E[x].nx.forEach(y=>{if(!(y in depth)){depth[y]=d;nf.push(y);}}));fr=nf;}
+  const cols={};Object.entries(depth).forEach(([k,d])=>(cols[d]=cols[d]||[]).push(k));
+  Object.values(cols).forEach(a=>a.sort((x,y)=>E[x].yr-E[y].yr));
+  const ds=Object.keys(cols).map(Number).sort((a,b)=>a-b),CW=220,BW=188,BH=48,GAP=14,TOP=40;
+  const maxN=Math.max(...Object.values(cols).map(a=>a.length));
+  const W=ds.length*CW+20,H=Math.max(TOP+maxN*(BH+GAP)+20,160),pos={};
+  ds.forEach((d,ci)=>{const a=cols[d],tot=a.length*(BH+GAP)-GAP,y0=TOP+(H-TOP-20-tot)/2;a.forEach((k,j)=>pos[k]={x:10+ci*CW+(CW-BW)/2,y:y0+j*(BH+GAP)});});
+  const eds=[];Object.keys(depth).forEach(a=>E[a].nx.forEach(b=>{if(b in depth&&depth[b]>depth[a]){const p=pos[a],q=pos[b];const x1=p.x+BW,y1=p.y+BH/2,x2=q.x-2,y2=q.y+BH/2,m=(x1+x2)/2;const d=`M${x1},${y1} C${m},${y1} ${m},${y2} ${x2},${y2}`;
+    const core=a===id||b===id;eds.push(`<g class="edg ${core?'core':''}" data-a="${a}" data-b="${b}" tabindex="0" role="button" aria-label="${E[a].no}장에서 ${E[b].no}장으로: ${esc(why(a,b))}"><path class="ed" d="${d}" marker-end="url(#ah)"/><path class="edhit" d="${d}"/><title>${E[a].no} → ${E[b].no}: ${esc(why(a,b))}</title></g>`);}}));
+  const cut=(s,n)=>s.length>n?s.slice(0,n-1)+'…':s;
+  const CK=NETCAT.find(x=>x.k===netCat.k)||null,CM=CK&&CK.m.find(x=>x.id===netCat.m)||null;
+  const SEQ=CM&&CM.ev.includes(id)?CM.ev.map(x=>E[x]):DATA.events,i=SEQ.indexOf(c),prev=SEQ[i-1],next=SEQ[i+1];
+  const inCat=CM?new Set(CM.ev):null;
+  const catHtml=`<div class="netcat"><div class="nc-row"><span class="lb">범주로 고르기</span>${NETCAT.map(x=>`<button class="pill ${CK===x?'on':''}" data-nck="${x.k}" title="${esc(x.d)}">${esc(x.n)}</button>`).join('')}${CK?`<button class="pill nc-x" data-nck="" aria-label="범주 닫기">✕ 순서대로</button>`:''}</div>
+   ${CK?`<div class="nc-row nc-m">${CK.m.map(m=>`<button class="pill ${CM===m?'on':''}" data-ncm="${esc(m.id)}" ${m.s?`title="${esc(m.s)}"`:''}>${m.c?`<i class="sw" style="background:${m.c}"></i>`:''}${esc(m.n)} <small>${m.ev.length}</small></button>`).join('')}</div>`:''}
+   ${CM?`<p class="nc-d"><b>${esc(CK.n)} · ${esc(CM.n)}</b>${CM.s?` — ${esc(CM.s)}`:''} · ${CM.ev.length}장. 아래 그림에서 이 범주의 장은 진하게, 나머지는 흐리게 보입니다.</p>
+   <ol class="nc-list">${CM.ev.map(x=>`<li><a class="${x===id?'on':''}" href="#/net/${x}"><span class="n">${E[x].no}</span>${esc(E[x].t)}</a></li>`).join('')}</ol>`:''}</div>`;
+  main.innerHTML=`<div class="wide"><p class="eyebrow">사건 연결망</p><h1 class="vt">${c.no}. ${esc(c.t)}</h1>
+  <p class="note vsub">가운데 상자가 고른 사건입니다. 왼쪽으로는 그 사건을 낳은 원인의 사슬이, 오른쪽으로는 그 사건이 낳은 결과의 사슬이 이어집니다. 선을 누르면 두 사건이 왜 이어지는지 나오고, 상자를 누르면 그 사건이 가운데로 옵니다.</p>
+  <div class="ctrl netbar"><button class="pill" id="nprev" ${prev?'':'disabled'} title="${CM&&SEQ!==DATA.events?esc(CM.n)+' 안에서 이전 장':'책 순서로 이전 장'}">← ${prev?prev.no+'장':'처음'}</button>
+   <label class="vh" for="nsel">장 고르기</label><select id="nsel" class="sel">${DATA.parts.map(p=>`<optgroup label="${esc(p.no)} ${esc(p.t)}">${DATA.events.filter(e=>e.p===p.id).map(e=>`<option value="${e.id}" ${e.id===id?'selected':''}>${e.no}. ${esc(e.t)}</option>`).join('')}</optgroup>`).join('')}</select>
+   <button class="pill" id="nnext" ${next?'':'disabled'} title="${CM&&SEQ!==DATA.events?esc(CM.n)+' 안에서 다음 장':'책 순서로 다음 장'}">${next?next.no+'장':'끝'} →</button>${CM&&SEQ!==DATA.events?`<span class="nc-pos">${esc(CM.n)} 안에서 ${i+1} / ${SEQ.length}</span>`:''}
+   <span class="sp"></span><span class="lb">펼칠 단계</span>${[1,2,3].map(d=>`<button class="pill ${d===DP?'on':''}" data-dep="${d}">${d}</button>`).join('')}</div>
+  ${catHtml}
+  <div class="edinfo" id="edinfo" aria-live="polite"><span class="note">선을 누르거나 선 위에 마우스를 올리면 두 사건이 왜 이어지는지 여기에 나옵니다. 가운데 사건에 닿은 선은 붉게 표시했습니다.</span></div>
+  <div class="scroller" id="nsc"><svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(c.t)}의 원인과 결과 연결망">
+   <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker></defs>
+   ${ds.map((d,ci)=>`<text class="colh" x="${10+ci*CW+CW/2}" y="22">${d<0?`원인 ${-d}단계`:d>0?`결과 ${d}단계`:'고른 사건'}</text>`).join('')}
+   ${eds.join('')}
+   ${Object.keys(depth).map(k=>{const e=E[k],p=pos[k];return `<g class="nd ${k===id?'c':''} ${inCat?(inCat.has(k)?'cin':'cout'):''}" data-id="${k}" tabindex="0" role="button" aria-label="${e.no}. ${esc(e.t)}"><rect x="${p.x}" y="${p.y}" width="${BW}" height="${BH}" rx="8"/><rect x="${p.x}" y="${p.y}" width="5" height="${BH}" rx="2" fill="${ECOL(e)}" stroke="none"/><text x="${p.x+12}" y="${p.y+20}" font-weight="700">${e.no}. ${esc(cut(e.t,14))}</text><text class="yy" x="${p.x+12}" y="${p.y+37}">${esc(P[e.p].no)} · ${esc(cut(e.y,18))}</text><title>${esc(e.t)}</title></g>`;}).join('')}
+  </svg></div>
+  <div class="netcols"><div>${evCard(c)}</div>
+   <div class="links one"><p class="lbl"><i class="ln in"></i>왜 이 사건이 일어났나 (앞선 고리)</p><ul>${c.pv.length?whyList(c.pv,x=>why(x,id)):'<li class="note">이 책의 범위에서는 출발점입니다. 오른쪽의 결과를 따라가 보세요.</li>'}</ul>
+   <p class="lbl"><i class="ln out"></i>이 사건이 무엇을 낳았나 (다음 고리)</p><ul>${c.nx.length?whyList(c.nx,x=>why(id,x)):'<li class="note">이 책의 마지막 장입니다.</li>'}</ul></div></div></div>`;
+  document.querySelectorAll('.nd').forEach(n=>{const go=()=>nav('#/net/'+n.dataset.id);n.onclick=go;n.onkeydown=ev=>{if(ev.key==='Enter')go();};});
+  const showEd=g=>{document.querySelectorAll('.edg.on').forEach(x=>x.classList.remove('on'));g.classList.add('on');const a=E[g.dataset.a],b=E[g.dataset.b];
+    $('#edinfo').innerHTML=`<p class="lbl"><a href="#/net/${a.id}">${a.no}. ${esc(a.t)}</a> → <a href="#/net/${b.id}">${b.no}. ${esc(b.t)}</a></p><p>${esc(why(a.id,b.id))}</p>`;};
+  document.querySelectorAll('.edg').forEach(g=>{g.onclick=()=>showEd(g);g.onmouseenter=()=>showEd(g);g.onkeydown=ev=>{if(ev.key==='Enter')showEd(g);};});
+  $('#nsel').onchange=ev=>nav('#/net/'+ev.target.value);
+  if(prev)$('#nprev').onclick=()=>nav('#/net/'+prev.id);if(next)$('#nnext').onclick=()=>nav('#/net/'+next.id);
+  document.querySelectorAll('[data-nck]').forEach(b=>b.onclick=()=>{const k=b.dataset.nck||null;netCat={k,m:k&&k===netCat.k?netCat.m:null};store.set('netCat',netCat);viewNet(id);});
+  document.querySelectorAll('[data-ncm]').forEach(b=>b.onclick=()=>{netCat={k:netCat.k,m:netCat.m===b.dataset.ncm?null:b.dataset.ncm};store.set('netCat',netCat);
+    const m=CK&&CK.m.find(x=>x.id===netCat.m);if(m&&!m.ev.includes(id))nav('#/net/'+m.ev[0]);else viewNet(id);});
+  { const on=document.querySelector('.nc-list a.on');if(on){const l=on.closest('.nc-list');l.scrollTop=on.offsetTop-l.clientHeight/2;} }
+  document.querySelectorAll('[data-dep]').forEach(b=>b.onclick=()=>{netDepth=+b.dataset.dep;store.set('netDepth',netDepth);viewNet(id);});
+  const sc=$('#nsc');sc.scrollLeft=Math.max(0,pos[id].x+BW/2-sc.clientWidth/2);
+}
+
+// ── 정체성 변화: 사건이 어느 집단의 어느 겹을 바꾸었는지 모은 색인
+const AXQ={lang:'무슨 말을 쓰는가',rel:'어떤 신앙 공동체에 속하는가',legit:'누구의 이름으로 다스리고 복종하는가',name:'무엇이라 불리는가',blood:'고대 DNA가 말해 주는 계통'};
+const allCh=()=>DATA.groups.flatMap(g=>g.ch.map(([ev,ax,t])=>({g,e:E[ev],ax,t})));
+function heat(click){
+  const cnt={};DATA.groups.forEach(g=>g.ch.forEach(([ev,ax])=>{const k=ax+'|'+E[ev].p;cnt[k]=(cnt[k]||0)+1;}));
+  const mx=Math.max(...Object.values(cnt));
+  return `<table class="tbl heat"><thead><tr><th>겹 \\ 시대</th>${DATA.parts.map(p=>`<th title="${esc(p.t)}">${esc(p.no)}<small>${esc(p.t)}</small></th>`).join('')}</tr></thead><tbody>
+  ${DATA.axes.map(a=>`<tr><th><a href="#/axis/${a.id}">${esc(a.n)}</a></th>${DATA.parts.map(p=>{const v=cnt[a.id+'|'+p.id]||0;const bg=`background:color-mix(in srgb,var(--accent) ${Math.round(v/mx*55)}%,transparent)`;
+    return `<td class="v" style="${bg}">${click&&v?`<button data-cell="${a.id}|${p.id}" aria-label="${esc(a.n)}, ${esc(p.no)}: ${v}건 보기">${v}</button>`:(v||'')}</td>`;}).join('')}</tr>`).join('')}</tbody></table>`;
+}
+function heatReading(){
+  const cnt={};allCh().forEach(c=>{const k=c.ax+'|'+c.e.p;cnt[k]=(cnt[k]||0)+1;});
+  const by={};DATA.axes.filter(a=>a.id!=='blood').forEach(a=>{const best=DATA.parts.reduce((m,p)=>(cnt[a.id+'|'+p.id]||0)>(cnt[a.id+'|'+m.id]||0)?p:m,DATA.parts[0]);(by[best.id]=by[best.id]||[]).push(a.n);});
+  return DATA.parts.filter(p=>by[p.id]).map(p=>`${by[p.id].join('과 ')}${/[가-힣]$/.test(by[p.id].at(-1))&&((by[p.id].at(-1).charCodeAt(by[p.id].at(-1).length-1)-0xAC00)%28)?'은':'는'} ${p.no}(${p.t})`).join(', ');
+}
+function viewId(gid){
+  const g=G[gid];if(g)return groupPage(g);
+  const all=allCh(),tot=all.length;
+  const cnt=(f)=>all.filter(f).length;
+  main.innerHTML=`<div class="col"><p class="eyebrow">사람들의 변화</p><h1 class="vt">누구의, 무엇이, 언제 바뀌었나</h1>
+  <p class="lede">체제가 바뀌면 사람들의 삶도 바뀝니다. 이 화면은 ${DATA.events.length}개 사건이 ${DATA.groups.length}개 집단의 무엇을 바꾸었는지를 공화정의 다섯 겹(주권, 시민권, 헌정 구조, 자유와 권리, 민족과 교회)으로 나누어 모은 색인입니다. 지금까지 ${tot}건을 기록했습니다. 본문을 쓴 장의 기록만 들어 있고, 집필이 이어지면 늘어납니다.</p>
+  <div class="how"><button data-jump="idg"><b>1. 집단을 따라가기</b><span>한 집단이 지금의 모습이 되기까지</span></button><button data-jump="idx"><b>2. 겹을 따라가기</b><span>시민권, 자유 같은 한 겹이 집단마다 언제 바뀌었나</span></button><button data-jump="idt"><b>3. 시대를 비교하기</b><span>어느 시대에 어느 겹이 많이 바뀌었나</span></button></div>
+  <h2 class="sh" id="idg">집단을 골라 따라가기</h2>
+  <div class="grid gcards">${DATA.groups.map(x=>{const ys=x.ch.map(c=>E[c[0]]).sort((a,b)=>a.yr-b.yr);return `<a class="card" href="#/id/${x.id}"><h3>${esc(x.n)}</h3><p>${esc(x.d)}</p>
+    <div class="axbar" aria-label="겹별 변화 수">${DATA.axes.map(a=>{const n=x.ch.filter(c=>c[1]===a.id).length;return `<span title="${esc(a.n)} ${n}건" style="flex:${n||0}" class="ax-${a.id}"></span>`;}).join('')}</div>
+    <p class="meta">${x.ch.length?`${x.ch.length}건 · ${esc(yfmt(ys[0].yr))} ~ ${esc(yfmt(ys.at(-1).yr))}`:'아직 기록 없음 · 집필이 이어지면 채워집니다'}</p></a>`;}).join('')}</div>
+  <p class="note axkey">${DATA.axes.map(a=>`<span><i class="ax-${a.id}"></i>${esc(a.n)}</span>`).join('')}</p>
+  <h2 class="sh" id="idx">겹을 골라 따라가기</h2>
+  <div class="grid">${DATA.axes.map(a=>`<a class="card" href="#/axis/${a.id}"><p class="lbl"><i class="ax-${a.id} dotk"></i>${cnt(c=>c.ax===a.id)}건 · ${new Set(all.filter(c=>c.ax===a.id).map(c=>c.g.id)).size}개 집단</p><h3>${esc(a.n)}</h3><p>${esc(a.d)}</p></a>`).join('')}</div>
+  <h2 class="sh" id="idt">시대별로 비교하기</h2>
+  <p>칸의 숫자는 그 시대에 그 겹이 바뀐 기록의 수이고, 색이 짙을수록 많습니다. 숫자를 누르면 그 칸의 변화가 아래에 펼쳐집니다.</p>
+  ${heat(true)}<div id="cell"></div>
+  <p class="note">이 분포는 맺음(<a href="#/end">생각에서 체제로</a>)에서 다시 읽습니다.</p></div>`;
+  document.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>document.getElementById(b.dataset.jump).scrollIntoView({behavior:'smooth',block:'start'}));
+  document.querySelectorAll('[data-cell]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-cell].on').forEach(x=>x.classList.remove('on'));b.classList.add('on');const [ax,p]=b.dataset.cell.split('|');
+    const rows=all.filter(c=>c.ax===ax&&c.e.p===p).sort((x,y)=>x.e.yr-y.e.yr);
+    $('#cell').innerHTML=`<div class="card cellbox"><p class="lbl">${esc(AX[ax].n)} · ${esc(P[p].no)} ${esc(P[p].t)} · ${rows.length}건</p><div class="chg">${rows.map(c=>`<a href="#/e/${c.e.id}"><span class="yr">${esc(c.e.y)}</span><span><b>${esc(c.g.n)}</b> ${esc(c.t)} <small class="note">· ${c.e.no}장</small></span></a>`).join('')}</div></div>`;});
+}
+function partBands(sx,lo,hi){const ext=DATA.parts.map(p=>{const xs=p.ev.map(e=>sx(e.yr));return [Math.min(...xs),Math.max(...xs)];});
+  return DATA.parts.map((p,i)=>({p,i,x0:i?(ext[i-1][1]+ext[i][0])/2:lo,x1:i<ext.length-1?(ext[i][1]+ext[i+1][0])/2:hi}));}
+function groupPage(g){
+  const gi=DATA.groups.indexOf(g),gp=DATA.groups[gi-1],gn=DATA.groups[gi+1];
+  const items=g.ch.map(([ev,ax,t])=>({e:E[ev],ax,t})).sort((a,b)=>a.e.yr-b.e.yr||DATA.axes.findIndex(x=>x.id===a.ax)-DATA.axes.findIndex(x=>x.id===b.ax));
+  const W=720,LX2=92,RW=W-LX2-34,RH=34,TOP=30,H=TOP+DATA.axes.length*RH+8;
+  const x0=X(YS[0]),x1=X(YS.at(-1)),sx=y=>LX2+(X(y)-x0)/(x1-x0)*RW;
+  const bands=partBands(sx,LX2-6,W-4).map(b=>`<rect x="${b.x0}" y="${TOP-6}" width="${b.x1-b.x0}" height="${H-TOP}" fill="${pc(b.p.id)}" opacity="${b.i%2?.06:.11}"/><text x="${(b.x0+b.x1)/2}" y="16" font-size="11" font-weight="700" fill="${pc(b.p.id)}" text-anchor="middle">${esc(b.p.no)}</text>`).join('');
+  const rows=DATA.axes.map((a,i)=>{const y=TOP+i*RH+RH/2;let last=-99;const dots=items.filter(c=>c.ax===a.id).map(c=>{let x=sx(c.e.yr);if(x-last<19)x=last+19;last=x;return `<a href="#/e/${c.e.id}"><g class="gdot"><circle cx="${x}" cy="${y}" r="9" fill="${ECOL(c.e)}"/><text x="${x}" y="${y}">${c.e.no}</text><title>${esc(c.e.y)} · ${esc(c.t)} (${c.e.no}장 ${esc(c.e.t)})</title></g></a>`;}).join('');
+    return `<text x="0" y="${y+4}" font-size="12" font-weight="700" fill="var(--ink)">${esc(a.n)}</text><line x1="${LX2-8}" x2="${W-4}" y1="${y}" y2="${y}" stroke="var(--line)"/>${dots}`;}).join('');
+  const mode=store.get('idmode','time');
+  main.innerHTML=`<div class="col"><p class="eyebrow"><a href="#/id">사람들의 변화</a> · 집단</p><h1 class="vt">${esc(g.n)}</h1>
+  <p class="lede">${esc(g.d)}</p>
+  <div class="ctrl"><button class="pill" id="gprev" ${gp?'':'disabled'}>← ${gp?esc(gp.n):''}</button><label class="vh" for="gsel">집단 고르기</label><select id="gsel" class="sel">${DATA.groups.map(x=>`<option value="${x.id}" ${x===g?'selected':''}>${esc(x.n)}</option>`).join('')}</select><button class="pill" id="gnext" ${gn?'':'disabled'}>${gn?esc(gn.n):''} →</button></div>
+  <h2 class="sh">다섯 겹이 바뀐 때</h2>
+  <p class="note">가로는 시간(여섯 부), 세로는 공화정의 다섯 겹입니다. 점 하나가 그 겹을 바꾼 사건이고, 점 안의 숫자는 장 번호입니다.</p>
+  <div class="gstrip"><svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${esc(g.n)}의 겹별 변화 시점">${bands}${rows}</svg></div>
+  <h2 class="sh">변화의 기록 <span class="segs"><button class="pill ${mode==='time'?'on':''}" data-m="time">시간순</button><button class="pill ${mode==='axis'?'on':''}" data-m="axis">겹별</button></span></h2>
+  <div id="glist"></div>
+  <p class="note">같은 사건이 여러 겹을 동시에 바꾸기도 합니다. 다른 집단과 견주려면 겹을 골라 보세요: ${DATA.axes.map(a=>`<a href="#/axis/${a.id}">${esc(a.n)}</a>`).join(', ')}.</p></div>`;
+  const tag=ax=>`<span class="axt"><i class="ax-${ax}"></i>${esc(AX[ax].n)}</span>`;
+  const draw=m=>{store.set('idmode',m);document.querySelectorAll('[data-m]').forEach(b=>b.classList.toggle('on',b.dataset.m===m));
+    $('#glist').innerHTML=m==='time'?`<ol class="tline">${items.map(c=>`<li style="--c:${ECOL(c.e)}"><span class="yr">${esc(c.e.y)}</span><div>${tag(c.ax)} <b>${esc(c.t)}</b><a href="#/e/${c.e.id}">${c.e.no}장 ${esc(c.e.t)}</a></div></li>`).join('')}</ol>`
+    :DATA.axes.map(a=>`<div class="axrow"><h4><i class="ax-${a.id} dotk"></i>${esc(a.n)}<small>${esc(a.d)}</small></h4><div class="chg">${items.filter(c=>c.ax===a.id).map(c=>`<a href="#/e/${c.e.id}"><span class="yr">${esc(c.e.y)}</span><span>${esc(c.t)} <small class="note">· ${c.e.no}장</small></span></a>`).join('')||'<span class="note">기록 없음</span>'}</div></div>`).join('');};
+  document.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>draw(b.dataset.m));draw(mode);
+  $('#gsel').onchange=ev=>nav('#/id/'+ev.target.value);if(gp)$('#gprev').onclick=()=>nav('#/id/'+gp.id);if(gn)$('#gnext').onclick=()=>nav('#/id/'+gn.id);
+}
+
+function viewAxis(aid){
+  const a=AX[aid]||DATA.axes[0];
+  const rows=DATA.groups.map(g=>({g,c:g.ch.filter(c=>c[1]===a.id)})).filter(r=>r.c.length);
+  const LX3=150,RH=34,H=rows.length*RH+40,FW=1140;
+  const sx=y=>LX3+(X(y)-X(YS[0]))/(X(YS.at(-1))-X(YS[0]))*(FW-LX3-30);
+  main.innerHTML=`<div class="wide"><p class="eyebrow"><a href="#/id">사람들의 변화</a> · 겹별</p><h1 class="vt">${esc(a.n)}: ${esc(a.d)}</h1><p class="note vsub">한 줄이 한 집단, 점 하나가 그 집단의 ${esc(a.n)} 겹을 바꾼 사건입니다. 색은 부(시대)이고, 점을 누르면 그 장으로 갑니다. 아래 표는 같은 기록을 시간순으로 모은 것입니다.</p>
+  <div class="ctrl">${DATA.axes.map(x=>`<a class="pill ${x.id===a.id?'on':''}" href="#/axis/${x.id}">${esc(x.n)}</a>`).join('')}<a class="pill" href="#/id">처음으로</a></div>
+  <div class="scroller"><svg viewBox="0 0 ${FW} ${H}" width="100%" style="min-width:760px" role="img" aria-label="${esc(a.n)} 겹의 집단별 변화">
+   ${partBands(sx,LX3-10,FW-4).map(b=>`<rect x="${b.x0}" y="0" width="${b.x1-b.x0}" height="${H}" fill="${pc(b.p.id)}" opacity="${b.i%2?.05:.09}"/><text x="${(b.x0+b.x1)/2}" y="${H-8}" font-size="10.5" fill="${pc(b.p.id)}" font-weight="700" text-anchor="middle">${esc(b.p.no)}</text>`).join('')}
+   ${rows.map((r,i)=>`<text x="10" y="${i*RH+26}" font-size="12" font-weight="700" fill="var(--ink)">${esc(r.g.n.length>11?r.g.n.slice(0,10)+'…':r.g.n)}</text><line x1="${LX3-10}" x2="${sx(YS.at(-1))+20}" y1="${i*RH+22}" y2="${i*RH+22}" stroke="var(--line)"/>
+    ${r.c.map(c=>{const e=E[c[0]];return `<a href="#/e/${e.id}"><circle cx="${sx(e.yr)}" cy="${i*RH+22}" r="7" fill="${ECOL(e)}"><title>${esc(r.g.n)} · ${esc(e.y)} · ${esc(c[2])}</title></circle></a>`;}).join('')}`).join('')}
+  </svg></div>
+  <h2 class="sh">기록된 변화</h2><table class="tbl"><thead><tr><th>집단</th><th>시기</th><th>변화</th></tr></thead><tbody>
+  ${rows.flatMap(r=>r.c.map(c=>({g:r.g,e:E[c[0]],t:c[2]}))).sort((x,y)=>x.e.yr-y.e.yr).map(x=>`<tr><td><a href="#/id/${x.g.id}">${esc(x.g.n)}</a></td><td><a href="#/e/${x.e.id}">${esc(x.e.y)}</a></td><td>${esc(x.t)}</td></tr>`).join('')}</tbody></table></div>`;
+}
+
+// ── 지역 통사
+function rhHtml(a){return (a||[]).map(x=>x.startsWith('## ')?`<h4>${esc(x.slice(3))}</h4>`:`<p>${rich(x)}</p>`).join('');}
+// ── 줄기
+function viewThread(tid){
+  const T=DATA.threads,t=T.find(x=>x.id===tid);
+  if(!t){main.innerHTML=`<div class="col"><p class="eyebrow">줄기</p><h1 style="font-family:var(--serif);font-size:1.7rem;margin:.2rem 0">네 줄기</h1>
+   <p class="lede" style="font-size:1rem">부와 무대의 칸을 건너, 하나의 물음을 따라 사건을 시간 순으로 잇습니다.</p>
+   <div class="grid">${T.map(x=>`<a class="card" href="#/t/${x.id}"><h3>${esc(x.n)}</h3><p>${esc(x.d)}</p><p class="note" style="margin-top:.4rem">사건 ${x.ev.length}개</p></a>`).join('')}</div></div>`;return;}
+  const ev=t.ev.map(id=>E[id]).filter(Boolean);
+  main.innerHTML=`<div class="col"><p class="eyebrow">줄기</p>
+  <div class="ctrl">${T.map(x=>`<a class="pill ${x.id===t.id?'on':''}" href="#/t/${x.id}">${esc(x.n)}</a>`).join('')}</div>
+  <h1 style="font-family:var(--serif);font-size:1.7rem;margin:.4rem 0 0">${esc(t.n)}</h1>
+  <div class="keys"><p>${linky(t.d)}</p></div>
+  <ol class="thr">${ev.map(e=>`<li style="--c:${ECOL(e)}"><a href="#/e/${e.id}"><span class="ty">${esc(e.y)}</span><b>${e.no}. ${esc(e.t)}</b>${e.w===1?'<span class="wt w1">핵심</span>':''}</a>
+   <p>${esc(e.s)}</p><p class="lbl">${e.r.map(x=>esc(R[x].n)).join(' · ')} · ${esc(e.pl[0])}</p></li>`).join('')}</ol></div>`;
+}
+// ── 인물
+let pfac=store.get('pfac','');
+function viewPeople(id){
+  const q=PE[id];if(q)return personPage(q);
+  const [Y0,Y1]=DATA.meta.life,LW=150,PX=3.2,RH=20;
+  const list=()=>DATA.people.filter(x=>!pfac||x.f===pfac).slice().sort((a,b)=>(a.life[0]??(a.life[1]-50))-(b.life[0]??(b.life[1]-50)));
+  const svg=()=>{const L=list(),W=LW+(Y1-Y0)*PX+20,H=30+L.length*RH+10,x=y=>LW+(y-Y0)*PX;
+    const ticks=DATA.meta.lifeTicks;const pb=DATA.parts.map(p=>[x(p.y0),x(p.y1),p]);
+    return `<svg class="lf" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="인물의 생몰 띠">
+     ${pb.map(([a,b,p],i)=>`<rect x="${a}" y="18" width="${b-a}" height="${H-18}" fill="${pc(p.id)}" opacity="${i%2?.05:.09}"/><text x="${a+3}" y="13" class="yr" style="fill:${pc(p.id)};font-weight:700">${esc(p.no)}</text>`).join('')}
+     ${ticks.map(t=>`<line x1="${x(t)}" x2="${x(t)}" y1="18" y2="${H}" stroke="var(--line)"/><text x="${x(t)+2}" y="${H-3}" class="yr">${t}</text>`).join('')}
+     ${L.map((p,i)=>{const y=30+i*RH,b=p.life[0]??(p.life[1]-45),d=p.life[1]??Y1,c=pcol(p);
+       return `<a href="#/pp/${p.id}"><text x="${LW-8}" y="${y+4}" text-anchor="end">${esc(p.n)}</text><rect class="bar" x="${x(b)}" y="${y-5}" width="${Math.max(3,(d-b)*PX)}" height="10" rx="5" fill="${c}" opacity="${p.life[0]==null?.45:.8}"/>${p.ch.filter(cid=>E[cid].yr>=b&&E[cid].yr<=d+1).map(cid=>`<circle cx="${x(E[cid].yr)}" cy="${y}" r="3" fill="var(--surface)" stroke="${c}" stroke-width="1.5"><title>${E[cid].no}장 ${esc(E[cid].t)}</title></circle>`).join('')}<title>${esc(p.n)} ${plife(p)} · ${esc(p.role)}</title></a>`;}).join('')}</svg>`;};
+  const draw=()=>{store.set('pfac',pfac);const L=list();
+    document.querySelectorAll('[data-pf]').forEach(b=>b.classList.toggle('on',b.dataset.pf===pfac));
+    $('#plife').innerHTML=svg();
+    $('#pgroups').innerHTML=DATA.facts.filter(f=>!pfac||f[0]===pfac).map(f=>{const ps=L.filter(x=>x.f===f[0]);if(!ps.length)return '';
+      return `<h2 class="sh"><span class="fchip" style="--pc:${f[2]}"><i class="fdot"></i>${esc(f[1])}</span><span class="shs">${esc(f[3])}</span></h2><ul class="plist">${ps.map(x=>`<li><a href="#/pp/${x.id}" style="--pc:${f[2]}"><i class="fdot"></i><b>${esc(x.n)}<small>${plife(x)}</small></b><span class="pr">${esc(x.role)}${x.ch.length?` · ${x.ch.length}개 장`:''}</span></a></li>`).join('')}</ul>`;}).join('');};
+  main.innerHTML=`<div class="wide"><p class="eyebrow">인물</p><h1 class="vt">누가 이 역사를 움직였나</h1>
+  <p class="note vsub">이 책에 나오는 ${DATA.people.length}명을 진영별로 모았습니다. 색은 진영을, 띠는 생애를, 띠 위의 작은 원은 그 사람이 나오는 장의 연대를 나타냅니다. 이름을 누르면 장별 행적과 관계를 볼 수 있습니다. 본문에서도 진영 색 밑줄이 그어진 이름을 누르면 같은 정보가 뜹니다.</p>
+  <div class="ctrl"><span class="lb">진영</span><button class="pill" data-pf="">모두</button>${DATA.facts.map(f=>`<button class="pill" data-pf="${f[0]}"><i class="fdot" style="--pc:${f[2]};margin-right:.3rem"></i>${esc(f[1])}</button>`).join('')}</div>
+  <div class="lifebox" id="plife"></div><p class="note">생몰년이 확실하지 않은 사람의 띠는 흐리게 그렸습니다. 좁은 화면에서는 옆으로 밀어 보세요.</p>
+  <div id="pgroups"></div></div>`;
+  document.querySelectorAll('[data-pf]').forEach(b=>b.onclick=()=>{pfac=b.dataset.pf;draw();});
+  draw();
+}
+function personPage(q){
+  const same=DATA.people.filter(x=>x.f===q.f&&x!==q).slice(0,24);
+  const rel=(q.rel||[]).map(([r,t])=>[PE[r],t]).filter(x=>x[0]);
+  const back=DATA.people.filter(x=>(x.rel||[]).some(r=>r[0]===q.id)&&!rel.some(y=>y[0]===x)).map(x=>[x,x.rel.find(r=>r[0]===q.id)[1]+'(상대 쪽에서)']);
+  main.innerHTML=`<article class="col"><header class="chead"><p class="eyebrow"><a href="#/pp">인물</a> · ${esc(FC[q.f][1])}</p><h1>${esc(q.n)}</h1><p class="period">${esc(q.hz||'')}${q.hz?' · ':''}${plife(q)}</p><div class="chips">${fchip(q)}</div></header>
+  <section class="keys"><p class="lbl">${esc(q.role)}</p><p>${linky(q.d)}</p></section>
+  <section class="slot"><h2>장별 행적</h2>${q.ch.length?`<ol class="ptl">${q.ch.map(c=>{const e=E[c];return `<li style="--c:${ECOL(e)}"><span class="yr">${esc(e.y)} · ${esc(P[e.p].no)}</span><a href="#/e/${c}">${e.no}. ${esc(e.t)}</a>${q.at&&q.at[c]?`<p>${esc(q.at[c])}</p>`:`<p class="note">${DATA.body[c]?'이 장에서 이름이 나옵니다.':'이 장의 요약에 나옵니다. 본문은 집필 예정입니다.'}</p>`}</li>`;}).join('')}</ol>`:'<p class="note">아직 이 사람이 나오는 장의 본문이 쓰이지 않았습니다.</p>'}</section>
+  ${rel.length||back.length?`<section class="slot"><h2>관계</h2><ul class="plist">${[...rel,...back].map(([x,t])=>`<li><a href="#/pp/${x.id}" style="--pc:${pcol(x)}"><i class="fdot"></i><b>${esc(x.n)}<small>${plife(x)}</small></b><span class="pr">${esc(t)}</span></a></li>`).join('')}</ul></section>`:''}
+  <section class="slot"><h2>같은 진영의 인물</h2><div class="go">${same.map(x=>`<a class="pill" href="#/pp/${x.id}">${esc(x.n)}</a>`).join('')}</div></section></article>`;
+}
+
+// ── 서가
+function viewBooks(bid){
+    const card=b=>`<section class="card" id="bk-${b.id}" style="margin:.8rem 0;${b.id===bid?'border-color:var(--accent)':''}"><h3>${b.lang==='en'?'<i>'+esc(b.t)+'</i>':'『'+esc(b.t)+'』'}</h3>
+   <p>${esc(b.a)}${b.tr?' · '+esc(b.tr):''}${b.pub?' · '+esc(b.pub):''}${b.o?' · '+esc(b.o):''}</p>
+   <p style="color:var(--ink);margin-top:.4rem">${esc(b.role)}</p>${b.warn&&b.warn!=='—'?`<p style="margin-top:.2rem"><b style="color:var(--warn)">읽을 때 주의</b> ${esc(b.warn)}</p>`:''}
+   <div class="chips" style="margin-top:.5rem">${b.ev.sort((x,y)=>E[x[0]].no-E[y[0]].no).map(([id,ch])=>`<a class="chip" href="#/e/${id}" title="${esc(E[id].t)}"><i style="background:${ECOL(E[id])}"></i>${E[id].no} · ${esc(ch)}</a>`).join('')}</div></section>`;
+  const ko=DATA.books.filter(b=>b.lang!=='en'),en=DATA.books.filter(b=>b.lang==='en');
+  main.innerHTML=`<div class="col"><p class="eyebrow">서가</p><h1 style="font-family:var(--serif);font-size:1.7rem;margin:.2rem 0">${DATA.books.length}권과 그 역할</h1>
+  <p class="note">장마다 기댄 책과 그 부분을 적었습니다. 각 책이 어떤 장을 받치는지 아래에서 볼 수 있습니다. 본문을 쓰면서 서가가 늘어납니다.</p>
+  <h2 class="sh">우리말 번역본 · ${ko.length}권</h2>${ko.map(card).join('')}
+  <h2 class="sh">원서 · ${en.length}권</h2><p class="note">우리말 번역본이 확인되지 않은 책은 원서 제목으로 적었습니다.</p>${en.map(card).join('')}</div>`;
+  if(bid){const el=document.getElementById('bk-'+bid);if(el)el.scrollIntoView({block:'center'});}
+}
+function viewTerms(cat){
+  const CATS=DATA.tcats;cat=CATS.includes(cat)?cat:'';
+  const list=DATA.terms.filter(t=>!cat||t[2]===cat).slice().sort((a,b)=>a[0].localeCompare(b[0],'ko'));
+  main.innerHTML=`<div class="col"><p class="eyebrow">용어</p><h1 style="font-family:var(--serif);font-size:1.7rem;margin:.2rem 0">용어 사전</h1>
+  <p class="note">모두 ${DATA.terms.length}개 항목. 본문에서 점선 밑줄이 그어진 말을 누르면 이 풀이가 바로 뜹니다.</p>
+  <div class="go" style="margin:.8rem 0 1rem"><a class="pill${cat?'':' on'}" href="#/terms">전체</a>${CATS.map(c=>`<a class="pill${c===cat?' on':''}" href="#/terms/${encodeURIComponent(c)}">${c} <small>${DATA.terms.filter(t=>t[2]===c).length}</small></a>`).join('')}</div>
+  <table class="tbl"><tbody>${list.map(([t,d,c])=>`<tr id="t-${esc(t)}"><th style="width:8.5rem">${esc(t)}${cat?'':`<br><small class="note">${esc(c||'')}</small>`}</th><td>${esc(d)}</td></tr>`).join('')}</tbody></table></div>`;
+}
+
+// ── 요소별 변천: 집단·종교·신화·언어·칭호·땅이름 하나를 골라 처음부터 끝까지
+const LN=Object.fromEntries(DATA.lineage.map(l=>[l.id,l])),LCAT=Object.fromEntries(DATA.lcats.map(c=>[c[0],c]));
+const EORD=Object.fromEntries(DATA.events.map((e,i)=>[e.id,i]));
+const lnStage=s=>{const [id,lab,txt]=s;if(id.startsWith('r:')){const r=id.slice(2);return {id,lab,txt,y:'',href:'#/r/'+r,ref:R[r]?R[r].n+' 통사':'지역 통사',col:'var(--muted)',ord:DATA.events.length-.5};}
+  const e=E[id];return {id,lab,txt,y:e.y,href:'#/e/'+id,ref:`제${e.no}장 ${e.t}`,col:ECOL(e),ord:EORD[id]};};
+const lnStrip=(l,big)=>{const n=DATA.events.length,st=l.st.map(lnStage);
+  const bands=DATA.parts.map(p=>{const a=EORD[p.ev[0].id],b=EORD[p.ev.at(-1).id]+1;return `<span class="lsb" style="left:${a/n*100}%;width:${(b-a)/n*100}%;background:${pc(p.id)}" title="${esc(p.no+' '+p.t)}"></span>`;}).join('');
+  return `<div class="lstrip${big?' big':''}" aria-hidden="true">${bands}<span class="lsl" style="left:${st[0].ord/n*100}%;right:${100-(st.at(-1).ord+1)/n*100}%"></span>${st.map((s,i)=>`<i style="left:calc(${(s.ord+.5)/n*100}% - ${big?6:4}px);background:${s.col}"${big?` data-i="${i}" title="${esc(s.lab)}"`:''}></i>`).join('')}</div>`;};
+let lnCat=store.get('lnCat','');
+function viewLineage(id){
+  const l=LN[id];if(l)return lineagePage(l);
+  if(!DATA.lineage.length){main.innerHTML=`<div class="col"><p class="eyebrow">요소별 변천</p><h1 class="vt">하나만 골라 끝까지 따라가기</h1><div class="todo"><b>집필 예정</b>개념(인민 주권·시민·덕), 상징(삼색기·마리안·마르세예즈), 인물(라파예트·나폴레옹·마치니·가리발디), 도시(파리·로마·빈), 제도(헌법·보통선거)의 일대기를 본문이 충분히 쓰인 뒤에 모읍니다.</div></div>`;return;}
+  const cnt=c=>DATA.lineage.filter(x=>x.cat===c).length;
+  main.innerHTML=`<div class="col"><p class="eyebrow">요소별 변천</p><h1 class="vt">하나만 골라 끝까지 따라가기</h1>
+  <p class="lede">본문은 시대순으로 흐르기 때문에, 한 개념이나 인물, 도시가 어떻게 바뀌어 왔는지는 여러 장에 흩어져 있습니다. 이 화면은 그것을 하나씩 모아 한 줄로 잇습니다.</p>
+  <p class="note">각 단계는 그 일이 서술된 장으로 이어집니다. 띠 위의 점은 책 전체(제1부~제6부)에서 그 단계가 놓인 자리입니다. 한 집단의 무엇이 언제 바뀌었는지 겹별로 보려면 <a href="#/id">사람들의 변화</a>를 보세요.</p>
+  <div class="go lncats" role="tablist"><button type="button" class="pill${lnCat?'':' on'}" data-c="">전체 <small>${DATA.lineage.length}</small></button>${DATA.lcats.map(c=>`<button type="button" class="pill${lnCat===c[0]?' on':''}" data-c="${c[0]}">${esc(c[1])} <small>${cnt(c[0])}</small></button>`).join('')}</div>
+  <div id="lnlist"></div>
+  <p class="note axkey lnkey">${DATA.parts.map(p=>`<span><i style="background:${pc(p.id)}"></i>${esc(p.no)}</span>`).join('')}</p></div>`;
+  const paint=()=>{
+    const cats=lnCat?DATA.lcats.filter(c=>c[0]===lnCat):DATA.lcats;
+    $('#lnlist').innerHTML=cats.map(c=>`<h2 class="sh">${esc(c[1])}<small class="shs">${esc(c[2])}</small></h2><div class="grid lncards">${DATA.lineage.filter(x=>x.cat===c[0]).map(x=>{const st=x.st.map(lnStage);
+      return `<a class="card" href="#/ln/${x.id}"><h3>${esc(x.n)}</h3><p class="lnd">${esc(x.d)}</p><p class="lnchain">${st.map(s=>`<span>${esc(s.lab)}</span>`).join('<b aria-hidden="true">→</b>')}</p>${lnStrip(x)}<p class="meta">${st.length}단계${st[0].y?' · '+esc(st[0].y.split(/\s[–-]\s/)[0]):''}${st.at(-1).y?' ~ '+esc(st.at(-1).y.split(/\s[–-]\s/).at(-1)):''}</p></a>`;}).join('')}</div>`).join('');
+    document.querySelectorAll('.lncats .pill').forEach(b=>b.classList.toggle('on',b.dataset.c===lnCat));};
+  paint();
+  document.querySelector('.lncats').onclick=ev=>{const b=ev.target.closest('[data-c]');if(!b)return;lnCat=b.dataset.c;store.set('lnCat',lnCat);paint();};
+}
+function lineagePage(l){
+  const st=l.st.map(lnStage),i=DATA.lineage.indexOf(l),pv=DATA.lineage[i-1],nx=DATA.lineage[i+1],c=LCAT[l.cat];
+  const sib=DATA.lineage.filter(x=>x.cat===l.cat&&x!==l);
+  main.innerHTML=`<div class="col"><p class="eyebrow"><a href="#/ln">요소별 변천</a> · ${esc(c[1])}</p><h1 class="vt">${esc(l.n)}</h1>
+  <p class="lede">${linky(l.d)}</p>
+  <div class="ctrl"><button class="pill" id="lnprev" ${pv?'':'disabled'}>← 이전</button><label class="vh" for="lnsel">다른 변천 고르기</label><select id="lnsel" class="sel">${DATA.lcats.map(k=>`<optgroup label="${esc(k[1])}">${DATA.lineage.filter(x=>x.cat===k[0]).map(x=>`<option value="${x.id}"${x===l?' selected':''}>${esc(x.n)}</option>`).join('')}</optgroup>`).join('')}</select><button class="pill" id="lnnext" ${nx?'':'disabled'}>다음 →</button></div>
+  ${l.b?`<p class="q">${esc(l.b.q)}</p><section class="keys"><p class="lbl">이 변천의 핵심</p><p>${linky(l.b.core)}</p></section>
+   <p class="note lnjump"><a href="#lnglance">한눈에 보기와 단계별 정리는 맨 아래에 있습니다 ↓</a></p>
+   ${l.b.sec.map(([h,ps])=>`<section class="slot"><h2>${esc(h)}</h2><div class="rh">${ps.map(x=>`<p>${rich(x)}</p>`).join('')}</div></section>`).join('')}
+   <h2 class="sh" id="lnglance">한눈에 보기</h2>`:''}
+  <section class="lnglance" aria-label="한눈에 보기"><p class="lbl">한눈에</p>
+   <ol class="lnflow">${st.map((s,k)=>`<li><a href="#lst-${k}" data-k="${k}" style="--c:${s.col}"><small>${esc(s.y||s.ref)}</small><b>${esc(s.lab)}</b></a></li>`).join('')}</ol>
+   ${lnStrip(l,true)}<p class="note lnkey">${DATA.parts.map(p=>`<span><i style="background:${pc(p.id)}"></i>${esc(p.no)}</span>`).join('')}</p></section>
+  ${l.b?'<h2 class="sh">단계별 정리</h2>':''}<ol class="lnsteps">${st.map((s,k)=>`<li id="lst-${k}" style="--c:${s.col}"><span class="k">${k+1}</span><div><p class="ly">${esc(s.y)}</p><h3>${esc(s.lab)}</h3><p>${linky(s.txt)}</p><a class="lref" href="${s.href}">${esc(s.ref)} →</a></div></li>`).join('')}</ol>
+  ${l.g&&G[l.g]?`<p class="note">이 집단의 무엇이 언제 바뀌었는지는 <a href="#/id/${l.g}">사람들의 변화: ${esc(G[l.g].n)}</a>에서 겹별로 볼 수 있습니다.</p>`:''}
+  ${sib.length?`<h2 class="sh">같은 갈래: ${esc(c[1])}</h2><div class="go">${sib.map(x=>`<a class="pill" href="#/ln/${x.id}">${esc(x.n)}</a>`).join('')}</div>`:''}
+  <nav class="pn">${pv?`<a class="prev" href="#/ln/${pv.id}"><small>이전</small>${esc(pv.n)}</a>`:'<span></span>'}${nx?`<a class="next" href="#/ln/${nx.id}"><small>다음</small>${esc(nx.n)}</a>`:`<a class="next" href="#/ln"><small>처음으로</small>요소별 변천</a>`}</nav></div>`;
+  $('#lnsel').onchange=ev=>nav('#/ln/'+ev.target.value);
+  if(pv)$('#lnprev').onclick=()=>nav('#/ln/'+pv.id);if(nx)$('#lnnext').onclick=()=>nav('#/ln/'+nx.id);
+  const jump=k=>{const el=$('#lst-'+k);if(!el)return;const bh=(document.querySelector('.bar')||{}).offsetHeight||0;window.scrollTo({top:el.getBoundingClientRect().top+curY()-bh-14,behavior:'smooth'});el.classList.add('flash');setTimeout(()=>el.classList.remove('flash'),1400);};
+  const lj=main.querySelector('.lnjump a');if(lj)lj.addEventListener('click',ev=>{ev.preventDefault();ev.stopPropagation();const el=$('#lnglance');const bh=(document.querySelector('.bar')||{}).offsetHeight||0;window.scrollTo({top:el.getBoundingClientRect().top+curY()-bh-60,behavior:'smooth'});},true);
+  main.querySelector('.lnflow').addEventListener('click',ev=>{const a=ev.target.closest('a[data-k]');if(!a)return;ev.preventDefault();ev.stopPropagation();jump(+a.dataset.k);},true);
+  main.querySelector('.lstrip.big').addEventListener('click',ev=>{const d=ev.target.closest('[data-i]');if(d)jump(+d.dataset.i);});
+}
+
+// ── 밑줄: 본문에서 글을 골라 밑줄을 긋고, 다시 열면 그 자리에 다시 그린다. 모음 화면에서 한꺼번에 본다.
+const UL=(function(){
+  let LIST=store.get('ul',[]);
+  const save=()=>store.set('ul',LIST);
+  const pageKey=()=>{const h=CUR.replace(/^#\/?/,'').split('/');const v=h[0]||'';
+    if(v==='e'&&E[h[1]])return '#/e/'+h[1];if(['p','ln','pp'].includes(v)&&h[1])return `#/${v}/${h[1]}`;if(v==='end')return '#/end';return null;};
+  const pageName=k=>{const [,v,a]=k.split('/');if(v==='e'&&E[a])return `제${E[a].no}장 ${E[a].t}`;if(v==='p'&&P[a])return `${P[a].no} 배경`;if(v==='ln'&&LN[a])return `변천: ${LN[a].n}`;if(v==='pp'&&PE[a])return `인물: ${PE[a].n}`;if(v==='end')return '맺음';return k;};
+  const SKIP='.secbar,.ctools,.ulbar,button,select,nav,svg,script,style,.pn,.go,.ctrl,.lnflow,.trail,.how';
+  function texts(root){const out=[];const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>{const p=n.parentElement;if(!p||!n.nodeValue)return NodeFilter.FILTER_REJECT;if(p.closest(SKIP))return NodeFilter.FILTER_REJECT;if(p.closest('.term'))return NodeFilter.FILTER_ACCEPT;return NodeFilter.FILTER_ACCEPT;}});let n,pos=0;while((n=w.nextNode())){out.push({n,s:pos});pos+=n.nodeValue.length;}return out;}
+  const root=()=>main.querySelector('article')||main.querySelector('.col')||main;
+  // 선택 범위를 전체 글 속의 위치로
+  function offsetOf(nodes,node,off){if(node.nodeType!==3){const c=node.childNodes[off];if(c){const w=document.createTreeWalker(c,NodeFilter.SHOW_TEXT);const t=w.nextNode()||null;if(t){node=t;off=0;}}else{const w=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);let t,l=null;while((t=w.nextNode()))l=t;if(l){node=l;off=l.nodeValue.length;}}}
+    const it=nodes.find(x=>x.n===node);return it?it.s+off:-1;}
+  function wrap(nodes,a,b,id){
+    for(const {n,s} of nodes){const e=s+n.nodeValue.length;if(e<=a||s>=b)continue;
+      const x=Math.max(a,s)-s,y=Math.min(b,e)-s;let t=n;if(x>0)t=t.splitText(x);if(y-x<t.nodeValue.length)t.splitText(y-x);
+      if(!t.nodeValue.trim())continue;const m=document.createElement('mark');m.className='ul';m.dataset.u=id;t.parentNode.insertBefore(m,t);m.appendChild(t);}
+  }
+  function paint(){
+    const k=pageKey();if(!k)return;const items=LIST.filter(x=>x.k===k);if(!items.length)return;
+    const r=root();
+    for(const it of items){const nodes=texts(r),full=nodes.map(x=>x.n.nodeValue).join('');
+      let best=-1,score=-1,i=-1;while((i=full.indexOf(it.q,i+1))>=0){const sc=(full.slice(Math.max(0,i-it.pre.length),i)===it.pre?2:0)+(full.slice(i+it.q.length,i+it.q.length+it.suf.length)===it.suf?1:0);if(sc>score){score=sc;best=i;}if(sc===3)break;}
+      if(best>=0)wrap(nodes,best,best+it.q.length,it.id);else it.lost=1;}
+  }
+  // 떠 있는 단추
+  const bar=document.createElement('div');bar.className='ulbar';bar.hidden=true;bar.setAttribute('role','toolbar');
+  document.body.appendChild(bar);let pend=null,curMark=null;
+  const sm=()=>matchMedia('(hover:none),(max-width:680px)').matches;
+  function place(rect){bar.hidden=false;const bw=bar.offsetWidth,bh=bar.offsetHeight;
+    if(sm()){bar.classList.add('dock');bar.style.left='';bar.style.top='';return;}
+    bar.classList.remove('dock');let x=rect.left+rect.width/2-bw/2,y=rect.top-bh-10;if(y<70)y=rect.bottom+10;
+    bar.style.left=Math.max(8,Math.min(innerWidth-bw-8,x))+'px';bar.style.top=y+'px';}
+  function hide(){bar.hidden=true;pend=null;curMark=null;}
+  function onSel(){
+    if(!pageKey())return hide();const sel=getSelection();if(!sel||sel.isCollapsed||!sel.rangeCount){if(!curMark)hide();return;}
+    const rg=sel.getRangeAt(0),r=root();if(!r.contains(rg.commonAncestorContainer))return hide();
+    const q=sel.toString();if(q.replace(/\s/g,'').length<2)return hide();
+    const nodes=texts(r),a=offsetOf(nodes,rg.startContainer,rg.startOffset),b=offsetOf(nodes,rg.endContainer,rg.endOffset);if(a<0||b<=a)return hide();
+    const full=nodes.map(x=>x.n.nodeValue).join('');
+    pend={a,b,q:full.slice(a,b),pre:full.slice(Math.max(0,a-24),a),suf:full.slice(b,b+24)};curMark=null;
+    bar.innerHTML=`<button type="button" class="ub-add">밑줄 긋기</button>`;place(rg.getBoundingClientRect());
+  }
+  let st;document.addEventListener('selectionchange',()=>{clearTimeout(st);st=setTimeout(onSel,sm()?350:120);});
+  bar.addEventListener('pointerdown',ev=>ev.preventDefault());
+  bar.addEventListener('mousedown',ev=>ev.preventDefault());
+  bar.addEventListener('click',ev=>{
+    if(ev.target.closest('.ub-add')&&pend){const k=pageKey();const id='u'+Date.now().toString(36);
+      const it={id,k,q:pend.q.trim()?pend.q:pend.q,pre:pend.pre,suf:pend.suf,t:Date.now()};
+      // 앞뒤 공백은 빼고 위치를 맞춘다
+      const lead=it.q.length-it.q.trimStart().length,trail=it.q.length-it.q.trimEnd().length;
+      if(lead||trail){it.pre=(it.pre+it.q.slice(0,lead)).slice(-24);it.suf=(it.q.slice(it.q.length-trail)+it.suf).slice(0,24);it.q=it.q.trim();}
+      LIST.push(it);save();const nodes=texts(root());wrap(nodes,pend.a+lead,pend.b-trail,id);getSelection().removeAllRanges();hide();say('밑줄을 그었습니다 · 모음은 처음 화면에서');}
+    else if(ev.target.closest('.ub-del')&&curMark){const id=curMark;LIST=LIST.filter(x=>x.id!==id);save();
+      main.querySelectorAll(`mark.ul[data-u="${id}"]`).forEach(m=>{const p=m.parentNode;while(m.firstChild)p.insertBefore(m.firstChild,m);m.remove();p.normalize();});hide();say('밑줄을 지웠습니다');}
+    else if(ev.target.closest('.ub-all')){hide();nav('#/ul');}
+  });
+  // 그어진 밑줄을 누르면 지우기
+  main.addEventListener('click',ev=>{const m=ev.target.closest('mark.ul');if(!m||ev.target.closest('.term'))return;const sel=getSelection();if(sel&&!sel.isCollapsed)return;
+    curMark=m.dataset.u;pend=null;bar.innerHTML=`<button type="button" class="ub-del">밑줄 지우기</button><button type="button" class="ub-all">밑줄 모음</button>`;place(m.getBoundingClientRect());});
+  document.addEventListener('click',ev=>{if(!bar.hidden&&curMark&&!ev.target.closest('.ulbar')&&!ev.target.closest('mark.ul'))hide();});
+  addEventListener('scroll',()=>{if(!bar.hidden&&!sm()&&curMark)hide();},{passive:true});
+  const toast=m=>{const t=document.querySelector('.toast');if(!t)return;t.textContent=m;t.hidden=false;clearTimeout(toast.h);toast.h=setTimeout(()=>t.hidden=true,1800);};const say=toast;
+  let jumpTo=null;
+  document.addEventListener('routed',()=>{hide();paint();if(jumpTo){const m=main.querySelector(`mark.ul[data-u="${jumpTo}"]`);jumpTo=null;if(m){const bh=(document.querySelector('.bar')||{}).offsetHeight||0;setTimeout(()=>{window.scrollTo({top:m.getBoundingClientRect().top+curY()-bh-90});m.classList.add('flash');setTimeout(()=>m.classList.remove('flash'),1600);},60);}}});
+  function view(){
+    const groups={};LIST.slice().sort((a,b)=>b.t-a.t).forEach(x=>(groups[x.k]=groups[x.k]||[]).push(x));
+    const keys=Object.keys(groups);
+    main.innerHTML=`<div class="col"><p class="eyebrow">내 서재</p><h1 class="vt">밑줄 모음</h1>
+    <p class="lede">본문에서 글을 길게 눌러(PC에서는 끌어서) 고르면 ‘밑줄 긋기’ 단추가 나타납니다. 그은 밑줄은 이 기기의 브라우저에 저장되고, 여기에 장별로 모입니다. 밑줄을 다시 누르면 지울 수 있습니다.</p>
+    ${keys.length?`<div class="go"><button type="button" class="pill" id="ulcopy">모두 글로 복사</button><span class="note" style="margin:0 .3rem">${LIST.length}개</span></div>`+keys.map(k=>`<section class="ulgrp"><h2 class="sh"><a href="${k}">${esc(pageName(k))}</a></h2><ul class="ullist">${groups[k].map(x=>`<li><a href="${k}" data-jump="${x.id}"><mark class="ul">${esc(x.q)}</mark></a><span class="ulm">${new Date(x.t).toLocaleDateString('ko-KR')}${x.lost?' · 본문이 바뀌어 위치를 찾지 못함':''}</span><button type="button" class="pill ul-x" data-x="${x.id}" aria-label="이 밑줄 지우기">지우기</button></li>`).join('')}</ul></section>`).join(''):`<div class="card"><p>아직 그은 밑줄이 없습니다. 아무 장이나 열어 마음에 남는 문장을 골라 보세요.</p><p><a href="#/p/p1">제1부부터 읽기 →</a></p></div>`}</div>`;
+    main.querySelector('.col').onclick=ev=>{const j=ev.target.closest('[data-jump]');if(j){jumpTo=j.dataset.jump;return;}
+      const x=ev.target.closest('[data-x]');if(x){LIST=LIST.filter(y=>y.id!==x.dataset.x);save();view();say('밑줄을 지웠습니다');}
+      if(ev.target.closest('#ulcopy')){const txt=keys.map(k=>`■ ${pageName(k)}\n`+groups[k].map(x=>`  · ${x.q}`).join('\n')).join('\n\n');
+        (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(()=>say('밑줄을 모두 복사했습니다'),()=>say('복사하지 못했습니다'));}};
+  }
+  return {view,count:()=>LIST.length};
+})();
+
+// ── 용어 상자
+document.addEventListener('click',ev=>{
+  const t=ev.target.closest('.term'),pop=$('#pop');
+  if(t){ev.preventDefault();const rs=t.getClientRects(),r=rs[rs.length-1]||t.getBoundingClientRect();
+    if(t.dataset.p){const q=PE[t.dataset.p],cid=(CUR.match(/^#\/e\/(\w+)/)||[])[1],at=cid&&q.at&&q.at[cid];
+      pop.innerHTML=`<b>${esc(q.n)} <small class="note" style="font-weight:400">${esc(q.hz||'')} · ${plife(q)}</small></b>${fchip(q)}<div>${esc(q.role)}</div>${at?`<div class="pat"><b style="display:inline">이 장에서</b> ${esc(at)}</div>`:''}${q.ch.length?`<div class="chips">${q.ch.slice(0,14).map(c=>`<a class="chip" href="#/e/${c}" title="${esc(E[c].t)}">${E[c].no}장</a>`).join('')}</div>`:''}<div style="margin-top:.4rem"><a href="#/pp/${q.id}">인물 사전에서 보기 →</a></div>`;}
+    else pop.innerHTML=`<b>${esc(t.dataset.t)}</b>${esc(TDEF[t.dataset.t])}<div style="margin-top:.4rem"><a href="#/terms">용어 사전 →</a></div>`;
+    pop.hidden=false;const pw=pop.offsetWidth,ph=pop.offsetHeight;pop.style.left=Math.max(12,Math.min(innerWidth-pw-12,r.left))+'px';pop.style.top=(r.bottom+6+ph>innerHeight-8?Math.max(8,r.top-ph-6):r.bottom+6)+'px';return;}
+  if(!ev.target.closest('#pop'))pop.hidden=true;
+  if(!ev.target.closest('#results')&&!ev.target.closest('.sbox'))$('#results').hidden=true;
+});
+
+document.addEventListener('keydown',ev=>{const t=ev.target;if(t&&t.classList&&t.classList.contains('term')&&(ev.key==='Enter'||ev.key===' ')){ev.preventDefault();t.click();}});
+
+// ── 찾기
+const norm=s=>String(s).toLowerCase().replace(/\s+/g,'');
+const IDX=[...DATA.events.map(e=>({h:'#/e/'+e.id,k:'장',t:`${e.no}. ${e.t}`,s:`${e.y} · ${e.pl[0]} · ${e.s}`})),
+ ...DATA.groups.map(g=>({h:'#/id/'+g.id,k:'집단',t:g.n,s:g.d})),
+ ...DATA.lineage.map(l=>({h:'#/ln/'+l.id,k:'변천',t:l.n,s:l.d})),
+ ...DATA.terms.map(([t,d])=>({h:'#/terms',k:'용어',t,s:d})),
+ ...DATA.books.map(b=>({h:'#/books/'+b.id,k:'책',t:'『'+b.t+'』',s:b.a+' · '+b.role})),
+ ...DATA.regions.map(r=>({h:'#/rr/'+r.id,k:'무대',t:r.n,s:r.d})),
+ ...DATA.people.map(q=>({h:'#/pp/'+q.id,k:'인물',t:q.n,s:`${q.hz||''} ${plife(q)} · ${FC[q.f][1]} · ${q.role}`}))];
+const mark=(s,q)=>{const i=norm(s).indexOf(q);if(i<0||!q)return esc(s);let c=0,a=-1,b=-1;for(let j=0;j<s.length;j++){if(/\s/.test(s[j]))continue;if(c===i)a=j;if(c===i+q.length-1){b=j+1;break;}c++;}return a<0?esc(s):esc(s.slice(0,a))+'<mark>'+esc(s.slice(a,b))+'</mark>'+esc(s.slice(b));};
+$('#q').addEventListener('input',ev=>{const q=norm(ev.target.value),res=$('#results');if(q.length<1){res.hidden=true;return;}
+  const hits=IDX.filter(x=>norm(x.t).includes(q)||norm(x.s).includes(q)).sort((a,b)=>(norm(b.t).includes(q))-(norm(a.t).includes(q))).slice(0,40);
+  res.innerHTML=hits.length?`<ol>${hits.map(x=>{const i=norm(x.s).indexOf(q);let sn=x.s;if(i>40)sn='…'+x.s.slice(Math.max(0,i-30));return `<li><a href="${x.h}"><b>${mark(x.t,q)}</b> <span class="chip">${x.k}</span><small>${mark(sn.slice(0,120),q)}</small></a></li>`;}).join('')}</ol>`:'<p class="note" style="padding:.5rem">찾는 말이 없습니다.</p>';res.hidden=false;});
+$('#results').addEventListener('click',ev=>{if(ev.target.closest('a')){$('#results').hidden=true;$('#q').value='';}});
+document.addEventListener('keydown',ev=>{if(ev.key==='/'&&document.activeElement.tagName!=='INPUT'){ev.preventDefault();$('#q').focus();}if(ev.key==='Escape'){$('#results').hidden=true;$('#pop').hidden=true;openDrawer(false);}});
+
+// ── 길잡이
+let CUR=(()=>{try{return location.hash}catch(e){return ''}})();
+// 기록의 한 칸마다 {y:떠날 때의 스크롤 자리, d:이 탭에서의 깊이}를 적어 두고, 뒤로·앞으로 오면 그 자리로 돌아간다
+try{history.scrollRestoration='manual'}catch(e){}
+const HS=()=>(history.state&&typeof history.state==='object')?history.state:{};
+let DEPTH=HS().d||0;
+const curY=()=>window.scrollY||document.documentElement.scrollTop||0;
+function saveY(){try{history.replaceState(Object.assign({},HS(),{y:curY(),d:DEPTH}),'',location.href)}catch(e){}}
+function setH(h){CUR=h;try{history.replaceState(Object.assign({},HS(),{d:DEPTH}),'',h)}catch(e){}}
+function nav(h){if(h===CUR){route();return;}saveY();CUR=h;DEPTH++;try{history.pushState({y:0,d:DEPTH},'',h)}catch(e){}route();}
+addEventListener('popstate',ev=>{try{CUR=location.hash}catch(e){}const st=ev.state||{};DEPTH=st.d||0;route(st.y||0);});
+addEventListener('pagehide',saveY);
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveY();});
+function restoreY(y){const go=()=>window.scrollTo({top:y,left:0,behavior:'instant'});go();requestAnimationFrame(go);let n=0;const t=setInterval(()=>{go();if(++n>5||Math.abs(curY()-y)<2)clearInterval(t);},80);
+  const stop=()=>{clearInterval(t);['wheel','touchstart','keydown'].forEach(x=>removeEventListener(x,stop,true));};['wheel','touchstart','keydown'].forEach(x=>addEventListener(x,stop,{capture:true,passive:true}));}
+function route(restore){
+  const h=CUR.replace(/^#\/?/,'').split('/');const v=h[0]||'',a=h[1];
+  let tab='home',cur=null;$('#pop').hidden=true;
+  if(v==='e'){viewEvent(a,h[2]);cur=a;}
+  else if(v==='rr'){viewTrail(a);tab='lanes';}
+  else if(v==='p'){viewPart(a);cur=a;}
+  else if(v==='end')viewEnd();
+  else if(v==='map'){viewMap(a);tab='map';}
+  else if(v==='lanes'){viewLanes(a);tab='lanes';}
+  else if(v==='net'){viewNet(a);tab='net';}
+  else if(v==='id'){viewId(a);tab='id';}
+  else if(v==='pp'){viewPeople(a);tab='pp';}
+  else if(v==='axis'){viewAxis(a);tab='id';}
+  else if(v==='ln'){viewLineage(a);tab='ln';}
+  else if(v==='ul'){UL.view();tab='home';}
+  else if(v==='r'){viewTrail(a);tab='lanes';}
+  else if(v==='t'){viewThread(a);tab='t';}
+  else if(v==='books'){viewBooks(a);tab='books';}
+  else if(v==='terms'){let c=a;try{c=decodeURIComponent(a||'')}catch(_){};viewTerms(c);tab='terms';}
+  else viewHome();
+  document.querySelectorAll('#tabs a').forEach(x=>x.classList.toggle('on',x.dataset.v===tab));
+  buildToc(cur);
+  if(typeof restore==='number')restoreY(restore);else if(!(v==='books'&&a))window.scrollTo(0,0);
+  document.dispatchEvent(new CustomEvent('routed',{detail:{v,a,cur}}));
+  const t=cur&&E[cur]?E[cur].t:cur&&P[cur]?P[cur].t:v==='ln'&&LN[a]?LN[a].n+' · 요소별 변천':v==='ln'?'요소별 변천':v==='ul'?'밑줄 모음':v==='pp'&&PE[a]?PE[a].n+' · 인물':v==='pp'?'인물':'';document.title=(t?t+' · ':'')+DATA.meta.title;
+}
+addEventListener('hashchange',()=>{if(location.hash===CUR)return;CUR=location.hash;DEPTH++;try{history.replaceState({y:0,d:DEPTH},'',location.href)}catch(e){}route();});
+// 미리보기(샌드박스 iframe)에서는 '#' 링크가 빈 문서로 이동하므로, 모든 내부 링크를 직접 처리한다
+document.addEventListener('click',ev=>{const a=ev.target.closest('a[href^="#"]');if(!a||ev.defaultPrevented||ev.button!==0||ev.metaKey||ev.ctrlKey)return;ev.preventDefault();nav(a.getAttribute('href'));});
+// ── 읽기 도구: 직전 위치·맨 위로 단추, 지금 읽는 절 띠, 책갈피·링크, 이어 읽기
+(function(){
+  const sm=()=>matchMedia('(max-width:680px)').matches;
+  // 1) 떠 있는 단추
+  const fabs=document.createElement('div');fabs.className='fabs';
+  fabs.innerHTML=`<button type="button" class="fab fb-back" hidden><span aria-hidden="true">←</span> 직전 위치로</button><button type="button" class="fab fb-top" hidden aria-label="맨 위로"><span aria-hidden="true">↑</span> 맨 위로</button>`;
+  document.body.appendChild(fabs);
+  const fBack=fabs.querySelector('.fb-back'),fTop=fabs.querySelector('.fb-top');
+  fBack.onclick=()=>{if(DEPTH>0)history.back();};
+  fTop.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+  const toast=document.createElement('div');toast.className='toast';toast.setAttribute('role','status');toast.hidden=true;document.body.appendChild(toast);
+  let tt;const say=m=>{toast.textContent=m;toast.hidden=false;clearTimeout(tt);tt=setTimeout(()=>toast.hidden=true,1800);};
+  let lastY=curY(),acc=0;
+  function syncFab(){const y=curY();fBack.hidden=!(DEPTH>0);fTop.hidden=y<700;}
+  addEventListener('scroll',()=>{const y=curY(),dy=y-lastY;lastY=y;syncFab();
+    const root=document.documentElement;
+    if(!sm()||y<160||y+innerHeight>=document.documentElement.scrollHeight-40){acc=0;root.classList.remove('fab-away');}
+    else{acc=Math.sign(dy)===Math.sign(acc)?acc+dy:dy;if(acc>70)root.classList.add('fab-away');else if(acc<-30)root.classList.remove('fab-away');}
+    secSync();},{passive:true});
+  // Esc·Backspace: 열린 창이 없으면 직전 위치로
+  addEventListener('keydown',ev=>{
+    if(ev.key!=='Escape'&&ev.key!=='Backspace')return;if(ev.altKey||ev.ctrlKey||ev.metaKey)return;
+    const t=ev.target,tag=(t&&t.tagName)||'';if(tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT'||(t&&t.isContentEditable))return;
+    const open=!$('#results').hidden||!$('#pop').hidden||!$('#drawer').hidden||document.querySelector('.secmenu:not([hidden])');
+    if(open)return;
+    if(DEPTH>0){ev.preventDefault();history.back();}
+  },true);
+
+  // 2) 지금 읽는 절 띠 (긴 글: 사건 장·배경 장·결론·지역 통사)
+  let secs=[],bar=null;
+  const barH=()=>{const b=document.querySelector('.bar');return b?b.getBoundingClientRect().height:0;};
+  function secBuild(v){
+    bar=null;secs=[];
+    if(!['e','p','end','ln'].includes(v))return;
+    const art=main.querySelector('article, .col');if(!art)return;
+    const sel=v==='e'?'section.keys.guide>.lbl, .slot>h2, aside.box>.lbl':v==='p'?'.slot>h2, h2.sh, .slot .rh>h4':v==='end'?'h2.sh, .rh>h4':v==='ln'?'.slot>h2, h2.sh':'section.part>h3';
+    const hs=[...art.querySelectorAll(sel)].filter(h=>h.offsetParent!==null);
+    if(hs.length<3)return;
+    secs=hs.map((h,i)=>{h.id=h.id||'sec-'+i;h.classList.add('sec-anchor');return {el:h,t:h.textContent.replace(/\s+/g,' ').split(/[:：]/)[0].trim().slice(0,28)};});
+    bar=document.createElement('div');bar.className='secbar';
+    bar.innerHTML=`<button type="button" class="sb-cur" aria-haspopup="true" aria-expanded="false"><span class="sb-lab"></span><span aria-hidden="true">▾</span></button><span class="sb-prog" aria-hidden="true"><i></i></span><ol class="secmenu" hidden>${secs.map((s,i)=>`<li><button type="button" data-i="${i}">${esc(s.t)}</button></li>`).join('')}</ol>`;
+    const tr=art.querySelector(':scope>.trail');if(tr)tr.after(bar);else art.prepend(bar);
+    const btn=bar.querySelector('.sb-cur'),menu=bar.querySelector('.secmenu');
+    btn.onclick=ev=>{ev.stopPropagation();menu.hidden=!menu.hidden;btn.setAttribute('aria-expanded',String(!menu.hidden));};
+    menu.onclick=ev=>{const b=ev.target.closest('button[data-i]');if(!b)return;menu.hidden=true;btn.setAttribute('aria-expanded','false');
+      const el=secs[+b.dataset.i].el;window.scrollTo({top:el.getBoundingClientRect().top+curY()-barH()-56,behavior:'smooth'});};
+    document.addEventListener('click',ev=>{if(bar&&!ev.target.closest('.secbar'))menu.hidden=true;});
+    secSync();
+  }
+  function secSync(){
+    if(!bar||!secs.length)return;
+    const off=barH()+70;let k=-1;
+    secs.forEach((s,i)=>{if(s.el.getBoundingClientRect().top<=off)k=i;});
+    const top=bar.parentElement.getBoundingClientRect().top+curY(),h=bar.parentElement.offsetHeight;
+    const p=Math.min(1,Math.max(0,(curY()-top+innerHeight*.3)/Math.max(1,h-innerHeight*.7)));
+    bar.querySelector('.sb-lab').textContent=k<0?'이 장의 차례':secs[k].t;
+    bar.querySelector('.sb-prog i').style.width=(p*100).toFixed(1)+'%';
+    bar.classList.toggle('stuck',bar.getBoundingClientRect().top<=barH()+1);
+    bar.querySelectorAll('.secmenu button').forEach((b,i)=>b.classList.toggle('on',i===k));
+  }
+  addEventListener('resize',()=>{document.documentElement.style.setProperty('--barh',barH()+'px');secSync();});
+
+  // 3) 책갈피·링크 복사·이어 읽기
+  let MARKS=store.get('marks',[]);
+  const isMarked=id=>MARKS.includes(id);
+  const toggleMark=id=>{MARKS=isMarked(id)?MARKS.filter(x=>x!==id):[id,...MARKS];store.set('marks',MARKS);};
+  const pageUrl=h=>location.href.split('#')[0]+h;
+  async function copy(txt){try{await navigator.clipboard.writeText(txt);return true;}catch(e){
+    try{const t=document.createElement('textarea');t.value=txt;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();const ok=document.execCommand('copy');t.remove();return ok;}catch(_){return false;}}}
+  function chapterTools(id){
+    const head=main.querySelector('.chead');if(!head||head.querySelector('.ctools'))return;
+    const d=document.createElement('div');d.className='ctools';
+    const paint=()=>{d.innerHTML=`<button type="button" class="tb tb-mark" aria-pressed="${isMarked(id)}">${isMarked(id)?'★ 책갈피에 있음':'☆ 책갈피'}</button><button type="button" class="tb tb-link">링크 복사</button><a class="tb" href="#/ul">밑줄 모음</a>`;};
+    paint();head.appendChild(d);
+    d.onclick=async ev=>{
+      if(ev.target.closest('.tb-mark')){toggleMark(id);paint();say(isMarked(id)?'책갈피에 넣었습니다':'책갈피에서 뺐습니다');}
+      if(ev.target.closest('.tb-link')){const ok=await copy(pageUrl('#/e/'+id));say(ok?'이 장의 링크를 복사했습니다':'복사하지 못했습니다');}
+    };
+  }
+  let lastSave=0;
+  addEventListener('scroll',()=>{const c=(CUR.match(/^#\/e\/(\w+)/)||[])[1];if(!c||!E[c])return;const n=Date.now();if(n-lastSave<600)return;lastSave=n;store.set('last',{id:c,h:CUR,y:curY()});},{passive:true});
+  function homeShelf(){
+    const hero=main.querySelector('.hero');if(!hero||hero.querySelector('.shelf'))return;
+    const last=store.get('last',null),marks=MARKS.filter(id=>E[id]);
+    const nul=UL.count();if(!(last&&E[last.id])&&!marks.length&&!nul)return;
+    const d=document.createElement('div');d.className='shelf';
+    d.innerHTML=(last&&E[last.id]?`<a class="resume" href="${esc(last.h||'#/e/'+last.id)}" data-y="${last.y||0}"><span class="rs"><small>읽던 곳 이어 읽기</small><b>제${E[last.id].no}장 ${esc(E[last.id].t)}</b></span><span aria-hidden="true">→</span></a>`:'')+
+      (marks.length?`<div class="marks"><span class="lb">책갈피</span>${marks.map(id=>`<a class="chip" href="#/e/${id}">${E[id].no}. ${esc(E[id].t)}</a>`).join('')}</div>`:'')+
+      (nul?`<div class="marks"><span class="lb">밑줄</span><a class="chip" href="#/ul">밑줄 모음 ${nul}개</a></div>`:'');
+    const sub=hero.querySelector('.sub');(sub||hero.firstElementChild).after(d);
+    const r=d.querySelector('.resume');if(r)r.addEventListener('click',ev=>{ev.preventDefault();ev.stopPropagation();const y=+r.dataset.y||0;nav(r.getAttribute('href'));restoreY(y);},true);
+  }
+
+  document.addEventListener('routed',ev=>{
+    const {v,cur}=ev.detail;
+    document.documentElement.style.setProperty('--barh',barH()+'px');
+    document.documentElement.classList.remove('fab-away');
+    if(v==='e'&&cur&&E[cur])chapterTools(cur);
+    if(!v)homeShelf();
+    secBuild(v);syncFab();
+  });
+})();
+
+route(typeof HS().y==='number'?HS().y:undefined);
+})();
+</script>
+</body>
+</html>

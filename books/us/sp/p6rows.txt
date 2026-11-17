@@ -1,0 +1,86 @@
+lodge|헨리 캐벗 로지|로지|Henry Cabot Lodge|1850|1924|fed|매사추세츠의 상원 의원||u48:문해 시험을 밀었다.;u51:남부의 선거를 감독하는 법안을 냈다.;u52:전쟁이 나라의 기백을 되살릴 것이라 했다.;u60:국제 연맹에 반대했다.
+tillman|벤 틸먼||Ben Tillman|1847|1918|dem|사우스캐롤라이나의 정치가||u51:흑인의 투표권을 빼앗는 헌법 회의를 이끌었다.
+plessy|호머 플레시|플레시|Homer Plessy|1862|1925|afr|뉴올리언스의 구두 수선공||u51:백인 칸에 앉아 체포되었다.
+hbbrown|헨리 빌링스 브라운||Henry Billings Brown|1836|1913|jus|대법관||u51:분리하되 평등하게의 판결을 썼다.
+harlan|존 마셜 할런|할런|John Marshall Harlan|1833|1911|jus|대법관||u51:우리 헌법은 피부색을 보지 않는다고 했다.
+wells|아이다 B. 웰스|웰스|Ida B. Wells|1862|1931|afr|기자, 린치 반대 운동가|미시시피에서 노예로 태어나 교사와 기자가 되었다. 친구가 린치를 당하자 그 실상을 조사해 고발했고, NAACP를 만드는 데 함께했다.|u51:린치를 고발하고 인쇄소를 잃었다.;u58:NAACP의 부름에 이름을 올렸다.;u59:행렬의 맨 뒤에 서라는 지시를 무시했다.
+tmoss|토머스 모스||Thomas Moss|1860|1892|afr|멤피스의 식료품 가게 주인||u51:린치를 당했다.
+manly|알렉스 맨리||Alexander Manly|1866|1944|afr|윌밍턴의 편집자||u51:그의 사설이 쿠데타의 불쏘시개가 되었다.
+waddell|앨프리드 와델||Alfred Moore Waddell|1834|1912|dem|윌밍턴의 쿠데타 지도자||u51:시장의 자리를 빼앗았다.
+mahan|앨프리드 세이어 머핸|머핸|Alfred Thayer Mahan|1840|1914|mil|해군 전략가||u52:해양력을 말했다.;u56:운하를 해양력의 열쇠라 했다.
+marti|호세 마르티|마르티|José Martí|1853|1895|for|쿠바의 시인, 독립 운동가||u52:괴물 안에서 살았다고 했다.
+weyler|발레리아노 웨일러||Valeriano Weyler|1838|1930|for|스페인의 장군||u52:재집중 정책을 폈다.
+hearst|윌리엄 랜돌프 허스트|허스트|William Randolph Hearst|1863|1951|biz|신문 왕||u52:황색 신문으로 전쟁을 부추겼다.
+pulitzer|조지프 퓰리처|퓰리처|Joseph Pulitzer|1847|1911|biz|신문 왕||u52:허스트와 부수를 다투었다.
+delome|엔리케 드 로메|드 로메|Enrique Dupuy de Lôme|1851|1904|for|스페인 공사||u52:매킨리를 비웃은 편지가 실렸다.
+teller|헨리 텔러||Henry M. Teller|1830|1914|fed|콜로라도의 상원 의원||u52:쿠바를 합병하지 않겠다는 조항을 냈다.
+dewey|조지 듀이|듀이 제독|George Dewey|1837|1917|mil|해군 제독||u52:마닐라만에서 이겼다.;u53:그의 승리 뒤 아기날도가 돌아왔다.
+liliuokalani|릴리우오칼라니||Liliʻuokalani|1838|1917|for|하와이의 여왕||u52:미국인 농장주에게 쫓겨났다.
+shafter|윌리엄 섀프터||William Shafter|1835|1906|mil|미군 장군||u52:쿠바의 장군을 항복식에 부르지 않았다.
+cgarcia|칼릭스토 가르시아||Calixto García|1839|1898|for|쿠바 독립군의 장군||u52:항의의 편지를 썼다.
+nmiles|넬슨 마일스||Nelson Miles|1839|1925|mil|미군 장군||u45:평원 전쟁에서 싸웠다.;u52:푸에르토리코에 올랐다.
+remington|프레더릭 레밍턴|레밍턴|Frederic Remington|1861|1909|phi|화가||u52:러프 라이더를 그렸다.
+rickover|하이먼 리코버||Hyman Rickover|1900|1986|mil|해군 제독||u52:메인호의 폭발을 다시 조사했다.
+aguinaldo|에밀리오 아기날도|아기날도|Emilio Aguinaldo|1869|1964|for|필리핀 혁명의 지도자||u53:독립을 선언하고 미국과 싸우다 붙잡혔다.
+kipling|러디어드 키플링|키플링|Rudyard Kipling|1865|1936|brt|영국의 시인||u53:「백인의 짐」을 썼다.
+beveridge|앨버트 베버리지||Albert Beveridge|1862|1927|fed|인디애나의 상원 의원||u53:깃발은 내려지지 않을 것이라 했다.
+wjames|윌리엄 제임스||William James|1842|1910|phi|철학자||u53:반제국주의 연맹에 있었다.;u54:실용주의를 말했다.
+jsmith_g|제이컵 스미스||Jacob H. Smith|1840|1918|mil|미군 장군||u53:사마르를 울부짖는 황야로 만들라고 했다.
+addams|제인 애덤스||Jane Addams|1860|1935|ref|헐 하우스의 창설자|일리노이의 부유한 집에서 태어나 시카고의 이민자 동네에 헐 하우스를 열었다. 아동 노동과 위생, 여성의 투표권, 평화를 위해 일했고 1931년 노벨 평화상을 받았다.|u53:반제국주의 연맹에 있었다.;u54:헐 하우스를 열었다.;u58:NAACP의 부름에 이름을 올렸다.;u59:혁신당 대회에서 연설했다.
+egstarr|엘런 게이츠 스타||Ellen Gates Starr|1859|1940|ref|헐 하우스의 공동 창설자||u54:헐 하우스를 함께 열었다.
+fkelley|플로렌스 켈리||Florence Kelley|1859|1932|ref|일리노이의 공장 감독관||u54:아동 노동을 조사했다.
+tarbell|아이다 타벨|타벨|Ida Tarbell|1857|1944|ref|머크레이커||u47:스탠더드 오일을 고발했다.;u54:스탠더드 오일의 역사를 썼다.
+steffens|링컨 스테펀스||Lincoln Steffens|1866|1936|ref|머크레이커||u54:『도시의 수치』를 썼다.
+sinclair|업턴 싱클레어|싱클레어|Upton Sinclair|1878|1968|ref|작가||u54:『정글』을 썼다.;u55:그의 소설이 법을 낳았다.
+rauschenbusch|월터 라우션부시||Walter Rauschenbusch|1861|1918|rel|침례교 목사||u54:사회 복음을 말했다.
+croly|허버트 크롤리|크롤리|Herbert Croly|1869|1930|phi|사상가||u54:해밀턴의 수단으로 제퍼슨의 목적을 이루자고 했다.
+jdewey|존 듀이||John Dewey|1859|1952|phi|철학자||u54:실용주의를 말했다.;u58:NAACP의 부름에 이름을 올렸다.
+lafollette|로버트 라폴레트|라폴레트|Robert La Follette|1855|1925|fed|위스콘신의 주지사, 상원 의원||u54:위스콘신 방식을 만들었다.;u60:참전에 반대했다.
+holmes|올리버 웬들 홈스|홈스|Oliver Wendell Holmes Jr.|1841|1935|jus|대법관||u54:14조는 스펜서를 법으로 정하지 않았다고 했다.
+brandeis|루이스 브랜다이스|브랜다이스|Louis Brandeis|1856|1941|jus|변호사, 대법관||u54:뮬러 사건의 의견서를 냈다.;u59:크기의 저주를 말하고 대법관이 되었다.
+apaul|앨리스 폴|앨리스 폴|Alice Paul|1885|1977|ref|여성 참정권 운동가||u54:수도에서 행진을 이끌었다.;u59:백악관 앞에서 피켓을 들었다.
+beard|찰스 비어드|비어드|Charles A. Beard|1874|1948|phi|역사가||u12:헌법의 경제적 해석을 썼다.;u54:건국자들이 재산을 지키려 헌법을 만들었다고 했다.
+czolgosz|리언 촐고시||Leon Czolgosz|1873|1901|lab|무정부주의자||u55:매킨리를 쏘았다.
+jjhill|제임스 힐||James J. Hill|1838|1916|biz|철도 왕||u55:노던 시큐리티스를 만들었다.
+harriman|에드워드 해리먼||E. H. Harriman|1848|1909|biz|철도 왕||u55:노던 시큐리티스를 만들었다.
+jmitchell|존 미첼||John Mitchell|1870|1919|lab|광산 노조의 지도자||u55:무연탄 파업을 이끌었다.
+baer|조지 베어||George F. Baer|1842|1914|biz|탄광 회사의 대변인||u55:하느님이 재산을 맡긴 이들이 노동자를 지킬 것이라 했다.
+pinchot|기퍼드 핀쇼|핀쇼|Gifford Pinchot|1865|1946|ref|산림청장||u55:국유림을 넓혔다.
+muir|존 뮤어|뮤어|John Muir|1838|1914|ref|자연 보호 운동가||u55:자연 그 자체를 지키자고 했다.
+btwashington|부커 T. 워싱턴|부커 워싱턴|Booker T. Washington|1856|1915|afr|터스키기 학교의 교장|버지니아에서 노예로 태어나 햄프턴에서 배우고 터스키기 학교를 세웠다. 애틀랜타 연설로 흑인의 경제적 자립과 사회적 분리의 수용을 말해 20년 동안 가장 힘 있는 흑인 지도자가 되었다.|u51:타협과 자립을 말했다.;u55:백악관의 저녁 식사에 초대받았다.;u58:애틀랜타 박람회에서 연설했다.
+taft|윌리엄 하워드 태프트|태프트|William Howard Taft|1857|1930|fed|27대 대통령||u55:루스벨트의 뒤를 이었다.;u56:달러 외교를 말했다.;u59:1912년 선거에서 3등이 되었다.
+berryman|클리퍼드 베리먼||Clifford Berryman|1869|1949|phi|만화가||u55:테디 베어를 낳은 만화를 그렸다.
+delesseps|페르디낭 드 레셉스|레셉스|Ferdinand de Lesseps|1805|1894|for|수에즈 운하의 건설자||u56:파나마에서 실패했다.
+bunauvarilla|필리프 뷔노바리야|뷔노바리야|Philippe Bunau-Varilla|1859|1940|for|프랑스의 기술자||u56:파나마의 반란을 준비하고 조약에 서명했다.
+gorgas|윌리엄 고거스|고거스|William C. Gorgas|1854|1920|mil|육군 의사||u56:모기를 잡아 황열병을 없앴다.
+goethals|조지 고설스||George Washington Goethals|1858|1928|mil|육군 공병||u56:운하 공사를 이끌었다.
+jstevens|존 스티븐스||John Frank Stevens|1853|1943|biz|기술자||u56:갑문을 세우기로 했다.
+warogers|윌리엄 앨런 로저스||William Allen Rogers|1854|1931|phi|만화가||u56:카리브해의 루스벨트를 그렸다.
+lemlich|클래라 렘리크|렘리크|Clara Lemlich|1886|1982|lab|여공, 노동 운동가||u57:총파업을 제안했다.
+amorgan|앤 모건||Anne Morgan|1873|1952|ref|J. P. 모건의 딸||u57:파업을 도왔다.
+abelmont|앨바 벨몬트||Alva Belmont|1853|1933|ref|사교계의 여성||u57:파업을 도왔다.
+blanck|맥스 블랭크||Max Blanck|1868|1942|biz|트라이앵글의 주인||u57:무죄가 되었다.
+iharris|아이작 해리스||Isaac Harris|1879|1930|biz|트라이앵글의 주인||u57:무죄가 되었다.
+schneiderman|로즈 슈나이더먼|슈나이더먼|Rose Schneiderman|1882|1972|lab|노동 운동가||u57:너무 많은 피가 흘렀다고 했다.
+wagner|로버트 와그너||Robert F. Wagner|1877|1953|dem|뉴욕 주 상원 의원||u57:공장 조사 위원회를 이끌었다.
+alsmith|앨 스미스||Al Smith|1873|1944|dem|뉴욕 주 하원 의원||u57:공장 조사 위원회를 이끌었다.
+perkins|프랜시스 퍼킨스|퍼킨스|Frances Perkins|1880|1965|ref|사회 사업가, 노동 장관||u57:화재를 보고 조사관이 되었다.
+trotter|윌리엄 먼로 트로터|트로터|William Monroe Trotter|1872|1934|afr|보스턴의 편집자||u58:나이아가라 운동을 만들었다.;u59:백악관에서 윌슨에게 항의했다.
+walling|윌리엄 잉글리시 월링||William English Walling|1877|1936|ref|기자||u58:링컨과 러브조이의 정신을 말했다.
+ovington|메리 화이트 오빙턴||Mary White Ovington|1865|1951|ref|사회 사업가||u58:NAACP를 만들었다.
+villard|오즈월드 개리슨 빌라드||Oswald Garrison Villard|1872|1949|ref|편집자||u58:NAACP를 만들었다.
+griffith|D. W. 그리피스|그리피스|D. W. Griffith|1875|1948|phi|영화감독||u58:「국가의 탄생」을 만들었다.
+dixon|토머스 딕슨||Thomas Dixon Jr.|1864|1946|phi|작가||u58:「국가의 탄생」의 원작을 썼다.
+garvey|마커스 가비|가비|Marcus Garvey|1887|1940|afr|흑인 민족주의 지도자||u58:할렘에서 흑인의 자립을 말했다.
+jwjohnson|제임스 웰던 존슨||James Weldon Johnson|1871|1938|afr|NAACP의 사무총장||u58:첫 흑인 사무총장이 되었다.
+wilson|우드로 윌슨|윌슨|Woodrow Wilson|1856|1924|dem|28대 대통령|버지니아의 장로교 목사의 아들로 남부에서 자랐다. 정치학 교수와 프린스턴 총장, 뉴저지 주지사를 거쳐 대통령이 되어 새 자유의 개혁과 참전을 이끌었다. 연방 공무원을 인종으로 나누었다.|u54:헌법을 다윈의 유기체라 했다.;u58:「국가의 탄생」을 백악관에서 상영했다.;u59:새 자유를 내걸고 이겼다.;u60:중립을 지키다 전쟁을 요청했다.
+burleson|앨버트 벌리슨||Albert S. Burleson|1863|1937|dem|우정 장관||u59:연방 일터를 인종으로 나누었다.
+mcadoo|윌리엄 매커두||William G. McAdoo|1863|1941|dem|재무 장관||u59:연방 일터를 인종으로 나누었다.
+hughes|찰스 에번스 휴스||Charles Evans Hughes|1862|1948|fed|공화당의 대통령 후보||u60:1916년 선거에서 졌다.
+zimmermann|아르투어 치머만|치머만|Arthur Zimmermann|1864|1940|for|독일의 외무 장관||u60:멕시코에 동맹을 제안했다.
+villa|판초 비야||Pancho Villa|1878|1923|for|멕시코의 혁명가||u60:미국군에게 쫓겼다.
+norris|조지 노리스||George W. Norris|1861|1944|fed|네브래스카의 상원 의원||u60:국기에 달러 표시를 붙이려 한다고 했다.
+rankin|지넷 랭킨|랭킨|Jeannette Rankin|1880|1973|ref|첫 여성 하원 의원||u60:전쟁에 반대표를 던졌다.
+creel|조지 크릴||George Creel|1876|1953|dem|공공 정보 위원회의 위원장||u60:전쟁을 선전했다.
+flagg|제임스 몽고메리 플래그||James Montgomery Flagg|1877|1960|phi|화가||u60:엉클 샘의 포스터를 그렸다.
+cohan|조지 M. 코핸||George M. Cohan|1878|1942|phi|작곡가||u60:「저기 너머」를 지었다.

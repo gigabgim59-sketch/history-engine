@@ -1,0 +1,14 @@
+ {id:'rudecrowd',lang:'en',t:'The Crowd in the French Revolution',a:'George Rudé',o:'1959',role:'혁명의 봉기에 나선 군중을 분석한 고전.',warn:'—'},
+ {id:'lyons',lang:'en',t:'France under the Directory',a:'Martyn Lyons',o:'1975',role:'총재정부의 정치와 사회를 다시 평가한 연구.',warn:'—'},
+ {id:'woronoff',lang:'fr',t:'La République bourgeoise de Thermidor à Brumaire, 1794–1799',a:'Denis Woronoff',o:'1972',role:'테르미도르에서 브뤼메르까지를 종합한 개설.',warn:'—'},
+ {id:'lefebvredir',lang:'fr',t:'Le Directoire',a:'Georges Lefebvre',o:'1946',role:'총재정부를 ‘부르주아 공화국’으로 분석한 연구.',warn:'—'},
+ {id:'woloch',lang:'en',t:'The New Regime: Transformations of the French Civic Order, 1789–1820s',a:'Isser Woloch',o:'1994',role:'혁명과 나폴레옹 시기의 행정과 시민 제도의 변화를 다룬 연구.',warn:'—'},
+ {id:'buonarroti',lang:'fr',t:'Conspiration pour l\'égalité dite de Babeuf',a:'Philippe Buonarroti',o:'1828',role:'음모의 동지가 쓴 기록. 다음 세대의 혁명가들이 읽었다.',warn:'당사자의 변론이다.'},
+ {id:'rose',lang:'en',t:'Gracchus Babeuf: The First Revolutionary Communist',a:'R. B. Rose',o:'1978',role:'바뵈프의 생애와 사상을 다룬 전기.',warn:'—'},
+ {id:'cole',lang:'en',t:'Napoleon\'s Egypt: Invading the Middle East',a:'Juan Cole',o:'2007',role:'이집트 원정을 이집트 쪽의 기록과 함께 다시 쓴 연구.',warn:'—'},
+ {id:'trouillot95',lang:'en',t:'Silencing the Past: Power and the Production of History',a:'Michel-Rolph Trouillot',o:'1995',role:'아이티 혁명이 역사 서술에서 지워진 방식을 분석한 연구.',warn:'—'},
+ {id:'girard',lang:'en',t:'The Slaves Who Defeated Napoleon',a:'Philippe R. Girard',o:'2011',role:'르클레르 원정과 아이티 독립 전쟁을 다룬 연구.',warn:'—'},
+ {id:'gueniffey08',lang:'fr',t:'Le Dix-Huit Brumaire: l\'épilogue de la Révolution française',a:'Patrice Gueniffey',o:'2008',role:'브뤼메르의 이틀을 다시 쓴 연구.',warn:'—'},
+ {id:'lefebvrenap',lang:'fr',t:'Napoléon',a:'Georges Lefebvre',o:'1935',role:'혁명과 나폴레옹의 연속을 그린 고전.',warn:'—'},
+ {id:'langlois',lang:'fr',t:'Le plébiscite de l\'an VIII ou le coup d\'État du 18 pluviôse an VIII',a:'Claude Langlois',o:'1972',role:'1800년 국민투표의 숫자가 부풀려졌음을 밝힌 논문.',warn:'—'}
+ {id:'palmerage',lang:'en',t:'The Age of the Democratic Revolution',a:'R. R. Palmer',o:'1959–1964',role:'프랑스 혁명을 대서양 세계의 민주 혁명 속에 놓은 두 권의 고전.',warn:'—'}

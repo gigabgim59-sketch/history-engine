@@ -1,0 +1,70 @@
+wbush|조지 W. 부시|아들 부시,부시 독트린|George W. Bush|1946|null|pre|43대 대통령|아버지 부시의 아들로 텍사스 주지사를 거쳐 2000년 대통령이 되었다. 9·11 뒤 테러와의 전쟁을 선언하고 아프가니스탄과 이라크를 쳤으며, 선제와 민주주의 확산의 부시 독트린을 내세웠다. 관타나모와 고문, 이라크의 점령으로 큰 비판을 받았다.|d02:민주주의 확산으로 윌슨주의를 이었다.;d53:우크라이나와 조지아의 가입을 밀었다.;d55:우라늄 농축을 따졌다.;d56:하이난섬의 승무원을 데려왔다.;d58:9·11 뒤 테러와의 전쟁과 부시 독트린을 내세웠다.;d59:이라크를 침공하고 증파를 결정했다.;d60:두 전쟁을 오바마에게 넘겼다.
+clinton|빌 클린턴|클린턴|Bill Clinton|1946|null|pre|42대 대통령|아칸소의 주지사 출신으로 문제는 경제라는 구호로 1992년 당선되었다. NAFTA와 WTO로 세계화를 이끌고, 보스니아와 코소보에 개입했으며, NATO를 넓히고 북한과 제네바 합의를 맺었다. 오슬로와 캠프데이비드에서 중동 평화를 중재했다.|d51:확장의 전략을 폈다.;d52:소말리아에서 물러나고 르완다를 방관했다가 사과했다.;d53:NATO의 확대를 결정했다.;d54:NAFTA를 통과시키고 멕시코를 구제했다.;d55:영변의 폭격을 검토하다 합의로 돌아섰다.;d56:인권과 무역을 떼어 놓고 중국의 WTO 가입을 이끌었다.;d57:오슬로와 캠프데이비드를 중재했다.
+lake|앤서니 레이크|레이크|Anthony Lake|1939|null|sta|국가안보보좌관||d51:봉쇄를 대신해 확장을 내놓았다.;d53:확대를 밀었다.
+albright|매들린 올브라이트|올브라이트|Madeleine Albright|1937|2022|sta|유엔 대사, 국무장관||d51:미국을 없어서는 안 될 나라라 불렀다.;d55:평양에서 김정일을 만났다.;d57:1953년 쿠데타의 역할을 인정했다.
+mearsheimer|존 미어샤이머|미어샤이머|John Mearsheimer|1947|null|thk|국제정치학자||d51:유럽이 다시 불안해질 것이라 했다.;d53:우크라이나 위기가 서방의 잘못이라 했다.
+pkennedy|폴 케네디||Paul Kennedy|1945|null|thk|역사가||d51:과도한 팽창의 쇠퇴를 말했다.
+nye|조지프 나이||Joseph Nye|1937|2025|thk|국제정치학자||d51:소프트 파워를 말했다.
+rkaplan|로버트 캐플런||Robert D. Kaplan|1952|null|act|기자||d51:다가오는 무정부를 썼다.
+buchanan|팻 뷰캐넌|뷰캐넌|Pat Buchanan|1938|null|con|보수 논객||d51:1990년대의 고립주의를 대표했다.
+posen|배리 포즌||Barry Posen|1952|null|thk|국제정치학자||d51:절제의 전략을 주장했다.
+walt|스티븐 월트||Stephen Walt|1955|null|thk|국제정치학자||d51:자유주의 패권을 비판했다.
+ikenberry|존 아이켄베리||G. John Ikenberry|1954|null|thk|국제정치학자||d51:제도로 힘을 묶었다고 보았다.
+aidid|모하메드 파라 아이디드|아이디드|Mohamed Farrah Aidid|1934|1996|asi|소말리아의 군벌||d52:미군과 싸웠다.
+holbrooke|리처드 홀브룩|홀브룩|Richard Holbrooke|1941|2010|sta|외교관||d52:데이턴 협상을 이끌었다.;d53:확대를 밀었다.
+milosevic|슬로보단 밀로셰비치|밀로셰비치|Slobodan Milošević|1941|2006|eur|세르비아의 대통령||d52:보스니아의 전쟁을 부추겼다.;d53:코소보에서 물러섰다.
+spower|서맨사 파워||Samantha Power|1970|null|thk|기자, 외교관||d52:미국의 방관을 비판했다.
+bowden|마크 보든||Mark Bowden|1951|null|act|기자||d34:『후에 1968』을 썼다.;d52:『블랙호크 다운』을 썼다.
+walesa|레흐 바웬사|바웬사|Lech Wałęsa|1943|null|eur|자유노조 연대의 지도자, 폴란드의 대통령||d53:NATO에 들어가겠다고 했다.
+talbott|스트로브 탤벗|탤벗|Strobe Talbott|1946|null|sta|국무부 부장관||d53:확대가 러시아의 개혁파를 약하게 할까 걱정했다.
+yeltsin|보리스 옐친|옐친|Boris Yeltsin|1931|2007|sov|러시아의 대통령||d53:차가운 평화를 경고하고 푸틴을 세웠다.
+primakov|예브게니 프리마코프|프리마코프|Yevgeny Primakov|1929|2015|sov|러시아의 총리||d53:대서양 위에서 비행기를 돌렸다.
+putin|블라디미르 푸틴|푸틴|Vladimir Putin|1952|null|sov|러시아의 대통령|KGB 장교 출신으로 1999년 옐친을 이어 러시아의 지도자가 되었다. 처음에는 9·11 뒤 미국을 도왔지만, NATO의 확대와 색깔 혁명, 미국의 일방주의에 맞섰다. 2008년 조지아와 싸웠고, 2014년 크림을 병합했다.|d53:뮌헨에서 미국의 일방주의를 공격했다.
+nbrady|니컬러스 브래디||Nicholas F. Brady|1930|null|eco|재무장관||d54:외채의 일부를 탕감하게 했다.
+jwilliamson|존 윌리엄슨||John Williamson|1937|2021|eco|경제학자||d54:워싱턴 컨센서스라 불렀다.
+perot|로스 페로|페로|Ross Perot|1930|2019|con|무소속 대통령 후보||d54:거대한 소리가 들린다고 했다.
+rubin|로버트 루빈|루빈|Robert Rubin|1938|null|eco|국가경제위원장, 재무장관||d54:멕시코와 아시아의 구제를 이끌었다.
+summers|로런스 서머스|서머스|Lawrence Summers|1954|null|eco|재무차관, 재무장관||d54:IMF의 조건을 밀었다.
+greenspan|앨런 그린스펀|그린스펀|Alan Greenspan|1926|null|eco|연준 의장||d54:세계를 구한 위원회의 하나로 불렸다.
+tfriedman|토머스 프리드먼|프리드먼|Thomas L. Friedman|1953|null|act|칼럼니스트||d54:황금 구속복을 말했다.
+stiglitz|조지프 스티글리츠|스티글리츠|Joseph Stiglitz|1943|null|eco|경제학자||d54:IMF의 처방을 비판했다.
+rodrik|대니 로드릭|로드릭|Dani Rodrik|1957|null|eco|경제학자||d54:세계화의 삼중 딜레마를 말했다.
+autor|데이비드 오터||David Autor|1967|null|eco|경제학자||d54:중국 충격을 밝혔다.
+wperry|윌리엄 페리|페리|William Perry|1927|null|def|국방장관||d55:영변의 폭격 계획을 짜고 대북 정책을 검토했다.;d56:세계 최고의 해군을 상기시켰다.
+acarter|애슈턴 카터||Ashton Carter|1954|2022|def|국방차관보||d55:폭격 계획을 짰다.
+gallucci|로버트 갈루치|갈루치|Robert Gallucci|1946|null|sta|북핵 협상 대표||d55:기본 합의에 서명했다.
+kangsj|강석주|강석주|Kang Sok-ju|1939|2016|kor|북한의 외무성 제1부상||d55:기본 합의에 서명했다.
+kimji|김정일|김정일|Kim Jong-il|1941|2011|kor|북한의 지도자||d55:올브라이트를 만났다.
+jkelly|제임스 켈리||James A. Kelly|1936|null|sta|동아시아 담당 차관보||d55:우라늄 농축을 따졌다.
+leeth|리덩후이|리덩후이|Lee Teng-hui|1923|2020|chn|대만의 총통||d56:코넬을 찾고 직선으로 당선되었다.
+jiang|장쩌민|장쩌민|Jiang Zemin|1926|2022|chn|중국의 국가주석||d56:워싱턴을 찾았다.
+barshefsky|샬린 바셰프스키||Charlene Barshefsky|1950|null|eco|무역대표||d56:WTO 가입 조건에 합의했다.
+zhurj|주룽지|주룽지|Zhu Rongji|1928|null|chn|중국의 총리||d56:WTO 가입 조건에 합의했다.
+kcampbell|커트 캠벨|캠벨|Kurt Campbell|1957|null|sta|동아시아 담당 차관보||d56:중국을 바꿀 수 있다는 기대가 틀렸다고 인정했다.;d60:회귀를 설계했다.
+ratner|일라이 래트너||Ely Ratner|1977|null|thk|안보 연구자||d56:관여의 기대가 틀렸다고 했다.
+rabin|이츠하크 라빈|라빈|Yitzhak Rabin|1922|1995|mid|이스라엘의 총리||d57:아라파트와 악수하고 암살되었다.
+arafat|야세르 아라파트|아라파트|Yasser Arafat|1929|2004|mid|PLO의 의장||d57:이스라엘을 인정하고 오슬로에 서명했다.
+netanyahu|베냐민 네타냐후|네타냐후|Benjamin Netanyahu|1949|null|mid|이스라엘의 총리||d57:오슬로에 반대해 선거에서 이겼다.
+barak|에후드 바라크|바라크|Ehud Barak|1942|null|mid|이스라엘의 총리||d57:캠프데이비드에서 가장 많은 것을 내놓았다.
+sharon|아리엘 샤론|샤론|Ariel Sharon|1928|2014|mid|이스라엘의 총리||d57:성전산을 찾았다.
+indyk|마틴 인딕|인딕|Martin Indyk|1951|2024|sta|국가안전보장회의의 중동 담당||d57:이중 봉쇄를 설명했다.
+khatami|모하마드 하타미|하타미|Mohammad Khatami|1943|null|mid|이란의 대통령||d57:문명의 대화를 말했다.
+amiller|에런 데이비드 밀러||Aaron David Miller|1949|null|sta|중동 협상가||d57:이스라엘의 변호사처럼 행동했다고 반성했다.
+rumsfeld|도널드 럼즈펠드|럼즈펠드|Donald Rumsfeld|1932|2021|def|국방장관||d58:단호한 민족주의자였다.;d59:적은 병력으로 이라크를 치고 늙은 유럽이라 했다.
+rclarke|리처드 클라크||Richard A. Clarke|1950|null|sta|대테러 책임자||d58:알카에다를 경고했다.
+blee|바버라 리||Barbara Lee|1946|null|con|캘리포니아의 하원 의원||d58:홀로 반대했다.
+karzai|하미드 카르자이|카르자이|Hamid Karzai|1957|null|asi|아프가니스탄의 대통령||d58:과도 정부의 지도자가 되었다.
+daalder|이보 달더||Ivo Daalder|1960|null|thk|국제정치학자||d58:단호한 민족주의자의 혁명이라 보았다.
+lindsay|제임스 린지||James M. Lindsay|1959|null|thk|국제정치학자||d58:단호한 민족주의자의 혁명이라 보았다.
+blair|토니 블레어|블레어|Tony Blair|1953|null|eur|영국의 총리||d59:미국을 지지했다.
+bremer|폴 브리머|브리머|L. Paul Bremer|1941|null|sta|연합국 임시 당국의 대표||d59:바트당원을 몰아내고 군대를 해산했다.
+petraeus|데이비드 퍼트레이어스|퍼트레이어스|David Petraeus|1952|null|def|이라크의 미군 사령관||d59:증파를 지휘했다.
+obama|버락 오바마|오바마|Barack Obama|1961|null|pre|44대 대통령|케냐 출신 아버지와 캔자스 출신 어머니에게서 태어나 하와이와 인도네시아에서 자랐다. 이라크 전쟁에 반대한 상원 의원으로 2008년 당선된 첫 흑인 대통령이 되었다. 금융위기를 수습하고 두 전쟁을 정리했으며, 아시아로의 회귀를 선언했다.|d59:이라크 전쟁의 실패가 당선을 도왔다.;d60:두 전쟁을 정리하고 아시아로의 회귀를 선언했다.
+hclinton|힐러리 클린턴|힐러리|Hillary Clinton|1947|null|sta|국무장관||d60:남중국해를 국가 이익이라 하고 미국의 태평양 세기를 썼다.
+bernanke|벤 버냉키|버냉키|Ben Bernanke|1953|null|eco|연준 의장||d60:세계적 저축 과잉을 말했다.
+zhouxc|저우샤오촨||Zhou Xiaochuan|1948|null|chn|중국 인민은행장||d60:달러를 대신할 준비 통화를 말했다.
+donilon|톰 도닐런||Thomas Donilon|1955|null|sta|국가안보보좌관||d60:회귀를 밀었다.
+yangjc|양제츠|양제츠|Yang Jiechi|1950|null|chn|중국의 외교부장||d60:중국은 큰 나라라고 했다.
+xi|시진핑|시진핑|Xi Jinping|1953|null|chn|중국의 국가주석||d60:권력을 쥐고 일대일로를 내놓았다.
+leemb|이명박|이명박|Lee Myung-bak|1941|null|kor|대한민국의 대통령||d60:한미 동맹을 가깝게 했다.
+tooze|애덤 투즈||Adam Tooze|1967|null|thk|역사가||d60:금융위기를 세계 정치경제의 위기로 보았다.

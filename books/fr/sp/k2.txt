@@ -1,0 +1,10 @@
+ v11:[['tackett_become','대표들이 혁명가가 되다'],['baker','주권의 언어'],['furet','말의 혁명'],['doyle','6월의 3주']],
+ v12:[['godechot','바스티유의 하루'],['rude','바스티유의 승리자'],['mcphee','시정 혁명']],
+ v13:[['lefebvre_gp','대공포'],['markoff_ab','농민 봉기의 분석'],['lefebvre','농민의 혁명']],
+ v14:[['kessel','8월 4일 밤'],['markoff_ab','영주제의 폐지'],['cobban','봉건제 폐지의 의미']],
+ v15:[['gauchet','권리 선언의 토론'],['baker','국민 주권'],['burke_text','버크의 비판'],['hunt','혁명의 언어']],
+ v16:[['levy','여성들의 문서'],['rude','10월의 군중'],['doyle','파리로 간 왕']],
+ v17:[['bodinier','국유 재산의 매각'],['jones','교회 재산과 아시냐']],
+ v18:[['ozouf_dep','도의 형성'],['tocqueville','중앙 집권']],
+ v19:[['kennedy','자코뱅 클럽'],['popkin','혁명기 신문']],
+ v20:[['ozouf_fete','혁명의 축제'],['hunt','상징과 축제']]

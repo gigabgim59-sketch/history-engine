@@ -1,0 +1,47 @@
+@page{size:A4;margin:26mm 27mm 30mm 27mm;
+ @bottom-center{content:counter(page);font:8pt "Noto Serif CJK KR",serif;color:#888;vertical-align:top;padding-top:6mm}}
+body.front{counter-reset:page}
+body.front{}
+@page :first{}
+html{font-family:"Noto Serif CJK KR","Noto Serif CJK",serif;font-size:11pt;color:#1a1a1a}
+body{margin:0}
+p{margin:0;text-align:justify;text-indent:1em;line-height:1.78;word-break:normal;orphans:2;widows:2;hyphens:none}
+b{font-weight:700}
+.xr{font-size:7.5pt;color:#8a2b1f;letter-spacing:-.02em;margin-left:.1em}
+.mk{position:absolute;font-size:1pt;color:#fff}
+h3{font-size:11.5pt;font-weight:700;text-align:center;margin:1.5em 0 .7em;break-after:avoid}
+.rule{width:12mm;border-top:.5pt solid #999;margin:5mm auto 9mm}
+.ch,.part{break-before:page;position:relative}
+.open{text-align:center;padding-top:18mm;break-after:avoid}
+.kick2{font-size:7.5pt;color:#777;text-indent:0;text-align:center;margin-bottom:5mm}
+.kick{font-size:8.5pt;color:#b0332a;text-indent:0;text-align:center;margin-bottom:3mm}
+.ct{font-size:18pt;font-weight:700;margin:0 0 2.5mm;letter-spacing:-.01em}
+.cy{font-size:9pt;color:#777;font-style:italic;text-indent:0;text-align:center}
+.lead{font-size:9.5pt;color:#555;text-indent:0;line-height:1.75;margin:0 6mm 6mm;padding:3mm 0 3mm 4mm;border-left:1.2pt solid #c9a39b}
+.part{text-align:center}
+.part .pno{padding-top:50mm;font-size:10pt;color:#b0332a;text-indent:0;text-align:center}
+.part .pt{font-size:24pt;margin:4mm 0 3mm}
+.part .py{font-size:10pt;color:#777;text-indent:0;text-align:center}
+.part p{text-align:justify}
+.part h3{margin-top:1.8em}
+.fl{display:inline-block;font-size:9pt;color:#b0332a;margin-right:.4em}
+/* front */
+.front .title{height:225mm;display:flex;flex-direction:column;break-after:page}
+.title .bar{width:12mm;border-top:2pt solid #b0332a;margin:22mm 0 9mm}
+.title h1{font-size:30pt;margin:0 0 7mm;letter-spacing:-.02em}
+.title p{text-indent:0;text-align:left}
+.tsub{font-size:11pt;color:#555}
+.tey{font-size:10pt;color:#777;font-style:italic;margin-top:8mm}
+.tfoot{margin-top:auto;border-top:.5pt solid #333;padding-top:3mm}
+.tfoot p{font-size:8pt;letter-spacing:.05em}
+.colo{height:228mm;display:flex;flex-direction:column;justify-content:flex-end;break-after:page}
+.colo p{font-size:8.5pt;color:#666;text-indent:0;line-height:1.7;margin-top:2mm}
+.toch{font-size:13pt;margin:0 0 6mm}
+.toc table{width:100%;border-collapse:collapse;font-size:9pt}
+.toc td{padding:1.15mm 0;border-bottom:.3pt solid #ddd;vertical-align:baseline}
+.toc td:last-child{text-align:right;width:12mm;color:#444}
+.toc .tn{width:9mm;color:#999;font-size:8pt}
+.toc tr.tp td{font-weight:700;padding-top:4mm;border-bottom:.6pt solid #888}
+.toc tr.tp{break-after:avoid}
+.ty{font-weight:400;color:#888;font-size:8pt;margin-left:2mm}
+body.front{}
