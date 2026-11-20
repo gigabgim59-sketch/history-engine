@@ -4,6 +4,7 @@
 하는 일
 1. 책마다 HTML을 읽고, 그 책에 심긴 글꼴(<style>@font-face{font-family:'KRSans'…}</style>)을 떼어 자리표시로 바꾼다.
    글꼴도 자리표시도 없으면 멈춘다(빌드 뒤 font.py를 빠뜨린 경우, DEFECTS E-03).
+   서가 안에서 쓰는 연결 스크립트(embed_head.html·embed_tail.html)가 없으면 넣는다.
 2. 모든 책과 서가 화면의 글자를 모아 공통 글꼴을 한 번만 만든다.
 3. 책을 gzip+base64로 묶어 넣고, 카드·색·권수 문구·PDF 버튼·묶음(grp)을 등록부에서 만든다(DEFECTS L-01).
 4. 책 사이 일관성 검사(library/xcheck.py)를 돌려 보고한다. 충돌은 출간 스킬이 처리한다.
@@ -31,12 +32,21 @@ def kn(n):
     return ten[t] + one[o]
 
 FONT_RE = re.compile(r"<style>@font-face\{font-family:'KRSans'.*?</style>", re.S)
+# 서가 안 iframe에서 쓰는 연결 스크립트: 뒤로 가기 기록을 서가와 맞추고(머리), 읽는 법·본문 사이 이동과 현재 위치를 서가에 알린다(꼬리)
+EMB_H = open(os.path.join(HERE, 'embed_head.html'), encoding='utf-8').read()
+EMB_T = open(os.path.join(HERE, 'embed_tail.html'), encoding='utf-8').read()
 def prep(path, what):
     s = open(path, encoding='utf-8').read()
-    if '<!--__LIBFONTS__-->' in s: return s
-    s2, n = FONT_RE.subn('<!--__LIBFONTS__-->', s, count=1)
-    if not n: raise SystemExit(f'글꼴 없음: {what} ({path}) — 책 폴더에서 python3 font.py dist/index.html 을 먼저 돌릴 것')
-    return s2
+    if '<!--__LIBFONTS__-->' not in s:
+        s, n = FONT_RE.subn('<!--__LIBFONTS__-->', s, count=1)
+        if not n: raise SystemExit(f'글꼴 없음: {what} ({path}) — 책 폴더에서 python3 font.py dist/index.html 을 먼저 돌릴 것')
+    if EMB_H not in s:
+        if s.count('<head>') != 1: raise SystemExit(f'<head>가 하나가 아님: {what}')
+        s = s.replace('<head>', '<head>' + EMB_H + '\n', 1)
+    if EMB_T not in s:
+        if s.count('</body>') != 1: raise SystemExit(f'</body>가 하나가 아님: {what}')
+        s = s.replace('</body>', EMB_T + '</body>', 1)
+    return s
 
 books = REG['books']
 for b in books:

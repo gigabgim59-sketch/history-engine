@@ -1,4 +1,4 @@
-node_modules/
+node_modules
 package-lock.json
 package.json
 dist/
@@ -7,3 +7,4 @@ library/dist/
 __pycache__/
 *.pyc
 shots/
+books/*/ref

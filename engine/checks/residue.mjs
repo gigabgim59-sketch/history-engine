@@ -18,7 +18,8 @@ await pg.goto('file://'+file);await pg.waitForTimeout(600);
 const tabs=await pg.evaluate(()=>[...document.querySelectorAll('#tabs a[data-v]')].filter(a=>!a.hidden&&a.offsetParent!==null||!a.hidden).map(a=>[a.dataset.v,a.getAttribute('href')]));
 const out=[];
 for(const [v] of tabs)if(v in HAS&&!HAS[v])out.push(`메뉴 '${v}'가 보이지만 자료가 없음`);
-const screens=[['home','#/'],...tabs.filter(([v])=>v!=='home')];
+const screens=[['home','#/'],...tabs.filter(([v])=>v!=='home'),
+ ...((D.regions||[]).length?[['rr','#/rr/'+D.regions[0].id]]:[]),...((D.groups||[]).length?[['idg','#/id/'+D.groups[0].id]]:[])];
 for(const [v,h] of screens){await pg.evaluate(x=>{location.hash=x},h);await pg.waitForTimeout(350);
   const t=await pg.evaluate(()=>document.querySelector('main')?document.querySelector('main').innerText:document.body.innerText);
   for(const [w,why,home] of words){if(home&&home===(D.meta&&D.meta.title))continue;if(t.includes(w)&&!DATAJSON.includes(w))out.push(`${h}: '${w}' (${why})`);}
@@ -30,7 +31,12 @@ for(const [v,h] of screens){await pg.evaluate(x=>{location.hash=x},h);await pg.w
 const pages=[...(D.parts||[]).map(p=>'#/p/'+p.id),...(D.events||[]).map(e=>'#/e/'+e.id),'#/end'];
 for(const h of pages){await pg.evaluate(x=>{location.hash=x},h);await pg.waitForTimeout(120);
   const t=await pg.evaluate(()=>document.querySelector('main')?document.querySelector('main').innerText:'');
-  for(const [w,why,home] of words){if(home&&home===(D.meta&&D.meta.title))continue;if(t.includes(w)&&!DATAJSON.includes(w))out.push(`${h}: '${w}' (${why})`);}}
+  for(const [w,why,home] of words){if(home&&home===(D.meta&&D.meta.title))continue;if(t.includes(w)&&!DATAJSON.includes(w))out.push(`${h}: '${w}' (${why})`);}
+  // 템플릿이 만든 제목·설명(h2·라벨·주석)의 수 낱말
+  const th=await pg.evaluate(()=>[...document.querySelectorAll('main h2, main .lbl, main .note, main .eyebrow')].map(x=>x.innerText).join('\n'));
+  for(const m of th.matchAll(/(?<![가-힣])(한|두|세|네|다섯|여섯|일곱|여덟|아홉|열|열한|열두) (줄기|무대|집단|힘|부|축|겹)(?![가-힣])/g)){
+    const n=NUM[m[1]],k=m[2],have=COUNT[k];
+    if(have&&n!==have&&!DATAJSON.includes(m[0]))out.push(`${h}: '${m[0]}'인데 자료의 ${k}는 ${have}개`);}}
 await b.close();
 const all=[...new Set([...out,...errs])];
 console.log(all.length?all.join('\n'):'잔재 없음');process.exit(all.length?1:0);

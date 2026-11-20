@@ -520,10 +520,12 @@ mark.ul.flash{background:color-mix(in srgb,var(--accent) 28%,transparent)}
 'use strict';
 /*__DATA__*/
 const DRAFT=!!(DATA.meta&&DATA.meta.draft);
-const todo=t=>DRAFT?todo(`${t}`):'';
+const todo=t=>DRAFT?`<div class="todo"><b>집필 예정</b>${t}</div>`:'';
 const NUMW=['영','한','두','세','네','다섯','여섯','일곱','여덟','아홉','열','열한','열두','열세','열네','열다섯'];
 const kn=n=>NUMW[n]||String(n);
 const PFX=((DATA.meta&&DATA.meta.pfx)||'bk')+'-';
+// 장 머리 분량 표시: 빌드가 계산한 META.wl, 없으면 여기서 계산한다(등급별 중앙값, 100자 반올림, 문자열만 센다)
+const WLC=(()=>{const SL=v=>typeof v==='string'?v.length:Array.isArray(v)?v.reduce((a,x)=>a+SL(x),0):0;const by={};(DATA.events||[]).forEach(e=>{const b=DATA.body&&DATA.body[e.id];if(b)(by[e.w]=by[e.w]||[]).push(SL(Object.values(b)));});const med=a=>{const c=[...a].sort((x,y)=>x-y);return c[Math.floor((c.length-1)/2)];};return Object.fromEntries(Object.entries(by).map(([w,a])=>[w,'약 '+(Math.round(med(a)/100)*100).toLocaleString('en-US')+'자']));})();
 
 // 자료가 없는 화면은 메뉴에서 숨긴다(LIBRARY U8)
 (function(){const M=DATA.meta||{};const has={map:!M.nomap,lanes:!M.nolanes&&!!(DATA.regions&&DATA.regions.length),pp:!!(DATA.people&&DATA.people.length),id:!!(DATA.groups&&DATA.groups.length),ln:!!(DATA.lineage&&DATA.lineage.length),t:!!(DATA.threads&&DATA.threads.length),econ:!!DATA.econ,air:!!DATA.econ};
@@ -550,9 +552,9 @@ const fchip=p=>`<span class="fchip" style="--pc:${pcol(p)}"><i class="fdot"></i>
 const chOf={};DATA.groups.forEach(g=>g.ch.forEach(([ev,ax,t])=>(chOf[ev]=chOf[ev]||[]).push({g:g.id,ax,t})));
 const pc=id=>`var(--${id})`;
 const ECOL=e=>pc(e.p);
-const WN={1:'핵심',2:'주요',3:'보조'},WL=(DATA.meta&&DATA.meta.wl)||{1:'약 5,000자',2:'약 2,500자',3:'약 1,500자'};
+const WN={1:'핵심',2:'주요',3:'보조'},WL=(DATA.meta&&DATA.meta.wl)||WLC;
 const KN=Object.fromEntries((DATA.kinds||[]).map(k=>[k[0],k[1]]));const KM={ev:'사',eco:'경',cul:'문',air:'공',th:'상'};
-const SLOTH={ev:{배경:'상황',원인:'마주침',주체:'목소리들',전개:'갈림과 움직임',영향:'그 뒤'},hv:{배경:'시대',원인:'저작과 사람',주체:'그들이 본 세계',전개:'쓰임과 변형',영향:'그 뒤'}};
+const SLOTH=DATA.sloth||{}; // 장 종류별 절 이름: data.mjs의 SLOTH
 const kdBadge=e=>e.kd&&KN[e.kd]?`<span class="kd kd-${e.kd}">${esc(KN[e.kd])} 장</span>`:'';
 const yfmt=y=>y<0?`기원전 ${-y}`:String(y);
 
@@ -657,7 +659,7 @@ function viewPart0(id){
   <div class="keys"><p class="lbl">이 시대의 큰 그림</p><p>${linky(p.lead)}</p></div>
   ${p.air?`<h2 class="sh">이 시대의 공기</h2><p class="mood">${linky(p.air.mood)}</p><div class="chips">${p.air.words.slice(0,8).map(([w])=>`<span class="chip">${esc(w)}</span>`).join('')}</div><div class="go"><a class="pill" href="#/air/${p.id}">이 시대의 말과 생활, 작품 모두 보기 →</a></div>`:''}
   ${p.f?`<h2 class="sh">이 시대의 ${esc(DATA.meta.engn)}</h2><div class="f3">${DATA.engines.map(([k,n])=>`<div class="card"><h3>${esc(n)}</h3><p>${linky(p.f[k])}</p></div>`).join('')}</div><div class="keys"><p class="lbl">고리들이 맞물리는 곳</p><p>${linky(p.f.meet)}</p></div>`:''}
-  ${p.bg?`<h2 class="sh">이 시대의 다섯 무대</h2>
+  ${p.bg?`<h2 class="sh">이 시대의 ${kn(DATA.regions.length)} 무대</h2>
   <div class="bg5">${DATA.regions.map(r=>`<div class="card"><h3>${esc(r.n)}</h3><p>${linky(p.bg[r.id])}</p><div class="go rgo"><a class="pill" href="#/rr/${r.id}">${esc(r.n)}의 장만 이어 읽기 →</a></div></div>`).join('')}
    <div class="card pe"><h3>${esc(DATA.meta.pen||"세계")} <span class="note">${esc(DATA.meta.pes||"")}</span></h3><p>${linky(p.bg.pe)}</p></div></div>`:''}
   ${(()=>{const cnt={};p.ev.forEach(e=>e.pp.forEach(x=>{if(PE[x].at&&PE[x].at[e.id])cnt[x]=(cnt[x]||0)+1;}));const ids=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]||(PE[a].life[0]||0)-(PE[b].life[0]||0)).slice(0,18);
@@ -720,7 +722,7 @@ function viewEvent0(id,rid){
    ${BD('영향')?`<div class="rh">${rhHtml(BD('영향'))}</div>`:todo(`남은 결과를 축으로 나누어 풀어 쓴다.`)}
    ${e.axc&&e.axc.length?`<p class="lbl" style="margin-top:1rem">${esc(DATA.meta.axn)}</p><table class="tbl"><tbody>${e.axc.map(([a,t])=>`<tr><th style="width:7rem"><span class="axt"><i class="ax-${a}"></i>${esc(AX[a].n)}</span></th><td>${esc(t)}</td></tr>`).join('')}</tbody></table>`:''}
    ${chs.length?`<p class="lbl" style="margin-top:1rem">사람들의 변화</p><table class="tbl"><thead><tr><th>집단</th><th>축</th><th>변화</th></tr></thead><tbody>${chs.map(c=>`<tr><td><a href="#/id/${c.g}">${esc(G[c.g].n)}</a></td><td>${esc(AX[c.ax].n)}</td><td>${esc(c.t)}</td></tr>`).join('')}</tbody></table>`:''}</section>
-   ${BD('사관')?`<aside class="box hvb"><p class="lbl">흐름들의 자리</p><dl class="hvl">${BD('사관').map(([a,t])=>`<dt>${esc(a)}</dt><dd>${rich(t)}</dd>`).join('')}</dl></aside>`:''}
+   ${BD('사관')?`<aside class="box hvb"><p class="lbl">${esc(DATA.meta.hvl||'관점들의 풀이')}</p><dl class="hvl">${BD('사관').map(([a,t])=>`<dt>${esc(a)}</dt><dd>${rich(t)}</dd>`).join('')}</dl></aside>`:''}
    ${BD('갈림')||DRAFT?`<aside class="box deb"><p class="lbl">${esc((DATA.meta&&DATA.meta.debl)||'해석의 갈림')}</p>${BD('갈림')?`<div class="rh">${rhHtml(BD('갈림'))}</div>`:todo(`책마다, 학설마다 다르게 보는 지점.`)}</aside>`:''}
    ${BD('오해')||DRAFT?`<aside class="box myth"><p class="lbl">흔한 오해</p>${BD('오해')?`<div class="rh">${rhHtml(BD('오해'))}</div>`:todo(`널리 퍼진 잘못된 이해와 그 교정.`)}</aside>`:''}
    <section class="slot"><h2>고리</h2><div class="links">
@@ -955,7 +957,7 @@ function viewTrail(rid){
   main.innerHTML=`<div class="col"><p class="eyebrow"><a href="#/lanes">무대 연표</a> · 무대별 이어 읽기</p>
   <div class="ctrl">${DATA.regions.map(x=>`<a class="pill ${x.id===rid?'on':''}" href="#/rr/${x.id}">${esc(x.n)}</a>`).join('')}</div>
   <h1 class="vt">${esc(r.n)}의 장 이어 읽기</h1><p class="sub">${esc(r.h)}</p>
-  <p>이 책은 다섯 무대를 시대순으로 번갈아 다룹니다. 여기서는 ${esc(r.n)}에 걸린 장만 골라 책의 순서대로 이어 읽습니다. 장을 열면 맨 아래의 ‘다음’이 이 무대의 다음 장으로 이어지고, 맨 위 띠에서 언제든 책 전체의 순서로 돌아갈 수 있습니다.</p>
+  <p>이 책은 ${kn(DATA.regions.length)} 무대를 시대순으로 번갈아 다룹니다. 여기서는 ${esc(r.n)}에 걸린 장만 골라 책의 순서대로 이어 읽습니다. 장을 열면 맨 아래의 ‘다음’이 이 무대의 다음 장으로 이어지고, 맨 위 띠에서 언제든 책 전체의 순서로 돌아갈 수 있습니다.</p>
   <div class="ctrl"><span class="lb">범위</span><button class="pill ${mode==='all'?'on':''}" data-tm="all">이 무대가 걸린 모든 장 · ${nAll}장</button><button class="pill ${mode==='core'?'on':''}" data-tm="core">이 무대가 중심인 장만 · ${nCore}장</button></div>
   <div class="go"><a class="pill on" href="#/e/${seq[0].id}/${rid}">처음부터 읽기 (${seq[0].no}장)</a>${nread&&resume?`<a class="pill" href="#/e/${resume.id}/${rid}">읽지 않은 곳부터 (${resume.no}장)</a>`:''}<a class="pill" href="#/lanes">연표로 돌아가기</a></div>
   <div class="meter"><i style="width:${nread/seq.length*100}%"></i></div><p class="note">${seq.length}장 가운데 ${nread}장을 읽었습니다. ‘함께’ 표시는 이 무대가 중심은 아니지만 함께 걸린 장입니다.</p>
@@ -972,7 +974,7 @@ const NETCAT=(()=>{const ord=a=>[...new Set(a)].filter(x=>E[x]).sort((x,y)=>E[x]
   const axEv={};DATA.groups.forEach(g=>g.ch.forEach(([ev,ax])=>(axEv[ax]=axEv[ax]||[]).push(ev)));
   return [
    {k:'part',n:'부',d:DATA.parts.length+'개의 시대',m:DATA.parts.map(p=>({id:p.id,n:p.no,s:p.t,c:pc(p.id),ev:ord(DATA.events.filter(e=>e.p===p.id).map(e=>e.id))}))},
-   {k:'region',n:'무대',d:'다섯 무대',m:DATA.regions.map(r=>({id:r.id,n:r.n,ev:ord(DATA.events.filter(e=>e.r.includes(r.id)).map(e=>e.id))}))},
+   {k:'region',n:'무대',d:kn(DATA.regions.length)+' 무대',m:DATA.regions.map(r=>({id:r.id,n:r.n,ev:ord(DATA.events.filter(e=>e.r.includes(r.id)).map(e=>e.id))}))},
    {k:'thread',n:'줄기',d:'시대를 건너는 흐름',m:DATA.threads.map(t=>({id:t.id,n:t.n,s:t.d,ev:ord(t.ev)}))},
    {k:'axis',n:'축',d:'무엇이 바뀌었나',m:DATA.axes.map(a=>({id:a.id,n:a.n,s:a.d,ev:ord(axEv[a.id]||[])}))},
    {k:'group',n:'집단',d:'누가 바뀌었나',m:DATA.groups.map(g=>({id:g.id,n:g.n,s:g.d,ev:ord(g.ch.map(c=>c[0]))}))},
@@ -1084,8 +1086,8 @@ function groupPage(g){
   main.innerHTML=`<div class="col"><p class="eyebrow"><a href="#/id">사람들의 변화</a> · 집단</p><h1 class="vt">${esc(g.n)}</h1>
   <p class="lede">${esc(g.d)}</p>
   <div class="ctrl"><button class="pill" id="gprev" ${gp?'':'disabled'}>← ${gp?esc(gp.n):''}</button><label class="vh" for="gsel">집단 고르기</label><select id="gsel" class="sel">${DATA.groups.map(x=>`<option value="${x.id}" ${x===g?'selected':''}>${esc(x.n)}</option>`).join('')}</select><button class="pill" id="gnext" ${gn?'':'disabled'}>${gn?esc(gn.n):''} →</button></div>
-  <h2 class="sh">다섯 축이 바뀐 때</h2>
-  <p class="note">가로는 시간, 세로는 다섯 축입니다. 제8부의 주제 장은 다루는 대표 연도에 놓입니다. 점 하나가 그 축을 바꾼 사건이고, 점 안의 숫자는 장 번호입니다.</p>
+  <h2 class="sh">${kn(DATA.axes.length)} 축이 바뀐 때</h2>
+  <p class="note">가로는 시간, 세로는 ${kn(DATA.axes.length)} 축입니다.${DATA.parts.some(p=>p.theme)?' 주제 부의 장은 다루는 대표 연도에 놓입니다.':''} 점 하나가 그 축을 바꾼 사건이고, 점 안의 숫자는 장 번호입니다.</p>
   <div class="gstrip"><svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${esc(g.n)}의 축별 변화 시점">${bands}${rows}</svg></div>
   <h2 class="sh">변화의 기록 <span class="segs"><button class="pill ${mode==='time'?'on':''}" data-m="time">시간순</button><button class="pill ${mode==='axis'?'on':''}" data-m="axis">축별</button></span></h2>
   <div id="glist"></div>

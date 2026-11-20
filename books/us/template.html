@@ -477,7 +477,7 @@ mark.ul.flash{background:color-mix(in srgb,var(--accent) 28%,transparent)}
 .kd-ev{color:#3a5a9c}.kd-th{color:#7b3f78}.kd-eco{color:#2c7062}.kd-cul{color:#a0372b}.kd-air{color:#8a5a1c}
 :root[data-theme="dark"] .kd{filter:brightness(1.6)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .kd{filter:brightness(1.6)}}
-.kdm{flex:none;font-size:.68rem;font-weight:700;width:1.25rem;height:1.25rem;display:inline-grid;place-items:center;border-radius:4px;border:1px solid currentColor;opacity:.85}
+.kdm{flex:none;align-self:flex-start;margin-top:.1rem;height:auto;font-size:.68rem;font-weight:700;line-height:1;padding:.2rem .4rem;display:inline-flex;align-items:center;white-space:nowrap;border-radius:4px;border:1px solid currentColor;opacity:.9}
 .words{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(15rem,100%),1fr));gap:.5rem;margin:.6rem 0}
 .words div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.5rem .7rem;font-size:.92rem;line-height:1.55}
 .words b{display:block;font-size:1rem;color:var(--ink)}
@@ -518,6 +518,17 @@ mark.ul.flash{background:color-mix(in srgb,var(--accent) 28%,transparent)}
 (function(){
 'use strict';
 /*__DATA__*/
+const DRAFT=!!(DATA.meta&&DATA.meta.draft);
+const todo=t=>DRAFT?`<div class="todo"><b>집필 예정</b>${t}</div>`:'';
+const NUMW=['영','한','두','세','네','다섯','여섯','일곱','여덟','아홉','열','열한','열두','열세','열네','열다섯'];
+const kn=n=>NUMW[n]||String(n);
+const PFX=((DATA.meta&&DATA.meta.pfx)||'bk')+'-';
+// 장 머리 분량 표시: 빌드가 계산한 META.wl, 없으면 여기서 계산한다(등급별 중앙값, 100자 반올림, 문자열만 센다)
+const WLC=(()=>{const SL=v=>typeof v==='string'?v.length:Array.isArray(v)?v.reduce((a,x)=>a+SL(x),0):0;const by={};(DATA.events||[]).forEach(e=>{const b=DATA.body&&DATA.body[e.id];if(b)(by[e.w]=by[e.w]||[]).push(SL(Object.values(b)));});const med=a=>{const c=[...a].sort((x,y)=>x-y);return c[Math.floor((c.length-1)/2)];};return Object.fromEntries(Object.entries(by).map(([w,a])=>[w,'약 '+(Math.round(med(a)/100)*100).toLocaleString('en-US')+'자']));})();
+
+// 자료가 없는 화면은 메뉴에서 숨긴다(LIBRARY U8)
+(function(){const M=DATA.meta||{};const has={map:!M.nomap,lanes:!M.nolanes&&!!(DATA.regions&&DATA.regions.length),pp:!!(DATA.people&&DATA.people.length),id:!!(DATA.groups&&DATA.groups.length),ln:!!(DATA.lineage&&DATA.lineage.length),t:!!(DATA.threads&&DATA.threads.length),econ:!!DATA.econ,air:!!DATA.econ};
+ document.querySelectorAll('#tabs a[data-v]').forEach(a=>{if(a.dataset.v in has&&!has[a.dataset.v])a.hidden=true;});})();
 const $=s=>document.querySelector(s), main=$('#main');
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const mem={};
@@ -540,8 +551,8 @@ const fchip=p=>`<span class="fchip" style="--pc:${pcol(p)}"><i class="fdot"></i>
 const chOf={};DATA.groups.forEach(g=>g.ch.forEach(([ev,ax,t])=>(chOf[ev]=chOf[ev]||[]).push({g:g.id,ax,t})));
 const pc=id=>`var(--${id})`;
 const ECOL=e=>pc(e.p);
-const WN={1:'핵심',2:'주요',3:'보조'},WL={1:'약 5,000자',2:'약 2,500자',3:'약 1,500자'};
-const KN=Object.fromEntries((DATA.kinds||[]).map(k=>[k[0],k[1]]));const KM={ev:'사',eco:'경',cul:'문',air:'공'};
+const WN={1:'핵심',2:'주요',3:'보조'},WL=(DATA.meta&&DATA.meta.wl)||WLC;
+const KN=Object.fromEntries((DATA.kinds||[]).map(k=>[k[0],k[1]]));const KM={ev:'사',eco:'경',cul:'문',air:'공',th:'상'};
 const SLOTH={eco:{원인:'왜 그렇게 되었나',주체:'누가 움직였나'},cul:{배경:'뿌리',원인:'맞선 두 극',주체:'작품과 목소리',전개:'흐름'},th:{배경:'뿌리',원인:'물음',주체:'사람과 글',전개:'흐름'},air:{원인:'분위기를 만든 것',주체:'그 시대를 산 사람들',전개:'장면들'}};
 const kdBadge=e=>e.kd&&KN[e.kd]?`<span class="kd kd-${e.kd}">${esc(KN[e.kd])} 장</span>`:'';
 const yfmt=y=>y<0?`기원전 ${-y}`:String(y);
@@ -579,7 +590,7 @@ const statusMeter=()=>{const n=DATA.events.length;return `<div class="meter" ari
 // ── 차례 서랍
 function buildToc(cur){
   $('#toc').innerHTML=DATA.parts.map(p=>`<li class="tp">${esc(p.no)} ${esc(p.t)}</li><li><a href="#/p/${p.id}" class="${cur===p.id?'on':''}"><span class="n">序</span><span>배경: ${esc(p.y)}</span></a></li>`+
-    p.ev.map(e=>`<li><a href="#/e/${e.id}" class="${cur===e.id?'on':''}"><span class="n">${e.no}</span><span style="flex:1">${esc(e.t)}</span>${e.kd?`<span class="kdm kd-${e.kd}" title="${esc(KN[e.kd])} 장">${KM[e.kd]}</span>`:''}<span class="rd ${READ[e.id]?'on':''}"></span></a></li>`).join('')).join('')+
+    p.ev.map(e=>`<li><a href="#/e/${e.id}" class="${cur===e.id?'on':''}"><span class="n">${e.no}</span><span style="flex:1">${esc(e.t)}</span>${e.kd&&e.kd!=='ev'?`<span class="kdm kd-${e.kd}" title="${esc(KN[e.kd])} 장">${esc(KN[e.kd]||'')}</span>`:''}<span class="rd ${READ[e.id]?'on':''}"></span></a></li>`).join('')).join('')+
     `<li class="tp">맺음과 부록</li><li><a href="#/end"><span class="n">結</span><span>맺음: ${esc(DATA.meta.endT||'')}</span></a></li>`;
 }
 function openDrawer(o){$('#drawer').hidden=!o;$('#scrim').hidden=!o;$('#bToc').setAttribute('aria-expanded',String(o));}
@@ -611,21 +622,21 @@ function viewHome(){
   <h2 class="sh">${esc(M.engn)}</h2>
   <p class="lede">${M.engines}</p>
   <div class="f3">${DATA.engines.map(([k,nm,d])=>`<div class="card"><h3>${esc(nm)}</h3><p>${esc(d)}</p></div>`).join('')}</div>
-  <h2 class="sh">이 책을 읽는 여덟 가지 길</h2>
+  <h2 class="sh">이 책을 읽는 길</h2>
   <div class="grid">
-   <a class="card" href="#/p/p1"><h3>읽기</h3><p>부마다 배경 장으로 시대의 다섯 무대를 훑고, 사건 장을 차례로 읽습니다.</p></a>
-   <a class="card" href="#/map"><h3>지도</h3><p>사건이 일어난 자리와, 원인과 결과가 열도와 대륙과 바다를 넘나드는 길을 봅니다.</p></a>
-   <a class="card" href="#/lanes"><h3>무대 연표</h3><p>다섯 무대를 가로 레인으로 놓고 사건 사이의 화살표를 따라갑니다. 무대를 고르면 그 무대의 장만 이어 읽을 수 있습니다.</p></a>
+   <a class="card" href="#/p/p1"><h3>읽기</h3><p>부마다 배경 장으로 시대의 무대를 훑고, 사건 장을 차례로 읽습니다.</p></a>
+   <a class="card" href="#/map"><h3>지도</h3><p>사건이 일어난 자리와, 원인과 결과가 무대를 넘나드는 길을 봅니다.</p></a>
+   <a class="card" href="#/lanes"><h3>무대 연표</h3><p>${kn(DATA.regions.length)} 무대를 가로 레인으로 놓고 사건 사이의 화살표를 따라갑니다. 무대를 고르면 그 무대의 장만 이어 읽을 수 있습니다.</p></a>
    <a class="card" href="#/net/${DATA.events[0].id}"><h3>사건 연결망</h3><p>한 장씩, 그 사건을 낳은 원인과 그 사건이 낳은 결과를 이유와 함께 따라갑니다.</p></a>
-   <a class="card" href="#/id"><h3>사람들의 변화</h3><p>${DATA.groups.map(g=>esc(g.n)).join(', ')}의 무엇이 어느 사건에서 바뀌었는지 모아 봅니다.</p></a>
-   ${DATA.econ?`<a class="card" href="#/econ"><h3>경제 지표</h3><p>성장률과 주가, 환율과 실업률, 출산율을 시대의 흐름과 함께 그래프로 봅니다.</p></a><a class="card" href="#/air"><h3>시대의 공기</h3><p>부마다 그 시대의 말과 생활, 영화·소설·노래·애니메이션을 모아 봅니다.</p></a>`:''}<a class="card" href="#/ln"><h3>요소별 변천</h3><p>개념·상징·인물·도시·사람들 하나를 골라 그것이 거쳐 온 모습을 한 줄로 봅니다.</p></a>
-   <a class="card" href="#/t"><h3>줄기</h3><p>${DATA.threads.map(x=>esc(x.n)).join(', ')}의 줄기를 시대를 건너 따라갑니다.</p></a>
+   ${DATA.groups.length?`<a class="card" href="#/id"><h3>사람들의 변화</h3><p>${DATA.groups.map(g=>esc(g.n)).join(', ')}의 무엇이 어느 사건에서 바뀌었는지 모아 봅니다.</p></a>`:''}
+   ${DATA.econ?`<a class="card" href="#/econ"><h3>경제 지표</h3><p>성장률과 주가, 환율과 실업률, 출산율을 시대의 흐름과 함께 그래프로 봅니다.</p></a><a class="card" href="#/air"><h3>시대의 공기</h3><p>부마다 그 시대의 말과 생활, 영화·소설·노래·애니메이션을 모아 봅니다.</p></a>`:''}${DATA.lineage.length?`<a class="card" href="#/ln"><h3>요소별 변천</h3><p>개념·상징·인물·도시·사람들 하나를 골라 그것이 거쳐 온 모습을 한 줄로 봅니다.</p></a>`:''}
+   ${DATA.threads.length?`<a class="card" href="#/t"><h3>줄기</h3><p>${DATA.threads.map(x=>esc(x.n)).join(', ')}의 줄기를 시대를 건너 따라갑니다.</p></a>`:''}
    <a class="card" href="#/books"><h3>서가</h3><p>이 책이 기댄 책들과, 각 책이 받치는 장을 봅니다.</p></a>
   </div>
   <h2 class="sh">${esc(M.axn)}</h2>
-  <p>장마다 ‘영향’에서 무엇이 바뀌었는지를 다섯 축으로 나누어 적습니다.</p>
+  <p>장마다 ‘영향’에서 무엇이 바뀌었는지를 ${kn(DATA.axes.length)} 축으로 나누어 적습니다.</p>
   <table class="tbl"><tbody>${DATA.axes.map(a=>`<tr><th style="width:7rem"><span class="axt"><i class="ax-${a.id}"></i>${esc(a.n)}</span></th><td>${esc(a.d)}</td></tr>`).join('')}</tbody></table>
-  <h2 class="sh">다섯 무대</h2>
+  <h2 class="sh">${kn(DATA.regions.length)} 무대</h2>
   <table class="tbl"><tbody>${DATA.regions.map(r=>`<tr><th style="width:7rem"><a href="#/rr/${r.id}">${esc(r.n)}</a></th><td>${esc(r.d)}</td></tr>`).join('')}</tbody></table>
   ${DATA.kinds?`<h2 class="sh">장의 종류</h2><table class="tbl"><tbody>${DATA.kinds.map(([k,n,d])=>`<tr><th style="width:8rem"><span class="kd kd-${k}">${esc(n)} 장</span></th><td>${esc(d)} · ${DATA.events.filter(e=>e.kd===k).length}개</td></tr>`).join('')}</tbody></table>`:''}
   <h2 class="sh">중요도와 분량</h2>
@@ -634,7 +645,7 @@ function viewHome(){
   <h2 class="sh">차례</h2>
   ${DATA.parts.map(p=>`<section class="part"><h3><span class="pbar" style="background:${pc(p.id)}"></span>${esc(p.no)} ${esc(p.t)}<em>${esc(p.y)}</em></h3>
    <ol class="clist"><li><a href="#/p/${p.id}"><span class="n">序</span><span class="t">배경: 이 시대의 큰 그림</span></a></li>
-   ${p.ev.map(e=>`<li><a href="#/e/${e.id}" class="w${e.w}"><span class="n">${e.no}</span><span class="t">${e.kd?`<span class="kdm kd-${e.kd}" style="margin-right:.35rem" title="${esc(KN[e.kd])} 장">${KM[e.kd]}</span>`:''}${esc(e.t)}${e.w===1?'<span class="wt w1">핵심</span>':''}${DATA.body[e.id]?'':'<span class="tg">집필 예정</span>'}</span><small>${esc(e.y)}</small><span class="rd ${READ[e.id]?'on':''}"></span></a></li>`).join('')}</ol></section>`).join('')}
+   ${p.ev.map(e=>`<li><a href="#/e/${e.id}" class="w${e.w}"><span class="n">${e.no}</span><span class="t">${e.kd&&e.kd!=='ev'?`<span class="kdm kd-${e.kd}" style="margin-right:.35rem" title="${esc(KN[e.kd])} 장">${esc(KN[e.kd]||'')}</span>`:''}${esc(e.t)}${e.w===1?'<span class="wt w1">핵심</span>':''}${DATA.body[e.id]||!DRAFT?'':'<span class="tg">집필 예정</span>'}</span><small>${esc(e.y)}</small><span class="rd ${READ[e.id]?'on':''}"></span></a></li>`).join('')}</ol></section>`).join('')}
   <section class="part"><h3>맺음</h3><ol class="clist"><li><a href="#/end"><span class="n">結</span><span class="t">${esc(DATA.meta.endT||'')}</span></a></li></ol></section></div>`;
 }
 
@@ -647,7 +658,7 @@ function viewPart0(id){
   <div class="keys"><p class="lbl">이 시대의 큰 그림</p><p>${linky(p.lead)}</p></div>
   ${p.air?`<h2 class="sh">이 시대의 공기</h2><p class="mood">${linky(p.air.mood)}</p><div class="chips">${p.air.words.slice(0,8).map(([w])=>`<span class="chip">${esc(w)}</span>`).join('')}</div><div class="go"><a class="pill" href="#/air/${p.id}">이 시대의 말과 생활, 작품 모두 보기 →</a></div>`:''}
   ${p.f?`<h2 class="sh">이 시대의 ${esc(DATA.meta.engn)}</h2><div class="f3">${DATA.engines.map(([k,n])=>`<div class="card"><h3>${esc(n)}</h3><p>${linky(p.f[k])}</p></div>`).join('')}</div><div class="keys"><p class="lbl">고리들이 맞물리는 곳</p><p>${linky(p.f.meet)}</p></div>`:''}
-  ${p.bg?`<h2 class="sh">이 시대의 다섯 무대</h2>
+  ${p.bg?`<h2 class="sh">이 시대의 ${kn(DATA.regions.length)} 무대</h2>
   <div class="bg5">${DATA.regions.map(r=>`<div class="card"><h3>${esc(r.n)}</h3><p>${linky(p.bg[r.id])}</p><div class="go rgo"><a class="pill" href="#/rr/${r.id}">${esc(r.n)}의 장만 이어 읽기 →</a></div></div>`).join('')}
    <div class="card pe"><h3>${esc(DATA.meta.pen||"세계")} <span class="note">${esc(DATA.meta.pes||"")}</span></h3><p>${linky(p.bg.pe)}</p></div></div>`:''}
   ${(()=>{const cnt={};p.ev.forEach(e=>e.pp.forEach(x=>{if(PE[x].at&&PE[x].at[e.id])cnt[x]=(cnt[x]||0)+1;}));const ids=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]||(PE[a].life[0]||0)-(PE[b].life[0]||0)).slice(0,18);
@@ -655,7 +666,7 @@ function viewPart0(id){
   <h2 class="sh">이 부의 사건 ${p.ev.length}개</h2>
   ${partMap(p)}
   <ol class="clist">${p.ev.map(e=>`<li><a href="#/e/${e.id}"><span class="n">${e.no}</span><span class="t">${esc(e.t)}</span><small>${esc(e.y)}</small></a></li>`).join('')}</ol>
-  <div class="slot"><h2>기초 배경 서술</h2>${p.bgx?`<div class="rh">${rhHtml(p.bgx)}</div>`:`<div class="todo"><b>집필 예정</b>이 시대를 읽는 데 필요한 국가와 사회의 바탕을 풀어 쓴다.</div>`}</div>
+  ${p.bgx||DRAFT?`<div class="slot"><h2>기초 배경 서술</h2>${p.bgx?`<div class="rh">${rhHtml(p.bgx)}</div>`:todo(`이 시대를 읽는 데 필요한 국가와 사회의 바탕을 풀어 쓴다.`)}</div>`:''}
   ${p.sum?`<section class="slot"><h2>이 부에서 바뀐 것</h2><div class="rh">${rhHtml(p.sum)}</div></section>`:''}
   <nav class="pn">${prev?`<a class="prev" href="#/e/${prev.ev.at(-1).id}"><small>이전</small>${esc(prev.ev.at(-1).t)}</a>`:'<span></span>'}<a class="next" href="#/e/${first.id}"><small>다음</small>${first.no}. ${esc(first.t)}</a></nav></article>`;
 }
@@ -703,20 +714,21 @@ function viewEvent0(id,rid){
    ${BD('안내')?`<section class="keys guide"><p class="lbl">먼저 알아 둘 것</p><div class="rh">${rhHtml(BD('안내'))}</div></section>`:''}
    ${pbox(e)}
    ${mini}<p class="note">파란 선은 이 사건을 낳은 앞선 고리, 붉은 선은 이 사건이 낳은 다음 고리입니다.</p>
-   ${SLOTS.filter(([h])=>BD(h)||!DATA.body[id]).map(([h,d])=>`<section class="slot"><h2>${esc((SLOTH[e.kd]||{})[h]||h)}</h2>${BD(h)?`<div class="rh">${rhHtml(BD(h))}</div>`:`<div class="todo"><b>집필 예정</b>${esc(d)}</div>`}</section>`).join('')}
+   ${SLOTS.filter(([h])=>BD(h)||!DATA.body[id]).map(([h,d])=>`<section class="slot"><h2>${esc((SLOTH[e.kd]||{})[h]||h)}</h2>${BD(h)?`<div class="rh">${rhHtml(BD(h))}</div>`:todo(`${esc(d)}`)}</section>`).join('')}
    ${BD('말')?`<section class="slot"><h2>그 시대의 말</h2><div class="words">${BD('말').map(([w,x])=>`<div><b>${esc(w)}</b>${linky(x)}</div>`).join('')}</div></section>`:''}
    ${BD('작품')?`<section class="slot"><h2>이 장의 작품</h2><table class="tbl works"><tbody>${BD('작품').map(([w,y,x])=>`<tr><td>${esc(w)}</td><td><span class="note">${esc(y)}</span><br>${linky(x)}</td></tr>`).join('')}</tbody></table></section>`:''}
    <section class="slot"><h2>영향: 무엇이 바뀌었나</h2>
-   ${BD('영향')?`<div class="rh">${rhHtml(BD('영향'))}</div>`:`<div class="todo" style="margin-top:.6rem"><b>집필 예정</b>국가와 사회에 남은 결과를 다섯 축으로 나누어 풀어 쓴다.</div>`}
+   ${BD('영향')?`<div class="rh">${rhHtml(BD('영향'))}</div>`:todo(`남은 결과를 축으로 나누어 풀어 쓴다.`)}
    ${e.axc&&e.axc.length?`<p class="lbl" style="margin-top:1rem">${esc(DATA.meta.axn)}</p><table class="tbl"><tbody>${e.axc.map(([a,t])=>`<tr><th style="width:7rem"><span class="axt"><i class="ax-${a}"></i>${esc(AX[a].n)}</span></th><td>${esc(t)}</td></tr>`).join('')}</tbody></table>`:''}
    ${chs.length?`<p class="lbl" style="margin-top:1rem">사람들의 변화</p><table class="tbl"><thead><tr><th>집단</th><th>축</th><th>변화</th></tr></thead><tbody>${chs.map(c=>`<tr><td><a href="#/id/${c.g}">${esc(G[c.g].n)}</a></td><td>${esc(AX[c.ax].n)}</td><td>${esc(c.t)}</td></tr>`).join('')}</tbody></table>`:''}</section>
-   <aside class="box deb"><p class="lbl">해석의 갈림</p>${BD('갈림')?`<div class="rh">${rhHtml(BD('갈림'))}</div>`:`<div class="todo"><b>집필 예정</b>책마다, 학설마다 다르게 보는 지점.</div>`}</aside>
-   <aside class="box myth"><p class="lbl">흔한 오해</p>${BD('오해')?`<div class="rh">${rhHtml(BD('오해'))}</div>`:`<div class="todo"><b>집필 예정</b>널리 퍼진 잘못된 이해와 그 교정.</div>`}</aside>
+   ${BD('사관')?`<aside class="box hvb"><p class="lbl">${esc(DATA.meta.hvl||'관점들의 풀이')}</p><dl class="hvl">${BD('사관').map(([a,t])=>`<dt>${esc(a)}</dt><dd>${rich(t)}</dd>`).join('')}</dl></aside>`:''}
+   ${BD('갈림')||DRAFT?`<aside class="box deb"><p class="lbl">해석의 갈림</p>${BD('갈림')?`<div class="rh">${rhHtml(BD('갈림'))}</div>`:todo(`책마다, 학설마다 다르게 보는 지점.`)}</aside>`:''}
+   ${BD('오해')||DRAFT?`<aside class="box myth"><p class="lbl">흔한 오해</p>${BD('오해')?`<div class="rh">${rhHtml(BD('오해'))}</div>`:todo(`널리 퍼진 잘못된 이해와 그 교정.`)}</aside>`:''}
    <section class="slot"><h2>고리</h2><div class="links">
     <div><p class="lbl">앞선 고리 (원인)</p><ul>${e.pv.length?whyList(e.pv,x=>why(x,id)):'<li class="note">이 책의 범위에서는 출발점입니다.</li>'}</ul></div>
     <div><p class="lbl">다음 고리 (영향)</p><ul>${e.nx.length?whyList(e.nx,x=>why(id,x)):'<li class="note">이 책의 범위에서는 이어지는 사건을 따로 두지 않았습니다.</li>'}</ul></div></div>
     <div class="go"><a class="pill" href="#/net/${id}">연결망에서 보기</a><a class="pill" href="#/lanes/${id}">연표에서 보기</a><a class="pill" href="#/map/${id}">지도에서 보기</a></div></section>
-   <section class="slot"><h2>근거 도서</h2>${e.bk.length?`<table class="tbl"><tbody>${e.bk.map(([b,ch])=>`<tr><td><a href="#/books/${b}">${btitle(B[b])}</a></td><td>${esc(ch)}</td></tr>`).join('')}</tbody></table>`:`<div class="todo"><b>집필 예정</b>본문을 쓸 때 기댄 책과 그 부분을 적는다.</div>`}</section>
+   ${e.bk.length||DRAFT?`<section class="slot"><h2>근거 도서</h2>${e.bk.length?`<table class="tbl"><tbody>${e.bk.map(([b,ch])=>`<tr><td><a href="#/books/${b}">${btitle(B[b])}</a></td><td>${esc(ch)}</td></tr>`).join('')}</tbody></table>`:todo(`본문을 쓸 때 기댄 책과 그 부분을 적는다.`)}</section>`:''}
    ${tr?trailNav(e,rid,tr):`<nav class="pn">${prev&&prev.p===e.p?`<a class="prev" href="#/e/${prev.id}"><small>이전</small>${prev.no}. ${esc(prev.t)}</a>`:`<a class="prev" href="#/p/${e.p}"><small>이전</small>${esc(p.no)} 배경</a>`}
    ${next?(next.p===e.p?`<a class="next" href="#/e/${next.id}"><small>다음</small>${next.no}. ${esc(next.t)}</a>`:`<a class="next" href="#/p/${next.p}"><small>다음</small>${esc(P[next.p].no)} ${esc(P[next.p].t)}</a>`):`<a class="next" href="#/end"><small>다음</small>맺음</a>`}</nav>`}</article>`;
 }
@@ -746,8 +758,8 @@ function viewEcon(sid){
     return `<section class="ebox" id="es-${s.id}"><p class="lbl" style="margin:.1rem .3rem">${esc(s.n)} <span class="note">(${esc(s.unit)}${s.log?', 로그 눈금':''})</span></p><div class="scroller"><svg class="echart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(s.n)} 그래프">${bands}${grid}${mk}${body}${xt}</svg></div><p class="note">${esc(s.note)}</p>
       <details style="margin:0 .3rem .6rem"><summary class="note">연도별 수치와 출처</summary><p class="note">${esc(s.src)}</p><p class="note" style="column-width:9rem">${s.data.map(([y,v])=>`${y} · ${fmt(v)}`).join('<br>')}</p></details></section>`;};
   const eco=DATA.events.filter(e=>e.kd==='eco');
-  main.innerHTML=`<div class="wide"><p class="eyebrow">경제 지표</p><h1 style="font-family:var(--serif);font-size:1.7rem;margin:.2rem 0">숫자로 보는 66년</h1>
-  <p class="note vsub">세로 점선은 경제의 큰 분기점입니다. 배경의 색 띠는 이 책의 일곱 부입니다. 막대나 점에 손을 대면 그해의 값이 나옵니다. 휴대폰에서는 그래프를 옆으로 밀어 봅니다.</p>
+  main.innerHTML=`<div class="wide"><p class="eyebrow">경제 지표</p><h1 style="font-family:var(--serif);font-size:1.7rem;margin:.2rem 0">${esc(X.title||'숫자로 보는 흐름')}</h1>
+  <p class="note vsub">세로 점선은 경제의 큰 분기점입니다. 배경의 색 띠는 이 책의 ${kn(DATA.parts.length)} 부입니다. 막대나 점에 손을 대면 그해의 값이 나옵니다. 휴대폰에서는 그래프를 옆으로 밀어 봅니다.</p>
   <div class="chips">${X.marks.map(([y,lab,id])=>`<a class="chip" href="#/e/${id}">${y} · ${esc(lab)}</a>`).join('')}</div>
   ${X.series.map(chart).join('')}
   <h2 class="sh">경제 장 ${eco.length}개</h2><ol class="clist">${eco.map(e=>`<li><a href="#/e/${e.id}"><span class="n">${e.no}</span><span class="t">${esc(e.t)}</span><small>${esc(e.y)}</small></a></li>`).join('')}</ol></div>`;
@@ -764,9 +776,9 @@ function viewAir(pid){
   <section class="airpart" style="--pc:${pc(p.id)}">
   ${a?`<p class="mood">${linky(a.mood)}</p>
   <h2 class="sh">그 시대의 말</h2><div class="words">${a.words.map(([w,x])=>`<div><b>${esc(w)}</b>${linky(x)}</div>`).join('')}</div>
-  ${a.life&&a.life.length?`<h2 class="sh">생활의 풍경</h2><table class="tbl"><tbody>${a.life.map(([k,x])=>`<tr><th style="width:7rem">${esc(k)}</th><td>${linky(x)}</td></tr>`).join('')}</tbody></table>`:''}`:`<div class="todo"><b>집필 예정</b>이 시대의 말과 생활을 모은다.</div>`}
+  ${a.life&&a.life.length?`<h2 class="sh">생활의 풍경</h2><table class="tbl"><tbody>${a.life.map(([k,x])=>`<tr><th style="width:7rem">${esc(k)}</th><td>${linky(x)}</td></tr>`).join('')}</tbody></table>`:''}`:todo(`이 시대의 말과 생활을 모은다.`)}
   ${works.length?`<h2 class="sh">이 시대의 작품</h2><table class="tbl works"><tbody>${works.map(([w,y,x,e])=>`<tr><td>${esc(w)}</td><td><span class="note">${esc(y)} · <a href="#/e/${e.id}">${e.no}장</a></span><br>${linky(x)}</td></tr>`).join('')}</tbody></table>`:''}
-  <h2 class="sh">이 시대의 문화와 공기 장</h2><ol class="clist">${chs.map(e=>`<li><a href="#/e/${e.id}"><span class="n">${e.no}</span><span class="t"><span class="kdm kd-${e.kd}" style="margin-right:.35rem">${KM[e.kd]}</span>${esc(e.t)}</span><small>${esc(e.y)}</small></a></li>`).join('')}</ol></section>
+  <h2 class="sh">이 시대의 문화와 공기 장</h2><ol class="clist">${chs.map(e=>`<li><a href="#/e/${e.id}"><span class="n">${e.no}</span><span class="t"><span class="kdm kd-${e.kd}" style="margin-right:.35rem">${esc(KN[e.kd]||'')}</span>${esc(e.t)}</span><small>${esc(e.y)}</small></a></li>`).join('')}</ol></section>
   <nav class="pn">${DATA.parts[p.i-1]?`<a class="prev" href="#/air/${DATA.parts[p.i-1].id}"><small>이전 시대</small>${esc(DATA.parts[p.i-1].t)}</a>`:'<span></span>'}${DATA.parts[p.i+1]?`<a class="next" href="#/air/${DATA.parts[p.i+1].id}"><small>다음 시대</small>${esc(DATA.parts[p.i+1].t)}</a>`:''}</nav></div>`;
 }
 
@@ -774,7 +786,7 @@ function viewEnd(){
   main.innerHTML=`<article class="col"><header class="chead"><p class="eyebrow">맺음</p><h1>${esc(DATA.meta.title)}</h1></header>
   <h2 class="sh">${esc(DATA.meta.axn)}: 시대별 분포</h2>${heat()}
   <p class="note">수치는 이 책의 ‘사람들의 변화’ 표에 기록된 항목 수입니다.</p>
-  ${DATA.concl?`<div class="rh">${rhHtml(DATA.concl)}</div>`:`<div class="todo"><b>집필 예정</b>여섯 부를 마친 뒤, 154년의 미국사를 다섯 줄기로 다시 정리합니다.</div>`}</article>`;
+  ${DATA.concl?`<div class="rh">${rhHtml(DATA.concl)}</div>`:todo(`모든 부를 마친 뒤, 책의 물음에 대한 답을 축과 줄기로 다시 정리합니다.`)}</article>`;
 }
 
 // ── 지도 화면: 왼쪽 지도, 오른쪽 목록·설명. 시대를 고르면 그 무대로 다가간다
@@ -800,7 +812,7 @@ function viewMap(sel){
    <div class="mtip" id="mtip" hidden></div>
    <div class="mleg"><span><i class="ln in"></i>원인</span><span><i class="ln out"></i>결과</span><span><i class="ring"></i>다른 시대의 연결 사건</span></div></div>
    <aside class="mside" id="mside"></aside></div>
-  <p class="note">바탕은 Natural Earth 자료로 그렸습니다. 회색 선은 오늘의 국경으로, 위치를 가늠하라고 희미하게 넣었습니다. 19~20세기 전반의 국경은 지금과 크게 달랐습니다. 워싱턴 회의처럼 태평양 건너의 사건은 지도 오른쪽 끝 ‘태평양 건너’ 자리에, 남부 인도차이나는 지도 아래쪽 끝에 기호로 표시했습니다. 같은 곳에 몰린 번호는 서로 비켜 놓았고, 가는 선이 실제 자리를 가리킵니다.</p></div>`;
+  <p class="note">바탕은 Natural Earth 자료로 그렸습니다. 회색 선은 오늘의 국경으로, 위치를 가늠하라고 희미하게 넣었습니다. ${esc((DATA.meta&&DATA.meta.mapnote)||'지도 밖에서 일어난 사건은 지도 가장자리에 기호로 표시했습니다.')} 같은 곳에 몰린 번호는 서로 비켜 놓았고, 가는 선이 실제 자리를 가리킵니다.</p></div>`;
   const svg=$('#msvg'),stage=$('#stage'),tip=$('#mtip');
   let lay=store.get('maplay',{bd:true,prov:true,rivers:true,ports:true,lease:true});
   const paintLay=()=>{MAPLAY.forEach(([k])=>{stage.classList.toggle('no'+(k==='bd'?'borders':k),!lay[k]);});document.querySelectorAll('[data-lay]').forEach(b=>b.classList.toggle('on',!!lay[b.dataset.lay]));};
@@ -944,7 +956,7 @@ function viewTrail(rid){
   main.innerHTML=`<div class="col"><p class="eyebrow"><a href="#/lanes">무대 연표</a> · 무대별 이어 읽기</p>
   <div class="ctrl">${DATA.regions.map(x=>`<a class="pill ${x.id===rid?'on':''}" href="#/rr/${x.id}">${esc(x.n)}</a>`).join('')}</div>
   <h1 class="vt">${esc(r.n)}의 장 이어 읽기</h1><p class="sub">${esc(r.h)}</p>
-  <p>이 책은 다섯 무대를 시대순으로 번갈아 다룹니다. 여기서는 ${esc(r.n)}에 걸린 장만 골라 책의 순서대로 이어 읽습니다. 장을 열면 맨 아래의 ‘다음’이 이 무대의 다음 장으로 이어지고, 맨 위 띠에서 언제든 책 전체의 순서로 돌아갈 수 있습니다.</p>
+  <p>이 책은 ${kn(DATA.regions.length)} 무대를 시대순으로 번갈아 다룹니다. 여기서는 ${esc(r.n)}에 걸린 장만 골라 책의 순서대로 이어 읽습니다. 장을 열면 맨 아래의 ‘다음’이 이 무대의 다음 장으로 이어지고, 맨 위 띠에서 언제든 책 전체의 순서로 돌아갈 수 있습니다.</p>
   <div class="ctrl"><span class="lb">범위</span><button class="pill ${mode==='all'?'on':''}" data-tm="all">이 무대가 걸린 모든 장 · ${nAll}장</button><button class="pill ${mode==='core'?'on':''}" data-tm="core">이 무대가 중심인 장만 · ${nCore}장</button></div>
   <div class="go"><a class="pill on" href="#/e/${seq[0].id}/${rid}">처음부터 읽기 (${seq[0].no}장)</a>${nread&&resume?`<a class="pill" href="#/e/${resume.id}/${rid}">읽지 않은 곳부터 (${resume.no}장)</a>`:''}<a class="pill" href="#/lanes">연표로 돌아가기</a></div>
   <div class="meter"><i style="width:${nread/seq.length*100}%"></i></div><p class="note">${seq.length}장 가운데 ${nread}장을 읽었습니다. ‘함께’ 표시는 이 무대가 중심은 아니지만 함께 걸린 장입니다.</p>
@@ -961,7 +973,7 @@ const NETCAT=(()=>{const ord=a=>[...new Set(a)].filter(x=>E[x]).sort((x,y)=>E[x]
   const axEv={};DATA.groups.forEach(g=>g.ch.forEach(([ev,ax])=>(axEv[ax]=axEv[ax]||[]).push(ev)));
   return [
    {k:'part',n:'부',d:DATA.parts.length+'개의 시대',m:DATA.parts.map(p=>({id:p.id,n:p.no,s:p.t,c:pc(p.id),ev:ord(DATA.events.filter(e=>e.p===p.id).map(e=>e.id))}))},
-   {k:'region',n:'무대',d:'다섯 무대',m:DATA.regions.map(r=>({id:r.id,n:r.n,ev:ord(DATA.events.filter(e=>e.r.includes(r.id)).map(e=>e.id))}))},
+   {k:'region',n:'무대',d:kn(DATA.regions.length)+' 무대',m:DATA.regions.map(r=>({id:r.id,n:r.n,ev:ord(DATA.events.filter(e=>e.r.includes(r.id)).map(e=>e.id))}))},
    {k:'thread',n:'줄기',d:'시대를 건너는 흐름',m:DATA.threads.map(t=>({id:t.id,n:t.n,s:t.d,ev:ord(t.ev)}))},
    {k:'axis',n:'축',d:'무엇이 바뀌었나',m:DATA.axes.map(a=>({id:a.id,n:a.n,s:a.d,ev:ord(axEv[a.id]||[])}))},
    {k:'group',n:'집단',d:'누가 바뀌었나',m:DATA.groups.map(g=>({id:g.id,n:g.n,s:g.d,ev:ord(g.ch.map(c=>c[0]))}))},
@@ -1041,7 +1053,7 @@ function viewId(gid){
   const all=allCh(),tot=all.length;
   const cnt=(f)=>all.filter(f).length;
   main.innerHTML=`<div class="col"><p class="eyebrow">사람들의 변화</p><h1 class="vt">누구의, 무엇이, 언제 바뀌었나</h1>
-  <p class="lede">체제가 바뀌면 사람들의 삶도 바뀝니다. 이 화면은 ${DATA.events.length}개 사건이 ${DATA.groups.length}개 집단의 무엇을 바꾸었는지를 다섯 축(정치와 안보, 경제와 일, 생활과 사회, 문화와 사상, 세계와 기억)으로 나누어 모은 색인입니다. 지금까지 ${tot}건을 기록했습니다. 본문을 쓴 장의 기록만 들어 있고, 집필이 이어지면 늘어납니다.</p>
+  <p class="lede">체제가 바뀌면 사람들의 삶도 바뀝니다. 이 화면은 ${DATA.events.length}개 사건이 ${DATA.groups.length}개 집단의 무엇을 바꾸었는지를 ${kn(DATA.axes.length)} 축(${DATA.axes.map(a=>esc(a.n)).join(', ')})으로 나누어 모은 색인입니다. 지금까지 ${tot}건을 기록했습니다.${DRAFT?' 본문을 쓴 장의 기록만 들어 있고, 집필이 이어지면 늘어납니다.':''}</p>
   <div class="how"><button data-jump="idg"><b>1. 집단을 따라가기</b><span>한 집단이 지금의 모습이 되기까지</span></button><button data-jump="idx"><b>2. 축을 따라가기</b><span>일, 생활 같은 한 축이 집단마다 언제 바뀌었나</span></button><button data-jump="idt"><b>3. 시대를 비교하기</b><span>어느 시대에 어느 축이 많이 바뀌었나</span></button></div>
   <h2 class="sh" id="idg">집단을 골라 따라가기</h2>
   <div class="grid gcards">${DATA.groups.map(x=>{const ys=x.ch.map(c=>E[c[0]]).sort((a,b)=>a.yr-b.yr);return `<a class="card" href="#/id/${x.id}"><h3>${esc(x.n)}</h3><p>${esc(x.d)}</p>
@@ -1073,8 +1085,8 @@ function groupPage(g){
   main.innerHTML=`<div class="col"><p class="eyebrow"><a href="#/id">사람들의 변화</a> · 집단</p><h1 class="vt">${esc(g.n)}</h1>
   <p class="lede">${esc(g.d)}</p>
   <div class="ctrl"><button class="pill" id="gprev" ${gp?'':'disabled'}>← ${gp?esc(gp.n):''}</button><label class="vh" for="gsel">집단 고르기</label><select id="gsel" class="sel">${DATA.groups.map(x=>`<option value="${x.id}" ${x===g?'selected':''}>${esc(x.n)}</option>`).join('')}</select><button class="pill" id="gnext" ${gn?'':'disabled'}>${gn?esc(gn.n):''} →</button></div>
-  <h2 class="sh">다섯 축이 바뀐 때</h2>
-  <p class="note">가로는 시간, 세로는 다섯 축입니다. 제8부의 주제 장은 다루는 대표 연도에 놓입니다. 점 하나가 그 축을 바꾼 사건이고, 점 안의 숫자는 장 번호입니다.</p>
+  <h2 class="sh">${kn(DATA.axes.length)} 축이 바뀐 때</h2>
+  <p class="note">가로는 시간, 세로는 ${kn(DATA.axes.length)} 축입니다.${DATA.parts.some(p=>p.theme)?' 주제 부의 장은 다루는 대표 연도에 놓입니다.':''} 점 하나가 그 축을 바꾼 사건이고, 점 안의 숫자는 장 번호입니다.</p>
   <div class="gstrip"><svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${esc(g.n)}의 축별 변화 시점">${bands}${rows}</svg></div>
   <h2 class="sh">변화의 기록 <span class="segs"><button class="pill ${mode==='time'?'on':''}" data-m="time">시간순</button><button class="pill ${mode==='axis'?'on':''}" data-m="axis">축별</button></span></h2>
   <div id="glist"></div>
@@ -1108,7 +1120,7 @@ function rhHtml(a){return (a||[]).map(x=>x.startsWith('## ')?`<h4>${esc(x.slice(
 // ── 줄기
 function viewThread(tid){
   const T=DATA.threads,t=T.find(x=>x.id===tid);
-  if(!t){main.innerHTML=`<div class="col"><p class="eyebrow">줄기</p><h1 style="font-family:var(--serif);font-size:1.7rem;margin:.2rem 0">네 줄기</h1>
+  if(!t){main.innerHTML=`<div class="col"><p class="eyebrow">줄기</p><h1 style="font-family:var(--serif);font-size:1.7rem;margin:.2rem 0">${kn(T.length)} 줄기</h1>
    <p class="lede" style="font-size:1rem">부와 무대의 칸을 건너, 하나의 물음을 따라 사건을 시간 순으로 잇습니다.</p>
    <div class="grid">${T.map(x=>`<a class="card" href="#/t/${x.id}"><h3>${esc(x.n)}</h3><p>${esc(x.d)}</p><p class="note" style="margin-top:.4rem">사건 ${x.ev.length}개</p></a>`).join('')}</div></div>`;return;}
   const ev=t.ev.map(id=>E[id]).filter(Boolean);
@@ -1192,7 +1204,7 @@ const lnStrip=(l,big)=>{const n=DATA.events.length,st=l.st.map(lnStage);
 let lnCat=store.get('lnCat','');
 function viewLineage(id){
   const l=LN[id];if(l)return lineagePage(l);
-  if(!DATA.lineage.length){main.innerHTML=`<div class="col"><p class="eyebrow">요소별 변천</p><h1 class="vt">하나만 골라 끝까지 따라가기</h1><div class="todo"><b>집필 예정</b>천황, 군대, 정당, 재벌, 조선, 만주, 도쿄 같은 요소의 일대기를 본문이 충분히 쓰인 뒤에 모읍니다.</div></div>`;return;}
+  if(!DATA.lineage.length){if(!DRAFT){location.replace('#/');return;}main.innerHTML=`<div class="col"><p class="eyebrow">요소별 변천</p><h1 class="vt">하나만 골라 끝까지 따라가기</h1><div class="todo"><b>집필 예정</b>개념·인물·제도 같은 요소의 일대기를 본문이 충분히 쓰인 뒤에 모읍니다.</div></div>`;return;}
   const cnt=c=>DATA.lineage.filter(x=>x.cat===c).length;
   main.innerHTML=`<div class="col"><p class="eyebrow">요소별 변천</p><h1 class="vt">하나만 골라 끝까지 따라가기</h1>
   <p class="lede">본문은 시대순으로 흐르기 때문에, 한 개념이나 인물, 도시가 어떻게 바뀌어 왔는지는 여러 장에 흩어져 있습니다. 이 화면은 그것을 하나씩 모아 한 줄로 잇습니다.</p>

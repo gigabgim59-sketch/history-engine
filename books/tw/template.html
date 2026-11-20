@@ -511,7 +511,8 @@ const fchip=p=>`<span class="fchip" style="--pc:${pcol(p)}"><i class="fdot"></i>
 const chOf={};DATA.groups.forEach(g=>g.ch.forEach(([ev,ax,t])=>(chOf[ev]=chOf[ev]||[]).push({g:g.id,ax,t})));
 const pc=id=>`var(--${id})`;
 const ECOL=e=>pc(e.p);
-const WN={1:'핵심',2:'주요',3:'보조'},WL={1:'약 5천 자',2:'약 2,500자',3:'약 1,500자'};
+const WLC=(()=>{const SL=v=>typeof v==='string'?v.length:Array.isArray(v)?v.reduce((a,x)=>a+SL(x),0):0;const by={};(DATA.events||[]).forEach(e=>{const b=DATA.body&&DATA.body[e.id];if(b)(by[e.w]=by[e.w]||[]).push(SL(Object.values(b)));});const med=a=>{const c=[...a].sort((x,y)=>x-y);return c[Math.floor((c.length-1)/2)];};return Object.fromEntries(Object.entries(by).map(([w,a])=>[w,'약 '+(Math.round(med(a)/100)*100).toLocaleString('en-US')+'자']));})(); // 장 머리 분량 표시: 등급별 실제 중앙값(DEFECTS E-06)
+const WN={1:'핵심',2:'주요',3:'보조'},WL=(DATA.meta&&DATA.meta.wl)||WLC;
 const yfmt=y=>y<0?`기원전 ${-y}`:String(y);
 
 // ── 읽은 장
@@ -671,8 +672,8 @@ function viewEvent0(id,rid){
    ${BD('영향')?`<div class="rh">${rhHtml(BD('영향'))}</div>`:`<div class="todo" style="margin-top:.6rem"><b>집필 예정</b>정치·사회·경제에 남은 결과를 다섯 겹으로 나누어 풀어 쓴다.</div>`}
    ${e.axc&&e.axc.length?`<p class="lbl" style="margin-top:1rem">${esc(DATA.meta.axn)}</p><table class="tbl"><tbody>${e.axc.map(([a,t])=>`<tr><th style="width:7rem"><span class="axt"><i class="ax-${a}"></i>${esc(AX[a].n)}</span></th><td>${esc(t)}</td></tr>`).join('')}</tbody></table>`:''}
    ${chs.length?`<p class="lbl" style="margin-top:1rem">사람들의 변화</p><table class="tbl"><thead><tr><th>집단</th><th>겹</th><th>변화</th></tr></thead><tbody>${chs.map(c=>`<tr><td><a href="#/id/${c.g}">${esc(G[c.g].n)}</a></td><td>${esc(AX[c.ax].n)}</td><td>${esc(c.t)}</td></tr>`).join('')}</tbody></table>`:''}</section>
-   <aside class="box deb"><p class="lbl">해석의 갈림</p>${BD('갈림')?`<div class="rh">${rhHtml(BD('갈림'))}</div>`:`<div class="todo"><b>집필 예정</b>책마다, 학설마다 다르게 보는 지점.</div>`}</aside>
-   <aside class="box myth"><p class="lbl">흔한 오해</p>${BD('오해')?`<div class="rh">${rhHtml(BD('오해'))}</div>`:`<div class="todo"><b>집필 예정</b>널리 퍼진 잘못된 이해와 그 교정.</div>`}</aside>
+   ${BD('갈림')?`<aside class="box deb"><p class="lbl">해석의 갈림</p><div class="rh">${rhHtml(BD('갈림'))}</div></aside>`:''}
+   ${BD('오해')?`<aside class="box myth"><p class="lbl">흔한 오해</p><div class="rh">${rhHtml(BD('오해'))}</div></aside>`:''}
    <section class="slot"><h2>고리</h2><div class="links">
     <div><p class="lbl">앞선 고리 (원인)</p><ul>${e.pv.length?whyList(e.pv,x=>why(x,id)):'<li class="note">이 책의 범위에서는 출발점입니다.</li>'}</ul></div>
     <div><p class="lbl">다음 고리 (영향)</p><ul>${e.nx.length?whyList(e.nx,x=>why(id,x)):'<li class="note">이 책의 범위에서는 이어지는 사건을 따로 두지 않았습니다.</li>'}</ul></div></div>

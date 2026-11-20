@@ -25,7 +25,9 @@ export function build(){
   // 성 경계: Natural Earth 1급 행정 경계 가운데 중국
   const a1=JSON.parse(fs.readFileSync('ref/ne/adm1_lines.geojson'));
   const lines=(feats,tol)=>{let out='';for(const f of feats){const g=f.geometry;const ls=g.type==='LineString'?[g.coordinates]:g.coordinates;for(const l of ls){let last=null,seg='';const pts=[];for(const c of l){const q=proj(c);if(!q)continue;if(last&&Math.hypot(q[0]-last[0],q[1]-last[1])<tol)continue;pts.push(q);last=q;}const e=proj(l.at(-1));if(e&&pts.length&&pts.at(-1)!==e)pts.push(e);if(pts.length<2)continue;out+='M'+pts.map(q=>q[0].toFixed(1)+','+q[1].toFixed(1)).join('L');}}return out;};
-  const prov=lines(a1.features.filter(f=>f.properties.ADM0_NAME==='China'),1.6);
+  let prov=lines(a1.features.filter(f=>f.properties.ADM0_NAME==='China'),1.6);
+  // ref/ne/adm1_lines.geojson에 이 나라가 없으면 출간본에서 떼어 둔 선을 쓴다(prov_cache.json)
+  if(!prov&&fs.existsSync('prov_cache.json'))prov=JSON.parse(fs.readFileSync('prov_cache.json')).prov;
   // 강: Natural Earth 10m 강 중심선, 규모가 큰 것만
   const rv=JSON.parse(fs.readFileSync('ref/ne/ne_10m_rivers_lake_centerlines.geojson'));
   const thin=co=>co.filter((p,i)=>i%3===0||i===co.length-1);

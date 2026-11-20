@@ -1,0 +1,10 @@
+<script>(function(){var H=history,P=H.pushState.bind(H),R=H.replaceState.bind(H),skip=0,tm;
+addEventListener('popstate',function(e){if(skip>0){skip--;e.stopImmediatePropagation();}},true);
+addEventListener('hashchange',function(){clearTimeout(tm);tm=setTimeout(function(){skip=0},200)},true);
+function mark(){skip++;clearTimeout(tm);tm=setTimeout(function(){skip=0},400);}
+function hof(u){u=String(u);var i=u.indexOf('#');return i<0?'':u.slice(i);}
+function base(){return location.href.split('#')[0];}
+function ok(f,s,t,u){try{f(s,t,u);return hof(location.href)===hof(u)}catch(e){return false}}
+H.pushState=function(s,t,u){if(u==null){try{P(s,t)}catch(e){}return;}if(ok(P,s,t,u))return;var h=hof(u);if(h!==location.hash){mark();location.hash=h||'#';}try{R(s,t)}catch(e){}};
+H.replaceState=function(s,t,u){if(u==null){try{R(s,t)}catch(e){}return;}if(ok(R,s,t,u))return;var h=hof(u);if(h!==location.hash){mark();try{location.replace(base()+(h||'#'))}catch(e){}}try{R(s,t)}catch(e){}};
+try{var fi=window.frameElement&&frameElement.getAttribute('data-inner');if(fi&&fi!==location.hash)H.replaceState(H.state,'',fi);}catch(e){}})();</script>

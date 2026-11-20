@@ -79,7 +79,7 @@ const seas=(D.SEAS||[]).map(([n,lo,la])=>({n,xy:P(lo,la)}));
 const lineage=(LN.LINEAGE||[]).map(l=>({...l,b:LNB[l.id]||null}));
 const DATA={meta:META,why:WHY,concl:CONCL,body:BODY,W:g.W,H:g.H,land:g.land,grat:g.grat,borders:g.borders,prov:g.prov,rivers:g.rivers,lakes:g.lakes,
  regions,seas,people,facts:FACTS,pdeny:PDENY,axes:D.AXES,engines:D.ENGINES,parts,events,groups,books:BOOKS,terms:TERMS,tcats:TCATS,lineage,lcats:LN.LCATS||[],
- threads:D.THREADS.map(t=>({...t,ev:THREAD_EV[t.id]||[]})),ports:[],leases:[],kinds:D.KINDS||null,econ:ECON};
+ threads:D.THREADS.map(t=>({...t,ev:THREAD_EV[t.id]||[]})),ports:[],leases:[],kinds:D.KINDS||null,sloth:D.SLOTH||null,econ:ECON};
 
 // 장 머리 분량 표시: 등급별 실제 중앙값(100자 반올림). 손으로 적지 않는다(LIBRARY U8)
 {const SL2=v=>typeof v==='string'?v.length:Array.isArray(v)?v.reduce((a,x)=>a+SL2(x),0):0;const L=Object.fromEntries(Object.entries(BODY).map(([k,v])=>[k,SL2(Object.values(v))]));const by={};
