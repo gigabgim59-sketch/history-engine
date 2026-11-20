@@ -107,7 +107,7 @@ grep -E "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}" dist/index.html   # 개인
 1. **등록부:** `library/books.json`에 그 책을 넣는다.
    - 들어갈 칸: id, 제목(`t`), 부제(`sub`), 범위(`span`), 설명(`desc`), 묶음(`grp`), 장·부 수(`ev`, `parts`), 읽는 법 여부(`guide`), 색(`color`, `colorDark`), PDF 이름(`pdf`), 소스 위치(`source`).
    - 새 묶음이 필요하면 `grp`에 새 이름을 쓴다. 서가는 묶음을 자동으로 만든다.
-2. **병합:** `python3 library/merge.py`. 병합 도구가 하는 일:
+2. **병합:** `python3 library/merge.py`(서재가 여럿이면 `--reg <등록부>`). 기존 책의 HTML이 작업 환경에 없으면 먼저 `python3 library/extract.py <서가 HTML>`로 공개 서가에서 꺼낸다. 병합 도구가 하는 일:
    - 책 사이 일관성 검사(`library/xcheck.py`)
    - 권수 문구, 색, 카드, PDF 버튼 생성
    - 공통 글꼴 생성

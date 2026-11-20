@@ -13,8 +13,12 @@ guideHtml(읽는 법 HTML 경로, 있을 때), source(소스 위치 메모).
 """
 import json, re, sys, os, gzip, base64, io, html as H
 HERE = os.path.dirname(os.path.abspath(__file__))
-REG = json.load(open(os.path.join(HERE, 'books.json'), encoding='utf-8'))
-OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, 'dist', 'index.html')
+# 사용: python3 library/merge.py [--reg 등록부.json] [출력 경로]  — 서재가 여럿이면 등록부를 따로 둔다(기본 library/books.json)
+args = sys.argv[1:]
+REGP = os.path.join(HERE, 'books.json')
+if args[:1] == ['--reg']: REGP = os.path.abspath(args[1]); args = args[2:]
+REG = json.load(open(REGP, encoding='utf-8'))
+OUT = args[0] if args else os.path.join(HERE, 'dist', 'index.html')
 SHELL = open(os.path.join(HERE, 'shell.html'), encoding='utf-8').read()
 
 def kn(n):
