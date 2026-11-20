@@ -36,8 +36,9 @@
    "colorDark": "#c98ac5",
    "pdf": "기원과계승그리고재창조_A4.pdf",
    "source": "books/eu",
-   "html": "library/build/eu.html",
-   "guideHtml": "library/build/eu.guide.html"
+   "html": "books/eu/dist/eurasia.html",
+   "guideHtml": "library/build/eu.guide.html",
+   "print": "books/eu/print/book_a4.pdf"
   },
   {
    "id": "rf",
@@ -53,7 +54,8 @@
    "colorDark": "#d2b07c",
    "pdf": "갈라진교회_A4.pdf",
    "source": "books/rf",
-   "html": "library/build/rf.html"
+   "html": "books/rf/dist/index.html",
+   "print": "books/rf/print/book_a4.pdf"
   },
   {
    "id": "rp",
@@ -69,8 +71,9 @@
    "colorDark": "#8fa9e6",
    "pdf": "공화국의탄생_A4.pdf",
    "source": "books/rp",
-   "html": "library/build/rp.html",
-   "guideHtml": "library/build/rp.guide.html"
+   "html": "books/rp/dist/index.html",
+   "guideHtml": "library/build/rp.guide.html",
+   "print": "books/rp/print/book_a4.pdf"
   },
   {
    "id": "lm",
@@ -86,7 +89,8 @@
    "colorDark": "#e48fb2",
    "pdf": "계몽의갈래_A4.pdf",
    "source": "books/lm",
-   "html": "library/build/lm.html"
+   "html": "books/lm/dist/index.html",
+   "print": "books/lm/print/book_a4.pdf"
   },
   {
    "id": "ru",
@@ -102,7 +106,8 @@
    "colorDark": "#8fb3e0",
    "pdf": "러시아의눈_A4.pdf",
    "source": "books/ru",
-   "html": "library/build/ru.html"
+   "html": "books/ru/dist/index.html",
+   "print": "books/ru/print/book_a4.pdf"
   },
   {
    "id": "fr",
@@ -118,7 +123,8 @@
    "colorDark": "#eda27a",
    "pdf": "시민의탄생_A4.pdf",
    "source": "books/fr",
-   "html": "library/build/fr.html"
+   "html": "books/fr/dist/index.html",
+   "print": "books/fr/print/book_a4.pdf"
   },
   {
    "id": "np",
@@ -134,7 +140,8 @@
    "colorDark": "#ad9fe6",
    "pdf": "황제의유럽_A4.pdf",
    "source": "books/np",
-   "html": "library/build/np.html"
+   "html": "books/np/dist/index.html",
+   "print": "books/np/print/book_a4.pdf"
   },
   {
    "id": "su",
@@ -150,8 +157,9 @@
    "colorDark": "#f0899a",
    "pdf": "깃발이내려지기까지_A4.pdf",
    "source": "books/su",
-   "html": "library/build/su.html",
-   "guideHtml": "library/build/su.guide.html"
+   "html": "books/su/dist/index.html",
+   "guideHtml": "library/build/su.guide.html",
+   "print": "books/su/print/book_a4.pdf"
   },
   {
    "id": "bc",
@@ -167,7 +175,8 @@
    "colorDark": "#b9c46a",
    "pdf": "제국의경영_A4.pdf",
    "source": "books/bc",
-   "html": "library/build/bc.html"
+   "html": "books/bc/dist/index.html",
+   "print": "books/bc/print/book_a4.pdf"
   },
   {
    "id": "us",
@@ -183,7 +192,8 @@
    "colorDark": "#80cc97",
    "pdf": "자유의제국_A4.pdf",
    "source": "books/us",
-   "html": "library/build/us.html"
+   "html": "books/us/dist/index.html",
+   "print": "books/us/print/book_a4.pdf"
   },
   {
    "id": "dp",
@@ -199,7 +209,8 @@
    "colorDark": "#a5b8cf",
    "pdf": "세계의설계자_A4.pdf",
    "source": "books/dp",
-   "html": "library/build/dp.html"
+   "html": "books/dp/dist/index.html",
+   "print": "books/dp/print/book_a4.pdf"
   },
   {
    "id": "jh",
@@ -215,7 +226,8 @@
    "colorDark": "#b5c47a",
    "pdf": "지하드주의의눈_A4.pdf",
    "source": "books/jh (book.json만 남음)",
-   "html": "library/build/jh.html"
+   "html": "books/jh/dist/index.html",
+   "print": "books/jh/print/book_a4.pdf"
   },
   {
    "id": "cn",
@@ -231,8 +243,9 @@
    "colorDark": "#ec8577",
    "pdf": "천하에서국가로_A4.pdf",
    "source": "books/cn",
-   "html": "library/build/cn.html",
-   "guideHtml": "library/build/cn.guide.html"
+   "html": "books/cn/dist/index.html",
+   "guideHtml": "library/build/cn.guide.html",
+   "print": "books/cn/print/book_a4.pdf"
   },
   {
    "id": "kr",
@@ -248,7 +261,8 @@
    "colorDark": "#8fc4a0",
    "pdf": "충격과대응_A4.pdf",
    "source": "books/kr",
-   "html": "library/build/kr.html"
+   "html": "books/kr/dist/index.html",
+   "print": "books/kr/print/book_a4.pdf"
   },
   {
    "id": "je",
@@ -264,7 +278,8 @@
    "colorDark": "#f08cb2",
    "pdf": "일본의눈_A4.pdf",
    "source": "books/je (book.json만 남음)",
-   "html": "library/build/je.html"
+   "html": "books/je/dist/index.html",
+   "print": "books/je/print/book_a4.pdf"
   },
   {
    "id": "tw",
@@ -280,7 +295,8 @@
    "colorDark": "#6cc2ad",
    "pdf": "섬의주인_A4.pdf",
    "source": "books/tw",
-   "html": "library/build/tw.html"
+   "html": "books/tw/dist/index.html",
+   "print": "books/tw/print/book_a4.pdf"
   },
   {
    "id": "jp",
@@ -296,8 +312,9 @@
    "colorDark": "#d9a650",
    "pdf": "제국의길_A4.pdf",
    "source": "books/jp",
-   "html": "library/build/jp.html",
-   "guideHtml": "library/build/jp.guide.html"
+   "html": "books/jp/dist/index.html",
+   "guideHtml": "library/build/jp.guide.html",
+   "print": "books/jp/print/book_a4.pdf"
   },
   {
    "id": "pw",
@@ -313,8 +330,9 @@
    "colorDark": "#7fb6d3",
    "pdf": "잃어버린것과얻은것_A4.pdf",
    "source": "books/pw",
-   "html": "library/build/pw.html",
-   "guideHtml": "library/build/pw.guide.html"
+   "html": "books/pw/dist/index.html",
+   "guideHtml": "library/build/pw.guide.html",
+   "print": "books/pw/print/book_a4.pdf"
   }
  ],
  "subTpl": "{n} 권의 역사책을 한 파일에",

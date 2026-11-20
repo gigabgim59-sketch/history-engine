@@ -38,7 +38,7 @@ export const BOOKS = [
  {id:'spence',lang:'en',t:'The Chan\'s Great Continent: China in Western Minds',a:'Jonathan D. Spence',o:'1998',role:'유럽이 상상한 중국의 모습을 시대별로 그렸다.',warn:'—'},
  {id:'mungello',lang:'en',t:'Curious Land: Jesuit Accommodation and the Origins of Sinology',a:'David E. Mungello',o:'1985',role:'예수회의 적응주의와 유럽 중국학의 기원을 다루었다.',warn:'—'},
  {id:'landes',lang:'en',t:'Women and the Public Sphere in the Age of the French Revolution',a:'Joan B. Landes',o:'1988',role:'혁명의 공론장이 여성을 배제한 방식을 보였다.',warn:'—'},
- {id:'blom',lang:'en',t:'Enlightening the World: Encyclopédie, the Book That Changed the Course of History',a:'Philipp Blom',o:'2004',role:'『백과전서』를 만든 사람들의 이야기를 썼다.',warn:'—'},
+ {id:'blom',lang:'en',t:'Enlightening the World: Encyclopédie, the Book That Changed the Course of History',a:'Philipp Blom',o:'2005',role:'『백과전서』를 만든 사람들의 이야기를 썼다.',warn:'—'},
  {id:'yeo',lang:'en',t:'Encyclopaedic Visions: Scientific Dictionaries and Enlightenment Culture',a:'Richard Yeo',o:'2001',role:'체임버스 이래 영국의 백과사전 문화를 다루었다.',warn:'—'},
  {id:'neiman',lang:'en',t:'Evil in Modern Thought: An Alternative History of Philosophy',a:'Susan Neiman',o:'2002',role:'리스본에서 아우슈비츠까지 악의 문제로 근대 철학을 다시 썼다.',warn:'—'},
  {id:'shrady',lang:'en',t:'The Last Day: Wrath, Ruin, and Reason in the Great Lisbon Earthquake of 1755',a:'Nicholas Shrady',o:'2008',role:'리스본 대지진과 폼발의 재건을 그렸다.',warn:'—'},

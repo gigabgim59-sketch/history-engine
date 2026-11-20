@@ -7,6 +7,10 @@ from playwright.sync_api import sync_playwright
 O = sys.argv[1]; B = os.path.abspath(sys.argv[2] if len(sys.argv) > 2 else '.')
 os.makedirs(O, exist_ok=True)
 html = os.path.join(B, 'dist', 'index.html')
+if not os.path.exists(html):  # 출력 이름이 다른 옛 책(eu: eurasia.html)
+    import glob
+    c = [f for f in glob.glob(os.path.join(B, 'dist', '*.html')) if not f.endswith('guide.html')]
+    html = c[0] if len(c) == 1 else html
 src = open(html, encoding='utf-8').read()
 m = re.search(r'const DATA=(\{.*?\});\n', src, re.S)
 D = json.loads(m.group(1)) if m else {'events': [], 'parts': []}
