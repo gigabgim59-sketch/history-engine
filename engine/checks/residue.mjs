@@ -21,7 +21,7 @@ for(const [v] of tabs)if(v in HAS&&!HAS[v])out.push(`메뉴 '${v}'가 보이지�
 const screens=[['home','#/'],...tabs.filter(([v])=>v!=='home')];
 for(const [v,h] of screens){await pg.evaluate(x=>{location.hash=x},h);await pg.waitForTimeout(350);
   const t=await pg.evaluate(()=>document.querySelector('main')?document.querySelector('main').innerText:document.body.innerText);
-  for(const [w,why] of words){if(t.includes(w)&&!DATAJSON.includes(w))out.push(`${h}: '${w}' (${why})`);}
+  for(const [w,why,home] of words){if(home&&home===(D.meta&&D.meta.title))continue;if(t.includes(w)&&!DATAJSON.includes(w))out.push(`${h}: '${w}' (${why})`);}
   for(const m of t.matchAll(/(?<![가-힣])(한|두|세|네|다섯|여섯|일곱|여덟|아홉|열|열한|열두) (줄기|무대|집단|힘|부|축|겹)(?![가-힣])/g)){
     const n=NUM[m[1]],k=m[2],have=COUNT[k];
     if(have&&n!==have&&!DATAJSON.includes(m[0]))out.push(`${h}: '${m[0]}'인데 자료의 ${k}는 ${have}개`);}
@@ -30,7 +30,7 @@ for(const [v,h] of screens){await pg.evaluate(x=>{location.hash=x},h);await pg.w
 const pages=[...(D.parts||[]).map(p=>'#/p/'+p.id),...(D.events||[]).map(e=>'#/e/'+e.id),'#/end'];
 for(const h of pages){await pg.evaluate(x=>{location.hash=x},h);await pg.waitForTimeout(120);
   const t=await pg.evaluate(()=>document.querySelector('main')?document.querySelector('main').innerText:'');
-  for(const [w,why] of words){if(t.includes(w)&&!DATAJSON.includes(w))out.push(`${h}: '${w}' (${why})`);}}
+  for(const [w,why,home] of words){if(home&&home===(D.meta&&D.meta.title))continue;if(t.includes(w)&&!DATAJSON.includes(w))out.push(`${h}: '${w}' (${why})`);}}
 await b.close();
 const all=[...new Set([...out,...errs])];
 console.log(all.length?all.join('\n'):'잔재 없음');process.exit(all.length?1:0);
