@@ -1,5 +1,24 @@
 // 서가: 원서만(SPEC). 모두 이번 세션에서 웹으로 서지(저자·연도·학술지·쪽)의 실재를 확인했다. 내용은 2차 자료로 확인한 범위만 본문에 썼다(UNVERIFIED)
 export const BOOKS = [
+ {id:'bayes1763',lang:'src',t:'An essay towards solving a problem in the doctrine of chances',a:'Thomas Bayes (Richard Price 편)',o:'Philosophical Transactions 53 (1763, 1764 인쇄): 370–418',role:'원인의 확률을 다룬 논고. 당구대의 예.',warn:'—'},
+ {id:'laplace1814',lang:'src',t:'Essai philosophique sur les probabilités',a:'Pierre-Simon Laplace',o:'1814',role:'계승 규칙과 해돋이의 예.',warn:'—'},
+ {id:'boole1854',lang:'src',t:'An Investigation of the Laws of Thought',a:'George Boole',o:'1854',role:'균등 사전의 자의성 비판.',warn:'—'},
+ {id:'bertrand1889',lang:'src',t:'Calcul des probabilités',a:'Joseph Bertrand',o:'1889',role:'현의 역설.',warn:'—'},
+ {id:'keynes1921',lang:'src',t:'A Treatise on Probability',a:'John Maynard Keynes',o:'1921',role:'논리적 확률, 무차별 원리(4장).',warn:'—'},
+ {id:'poisson1837',lang:'src',t:'Recherches sur la probabilité des jugements en matière criminelle et en matière civile',a:'Siméon Denis Poisson',o:'1837',role:'우연과 확률의 구별.',warn:'—'},
+ {id:'cournot1843',lang:'src',t:'Exposition de la théorie des chances et des probabilités',a:'Antoine Augustin Cournot',o:'1843',role:'객관적·주관적 확률.',warn:'—'},
+ {id:'ellis1844',lang:'src',t:'On the foundations of the theory of probabilities',a:'Robert Leslie Ellis',o:'Transactions of the Cambridge Philosophical Society 8 (1844; 1842 낭독)',role:'빈도 해석의 앞선 형태.',warn:'—'},
+ {id:'venn1866',lang:'src',t:'The Logic of Chance',a:'John Venn',o:'1866',role:'계열로서의 확률.',warn:'—'},
+ {id:'vonmises1928',lang:'src',t:'Wahrscheinlichkeit, Statistik und Wahrheit',a:'Richard von Mises',o:'1928',role:'콜렉티브.',warn:'—'},
+ {id:'carnap1945',lang:'src',t:'The two concepts of probability',a:'Rudolf Carnap',o:'Philosophy and Phenomenological Research 5 (1945): 513–532',role:'확률1과 확률2.',warn:'—'},
+ {id:'borel1924',lang:'src',t:"À propos d'un traité de probabilités",a:'Émile Borel',o:'Revue philosophique 98 (1924): 321–336',role:'케인스 서평, 내기로 재는 믿음.',warn:'—'},
+ {id:'ramsey1931',lang:'src',t:'Truth and probability',a:'Frank P. Ramsey',o:'1926 집필, 1931 출판(The Foundations of Mathematics)',role:'믿음의 정도와 정합성.',warn:'—'},
+ {id:'definetti1931',lang:'src',t:'Sul significato soggettivo della probabilità',a:'Bruno de Finetti',o:'Fundamenta Mathematicae 17 (1931): 298–329',role:'정합성으로 끌어낸 확률.',warn:'—'},
+ {id:'definetti1937',lang:'src',t:'La prévision: ses lois logiques, ses sources subjectives',a:'Bruno de Finetti',o:"Annales de l'Institut Henri Poincaré 7 (1937): 1–68",role:'교환 가능성. 1935년 강연.',warn:'—'},
+ {id:'kolmogorov1933',lang:'src',t:'Grundbegriffe der Wahrscheinlichkeitsrechnung',a:'A. N. Kolmogorov',o:'1933',role:'측도론의 공리.',warn:'—'},
+ {id:'zabell1989',lang:'en',t:'The rule of succession',a:'S. L. Zabell',o:'Erkenntnis 31 (1989): 283–321',role:'계승 규칙의 역사.',warn:'—'},
+ {id:'fienberg2006',lang:'en',t:"When did Bayesian inference become 'Bayesian'?",a:'Stephen E. Fienberg',o:'Bayesian Analysis 1 (2006)',role:'역확률에서 베이즈 추론으로의 이름.',warn:'—'},
+ {id:'hacking1975',lang:'en',t:'The Emergence of Probability',a:'Ian Hacking',o:'Cambridge University Press, 1975',role:'확률의 두 얼굴.',warn:'—'},
  {id:'lindley57',lang:'en',t:'A statistical paradox',a:'D. V. Lindley',o:'Biometrika 44 (1957): 187–192',role:'린들리 역설의 원 논문.',warn:'—'},
  {id:'bartlett57',lang:'en',t:"A comment on D. V. Lindley's statistical paradox",a:'M. S. Bartlett',o:'Biometrika 44 (1957): 533–534',role:'사후 확률이 대립가설 사전의 폭에 달린다는 논평.',warn:'—'},
  {id:'bs87',lang:'en',t:'Testing a point null hypothesis: the irreconcilability of P values and evidence',a:'James O. Berger · Thomas Sellke',o:'JASA 82 (1987): 112–122',role:'사전 집합별 사후 확률의 하한.',warn:'—'},
@@ -14,6 +33,10 @@ export const BOOKS = [
  {id:'kss96',lang:'en',t:'Reasoning to a foregone conclusion',a:'J. B. Kadane · M. J. Schervish · T. Seidenfeld',o:'JASA 91 (1996)',role:'정칙 사전에서 정해진 결론으로 가는 표집의 한계.',warn:'—'}
 ];
 export const BK = {
+ st02:[['bayes1763','논고 전체'],['laplace1814','계승 규칙, 해돋이'],['boole1854','확률 장'],['zabell1989','전체'],['fienberg2006','이름의 역사']],
+ st03:[['bertrand1889','현의 문제'],['keynes1921','4장 무차별 원리'],['vonmises1928','물과 포도주']],
+ st04:[['poisson1837','우연과 확률'],['cournot1843','전체'],['ellis1844','전체'],['venn1866','전체'],['vonmises1928','콜렉티브'],['carnap1945','전체'],['hacking1975','두 얼굴']],
+ st05:[['keynes1921','논리적 확률'],['borel1924','전체'],['ramsey1931','전체'],['definetti1931','전체'],['definetti1937','교환 가능성'],['kolmogorov1933','공리']],
  st18:[['els63','멈추는 규칙'],['anscombe63','서평 전체'],['amr69','반복 검정의 오류율'],['cornfield66','전체'],['lp76','이항·음이항의 예'],['kss96','전체']],
  st20:[['lindley57','전체'],['bartlett57','전체'],['bs87','하한의 표'],['cb87','한쪽 검정'],['els63','하한'],['wl23','역사와 해석'],['sbb01','보정식']]
 };
