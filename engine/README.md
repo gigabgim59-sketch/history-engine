@@ -10,7 +10,7 @@
 ## 책 폴더의 파일
 | 파일 | 내용 |
 |---|---|
-| `data.mjs` | `META`, `REGIONS`, `AXES`, `ENGINES`, `KINDS`, `PARTS`, `GROUPS`, `THREADS`, `THREAD_EV`, `SEAS`(지도 바다 이름 `[이름, 경도, 위도]`) |
+| `data.mjs` | `META`, `REGIONS`, `AXES`, `ENGINES`, `KINDS`, `SLOTH`(장 종류별 절 이름 `{kd:{배경:'…',원인:'…',…}}`. 없으면 절 이름이 '배경·원인…' 그대로 나온다), `PARTS`, `GROUPS`, `THREADS`, `THREAD_EV`, `SEAS`(지도 바다 이름 `[이름, 경도, 위도]`) |
 | `events.mjs` | `EVENTS`: 장 목록 `{id,p,t,y,yr,r,pl:[이름,경도,위도],w,g,nx,kd,q,s}` |
 | `links.mjs` | `WHY`: `'원인>결과': '이유 한 문장'`. `nx`마다 하나(빌드가 검사) |
 | `body_p<N>[a-z].mjs` | `B<N><A..>`: 장별 본문 `{안내,배경,원인,주체,전개,영향,사관,갈림,오해,말,작품}`. 앞의 여덟과 갈림·오해는 문단 배열, `사관`은 `[[흐름, 글]]`, `말`은 `[[낱말, 풀이]]`, `작품`은 `[[제목, '연도 · 사람', 설명]]`. 다른 장은 `[[id]]` |
@@ -26,10 +26,11 @@
 ### META에서 엔진이 읽는 칸
 - 기본: `title`, `sub`, `span`, `eyebrow`, `q`, `desc`, `intro`, `engines`, `engn`(힘 이름), `axn`(축 이름), `gl`, `pen`, `pes`, `ticks`, `life`, `lifeTicks`, `endT`
 - `pfx`: 브라우저 저장소 접두. 책마다 다르게 준다(없으면 빌드가 경고한다).
-- `len`: 등급별 분량 `{1:{min,target,draft},2:{…},3:{…}}`. `chk`와 `checks/lengths`가 읽는다.
+- `len`: 등급별 분량 `{1:{min,target,draft},2:{…},3:{…}}`. 장 종류 이름으로 따로 줄 수도 있다(`cul:{min}`). `chk`와 `checks/lengths`가 읽는다.
 - `draft`: true면 자리표시('집필 예정')를 보인다. 출간본에는 넣지 않는다.
 - 문구:
   - `debl`: 갈림 상자 이름. 기본 '해석의 갈림'.
+  - `hvl`: 사관(여러 목소리) 상자 이름. 기본 '관점들의 풀이'.
   - `mapnote`: 지도 아래 설명.
   - `srcnote`: 원전 서가 설명.
 - 화면 끄기: `nomap`, `nolanes`.
@@ -37,7 +38,7 @@
   - `evalw`: 서술자 문장에 쓰지 않을 평가어 목록.
   - `formulas`, `formulaMax`: 귀속 공식과 장당 허용 횟수. 기본은 '이 서사에서·이 서사는', 2회.
   - `outerMin`: 바깥 점검(갈림+오해) 비중의 하한(%).
-- 빌드가 채우는 칸: `wl`(장 머리 분량 표시, 등급별 실제 중앙값), `lenStat`.
+- 빌드가 채우는 칸: `wl`(장 머리 분량 표시, 등급별 실제 중앙값), `lenStat`. `wl`이 없으면 템플릿이 실행 중에 같은 값을 계산한다.
 
 ## 명령 (책 폴더에서)
 ```
@@ -55,14 +56,22 @@ node checks/lengths.mjs               # 하한 + 장 머리 표시 = 계산값
 node checks/residue.mjs dist/index.html   # 모든 메뉴 화면·장 화면의 잔재
 node checks/voice.mjs                 # 평가어, 귀속 공식, 학자 없는 갈림, 바깥 점검 비중
 node checks/consistency.mjs           # 책 안 연도 엇갈림, 요약↔본문
-node print/make.mjs && python3 print/render.py   # A4 인쇄본
+python3 ../../engine/print/render.py [dist/index.html]   # A4 인쇄본 → print/<pfx>_a4.pdf (make.mjs를 스스로 부른다)
 python3 checks/pdfcheck.py print/<pfx>_a4.pdf    # 숨은 표지, Type 3 글꼴, 북마크, 제목 정보
+node checks/review_text.mjs dist/index.html <폴더> [장 수]  # 독립 검수용 본문 묶음(part_NN.md, front.md, index.md)
 ```
+정비(E-10 이전에 낸 책)에서는 `node checks/lengths.mjs --tol 0.02`로 옛 셈법의 측정 차이를 허용한다(DEFECTS all-07).
 모든 검사 도구는 HTML 경로를 인자로 받는다. 그래서 서가에서 꺼낸 책(`library/build/<id>.html`)에도 그대로 쓸 수 있다.
 
 ## 잔재 목록
 `checks/residue_words.txt`는 출간본 화면에 나오면 안 되는 문구의 목록이다. 새 잔재를 찾으면 한 줄 더한다.
 
+## 인쇄본
+- `print/render.py`가 `print/make.mjs`로 한 문서(표제지·일러두기·차례·본문)를 만들고, 크로뮴으로 두세 번 짠다. 북마크로 구획의 첫 쪽을 찾아 차례에 넣고, 마지막 쪽에 몇 줄만 넘어간 구획은 줄 간격을 조인다(`print/state.json`).
+- 글꼴은 `print/serif.py`가 Noto Serif CJK KR을 그 책의 글자만 남겨 TrueType으로 바꿔 넣는다(Type 3 방지).
+- 절 이름과 상자 이름은 그 책 HTML의 템플릿에서 읽는다. 엔진 템플릿은 `DATA.sloth`, `META.debl`, `META.hvl`.
+- 책 폴더의 `print/meta.json`(선택)으로 덮어쓴다: `title`·`sub`·`eyebrow`·`span`·`endT`(meta가 없는 옛 책), `printFoot`(표제지 아래 줄), `introReplace`([[원문, 인쇄 문구]]), `introPrint`(머리말 전체). 머리말에서 화면을 가리키는 문장은 자동으로 빼고 알린다.
+
 ## 알려진 한계
-- 인쇄 도구(`print/make.mjs`)에는 『충격과 대응』의 문구와 절 이름이 박혀 있다(DEFECTS P-07). 새 책은 쓰기 전에 그 책에 맞게 고치고, 기존 책 정비 때 인쇄 도구를 일반화한다.
+- 엔진을 고치면 있는 책의 자료로 보통·DRAFT 두 번 시험 빌드하고 residue를 돌린다(DEFECTS E-11).
 - 연결(고리)의 종류는 아직 받지 않는다. 이유 문장만 받는다.
