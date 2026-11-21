@@ -124,7 +124,7 @@ export const BOOKS = [
  {id:'beecher',lang:'en',t:'Charles Fourier: The Visionary and His World',a:'Jonathan Beecher',o:'1986',role:'푸리에의 삶과 사상을 그린 전기.',warn:'—'},
  {id:'claeys',lang:'en',t:'Citizens and Saints: Politics and Anti-Politics in Early British Socialism',a:'Gregory Claeys',o:'1989',role:'오언주의의 정치 사상을 다루었다.',warn:'—'},
  {id:'sperber_r',lang:'en',t:'The European Revolutions 1848–1851',a:'Jonathan Sperber',o:'1994',role:'1848년 혁명을 유럽 전체에서 정리했다.',warn:'—'},
- {id:'namier',lang:'en',t:'1848: The Revolution of the Intellectuals',a:'Lewis Namier',o:'1944',role:'프랑크푸르트 의회를 지식인의 혁명으로 비판했다.',warn:'—'},
+ {id:'namier',lang:'en',t:'1848: The Revolution of the Intellectuals',a:'Lewis Namier',o:'1946(강연 1944)',role:'프랑크푸르트 의회를 지식인의 혁명으로 비판했다.',warn:'—'},
  {id:'clark_rs',lang:'en',t:'Revolutionary Spring: Fighting for a New World 1848–1849',a:'Christopher Clark',o:'2023',role:'1848년 혁명을 유럽 전체의 사건으로 그렸다.',warn:'—'},
  {id:'jones_m',lang:'en',t:'Karl Marx: Greatness and Illusion',a:'Gareth Stedman Jones',o:'2016',role:'마르크스를 19세기의 맥락으로 되돌려 놓았다.',warn:'—'},
  {id:'sperber_m',lang:'en',t:'Karl Marx: A Nineteenth-Century Life',a:'Jonathan Sperber',o:'2013',role:'마르크스를 19세기의 사람으로 그린 전기.',warn:'—'},
