@@ -51,7 +51,7 @@ for (const p of D.parts) {
   if (p.sum) front += '\n' + p.sum.map(ref).join('\n\n') + '\n';
 }
 front += `\n## 맺음 ${M.endT || ''}\n` + (D.concl || []).map(x => ref(x)).join('\n\n') + '\n';
-front += `\n## 서가(${(D.books || []).length}권)\n` + (D.books || []).map(b => `- [${b.id}] ${b.a || ''} · ${b.t || ''} · ${b.o || b.y || ''}${b.role ? ' — ' + b.role : ''}`).join('\n') + '\n';
+front += `\n## 서가(${(D.books || []).length}권)\n` + (D.books || []).map(b => `- [${b.id}] ${b.a || ''} · ${b.t || ''} · ${b.pub || ''}${b.o || b.y ? ' · ' + (b.o || b.y) : ''}${b.role ? ' — ' + b.role : ''}`).join('\n') + '\n';
 fs.writeFileSync(path.join(out, 'front.md'), front);
 let idx = `# 『${M.title || ''}』 장 요약과 연도 문장\n\n` + ev.map(e => `- 제${e.no}장 ${e.t} (${e.y}): ${ref(e.s || '')}`).join('\n') + '\n';
 fs.writeFileSync(path.join(out, 'index.md'), idx);

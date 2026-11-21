@@ -72,7 +72,7 @@ for it in range(MAXT + 1):
     order = [x[0] for x in seq]; sparse = []
     for i, sid in enumerate(order):
         lastp = (st[order[i + 1]] - 1) if i + 1 < len(order) else n
-        if lastp > st[sid] and len(lines[lastp - 1]) <= 3:
+        if lastp > st[sid] and len(lines[lastp - 1]) <= 5:
             sparse.append((sid, lastp, len(lines[lastp - 1])))
     grow = [(sid, p, k) for sid, p, k in sparse if state['tight'].get(sid, 0) < MAXT]
     if not grow: break
