@@ -15,6 +15,8 @@ from pypdf import PdfReader, PdfWriter
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from serif import faces
+sys.path.insert(0, os.path.join(HERE, '..'))
+from mathfont import math_face
 SRC = sys.argv[1] if len(sys.argv) > 1 else 'dist/index.html'
 ROOT = os.path.abspath('.')
 os.makedirs('print', exist_ok=True)
@@ -31,7 +33,7 @@ def make(state):
     if r.stderr.strip() and not WARNED: print(r.stderr.strip()); WARNED = True
     h = open('print/book.html', encoding='utf-8').read()
     text = re.sub(r'<[^>]+>', '', h)
-    h = h.replace('/*__FONTS__*/', faces(text), 1)
+    h = h.replace('/*__FONTS__*/', faces(text) + math_face(h, os.path.join(HERE, '..', 'node_modules')), 1)
     open('print/book.html', 'w', encoding='utf-8').write(h)
     return json.load(open('print/seq.json', encoding='utf-8'))
 

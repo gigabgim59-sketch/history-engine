@@ -21,7 +21,7 @@ let ENG = OV.engines || D.engines || null;
 if (!ENG) { const m = s.match(/\$\{(\[\[.*?\]\])\.map\(\(\[k,n\]\)/s); ENG = m ? Function('return ' + m[1])() : []; }
 const L = {
   guide: grab(/class="keys guide"><p class="lbl">([^<$]+)<\/p>/, '먼저 알아 둘 것'),
-  eff: grab(/<section class="slot"><h2>(영향[^<$]*)<\/h2>/, '영향'),
+  eff: grab(/<section class="slot"><h2>(영향[^<$]*)<\/h2>/, null) || grab(/\|\|'(영향[^']*)'\)\}<\/h2>/, '영향'),
   hv: M.hvl || grab(/class="box hvb"><p class="lbl">([^<$]+)<\/p>/, '관점들의 풀이'),
   deb: M.debl || grab(/class="box deb"><p class="lbl">([^<$]+)<\/p>/, '해석의 갈림'),
   myth: grab(/class="box myth"><p class="lbl">([^<$]+)<\/p>/, '흔한 오해'),
@@ -41,8 +41,20 @@ const ref = t => t.replace(/(?:\[\[(\w+)\]\])+/g, m => {
   const ids = [...m.matchAll(/\[\[(\w+)\]\]/g)].map(r => r[1]).filter(x => E[x]);
   return ids.length ? `<span class="xr">(${ids.map(x => `<a href="#c-${x}">${E[x].no}</a>`).join('·')}장)</span>` : '';
 });
-const rich = x => ref(esc(x).replace(/&lt;(\/?)(b|i|em|strong)&gt;/g, '<$1$2>'));
-const paras = (a, cls = '') => (a || []).map(x => x.startsWith('## ') ? `<p class="h4">${esc(x.slice(3))}</p>` : `<p${cls ? ` class="${cls}"` : ''}>${rich(x)}</p>`).join('');
+// 수식·표(DEFECTS E-16): 빌드가 만든 MathML(D.math)을 넣는다. 규칙은 checks/_text.mjs와 같다
+const MATH = D.math || {};
+const MRE = /\$\$([\s\S]+?)\$\$|(?<!\\)\$([^$\n]+?)(?<!\\)\$/g;
+const mathHtml = (d, t) => MATH[d + ':' + t.trim()] || esc(t);
+const rich0 = x => ref(esc(x).replace(/&lt;(\/?)(b|i|em|strong)&gt;/g, '<$1$2>'));
+const rich = x => { const ms = []; x = String(x); if (x.includes('$')) x = x.replace(MRE, (m, a, b) => { ms.push(a !== undefined ? ['d', a] : ['i', b]); return '\u0003' + (ms.length - 1) + '\u0004'; }).replace(/\\\$/g, '$');
+  const h = rich0(x); return ms.length ? h.replace(/\u0003(\d+)\u0004/g, (m, i) => mathHtml(...ms[+i])) : h; };
+const tRows = x => x.split('\n').filter(l => l.trim()).map(l => l.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim()));
+const tSep = r => r.every(c => /^:?-{3,}:?$/.test(c));
+const tbl = x => { const rows = tRows(x), hd = rows.length > 1 && tSep(rows[1]), bd = hd ? rows.slice(2) : rows;
+  return `<table class="mt">${hd ? `<thead><tr>${rows[0].map(c => `<th>${rich(c)}</th>`).join('')}</tr></thead>` : ''}<tbody>${bd.map(r => `<tr>${r.map(c => `<td>${rich(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`; };
+const paras = (a, cls = '') => (a || []).map(x => x.startsWith('## ') ? `<p class="h4">${esc(x.slice(3))}</p>`
+  : /^\$\$[\s\S]+\$\$$/.test(x.trim()) ? `<div class="mblk">${mathHtml('d', x.trim().slice(2, -2))}</div>`
+  : x.startsWith('|') ? tbl(x) : `<p${cls ? ` class="${cls}"` : ''}>${rich(x)}</p>`).join('');
 const KIND = Object.fromEntries((D.kinds || []).map(k => [k[0], k[1]]));
 const KD0 = D.kinds && D.kinds[0] ? D.kinds[0][0] : null;
 const tight = id => TIGHT[id] ? ` tg${TIGHT[id]}` : '';
@@ -74,7 +86,7 @@ if ((D.terms || []).length) only.push(`용어 ${D.terms.length}개`);
 if ((D.books || []).length) only.push(`서가 ${D.books.length}권`);
 const mapOK = !M.nomap && D.land, lanesOK = !M.nolanes && (D.regions || []).length;
 if (mapOK || lanesOK) only.push(mapOK && lanesOK ? '지도와 연표' : mapOK ? '지도' : '연표');
-only.push('사건 연결망');
+only.push(D.linkk ? '연결망' : '사건 연결망');
 if (D.econ) only.push('경제 지표');
 if ((D.groups || []).length) only.push('‘사람들의 변화’ 표');
 const last = only[only.length - 1];
@@ -117,7 +129,7 @@ for (const p of D.parts) {
     const sec = (lab, a) => a && a.length ? `<p class="h3">${esc(lab)}</p>` + paras(a) : '';
     body += sec(L.guide, B['안내']);
     for (const h of ['배경', '원인', '주체', '전개']) body += sec((SLOTH[e.kd] || {})[h] || h, B[h]);
-    body += sec(L.eff, B['영향']);
+    body += sec((SLOTH[e.kd] || {})['영향'] || L.eff, B['영향']);
     if (B['사관'] && B['사관'].length) body += `<p class="h3">${esc(L.hv)}</p>` + B['사관'].map(([a, t]) => `<p class="fh">${esc(a)}</p><p>${rich(t)}</p>`).join('');
     body += sec(L.deb, B['갈림']);
     body += sec(L.myth, B['오해']);

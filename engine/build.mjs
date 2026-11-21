@@ -3,7 +3,8 @@ import fs from 'fs';
 import {build} from './geo.mjs';
 import * as D from './data.mjs';
 import {EVENTS} from './events.mjs';
-import {WHY} from './links.mjs';
+import {WHY as WHY0} from './links.mjs';
+import {plain,mathSpans} from './checks/_text.mjs';
 import {BOOKS,BK} from './books.mjs';
 import {TERMS,TCATS} from './terms.mjs';
 import {PEOPLE as PEOPLE1,FACTS,PDENY as PDENY1} from './people.mjs';
@@ -46,6 +47,14 @@ function mentions(text){const out=[];text.replace(PRE,(m,_g,off,str)=>{const pv=
   if(m.length<=3){if(pv&&HG.test(pv))return m;if(nx&&HG.test(nx[0])&&!PTC.test(nx))return m;}
   const dn=PD[m];if(dn){const L=str.slice(Math.max(0,off-16),off);if((dn[0]&&dn[0].test(L))||(dn[1]&&dn[1].test(nx)))return m;}
   if(!out.includes(PID[m]))out.push(PID[m]);return m;});return out;}
+// 연결 종류(DEFECTS E-15): data.mjs의 LINKK=[[id,이름,색,설명]]가 있으면 WHY 값은 [종류, 이유]여야 한다. 없으면 옛 방식(이유 문장만)
+const LINKK=D.LINKK||null,WHY={},WHYK={},lkErr=[];
+for(const [k,v] of Object.entries(WHY0)){
+  if(LINKK){if(!Array.isArray(v)||!v[0]||!v[1])lkErr.push('연결 종류 빈칸(LINKK가 있으면 [종류, 이유]): '+k);
+    else if(!LINKK.find(x=>x[0]===v[0]))lkErr.push('연결 종류 없음(LINKK에 추가하거나 고칠 것): '+k+' → '+v[0]);
+    else{WHYK[k]=v[0];WHY[k]=v[1];}}
+  else if(Array.isArray(v))lkErr.push('연결 종류를 쓰려면 data.mjs에 LINKK를 둔다: '+k);else WHY[k]=v;}
+if(lkErr.length){console.error(lkErr);process.exit(1);}
 const g=build();
 const P=g.P;
 // 점검
@@ -64,7 +73,7 @@ if(err.length){console.error(err);process.exit(1);}
 
 const YC={};EVENTS.forEach(e=>{(YC[e.yr]=YC[e.yr]||[]).push(e.id);});
 const YF=id=>{const e=EVENTS.find(x=>x.id===id),L=YC[e.yr];return L.length>1?e.yr+L.indexOf(id)/L.length*0.9:e.yr;};
-const events=EVENTS.map((e,i)=>{const [x,y]=P(e.pl[1],e.pl[2]);const txt=[e.s,e.q,...(BODY[e.id]?Object.values(BODY[e.id]).flat():[])].join('\n');
+const events=EVENTS.map((e,i)=>{if(!e.pl)e.pl=[];const [x,y]=META.nomap||e.pl.length<3?[0,0]:P(e.pl[1],e.pl[2]);const txt=[e.s,e.q,...(BODY[e.id]?Object.values(BODY[e.id]).flat():[])].join('\n');
   const pp=mentions(txt);PEOPLE.forEach(p=>{if(p.at&&p.at[e.id]&&!pp.includes(p.id))pp.push(p.id);});
   return {...e,yr:YF(e.id),no:i+1,mx:x,my:y,bk:BK[e.id]||[],axc:AXCH[e.id]||[],pp};});
 const people=PEOPLE.map(p=>({...p,ch:events.filter(e=>e.pp.includes(p.id)).map(e=>e.id)}));
@@ -79,19 +88,30 @@ const seas=(D.SEAS||[]).map(([n,lo,la])=>({n,xy:P(lo,la)}));
 const lineage=(LN.LINEAGE||[]).map(l=>({...l,b:LNB[l.id]||null}));
 const DATA={meta:META,why:WHY,concl:CONCL,body:BODY,W:g.W,H:g.H,land:g.land,grat:g.grat,borders:g.borders,prov:g.prov,rivers:g.rivers,lakes:g.lakes,
  regions,seas,people,facts:FACTS,pdeny:PDENY,axes:D.AXES,engines:D.ENGINES,parts,events,groups,books:BOOKS,terms:TERMS,tcats:TCATS,lineage,lcats:LN.LCATS||[],
- threads:D.THREADS.map(t=>({...t,ev:THREAD_EV[t.id]||[]})),ports:[],leases:[],kinds:D.KINDS||null,sloth:D.SLOTH||null,econ:ECON};
+ threads:(D.THREADS||[]).map(t=>({...t,ev:(THREAD_EV||{})[t.id]||[]})),ports:[],leases:[],kinds:D.KINDS||null,sloth:D.SLOTH||null,econ:ECON,
+ linkk:LINKK,whyk:LINKK?WHYK:null};
+
+// 수식(DEFECTS E-16): 본문의 $…$(줄 안)·$$…$$(문단 하나)를 빌드할 때 MathML로 바꿔 DATA.math에 둔다. 외부 CDN도 실행 중 렌더러도 없다
+{const spans=new Map();const walk=v=>{if(typeof v==='string')mathSpans(v).forEach(([d,t])=>spans.set(d+':'+t,[d,t]));else if(Array.isArray(v))v.forEach(walk);else if(v&&typeof v==='object')Object.values(v).forEach(walk);};
+ walk([BODY,CONCL,PARTX,TERMS,META.intro]);
+ if(spans.size){const temml=(await import('temml')).default;DATA.math={};const bad=[];
+  for(const [k,[d,t]] of spans){try{DATA.math[k]=temml.renderToString(t,{displayMode:d==='d',throwOnError:true});}catch(x){bad.push(`수식 오류 ${d==='d'?'$$':'$'}${t}${d==='d'?'$$':'$'}: ${x.message}`);}}
+  if(bad.length){console.error(bad);process.exit(1);}
+  console.log('수식',spans.size,'개');}}
 
 // 장 머리 분량 표시: 등급별 실제 중앙값(100자 반올림). 손으로 적지 않는다(LIBRARY U8)
-{const SL2=v=>typeof v==='string'?v.length:Array.isArray(v)?v.reduce((a,x)=>a+SL2(x),0):0;const L=Object.fromEntries(Object.entries(BODY).map(([k,v])=>[k,SL2(Object.values(v))]));const by={};
+{const SL2=v=>typeof v==='string'?plain(v).length:Array.isArray(v)?v.reduce((a,x)=>a+SL2(x),0):0;const L=Object.fromEntries(Object.entries(BODY).map(([k,v])=>[k,SL2(Object.values(v))]));const by={};
  EVENTS.forEach(e=>{if(L[e.id])(by[e.w]=by[e.w]||[]).push(L[e.id]);});
  const med=a=>{const b=[...a].sort((x,y)=>x-y);return b[Math.floor((b.length-1)/2)];};
  DATA.meta.wl=Object.fromEntries(Object.entries(by).map(([w,a])=>[w,'약 '+(Math.round(med(a)/100)*100).toLocaleString('en-US')+'자']));
  DATA.meta.lenStat=Object.fromEntries(Object.entries(by).map(([w,a])=>[w,{n:a.length,min:Math.min(...a),med:med(a),max:Math.max(...a)}]));}
 let html=fs.readFileSync('template.html','utf8');
+const MATHCSS="math{font-family:'KRMath',math;font-size:1.06em;font-style:normal;font-weight:normal;line-height:normal;letter-spacing:normal;direction:ltr}.mblk{overflow-x:auto;overflow-y:hidden;max-width:100%;margin:.7rem 0;padding:.15rem 0}.mblk math{display:block math}";
+html=html.replace('/*__MATHCSS__*/',()=>DATA.math?MATHCSS:'');
 html=html.replace('/*__DATA__*/',()=>'const DATA='+JSON.stringify(DATA)+';').replaceAll('__TITLE__',META.title).replaceAll('__SUB__',META.sub).replaceAll('__DESC__',META.desc);
 fs.mkdirSync('dist',{recursive:true});
 fs.writeFileSync('dist/index.html',html);
-const SL=v=>typeof v==='string'?v.length:Array.isArray(v)?v.reduce((a,x)=>a+SL(x),0):0; // 글자 수: 문자열만 센다(쉼표 등 구분자 제외, DEFECTS E-10)
+const SL=v=>typeof v==='string'?plain(v).length:Array.isArray(v)?v.reduce((a,x)=>a+SL(x),0):0; // 글자 수: 문자열만 센다(쉼표 등 구분자 제외, DEFECTS E-10). 수식·표 마크업은 뺀다(E-16)
 const bc=Object.fromEntries(Object.entries(BODY).map(([k,v])=>[k,SL(Object.values(v))]));
 console.log('ok',(html.length/1024).toFixed(0)+'KB','H='+g.H,'people',PEOPLE.length,bc);
 console.log('분량(등급: 장 수 최소/중앙/최대)',JSON.stringify(DATA.meta.lenStat),'표시',JSON.stringify(DATA.meta.wl));

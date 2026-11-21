@@ -5,6 +5,7 @@
 // 고친 결함(DEFECTS E-01): 절 이름을 정규화하고 허용 목록으로 검사한다. 쓴 뒤 다시 읽어
 // 겹친 키·빈 절·허용되지 않은 키(예: 다른 문자로 쓴 '작品')를 찾아 멈춘다.
 import fs from 'fs';
+import {plain} from './checks/_text.mjs';
 const ORDER=['안내','배경','원인','주체','전개','영향','사관','갈림','오해','말','작품'];
 const ALLOWED=new Set(ORDER);
 const files=fs.readdirSync('.').filter(f=>/^body_p\d+[a-z]?\.mjs$/.test(f)).sort();
@@ -39,4 +40,4 @@ for(const f of touched){const src=fs.readFileSync(f,'utf8');
     if(!Array.isArray(arr)||!arr.length)bad.push(`${c}: 빈 절 '${k}'`);}}
 if(bad.length){console.error('검사 실패:\n'+bad.join('\n'));process.exit(1);}
 const W={};(await import('./events.mjs')).EVENTS.forEach(e=>W[e.id]=e.w);
-for(const c of new Set(spec.map(x=>x.c))){const f=where(c);const SL=v=>typeof v==='string'?v.length:Array.isArray(v)?v.reduce((s,x)=>s+SL(x),0):0;console.log(c,'w'+W[c],SL(Object.values(loaded[f].obj[c])));}
+for(const c of new Set(spec.map(x=>x.c))){const f=where(c);const SL=v=>typeof v==='string'?plain(v).length:Array.isArray(v)?v.reduce((s,x)=>s+SL(x),0):0;console.log(c,'w'+W[c],SL(Object.values(loaded[f].obj[c])));}

@@ -44,6 +44,10 @@ for src_w, css_w in [('400', '400'), ('600', '500 600'), ('700', '700'), ('800',
         b = base64.b64encode(buf.getvalue()).decode(); total += len(b)
         faces.append(f"@font-face{{font-family:'KRSans';font-style:normal;font-weight:{css_w};font-display:swap;"
                      f"src:url(data:font/woff2;base64,{b}) format('woff2');unicode-range:{urange(cps)}}}")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from mathfont import math_face  # 수식이 있으면 Noto Sans Math를 'KRMath'로(DEFECTS E-16)
+mf = math_face(html, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'node_modules'))
+if mf: faces.append(mf); total += len(mf)
 style = '<style>' + ''.join(faces) + '</style>'
 html = html.replace('<!--__FONTS__-->', style)
 open(html_path, 'w', encoding='utf-8').write(html)
