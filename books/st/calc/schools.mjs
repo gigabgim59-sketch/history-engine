@@ -1,14 +1,15 @@
-// 학파 배분(SPEC '배분 점검'): 장마다 학파별로 이름이 나오는 문단 수. 한 문단에 여러 학파가 나오면 각각 센다.
-// 분류는 이 장에서 그 사람이 낸 답의 자리다(인물 사전의 고정 진영과 같지 않을 수 있다).
-import {B3A} from '../body_p3a.mjs';
+// 학파 배분(SPEC '보정 뒤 결정' 3): 문단마다 주된 목소리 하나 — 문단에서 가장 먼저 나오는 학파 표지(사람 이름 등)의 학파.
+// 표지가 없는 문단(서술자의 정의·계산)은 세지 않는다. 한 학파가 셈한 문단의 3분의 2를 넘으면 STATUS에 이유를 적는다.
+// 표지 목록은 calc/voices.json(장을 쓸 때 사람을 더한다). 사용: node calc/schools.mjs [장 id …]
+import fs from 'fs';
 import {isTable} from '../checks/_text.mjs';
-const S={
- '베이즈(객관·주관)':['제프리스','린들리','에드워즈','새비지','콘필드','제임스 버거','버거·셀크','셀크','바야리','라우더','바허마커르스','로베르','스프렝어','케데인'],
- '가능도주의':['앤스컴','가능도 원리'],
- '피셔':['피셔'],
- '네이만–피어슨·오류 통계':['아미티지','네이만','스파노스','오류율'],
- '학파 밖·응답자':['바틀릿','카셀라','로저 버거','샌번','시먼스']
-};
-for(const [id,b] of Object.entries(B3A)){const ps=Object.values(b).flat().filter(p=>!isTable(p)&&!/^\$\$/.test(p.trim()));const c={};let any=0;
-  for(const p of ps){let hit=false;for(const [k,ws] of Object.entries(S))if(ws.some(w=>p.includes(w))){c[k]=(c[k]||0)+1;hit=true;}if(hit)any++;}
-  console.log(id,`문단 ${ps.length}, 학파 언급 문단 ${any}`,Object.entries(c).map(([k,n])=>`${k} ${n}(${(n/any*100).toFixed(0)}%)`).join(' / '));}
+const V=JSON.parse(fs.readFileSync(new URL('./voices.json',import.meta.url)));
+const BODY={};for(const f of fs.readdirSync('.').filter(f=>/^body_p\d+[a-z]?\.mjs$/.test(f)))Object.assign(BODY,...Object.values(await import('../'+f)));
+const want=process.argv.slice(2);const over=[];
+for(const [id,b] of Object.entries(BODY).sort()){if(want.length&&!want.includes(id))continue;
+  const ps=Object.values(b).flat().filter(p=>typeof p==='string'&&!isTable(p)&&!/^\$\$/.test(p.trim())&&!p.startsWith('## '));const c={};let n=0;
+  for(const p of ps){let best=null,bi=1e9;for(const [k,ws] of Object.entries(V))for(const w of ws){const i=p.indexOf(w);if(i>=0&&i<bi){bi=i;best=k;}}
+    if(best){c[best]=(c[best]||0)+1;n++;}}
+  const top=Object.entries(c).sort((a,b)=>b[1]-a[1])[0];if(top&&top[1]/n>2/3)over.push(id);
+  console.log(id,`문단 ${ps.length}, 목소리 있는 문단 ${n}:`,Object.entries(c).sort((a,b)=>b[1]-a[1]).map(([k,x])=>`${k} ${x}(${Math.round(x/n*100)}%)`).join(' / '));}
+console.log(over.length?'3분의 2 초과: '+over.join(', '):'3분의 2 초과 없음');

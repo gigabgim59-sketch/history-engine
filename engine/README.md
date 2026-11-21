@@ -89,5 +89,5 @@ node checks/review_text.mjs dist/index.html <폴더> [장 수]  # 독립 검수�
 
 ## 알려진 한계
 - 엔진을 고치면 있는 책의 자료로 보통·DRAFT 두 번 시험 빌드하고 residue를 돌린다(DEFECTS E-11).
-- 장의 단위가 사건이 아닌 책에서 첫 화면·부·줄기 화면에 '사건'이라는 말이 남는다(DEFECTS E-20).
+- 장의 단위가 사건이 아니면 `META.unitn`을 준다(DEFECTS E-20). 지도·무대 화면의 '사건' 문구는 그대로이므로 지도를 쓰는 책에서는 확인한다.
 - 읽는 법(`dist/guide.html`)은 엔진이 만들지 않는다. 있으면 첫 화면에 고리만 건다(eu가 따로 만든 것).
