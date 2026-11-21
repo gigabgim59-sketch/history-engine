@@ -1,5 +1,20 @@
 // 서가: 원서만(SPEC). 모두 이번 세션에서 웹으로 서지(저자·연도·학술지·쪽)의 실재를 확인했다. 내용은 2차 자료로 확인한 범위만 본문에 썼다(UNVERIFIED)
 export const BOOKS = [
+ {id:'wald1939',lang:'src',t:'Contributions to the theory of statistical estimation and testing hypotheses',a:'Abraham Wald',o:'Annals of Mathematical Statistics 10 (1939): 299–326',role:'결정 문제로서의 검정과 추정.',warn:'—'},
+ {id:'wald1950',lang:'src',t:'Statistical Decision Functions',a:'Abraham Wald',o:'Wiley, 1950',role:'완비류 정리, 최소최대.',warn:'—'},
+ {id:'savage1954',lang:'src',t:'The Foundations of Statistics',a:'Leonard J. Savage',o:'Wiley, 1954',role:'주관 기대효용의 공리.',warn:'—'},
+ {id:'allais1953',lang:'src',t:"Le comportement de l'homme rationnel devant le risque: critique des postulats et axiomes de l'école américaine",a:'Maurice Allais',o:'Econometrica 21 (1953): 503–546',role:'알레의 역설.',warn:'—'},
+ {id:'ellsberg1961',lang:'src',t:'Risk, ambiguity, and the Savage axioms',a:'Daniel Ellsberg',o:'Quarterly Journal of Economics 75 (1961): 643–669',role:'모호성.',warn:'—'},
+ {id:'barnard1949',lang:'src',t:'Statistical inference',a:'G. A. Barnard',o:'JRSS B 11 (1949): 115–149',role:'가능도 원리의 첫 주장.',warn:'—'},
+ {id:'birnbaum1962',lang:'src',t:'On the foundations of statistical inference',a:'Allan Birnbaum',o:'JASA 57 (1962): 269–306',role:'충분성·조건성과 가능도 원리.',warn:'—'},
+ {id:'mayo2014',lang:'en',t:'On the Birnbaum argument for the strong likelihood principle',a:'Deborah G. Mayo',o:'Statistical Science 29 (2014): 227–239',role:'증명 비판과 토론.',warn:'—'},
+ {id:'cox1958',lang:'src',t:'Some problems connected with statistical inference',a:'D. R. Cox',o:'Annals of Mathematical Statistics 29 (1958): 357–372',role:'두 측정기의 예.',warn:'—'},
+ {id:'reid1995',lang:'en',t:'The roles of conditioning in inference',a:'N. Reid',o:'Statistical Science 10 (1995): 138–157',role:'조건부 추론의 정리.',warn:'—'},
+ {id:'hacking1965',lang:'src',t:'Logic of Statistical Inference',a:'Ian Hacking',o:'Cambridge University Press, 1965',role:'가능도의 법칙.',warn:'—'},
+ {id:'edwards1972',lang:'src',t:'Likelihood',a:'A. W. F. Edwards',o:'Cambridge University Press, 1972',role:'지지로서의 가능도.',warn:'—'},
+ {id:'royall1997',lang:'src',t:'Statistical Evidence: A Likelihood Paradigm',a:'Richard Royall',o:'Chapman & Hall, 1997',role:'세 물음, 오도하는 증거.',warn:'—'},
+ {id:'good1979',lang:'en',t:"A. M. Turing's statistical work in World War II",a:'I. J. Good',o:'Biometrika 66 (1979)',role:'반버리스무스와 데시반.',warn:'—'},
+ {id:'zabell2023',lang:'en',t:'The secret life of I. J. Good',a:'Sandy L. Zabell',o:'Statistical Science 38 (2023)',role:'굿의 생애와 베이즈 철학.',warn:'—'},
  {id:'fisher1922',lang:'src',t:'On the mathematical foundations of theoretical statistics',a:'R. A. Fisher',o:'Philosophical Transactions of the Royal Society A 222 (1922)',role:'역확률 거부, 가능도와 추정의 기준.',warn:'—'},
  {id:'fisher1925',lang:'src',t:'Statistical Methods for Research Workers',a:'R. A. Fisher',o:'1925',role:'p값과 5% 경계의 표.',warn:'—'},
  {id:'fisher1926',lang:'src',t:'The arrangement of field experiments',a:'R. A. Fisher',o:'Journal of the Ministry of Agriculture 33 (1926): 503–513',role:'유의성과 무작위화, 밭 시험의 원칙.',warn:'—'},
@@ -56,6 +71,12 @@ export const BOOKS = [
  {id:'kss96',lang:'en',t:'Reasoning to a foregone conclusion',a:'J. B. Kadane · M. J. Schervish · T. Seidenfeld',o:'JASA 91 (1996)',role:'정칙 사전에서 정해진 결론으로 가는 표집의 한계.',warn:'—'}
 ];
 export const BK = {
+ st15:[['wald1939','전체'],['wald1950','완비류 정리'],['fisher1955','비판']],
+ st16:[['savage1954','공리'],['allais1953','전체'],['ellsberg1961','전체']],
+ st17:[['barnard1949','전체'],['birnbaum1962','전체'],['mayo2014','전체와 토론']],
+ st19:[['cox1958','두 측정기'],['reid1995','전체']],
+ st21:[['hacking1965','가능도의 법칙'],['edwards1972','전체'],['royall1997','전체']],
+ st22:[['fienberg2006','전체'],['good1979','전체'],['zabell2023','굿'],['savage1954','공리']],
  st07:[['fisher1922','역확률 거부'],['mackenzie1981','사회적 해석'],['aldrich1997','전체'],['zabell1989b','전체']],
  st08:[['fisher1922','가능도와 효율성'],['ns1948','전체'],['aldrich1997','전체']],
  st09:[['fisher1925','표와 5%'],['fisher1926','전체'],['fisher1935','차 맛보기']],
