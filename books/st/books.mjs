@@ -1,5 +1,16 @@
 // 서가: 원서만(SPEC). 모두 이번 세션에서 웹으로 서지(저자·연도·학술지·쪽)의 실재를 확인했다. 내용은 2차 자료로 확인한 범위만 본문에 썼다(UNVERIFIED)
 export const BOOKS = [
+ {id:'metropolis1953',lang:'src',t:'Equation of state calculations by fast computing machines',a:'N. Metropolis · A. W. Rosenbluth · M. N. Rosenbluth · A. H. Teller · E. Teller',o:'Journal of Chemical Physics 21 (1953)',role:'메트로폴리스 알고리즘.',warn:'—'},
+ {id:'gs1990',lang:'src',t:'Sampling-based approaches to calculating marginal densities',a:'A. E. Gelfand · A. F. M. Smith',o:'JASA 85 (1990)',role:'깁스 표집의 보급.',warn:'—'},
+ {id:'efron1979',lang:'src',t:'Bootstrap methods: another look at the jackknife',a:'Bradley Efron',o:'Annals of Statistics 7 (1979)',role:'부트스트랩.',warn:'—'},
+ {id:'rc2011',lang:'en',t:'A short history of Markov chain Monte Carlo: subjective recollections from incomplete data',a:'Christian Robert · George Casella',o:'Statistical Science 26 (2011)',role:'MCMC의 역사.',warn:'—'},
+ {id:'box1980',lang:'src',t:"Sampling and Bayes' inference in scientific modelling and robustness",a:'G. E. P. Box',o:'JRSS A 143 (1980): 383–430',role:'모형 비판과 베이즈 추정.',warn:'—'},
+ {id:'dfreedman1986',lang:'src',t:'On the consistency of Bayes estimates',a:'P. Diaconis · D. Freedman',o:'Annals of Statistics 14 (1986): 1–26',role:'베이즈 추정의 불일치.',warn:'—'},
+ {id:'little2006',lang:'src',t:'Calibrated Bayes: a Bayes/frequentist roadmap',a:'Roderick J. A. Little',o:'The American Statistician 60 (2006)',role:'보정된 베이즈.',warn:'—'},
+ {id:'akaike1974',lang:'src',t:'A new look at the statistical model identification',a:'Hirotugu Akaike',o:'IEEE Transactions on Automatic Control 19 (1974): 716–723',role:'AIC.',warn:'—'},
+ {id:'schwarz1978',lang:'src',t:'Estimating the dimension of a model',a:'Gideon Schwarz',o:'Annals of Statistics 6 (1978): 461–464',role:'BIC.',warn:'—'},
+ {id:'kr1995',lang:'src',t:'Bayes factors',a:'Robert E. Kass · Adrian E. Raftery',o:'JASA 90 (1995): 773–795',role:'베이즈 인자와 BIC.',warn:'—'},
+ {id:'breiman2001',lang:'src',t:'Statistical modeling: the two cultures',a:'Leo Breiman',o:'Statistical Science 16 (2001): 199–231 (논평 포함)',role:'두 문화.',warn:'—'},
  {id:'jeffreys1946',lang:'src',t:'An invariant form for the prior probability in estimation problems',a:'Harold Jeffreys',o:'Proceedings of the Royal Society A 186 (1946): 453–461',role:'제프리스 사전.',warn:'—'},
  {id:'jaynes1968',lang:'src',t:'Prior probabilities',a:'E. T. Jaynes',o:'IEEE Transactions on Systems Science and Cybernetics 4 (1968): 227–241',role:'최대 엔트로피 사전.',warn:'—'},
  {id:'bernardo1979',lang:'src',t:'Reference posterior distributions for Bayesian inference',a:'José M. Bernardo',o:'JRSS B 41 (1979): 113–147',role:'참조 사전.',warn:'—'},
@@ -85,6 +96,11 @@ export const BOOKS = [
  {id:'kss96',lang:'en',t:'Reasoning to a foregone conclusion',a:'J. B. Kadane · M. J. Schervish · T. Seidenfeld',o:'JASA 91 (1996)',role:'정칙 사전에서 정해진 결론으로 가는 표집의 한계.',warn:'—'}
 ];
 export const BK = {
+ st29:[['metropolis1953','전체'],['gs1990','전체'],['efron1979','전체'],['rc2011','전체']],
+ st30:[['box1980','전체']],
+ st31:[['dfreedman1986','전체'],['little2006','전체']],
+ st32:[['akaike1974','전체'],['schwarz1978','전체'],['kr1995','BIC']],
+ st33:[['breiman2001','전체와 논평']],
  st23:[['jeffreys1946','전체'],['jaynes1968','전체'],['bernardo1979','전체'],['berger2006','전체'],['goldstein2006','전체']],
  st24:[['dsz1973','전체']],
  st25:[['js1961','전체'],['em1975','야구 타율']],
