@@ -1,5 +1,17 @@
 // 서가: 원서만(SPEC). 모두 이번 세션에서 웹으로 서지(저자·연도·학술지·쪽)의 실재를 확인했다. 내용은 2차 자료로 확인한 범위만 본문에 썼다(UNVERIFIED)
 export const BOOKS = [
+ {id:'gigerenzer1993',lang:'en',t:'The superego, the ego, and the id in statistical reasoning',a:'Gerd Gigerenzer',o:'A Handbook for Data Analysis in the Behavioral Sciences (Keren · Lewis 편, 1993): 311–339',role:'혼합된 검정.',warn:'—'},
+ {id:'cohen1994',lang:'src',t:'The earth is round (p < .05)',a:'Jacob Cohen',o:'American Psychologist 49 (1994): 997–1003',role:'유의성 관행 비판.',warn:'—'},
+ {id:'wilkinson1999',lang:'src',t:'Statistical methods in psychology journals: guidelines and explanations',a:'L. Wilkinson · Task Force on Statistical Inference',o:'American Psychologist 54 (1999): 594–604',role:'APA 대책반 지침.',warn:'—'},
+ {id:'bh1995',lang:'src',t:'Controlling the false discovery rate: a practical and powerful approach to multiple testing',a:'Y. Benjamini · Y. Hochberg',o:'JRSS B 57 (1995): 289–300',role:'거짓 발견율.',warn:'—'},
+ {id:'ioannidis2005',lang:'src',t:'Why most published research findings are false',a:'John P. A. Ioannidis',o:'PLoS Medicine 2 (2005): e124',role:'발견이 참일 확률의 모형.',warn:'—'},
+ {id:'osc2015',lang:'src',t:'Estimating the reproducibility of psychological science',a:'Open Science Collaboration',o:'Science 349 (2015): aac4716',role:'100편 재현.',warn:'—'},
+ {id:'asa2016',lang:'src',t:"The ASA's statement on p-values: context, process, and purpose",a:'R. L. Wasserstein · N. A. Lazar',o:'The American Statistician 70 (2016)',role:'여섯 원칙.',warn:'—'},
+ {id:'wagenmakers2007',lang:'src',t:'A practical solution to the pervasive problems of p values',a:'Eric-Jan Wagenmakers',o:'Psychonomic Bulletin & Review 14 (2007): 779–804',role:'베이즈 모형 비교.',warn:'—'},
+ {id:'ms2006',lang:'src',t:'Severe testing as a basic concept in a Neyman–Pearson philosophy of induction',a:'D. G. Mayo · A. Spanos',o:'British Journal for the Philosophy of Science 57 (2006): 323–357',role:'엄격한 시험.',warn:'—'},
+ {id:'howson1997',lang:'src',t:'Error probabilities in error',a:'Colin Howson',o:'Philosophy of Science 64 (1997): S185–S194',role:'베이즈 쪽의 응답.',warn:'—'},
+ {id:'cousins2017',lang:'src',t:'The Jeffreys–Lindley paradox and discovery criteria in high energy physics',a:'Robert D. Cousins',o:'Synthese 194 (2017) (arXiv:1310.3791)',role:'5시그마와 역설.',warn:'—'},
+ {id:'lyons2013',lang:'src',t:'Discovering the significance of 5 sigma',a:'Louis Lyons',o:'arXiv:1310.1284 (2013)',role:'5시그마의 근거.',warn:'—'},
  {id:'metropolis1953',lang:'src',t:'Equation of state calculations by fast computing machines',a:'N. Metropolis · A. W. Rosenbluth · M. N. Rosenbluth · A. H. Teller · E. Teller',o:'Journal of Chemical Physics 21 (1953)',role:'메트로폴리스 알고리즘.',warn:'—'},
  {id:'gs1990',lang:'src',t:'Sampling-based approaches to calculating marginal densities',a:'A. E. Gelfand · A. F. M. Smith',o:'JASA 85 (1990)',role:'깁스 표집의 보급.',warn:'—'},
  {id:'efron1979',lang:'src',t:'Bootstrap methods: another look at the jackknife',a:'Bradley Efron',o:'Annals of Statistics 7 (1979)',role:'부트스트랩.',warn:'—'},
@@ -96,6 +108,13 @@ export const BOOKS = [
  {id:'kss96',lang:'en',t:'Reasoning to a foregone conclusion',a:'J. B. Kadane · M. J. Schervish · T. Seidenfeld',o:'JASA 91 (1996)',role:'정칙 사전에서 정해진 결론으로 가는 표집의 한계.',warn:'—'}
 ];
 export const BK = {
+ st34:[['gigerenzer1993','전체'],['cohen1994','전체'],['wilkinson1999','전체']],
+ st35:[['bh1995','전체']],
+ st36:[['ioannidis2005','전체'],['osc2015','전체']],
+ st37:[['asa2016','전체']],
+ st38:[['wagenmakers2007','전체'],['kr1995','베이즈 인자']],
+ st39:[['ms2006','전체'],['howson1997','전체']],
+ st40:[['lyons2013','전체'],['cousins2017','전체']],
  st29:[['metropolis1953','전체'],['gs1990','전체'],['efron1979','전체'],['rc2011','전체']],
  st30:[['box1980','전체']],
  st31:[['dfreedman1986','전체'],['little2006','전체']],
