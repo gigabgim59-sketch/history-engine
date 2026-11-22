@@ -802,8 +802,8 @@ function viewAir(pid){
 
 function viewEnd(){
   main.innerHTML=`<article class="col"><header class="chead"><p class="eyebrow">맺음</p><h1>${esc(DATA.meta.title)}</h1></header>
-  <h2 class="sh">${esc(DATA.meta.axn)}: 시대별 분포</h2>${heat()}
-  <p class="note">수치는 이 책의 ‘사람들의 변화’ 표에 기록된 항목 수입니다.</p>
+  ${DATA.groups.length?`<h2 class="sh">${esc(DATA.meta.axn)}: 시대별 분포</h2>${heat()}
+  <p class="note">수치는 이 책의 ‘사람들의 변화’ 표에 기록된 항목 수입니다.</p>`:''}
   ${DATA.concl?`<div class="rh">${rhHtml(DATA.concl)}</div>`:todo(`모든 부를 마친 뒤, 책의 물음에 대한 답을 축과 줄기로 다시 정리합니다.`)}</article>`;
 }
 
