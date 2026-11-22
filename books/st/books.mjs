@@ -1,5 +1,19 @@
 // 서가: 원서만(SPEC). 모두 이번 세션에서 웹으로 서지(저자·연도·학술지·쪽)의 실재를 확인했다. 내용은 2차 자료로 확인한 범위만 본문에 썼다(UNVERIFIED)
 export const BOOKS = [
+ {id:'jeffreys1946',lang:'src',t:'An invariant form for the prior probability in estimation problems',a:'Harold Jeffreys',o:'Proceedings of the Royal Society A 186 (1946): 453–461',role:'제프리스 사전.',warn:'—'},
+ {id:'jaynes1968',lang:'src',t:'Prior probabilities',a:'E. T. Jaynes',o:'IEEE Transactions on Systems Science and Cybernetics 4 (1968): 227–241',role:'최대 엔트로피 사전.',warn:'—'},
+ {id:'bernardo1979',lang:'src',t:'Reference posterior distributions for Bayesian inference',a:'José M. Bernardo',o:'JRSS B 41 (1979): 113–147',role:'참조 사전.',warn:'—'},
+ {id:'berger2006',lang:'src',t:'The case for objective Bayesian analysis',a:'James O. Berger',o:'Bayesian Analysis 1 (2006): 385–402',role:'객관 베이즈의 옹호.',warn:'—'},
+ {id:'goldstein2006',lang:'src',t:'Subjective Bayesian analysis: principles and practice',a:'Michael Goldstein',o:'Bayesian Analysis 1 (2006)',role:'주관 베이즈의 옹호.',warn:'—'},
+ {id:'dsz1973',lang:'src',t:'Marginalization paradoxes in Bayesian and structural inference',a:'A. P. Dawid · M. Stone · J. V. Zidek',o:'JRSS B 35 (1973): 189–233',role:'주변화 역설.',warn:'—'},
+ {id:'js1961',lang:'src',t:'Estimation with quadratic loss',a:'W. James · C. Stein',o:'Proceedings of the Fourth Berkeley Symposium 1 (1961): 361–379',role:'제임스–스타인 추정.',warn:'—'},
+ {id:'em1975',lang:'src',t:"Data analysis using Stein's estimator and its generalizations",a:'Bradley Efron · Carl Morris',o:'JASA 70 (1975): 311–319',role:'야구 타율의 예.',warn:'—'},
+ {id:'royall1970',lang:'src',t:'On finite population sampling theory under certain linear regression models',a:'Richard M. Royall',o:'Biometrika 57 (1970): 377–387',role:'모형 기반 표본조사.',warn:'—'},
+ {id:'basu1971',lang:'src',t:'An essay on the logical foundations of survey sampling, part one',a:'D. Basu',o:'Foundations of Statistical Inference (Godambe · Sprott 편, 1971): 203–242',role:'서커스 코끼리.',warn:'—'},
+ {id:'hmt1983',lang:'src',t:'An evaluation of model-dependent and probability-sampling inferences in sample surveys',a:'M. H. Hansen · W. G. Madow · B. J. Tepping',o:'JASA 78 (1983): 776–793',role:'설계 쪽의 응답.',warn:'—'},
+ {id:'gh2017',lang:'src',t:'Beyond subjective and objective in statistics',a:'Andrew Gelman · Christian Hennig',o:'JRSS A 180 (2017): 967–1033',role:'덕목의 언어.',warn:'—'},
+ {id:'collins1968',lang:'src',t:'People v. Collins',a:'California Supreme Court',o:'68 Cal.2d 319 (1968)',role:'확률의 곱을 물리친 판결과 부록.',warn:'—'},
+ {id:'adams1996',lang:'src',t:'R v Adams',a:'Court of Appeal (England and Wales)',o:'[1996] 2 Cr App R 467',role:'배심원에 대한 베이즈 설명의 비판.',warn:'—'},
  {id:'wald1939',lang:'src',t:'Contributions to the theory of statistical estimation and testing hypotheses',a:'Abraham Wald',o:'Annals of Mathematical Statistics 10 (1939): 299–326',role:'결정 문제로서의 검정과 추정.',warn:'—'},
  {id:'wald1950',lang:'src',t:'Statistical Decision Functions',a:'Abraham Wald',o:'Wiley, 1950',role:'완비류 정리, 최소최대.',warn:'—'},
  {id:'savage1954',lang:'src',t:'The Foundations of Statistics',a:'Leonard J. Savage',o:'Wiley, 1954',role:'주관 기대효용의 공리.',warn:'—'},
@@ -71,6 +85,12 @@ export const BOOKS = [
  {id:'kss96',lang:'en',t:'Reasoning to a foregone conclusion',a:'J. B. Kadane · M. J. Schervish · T. Seidenfeld',o:'JASA 91 (1996)',role:'정칙 사전에서 정해진 결론으로 가는 표집의 한계.',warn:'—'}
 ];
 export const BK = {
+ st23:[['jeffreys1946','전체'],['jaynes1968','전체'],['bernardo1979','전체'],['berger2006','전체'],['goldstein2006','전체']],
+ st24:[['dsz1973','전체']],
+ st25:[['js1961','전체'],['em1975','야구 타율']],
+ st26:[['neyman1934','설계 기반'],['royall1970','전체'],['basu1971','서커스'],['hmt1983','전체']],
+ st27:[['gh2017','전체와 토론']],
+ st28:[['collins1968','판결과 부록'],['adams1996','전체']],
  st15:[['wald1939','전체'],['wald1950','완비류 정리'],['fisher1955','비판']],
  st16:[['savage1954','공리'],['allais1953','전체'],['ellsberg1961','전체']],
  st17:[['barnard1949','전체'],['birnbaum1962','전체'],['mayo2014','전체와 토론']],
