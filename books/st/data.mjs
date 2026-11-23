@@ -5,7 +5,7 @@ export const META = {
  span:'1763–2021',
  eyebrow:'38개의 쟁점으로 읽는 통계적 추론: 베이즈의 논고에서 ASA 회장 대책반 성명까지',
  pfx:'st',
- draft:true,
+ draft:false,
  nomap:true, nolanes:true,
  unitn:'장',
  axn:'갈림의 네 축',
