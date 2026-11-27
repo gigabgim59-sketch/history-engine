@@ -1,0 +1,916 @@
+[
+[
+"pearson1900",
+"src",
+"On the criterion that a given system of deviations from the probable in the case of a correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling",
+"Karl Pearson",
+"Philosophical Magazine 5th ser. 50 (1900): 157–175",
+"카이제곱 적합도 검정.",
+[
+"칼 피어슨은 1900년",
+"카이제곱(1900)"
+]
+],
+[
+"student1908",
+"src",
+"The probable error of a mean",
+"Student (W. S. Gosset)",
+"Biometrika 6 (1908): 1–25",
+"작은 표본의 t 분포.",
+[
+"1908년",
+"t 분포(1908)"
+]
+],
+[
+"fisher1921",
+"src",
+"On the ‘probable error’ of a coefficient of correlation deduced from a small sample",
+"R. A. Fisher",
+"Metron 1 (1921): 3–32",
+"‘가능도’의 정의.",
+[
+"1921년 『메트론"
+]
+],
+[
+"fisher1925e",
+"src",
+"Theory of statistical estimation",
+"R. A. Fisher",
+"Proceedings of the Cambridge Philosophical Society 22 (1925): 700–725",
+"정보량과 보조 통계량.",
+[
+"피셔(1925·1934)",
+"1925년에 정의한"
+]
+],
+[
+"fisher1930",
+"src",
+"Inverse probability",
+"R. A. Fisher",
+"Proceedings of the Cambridge Philosophical Society 26 (1930): 528–535",
+"기준 논증의 첫 제시.",
+[
+"피셔는 1930년"
+]
+],
+[
+"fisher1934",
+"src",
+"Probability likelihood and quantity of information in the logic of uncertain inference",
+"R. A. Fisher",
+"Proceedings of the Royal Society A 146 (1934): 1–8",
+"제프리스와의 교환.",
+[
+"피셔는 1934년",
+"피셔의 1934년"
+]
+],
+[
+"jeffreys1934",
+"src",
+"Probability and scientific method",
+"Harold Jeffreys",
+"Proceedings of the Royal Society A 146 (1934): 9–15",
+"피셔와의 교환.",
+[
+"「확률과 과학적 방법」"
+]
+],
+[
+"behrens1929",
+"src",
+"Ein Beitrag zur Fehlerberechnung bei wenigen Beobachtungen",
+"W.-U. Behrens",
+"Landwirtschaftliche Jahrbücher 68 (1929): 807–837",
+"베렌스–피셔 문제.",
+[
+"베렌스가"
+]
+],
+[
+"neyman1941",
+"src",
+"Fiducial argument and the theory of confidence intervals",
+"Jerzy Neyman",
+"Biometrika 32 (1941): 128–150",
+"기준 논증과 신뢰구간의 구별.",
+[
+"네이만(1941)",
+"1941"
+]
+],
+[
+"neyman1957",
+"src",
+"‘Inductive behavior’ as a basic concept of philosophy of science",
+"Jerzy Neyman",
+"Review of the International Statistical Institute 25 (1957): 7–22",
+"귀납적 행동.",
+[
+"1957년 국제통계연구소"
+]
+],
+[
+"soper1917",
+"src",
+"On the distribution of the correlation coefficient in small samples: a cooperative study",
+"H. E. Soper · A. W. Young · B. M. Cave · A. Lee · K. Pearson",
+"Biometrika 11 (1917): 328–413",
+"피셔 방법을 역확률로 읽은 비판.",
+[
+"협동 연구"
+]
+],
+[
+"vonmises1919",
+"src",
+"Grundlagen der Wahrscheinlichkeitsrechnung",
+"Richard von Mises",
+"Mathematische Zeitschrift 5 (1919): 52–99",
+"콜렉티브.",
+[
+"미제스는 1919년"
+]
+],
+[
+"ville1939",
+"src",
+"Étude critique de la notion de collectif",
+"Jean Ville",
+"Gauthier-Villars (1939)",
+"콜렉티브의 반례.",
+[
+"빌(1939)"
+]
+],
+[
+"martinlof1966",
+"src",
+"The definition of random sequences",
+"Per Martin-Löf",
+"Information and Control 9 (1966): 602–619",
+"무작위 수열의 정의.",
+[
+"마르틴-뢰프(1966)"
+]
+],
+[
+"vanlambalgen1987",
+"en",
+"Random Sequences",
+"Michiel van Lambalgen",
+"박사논문, 암스테르담 대학 (1987)",
+"콜렉티브의 재평가.",
+[
+"판 람발건(1987)"
+]
+],
+[
+"hajek1996",
+"en",
+"‘Mises redux’ — redux: fifteen arguments against finite frequentism",
+"Alan Hájek",
+"Erkenntnis 45 (1996): 209–227",
+"유한 빈도 해석 비판.",
+[
+"(1996)에서 실제 관측열"
+]
+],
+[
+"hajek2009",
+"en",
+"Fifteen arguments against hypothetical frequentism",
+"Alan Hájek",
+"Erkenntnis 70 (2009): 211–235",
+"가설적 빈도 해석 비판.",
+[
+"하이에크(2009)"
+]
+],
+[
+"vanfraassen1989",
+"en",
+"Laws and Symmetry",
+"Bas C. van Fraassen",
+"Oxford University Press (1989)",
+"불변성 요구의 선택.",
+[
+"반 프라선(1989)"
+]
+],
+[
+"stigler1982",
+"en",
+"Thomas Bayes's Bayesian inference",
+"Stephen M. Stigler",
+"Journal of the Royal Statistical Society A 145 (1982): 250–258",
+"베이즈 논증의 읽기.",
+[
+"스티글러(1982)"
+]
+],
+[
+"galavotti1991",
+"en",
+"The notion of subjective probability in the work of Ramsey and de Finetti",
+"Maria Carla Galavotti",
+"Theoria 57 (1991): 239–259",
+"램지와 데 피네티의 비교.",
+[
+"갈라보티(1991)"
+]
+],
+[
+"howson2008",
+"en",
+"De Finetti, countable additivity, consistency and coherence",
+"Colin Howson",
+"British Journal for the Philosophy of Science 59 (2008): 1–23",
+"가산 가법성 거부의 이유.",
+[
+"하우슨(2008)"
+]
+],
+[
+"cd1982",
+"en",
+"On the origins of the .05 level of statistical significance",
+"Michael Cowles · Caroline Davis",
+"American Psychologist 37 (1982): 553–558",
+"5% 관행의 기원.",
+[
+"카울스·데이비스(1982)"
+]
+],
+[
+"hb2003",
+"en",
+"Confusion over measures of evidence (p’s) versus errors (α’s) in classical statistical testing",
+"Raymond Hubbard · M. J. Bayarri",
+"The American Statistician 57 (2003): 171–178",
+"p와 α의 혼동.",
+[
+"허버드·바야리(2003)"
+]
+],
+[
+"berger2003",
+"src",
+"Could Fisher, Jeffreys and Neyman have agreed on testing?",
+"James O. Berger",
+"Statistical Science 18 (2003): 1–32",
+"조건부 오류율로 세 검정을 잇는 제안.",
+[
+"제임스 버거(2003)"
+]
+],
+[
+"lehmann1993",
+"en",
+"The Fisher, Neyman–Pearson theories of testing hypotheses: one theory or two?",
+"E. L. Lehmann",
+"JASA 88 (1993): 1242–1249",
+"두 이론은 하나인가.",
+[
+"레만(1993)"
+]
+],
+[
+"basu1980",
+"src",
+"Randomization analysis of experimental data: the Fisher randomization test",
+"D. Basu",
+"JASA 75 (1980): 575–582",
+"무작위화 검정 비판.",
+[
+"바수(1980)"
+]
+],
+[
+"rubin1978",
+"src",
+"Bayesian inference for causal effects: the role of randomization",
+"Donald B. Rubin",
+"Annals of Statistics 6 (1978): 34–58",
+"베이즈 틀의 무작위화.",
+[
+"루빈(1978)"
+]
+],
+[
+"fs1948",
+"src",
+"The utility analysis of choices involving risk",
+"Milton Friedman · L. J. Savage",
+"Journal of Political Economy 56 (1948): 279–304",
+"위험 선택의 효용 분석.",
+[
+"(1948)을 함께"
+]
+],
+[
+"raiffa1961",
+"src",
+"Risk, ambiguity, and the Savage axioms: comment",
+"Howard Raiffa",
+"Quarterly Journal of Economics 75 (1961): 690–694",
+"엘스버그에 대한 응답.",
+[
+"레이파(1961)"
+]
+],
+[
+"gs1989",
+"src",
+"Maxmin expected utility with non-unique prior",
+"Itzhak Gilboa · David Schmeidler",
+"Journal of Mathematical Economics 18 (1989): 141–153",
+"모호성의 결정 이론.",
+[
+"길보아·슈마이들러(1989)"
+]
+],
+[
+"bw1984",
+"src",
+"The Likelihood Principle",
+"James O. Berger · Robert L. Wolpert",
+"IMS Lecture Notes 6 (1984)",
+"가능도 원리의 옹호.",
+[
+"버거·볼퍼트(1984)"
+]
+],
+[
+"savage1962",
+"src",
+"The Foundations of Statistical Inference: A Discussion",
+"L. J. Savage 외",
+"Methuen (1962)",
+"1959년 런던 토론.",
+[
+"새비지 외"
+]
+],
+[
+"kendall1949",
+"src",
+"On the reconciliation of theories of probability",
+"M. G. Kendall",
+"Biometrika 36 (1949): 101–116",
+"‘빈도주의자’라는 말.",
+[
+"켄들"
+]
+],
+[
+"good1950",
+"src",
+"Probability and the Weighing of Evidence",
+"I. J. Good",
+"Charles Griffin (1950)",
+"증거의 무게.",
+[
+"굿(1950)",
+"1950년 『확률과"
+]
+],
+[
+"rs1961",
+"src",
+"Applied Statistical Decision Theory",
+"Howard Raiffa · Robert Schlaifer",
+"Harvard Business School (1961)",
+"켤레 사전과 결정.",
+[
+"슐레이퍼(1961)"
+]
+],
+[
+"kiefer1977",
+"src",
+"Conditional confidence statements and confidence estimators",
+"J. Kiefer",
+"JASA 72 (1977): 789–827",
+"조건부 신뢰 진술.",
+[
+"키퍼(1977)"
+]
+],
+[
+"hacking1972",
+"src",
+"Review of A. W. F. Edwards, Likelihood",
+"Ian Hacking",
+"British Journal for the Philosophy of Science 23 (1972): 132–137",
+"가능도의 법칙 철회.",
+[
+"해킹(1972)"
+]
+],
+[
+"mayo1996",
+"src",
+"Error and the Growth of Experimental Knowledge",
+"Deborah G. Mayo",
+"University of Chicago Press (1996)",
+"엄격한 시험.",
+[
+"메이오(1996)"
+]
+],
+[
+"mayo2018",
+"src",
+"Statistical Inference as Severe Testing",
+"Deborah G. Mayo",
+"Cambridge University Press (2018)",
+"엄격한 시험과 재현성 논쟁.",
+[
+"메이오(2018)",
+"2018년 『엄격한"
+]
+],
+[
+"jaynes1957",
+"src",
+"Information theory and statistical mechanics",
+"E. T. Jaynes",
+"Physical Review 106 (1957): 620–630",
+"최대 엔트로피.",
+[
+"제인스(1957"
+]
+],
+[
+"jaynes1980",
+"src",
+"Marginalization and prior probabilities",
+"E. T. Jaynes",
+"Bayesian Analysis in Econometrics and Statistics (A. Zellner 편, 1980): 43–87",
+"주변화 역설에 대한 응답.",
+[
+"제인스(1980)"
+]
+],
+[
+"kw1996",
+"en",
+"The selection of prior distributions by formal rules",
+"Robert E. Kass · Larry Wasserman",
+"JASA 91 (1996): 1343–1370",
+"규칙 사전의 개관.",
+[
+"카스·와서먼"
+]
+],
+[
+"stein1956",
+"src",
+"Inadmissibility of the usual estimator for the mean of a multivariate normal distribution",
+"Charles Stein",
+"Proceedings of the Third Berkeley Symposium 1 (1956): 197–206",
+"관측값 추정의 비허용성.",
+[
+"스타인(1956)",
+"스타인은 1954"
+]
+],
+[
+"robbins1956",
+"src",
+"An empirical Bayes approach to statistics",
+"Herbert Robbins",
+"Proceedings of the Third Berkeley Symposium 1 (1956): 157–163",
+"경험적 베이즈.",
+[
+"로빈스(1956)",
+"허버트 로빈스"
+]
+],
+[
+"em1972",
+"src",
+"Limiting the risk of Bayes and empirical Bayes estimators — Part II",
+"Bradley Efron · Carl Morris",
+"JASA 67 (1972): 130–139",
+"개별 손해의 한도.",
+[
+"에프론·모리스(1972)"
+]
+],
+[
+"em1973",
+"src",
+"Stein's estimation rule and its competitors — an empirical Bayes approach",
+"Bradley Efron · Carl Morris",
+"JASA 68 (1973): 117–130",
+"스타인 추정의 경험적 베이즈 읽기.",
+[
+"에프론·모리스(1973"
+]
+],
+[
+"em1977",
+"src",
+"Stein's paradox in statistics",
+"Bradley Efron · Carl Morris",
+"Scientific American 236(5) (1977): 119–127",
+"스타인의 역설.",
+[
+"에프론·모리스(1977)"
+]
+],
+[
+"ls1972",
+"src",
+"Bayes estimates for the linear model",
+"D. V. Lindley · A. F. M. Smith",
+"JRSS B 34 (1972): 1–41",
+"위계 베이즈.",
+[
+"린들리와 스미스"
+]
+],
+[
+"bb1988",
+"src",
+"Statistical analysis and the illusion of objectivity",
+"James O. Berger · Donald A. Berry",
+"American Scientist 76 (1988): 159–165",
+"빈도 방법의 객관성 비판.",
+[
+"버거·베리"
+]
+],
+[
+"ff1970",
+"src",
+"A Bayesian approach to identification evidence",
+"Michael O. Finkelstein · William B. Fairley",
+"Harvard Law Review 83 (1970): 489–517",
+"배심원을 위한 베이즈.",
+[
+"핀켈스타인·페얼리"
+]
+],
+[
+"tribe1971",
+"src",
+"Trial by mathematics: precision and ritual in the legal process",
+"Laurence H. Tribe",
+"Harvard Law Review 84 (1971): 1329–1393",
+"법정 수학 비판.",
+[
+"트라이브"
+]
+],
+[
+"gg1984",
+"src",
+"Stochastic relaxation, Gibbs distributions, and the Bayesian restoration of images",
+"Stuart Geman · Donald Geman",
+"IEEE Transactions on Pattern Analysis and Machine Intelligence 6 (1984): 721–741",
+"깁스 표집.",
+[
+"기먼"
+]
+],
+[
+"efron1986",
+"src",
+"Why isn't everyone a Bayesian?",
+"Bradley Efron",
+"The American Statistician 40 (1986): 1–5",
+"베이즈 방법의 걸림돌.",
+[
+"에프론(1986)"
+]
+],
+[
+"rubin1984",
+"src",
+"Bayesianly justifiable and relevant frequency calculations for the applied statistician",
+"Donald B. Rubin",
+"Annals of Statistics 12 (1984): 1151–1172",
+"사후 예측 점검.",
+[
+"루빈(1984)"
+]
+],
+[
+"gms1996",
+"src",
+"Posterior predictive assessment of model fitness via realized discrepancies",
+"Andrew Gelman · Xiao-Li Meng · Hal Stern",
+"Statistica Sinica 6 (1996): 733–807",
+"사후 예측 p값.",
+[
+"겔먼·멍·스턴"
+]
+],
+[
+"gs2013",
+"src",
+"Philosophy and the practice of Bayesian statistics",
+"Andrew Gelman · Cosma Rohilla Shalizi",
+"British Journal of Mathematical and Statistical Psychology 66 (2013): 8–38",
+"가설 연역적 베이즈.",
+[
+"겔먼·샬리지"
+]
+],
+[
+"leamer1983",
+"src",
+"Let's take the con out of econometrics",
+"Edward E. Leamer",
+"American Economic Review 73 (1983): 31–43",
+"모형 선택 비판.",
+[
+"리머(1983)"
+]
+],
+[
+"hmrv1999",
+"en",
+"Bayesian model averaging: a tutorial",
+"J. A. Hoeting · D. Madigan · A. E. Raftery · C. T. Volinsky",
+"Statistical Science 14 (1999): 382–417",
+"베이즈 모형 평균.",
+[
+"호이팅 외"
+]
+],
+[
+"bb2004",
+"src",
+"The interplay of Bayesian and frequentist analysis",
+"M. J. Bayarri · James O. Berger",
+"Statistical Science 19 (2004): 58–80",
+"베이즈와 빈도의 결합.",
+[
+"바야리·제임스 버거(2004)"
+]
+],
+[
+"akaike1973",
+"src",
+"Information theory and an extension of the maximum likelihood principle",
+"Hirotugu Akaike",
+"2nd International Symposium on Information Theory (1973): 267–281",
+"AIC.",
+[
+"아카이케(1973",
+"아카이케에게"
+]
+],
+[
+"eh2016",
+"en",
+"Computer Age Statistical Inference",
+"Bradley Efron · Trevor Hastie",
+"Cambridge University Press (2016)",
+"계산 시대의 추론.",
+[
+"에프론·헤이스티"
+]
+],
+[
+"pocock1977",
+"src",
+"Group sequential methods in the design and analysis of clinical trials",
+"Stuart J. Pocock",
+"Biometrika 64 (1977): 191–199",
+"집단 순차 경계.",
+[
+"포콕"
+]
+],
+[
+"cohen1962",
+"src",
+"The statistical power of abnormal-social psychological research: a review",
+"Jacob Cohen",
+"Journal of Abnormal and Social Psychology 65 (1962): 145–153",
+"검정력 조사.",
+[
+"1962년 한 심리학"
+]
+],
+[
+"melton1962",
+"src",
+"Editorial",
+"Arthur W. Melton",
+"Journal of Experimental Psychology 64 (1962): 553–557",
+"게재 방침.",
+[
+"멜턴"
+]
+],
+[
+"rozeboom1960",
+"src",
+"The fallacy of the null-hypothesis significance test",
+"William W. Rozeboom",
+"Psychological Bulletin 57 (1960): 416–428",
+"귀무가설 검정 비판.",
+[
+"로즈붐"
+]
+],
+[
+"meehl1967",
+"src",
+"Theory-testing in psychology and physics: a methodological paradox",
+"Paul E. Meehl",
+"Philosophy of Science 34 (1967): 103–115",
+"방법론의 역설.",
+[
+"폴 밀"
+]
+],
+[
+"rothman1990",
+"src",
+"No adjustments are needed for multiple comparisons",
+"Kenneth J. Rothman",
+"Epidemiology 1 (1990): 43–46",
+"다중 비교 보정 반대.",
+[
+"로스먼"
+]
+],
+[
+"ghy2012",
+"src",
+"Why we (usually) don't have to worry about multiple comparisons",
+"Andrew Gelman · Jennifer Hill · Masanao Yajima",
+"Journal of Research on Educational Effectiveness 5 (2012): 189–211",
+"위계 모형의 다중 비교.",
+[
+"야지마"
+]
+],
+[
+"gl2014",
+"src",
+"The statistical crisis in science",
+"Andrew Gelman · Eric Loken",
+"American Scientist 102 (2014): 460–465",
+"갈림길의 정원.",
+[
+"로컨"
+]
+],
+[
+"gg2007",
+"src",
+"Why most published research findings are false: problems in the analysis",
+"Steven Goodman · Sander Greenland",
+"PLoS Medicine 4 (2007): e168",
+"이오아니디스 비판.",
+[
+"굿맨·그린랜드"
+]
+],
+[
+"sns2011",
+"src",
+"False-positive psychology",
+"Joseph P. Simmons · Leif D. Nelson · Uri Simonsohn",
+"Psychological Science 22 (2011): 1359–1366",
+"분석의 자유도.",
+[
+"시먼스"
+]
+],
+[
+"tm2015",
+"src",
+"Editorial",
+"David Trafimow · Michael Marks",
+"Basic and Applied Social Psychology 37 (2015): 1–2",
+"유의성 검정 금지.",
+[
+"트라피모"
+]
+],
+[
+"benjamin2018",
+"src",
+"Redefine statistical significance",
+"Daniel J. Benjamin 외",
+"Nature Human Behaviour 2 (2018): 6–10",
+"0.005 문턱.",
+[
+"벤저민 외",
+"다니엘 벤저민"
+]
+],
+[
+"lakens2018",
+"src",
+"Justify your alpha",
+"Daniël Lakens 외",
+"Nature Human Behaviour 2 (2018): 168–171",
+"문턱의 정당화.",
+[
+"라컨스"
+]
+],
+[
+"agm2019",
+"src",
+"Scientists rise up against statistical significance",
+"Valentin Amrhein · Sander Greenland · Blake McShane",
+"Nature 567 (2019): 305–307",
+"유의성 폐기 서명.",
+[
+"암라인"
+]
+],
+[
+"mcshane2019",
+"src",
+"Abandon statistical significance",
+"Blakeley B. McShane · David Gal · Andrew Gelman · Christian Robert · Jennifer L. Tackett",
+"The American Statistician 73 sup1 (2019): 235–245",
+"유의성 폐기.",
+[
+"맥셰인"
+]
+],
+[
+"wsl2019",
+"src",
+"Moving to a world beyond ‘p < 0.05’",
+"Ronald L. Wasserstein · Allen L. Schirm · Nicole A. Lazar",
+"The American Statistician 73 sup1 (2019): 1–19",
+"특집호 사설.",
+[
+"시름"
+]
+],
+[
+"asa2021",
+"src",
+"The ASA president's task force statement on statistical significance and replicability",
+"Yoav Benjamini 외",
+"Annals of Applied Statistics 15 (2021): 1084–1085",
+"회장 대책반 성명.",
+[
+"회장 대책반"
+]
+],
+[
+"rouder2009",
+"src",
+"Bayesian t tests for accepting and rejecting the null hypothesis",
+"Jeffrey N. Rouder · Paul L. Speckman · Dongchu Sun · Richard D. Morey · Geoffrey Iverson",
+"Psychonomic Bulletin & Review 16 (2009): 225–237",
+"JZS 베이즈 인자.",
+[
+"라우더"
+]
+],
+[
+"gr1995",
+"src",
+"Avoiding model selection in Bayesian social research",
+"Andrew Gelman · Donald B. Rubin",
+"Sociological Methodology 25 (1995): 165–173",
+"래프터리 비판.",
+[
+"겔먼·루빈(1995)",
+"겔먼과 루빈"
+]
+],
+[
+"mcgrayne2011",
+"en",
+"The Theory That Would Not Die",
+"Sharon Bertsch McGrayne",
+"Yale University Press (2011)",
+"대중서. 암호 해독 서술의 예로만 든다.",
+[
+"맥그레인(2011)"
+]
+],
+[
+"burnham2002",
+"src",
+"Model Selection and Multimodel Inference (2판)",
+"Kenneth P. Burnham · David R. Anderson",
+"Springer (2002)",
+"AIC 가중 평균.",
+[
+"번햄"
+]
+]
+]

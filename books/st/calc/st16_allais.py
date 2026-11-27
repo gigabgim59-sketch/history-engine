@@ -5,8 +5,7 @@
 P(R)>P(B)이고 P(B)+P(Y)>P(R)+P(Y) → P(B)>P(R)이 동시에 필요 → 모순."""
 import numpy as np
 rng = np.random.default_rng(16)
-for _ in range(3):
-    u0, u1, u5 = np.sort(rng.uniform(0, 1, 3))
+for u0, u1, u5 in [(0.09,0.43,0.57),(0.02,0.35,0.62),(0.04,0.85,0.87)]:  # 표에 적는 두 자리 효용 그대로(검수 2026-11-27)
     d1 = u1 - (.10 * u5 + .89 * u1 + .01 * u0); d2 = (.11 * u1 + .89 * u0) - (.10 * u5 + .90 * u0)
     print(f'u(0)={u0:.2f} u(1M)={u1:.2f} u(5M)={u5:.2f}: EU(1A)-EU(1B)={d1:.4f}  EU(2A)-EU(2B)={d2:.4f}')
 ok = [b for b in np.linspace(0, 2/3, 1001) if (1/3 > b) and (b > 1/3)]
