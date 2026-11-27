@@ -75,7 +75,7 @@ export const BOOKS = [
  {id:'howie2002',lang:'en',t:'Interpreting Probability: Controversies and Developments in the Early Twentieth Century',a:'David Howie',o:'Cambridge University Press, 2002',role:'피셔–제프리스 교환(1932–1934).',warn:'—'},
  {id:'lehmann2011',lang:'en',t:'Fisher, Neyman, and the Creation of Classical Statistics',a:'Erich L. Lehmann',o:'Springer, 2011',role:'신뢰구간과 기준 구간의 분화.',warn:'—'},
  {id:'sh2016',lang:'en',t:'Confidence, Likelihood, Probability',a:'Tore Schweder · Nils Lid Hjort',o:'Cambridge University Press, 2016',role:'신뢰 분포.',warn:'—'},
- {id:'bayes1763',lang:'src',t:'An essay towards solving a problem in the doctrine of chances',a:'Thomas Bayes (Richard Price 편)',o:'Philosophical Transactions 53 (1763, 1764 인쇄): 370–418',role:'원인의 확률을 다룬 논고. 당구대의 예.',warn:'—'},
+ {id:'bayes1763',lang:'src',t:'An essay towards solving a problem in the doctrine of chances',a:'Thomas Bayes (Richard Price 편)',o:'Philosophical Transactions 53 (1763, 1764 인쇄): 370–418',role:'원인의 확률을 다룬 논고. 탁자의 예.',warn:'—'},
  {id:'laplace1814',lang:'src',t:'Essai philosophique sur les probabilités',a:'Pierre-Simon Laplace',o:'1814',role:'계승 규칙과 해돋이의 예.',warn:'—'},
  {id:'boole1854',lang:'src',t:'An Investigation of the Laws of Thought',a:'George Boole',o:'1854',role:'균등 사전의 자의성 비판.',warn:'—'},
  {id:'bertrand1889',lang:'src',t:'Calcul des probabilités',a:'Joseph Bertrand',o:'1889',role:'현의 역설.',warn:'—'},
