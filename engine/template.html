@@ -1176,7 +1176,7 @@ function viewPeople(id){
     $('#plife').innerHTML=svg();
     $('#pgroups').innerHTML=DATA.facts.filter(f=>!pfac||f[0]===pfac).map(f=>{const ps=L.filter(x=>x.f===f[0]);if(!ps.length)return '';
       return `<h2 class="sh"><span class="fchip" style="--pc:${f[2]}"><i class="fdot"></i>${esc(f[1])}</span><span class="shs">${esc(f[3])}</span></h2><ul class="plist">${ps.map(x=>`<li><a href="#/pp/${x.id}" style="--pc:${f[2]}"><i class="fdot"></i><b>${esc(x.n)}<small>${plife(x)}</small></b><span class="pr">${esc(x.role)}${x.ch.length?` · ${x.ch.length}개 장`:''}</span></a></li>`).join('')}</ul>`;}).join('');};
-  main.innerHTML=`<div class="wide"><p class="eyebrow">인물</p><h1 class="vt">누가 이 역사를 움직였나</h1>
+  main.innerHTML=`<div class="wide"><p class="eyebrow">인물</p><h1 class="vt">${esc(DATA.meta.ppT||'누가 이 역사를 움직였나')}</h1>
   <p class="note vsub">이 책에 나오는 ${DATA.people.length}명을 진영별로 모았습니다. 색은 진영을, 띠는 생애를, 띠 위의 작은 원은 그 사람이 나오는 장의 연대를 나타냅니다. 이름을 누르면 장별 행적과 관계를 볼 수 있습니다. 본문에서도 진영 색 밑줄이 그어진 이름을 누르면 같은 정보가 뜹니다.</p>
   <div class="ctrl"><span class="lb">진영</span><button class="pill" data-pf="">모두</button>${DATA.facts.map(f=>`<button class="pill" data-pf="${f[0]}"><i class="fdot" style="--pc:${f[2]};margin-right:.3rem"></i>${esc(f[1])}</button>`).join('')}</div>
   <div class="lifebox" id="plife"></div><p class="note">생몰년이 확실하지 않은 사람의 띠는 흐리게 그렸습니다. 좁은 화면에서는 옆으로 밀어 보세요.</p>

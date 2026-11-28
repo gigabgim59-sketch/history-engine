@@ -1,0 +1,60 @@
+@page{size:A4;margin:26mm 27mm 30mm 27mm;
+ @bottom-center{content:counter(page);font:8pt PSerif,serif;color:#888;vertical-align:top;padding-top:6mm}}
+@page front{@bottom-center{content:none}}
+.front{page:front}
+html{font-family:PSerif,serif;font-size:11pt;color:#1a1a1a}
+body{margin:0}
+a{color:inherit;text-decoration:none}
+p{margin:0;text-align:justify;text-indent:1em;line-height:1.78;word-break:normal;orphans:3;widows:3;hyphens:none}
+b{font-weight:700}
+.xr{font-size:7.5pt;color:#8a2b1f;letter-spacing:-.02em;margin-left:.1em}
+h1,h2{margin:0;font-weight:700}
+.h3{font-size:11.5pt;font-weight:700;text-align:center;text-indent:0;margin:1.5em 0 .7em;break-after:avoid}
+.h4{font-size:10.5pt;font-weight:700;text-indent:0;margin:1.1em 0 .4em;break-after:avoid}
+.fh{font-size:9pt;font-weight:700;color:#b0332a;text-indent:0;margin:.9em 0 .2em;break-after:avoid}
+.rule{width:12mm;border-top:.5pt solid #999;margin:5mm auto 9mm}
+.ch,.part{break-before:page}
+.open{text-align:center;padding-top:18mm;break-after:avoid}
+.kick2{font-size:7.5pt;color:#777;text-indent:0;text-align:center;margin-bottom:5mm}
+.ct .kick{display:block;font-size:8.5pt;font-weight:400;color:#b0332a;margin-bottom:3mm}
+.ct .tt{display:block;font-size:18pt;letter-spacing:-.01em;margin-bottom:2.5mm}
+.cy{font-size:9pt;color:#777;font-style:italic;text-indent:0;text-align:center}
+.lead{font-size:9.5pt;color:#555;text-indent:0;line-height:1.75;margin:0 6mm 6mm;padding:3mm 0 3mm 4mm;border-left:1.2pt solid #c9a39b}
+.ph{text-align:center;padding-top:50mm}
+.ph .pno{display:block;font-size:10pt;font-weight:400;color:#b0332a}
+.ph .pt{display:block;font-size:24pt;margin:4mm 0 3mm}
+.part .py{font-size:10pt;color:#777;text-indent:0;text-align:center}
+.part .h3{margin-top:1.8em}
+/* 마지막 쪽에 몇 줄만 넘어가는 구획을 조인다(render.py가 정한다) */
+.tg1 p{line-height:1.74}
+.tg2 p{line-height:1.70}
+.tg3 p{line-height:1.68;letter-spacing:-.008em}
+.tg4 p{line-height:1.66;letter-spacing:-.012em}
+.tg5 p{font-size:10.8pt;line-height:1.66;letter-spacing:-.012em}
+/* 앞붙이 */
+.title{height:225mm;display:flex;flex-direction:column;break-after:page}
+.title .bar{width:12mm;border-top:2pt solid #b0332a;margin:22mm 0 9mm}
+.title p{text-indent:0;text-align:left}
+.title .t1{font-size:30pt;font-weight:700;line-height:1.3;margin:0 0 7mm;letter-spacing:-.02em}
+.tsub{font-size:11pt;color:#555}
+.tey{font-size:10pt;color:#777;font-style:italic;margin-top:8mm}
+.tfoot{margin-top:auto;border-top:.5pt solid #333;padding-top:3mm}
+.tfoot p{font-size:8pt;letter-spacing:.05em}
+.colo{height:228mm;display:flex;flex-direction:column;justify-content:flex-end;break-after:page}
+.colo p{font-size:8.5pt;color:#666;text-indent:0;line-height:1.7;margin-top:2mm}
+.toch{font-size:13pt;font-weight:700;text-indent:0;margin:0 0 6mm}
+.toc table{width:100%;border-collapse:collapse;font-size:9pt}
+.toc td{padding:1.15mm 0;border-bottom:.3pt solid #ddd;vertical-align:baseline}
+.toc td:last-child{text-align:right;width:12mm;color:#444}
+.toc .tn{width:9mm;color:#999;font-size:8pt}
+.toc tr.tp td{font-weight:700;padding-top:4mm;border-bottom:.6pt solid #888}
+.toc tr{break-inside:avoid}
+.toc tr.tp{break-after:avoid}
+.ty{font-weight:400;color:#888;font-size:8pt;margin-left:2mm}
+
+/* 본문 표와 수식(DEFECTS E-16) */
+table.mt{border-collapse:collapse;margin:2.5mm auto 3mm;font-size:8.6pt;line-height:1.45;break-inside:avoid}
+table.mt th,table.mt td{border-top:.3pt solid #999;border-bottom:.3pt solid #999;padding:1mm 2.2mm;text-align:left;vertical-align:top}
+table.mt thead th{border-bottom:.6pt solid #333;font-weight:700}
+math{font-family:'KRMath','PSerif',math;font-size:1.02em}
+.mblk{margin:2mm 0 2.5mm;text-align:center;break-inside:avoid}.mblk math{display:block math}

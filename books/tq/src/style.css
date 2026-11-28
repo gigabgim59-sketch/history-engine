@@ -1,0 +1,113 @@
+:root{--bg:#f7f4ee;--paper:#fffdf8;--ink:#23201b;--mute:#6b645a;--line:#e2dbcf;--acc:#5a3a2a;--acc2:#8a5a3c;--soft:#efe7da;--hl:#fff1c9;--key:#f3ece0;
+--sans:'KRSans','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--paper:#1f1c16;--ink:#ece6da;--mute:#a59d8f;--line:#3a352c;--acc:#d7ab8c;--acc2:#e7c2a4;--soft:#2a261f;--hl:#4a3c18;--key:#28231b}}
+:root[data-theme="dark"]{--bg:#17150f;--paper:#1f1c16;--ink:#ece6da;--mute:#a59d8f;--line:#3a352c;--acc:#d7ab8c;--acc2:#e7c2a4;--soft:#2a261f;--hl:#4a3c18;--key:#28231b}
+*{box-sizing:border-box}
+html{scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75;word-break:keep-all;overflow-wrap:anywhere}
+a{color:var(--acc)}
+.bar{position:sticky;top:0;z-index:20;display:flex;gap:8px;align-items:center;padding:8px 16px;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar .brand{font-weight:800;text-decoration:none;color:var(--ink);white-space:nowrap;margin-right:auto}
+.bar input,.bar select,.bar button{font:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+.bar input{width:min(340px,40vw)}
+.bar button{cursor:pointer}
+#menu{display:none}
+.toc{position:fixed;top:53px;left:0;bottom:0;width:290px;overflow:auto;border-right:1px solid var(--line);background:var(--paper);z-index:10}
+.tocin{padding:14px 16px 40px}
+.toc .th{font-weight:800;margin:0 0 6px;color:var(--mute);font-size:13px}
+.toc ol{list-style:none;margin:0;padding:0}
+.toc .tp>a{display:block;font-weight:700;margin-top:12px;text-decoration:none;color:var(--ink);font-size:14px}
+.toc .tp ol li a{display:flex;gap:8px;padding:3px 0;font-size:13.5px;text-decoration:none;color:var(--ink);line-height:1.45}
+.toc .tp ol li a:hover{color:var(--acc)}
+.toc .n{color:var(--mute);min-width:1.6em;text-align:right;font-variant-numeric:tabular-nums}
+.toc li.off{display:none}
+.toc .hit{font-size:13px;color:var(--mute)}
+main{margin-left:290px;padding:24px 40px 80px;max-width:1240px}
+.cover{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:32px 36px;margin-bottom:28px}
+.title{font-size:2.3rem;line-height:1.25;margin:.2rem 0 .3rem}
+.sub{color:var(--mute);font-size:1.1rem;margin-top:0}
+.caveat{font-size:14px;color:var(--mute);border-left:3px solid var(--acc2);padding-left:12px}
+.legend{font-size:14px;background:var(--soft);border-radius:10px;padding:12px 14px}
+.eyebrow{font-size:13px;color:var(--mute);font-weight:700;letter-spacing:.02em}
+.part{margin:56px 0 18px;padding:22px 0 10px;border-top:3px solid var(--acc)}
+.part .pn{font-weight:800;color:var(--acc);font-size:15px}
+.part h1{margin:.1rem 0;font-size:1.9rem}
+.part p{color:var(--mute);margin:.2rem 0 0}
+.issue{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 32px;margin:18px 0}
+.issue.off{display:none}
+.ih h2,.issue>h2{font-size:1.55rem;line-height:1.35;margin:.2rem 0 .4rem}
+.qq{font-size:1.08rem;margin:.2rem 0 .6rem;padding-left:12px;border-left:4px solid var(--acc)}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.ax{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:1px 9px;color:var(--mute)}
+.keybox{background:var(--key);border-radius:10px;padding:12px 14px;margin:14px 0}
+.issue h3{font-size:1.08rem;margin:1.6rem 0 .5rem;color:var(--acc)}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.6}
+th,td{border-bottom:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+thead th{background:var(--soft);font-size:13px;white-space:nowrap}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
+table.pos{min-width:780px}
+table.pos td:first-child{width:19%}
+table.pos td.src{width:24%;color:var(--mute);font-size:13.5px}
+table.arg{min-width:620px}
+table.arg td:first-child{width:18%}
+table.cmp{min-width:1100px;font-size:13.5px}
+table.cmp tbody th{white-space:nowrap;background:var(--soft)}
+table.tl td.yr{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+.tgs{margin-top:4px;display:flex;flex-wrap:wrap;gap:3px}
+.tg{font-size:11px;line-height:1.5;border-radius:4px;padding:0 5px;background:var(--soft);color:var(--mute);white-space:nowrap}
+tr.hl td{background:var(--hl)}
+tr.dim td{opacity:.45}
+.txt{border-left:3px solid var(--line);padding:2px 0 2px 14px;margin:12px 0}
+.txt .ref{font-weight:800}
+.txt .gist{color:var(--mute);font-size:14.5px;margin-bottom:4px}
+.txt dl{margin:0;display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:4px 14px}
+.txt dt{font-weight:700;font-size:14px}
+.txt dd{margin:0;font-size:14.5px}
+.docs,.crit,.mis{padding-left:1.2em}
+.docs li,.crit li,.mis li{margin:.35rem 0}
+.ct{background:var(--soft);border-radius:4px;padding:0 5px}
+.chs{margin-top:1.4rem;font-size:14px;background:var(--soft);border-radius:10px;padding:10px 14px}
+.chs span{display:inline-block;margin:2px 10px 2px 0}
+.chs span:before{content:'· ';color:var(--mute)}
+.note{color:var(--mute);font-size:14.5px}
+.top{text-align:right;font-size:13px;margin:.6rem 0 0}
+.qr{white-space:nowrap}
+.foot{color:var(--mute);font-size:13px;text-align:center;margin-top:40px}
+@media (max-width:1000px){
+ #menu{display:inline-block}
+ .toc{transform:translateX(-100%);transition:transform .2s;width:min(320px,86vw);box-shadow:0 0 0 100vmax transparent}
+ body.menu .toc{transform:none;box-shadow:0 0 0 100vmax rgba(0,0,0,.35)}
+ main{margin-left:0;padding:16px 16px 60px}
+ .bar{flex-wrap:wrap}
+ .bar input{order:5;width:100%}
+}
+@media (max-width:600px){
+ body{font-size:15.5px}
+ .cover,.issue{padding:18px 16px;border-radius:10px}
+ .title{font-size:1.8rem}
+ .ih h2,.issue>h2{font-size:1.3rem}
+ .txt dl{grid-template-columns:1fr}
+ .txt dd{margin-bottom:6px}
+ .bar{gap:6px;padding:8px 12px}
+ .bar .brand{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:15px}
+ .bar select{max-width:36vw;padding:6px 6px}
+ html{scroll-padding-top:110px}
+}
+@media print{
+ @page{size:A4;margin:16mm 15mm}
+ :root{--bg:#fff;--paper:#fff;--soft:#f1ede6;--key:#f4efe6}
+ .bar,.toc,.top,.legend{display:none!important}
+ main{margin:0;padding:0;max-width:none}
+ body{font-size:10.5pt;line-height:1.6}
+ .cover,.issue{border:0;padding:0;margin:0 0 10mm;border-radius:0}
+ .issue{break-before:page}
+ .part{break-before:page;border-top:2px solid #000}
+ .part+.issue{break-before:auto}
+ .tw{overflow:visible;border:1px solid #ccc}
+ table.pos,table.arg,table.cmp{min-width:0}
+ table.cmp{font-size:8pt}
+ tr,.txt,li{break-inside:avoid}
+ h2,h3{break-after:avoid}
+ a{color:inherit;text-decoration:none}
+}
