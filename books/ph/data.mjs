@@ -69,9 +69,9 @@ export const THREADS = [
  {id:'cri',n:'비판과 환원',d:'신 개념을 공포와 희망, 인간 본질의 투사, 사회와 무의식의 산물로 설명한 줄기.'}
 ];
 export const THREAD_EV = {
- pla:['ph01','ph02','ph05'],
- ari:['ph03','ph06','ph14'],
- sce:['ph01','ph04','ph14','ph26'],
+ pla:['ph01','ph02','ph05','ph07','ph08','ph10','ph11'],
+ ari:['ph03','ph06','ph11','ph12','ph13','ph14','ph15'],
+ sce:['ph01','ph04','ph09','ph10','ph14','ph26'],
  rat:['ph04','ph26','ph28'],
  cri:['ph01','ph04']
 };
