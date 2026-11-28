@@ -1,6 +1,28 @@
 // 서가: 원서만(SPEC, LIBRARY §3.9). lang: 'src' 원전, 'en'·'de'·'fr' 연구서의 언어.
 // 2026-11-28 보정 장 셋의 서지. 웹(출판사·도서관 목록·SEP 서지)으로 실재를 확인한 것과 기억에 기댄 것을 UNVERIFIED '서지'에 나누어 적었다. warn이 '—'가 아니면 판·출판사 대조가 남았다.
 export const BOOKS = [
+ {id:'dk',lang:'src',t:'Die Fragmente der Vorsokratiker',a:'Hermann Diels, Walther Kranz (Hgg.)',o:'6. Aufl., Berlin: Weidmann, 1951–1952 (3 Bde.)',role:'크세노파네스(DK 21), 프로타고라스(DK 80), 프로디코스(DK 84), 크리티아스(DK 88)의 단편.',warn:'—'},
+ {id:'plato_oct',lang:'src',t:'Platonis Opera',a:'Platon',o:'ed. J. Burnet, Oxford: Clarendon Press, 1900–1907 (5 vols.)',role:'『국가』, 『티마이오스』, 『법률』, 『에우티프론』, 『테아이테토스』.',warn:'—'},
+ {id:'ross1924',lang:'src',t:'Aristotle’s Metaphysics: A Revised Text with Introduction and Commentary',a:'W. D. Ross (ed.)',o:'Oxford: Clarendon Press, 1924 (2 vols.)',role:'『형이상학』 12권의 교감과 주석. 원동자를 목적인으로 읽는 전통적 해석.',warn:'—'},
+ {id:'jaeger1923',lang:'de',t:'Aristoteles: Grundlegung einer Geschichte seiner Entwicklung',a:'Werner Jaeger',o:'Berlin: Weidmann, 1923',role:'아리스토텔레스 사상의 발전 단계론. 12권 8장을 뒤의 삽입으로 보았다.',warn:'—'},
+ {id:'berti2000',lang:'en',t:'Unmoved Mover(s) as Efficient Cause(s) in Metaphysics Λ 6',a:'Enrico Berti',o:'in M. Frede, D. Charles (eds.), Aristotle’s Metaphysics Lambda (Oxford: Clarendon Press, 2000), 181–206',role:'원동자를 작용인으로 읽는 해석.',warn:'—'},
+ {id:'cornford1937',lang:'en',t:'Plato’s Cosmology: The Timaeus of Plato',a:'F. M. Cornford',o:'London: Routledge & Kegan Paul, 1937',role:'『티마이오스』의 창조를 상징으로 읽는 해석.',warn:'—'},
+ {id:'vlastos1939',lang:'en',t:'The Disorderly Motion in the Timaios',a:'Gregory Vlastos',o:'Classical Quarterly 33 (1939): 71–83',role:'상징적 독해의 근거를 검토하고 문자적 독해를 옹호.',warn:'—'},
+ {id:'sedley2007',lang:'en',t:'Creationism and Its Critics in Antiquity',a:'David Sedley',o:'Berkeley: University of California Press, 2007',role:'세계의 질서를 지성으로 설명하려는 고대 논쟁의 연구.',warn:'—'},
+ {id:'mayhew2008',lang:'en',t:'Plato: Laws 10',a:'Robert Mayhew',o:'Oxford: Clarendon Press, 2008 (Clarendon Plato Series)',role:'『법률』 10권의 번역과 주석.',warn:'—'},
+ {id:'dihle1977',lang:'de',t:'Das Satyrspiel ‚Sisyphos‘',a:'Albrecht Dihle',o:'Hermes 105 (1977): 28–42',role:'‘시시포스 단편’을 에우리피데스에게 돌린 논문.',warn:'—'},
+ {id:'kahn1997',lang:'en',t:'Greek Religion and Philosophy in the Sisyphus Fragment',a:'Charles H. Kahn',o:'Phronesis 42 (1997): 247–262',role:'‘시시포스 단편’의 종교사적·철학적 맥락.',warn:'—'},
+ {id:'sutton1981',lang:'en',t:'Critias and Atheism',a:'Dana F. Sutton',o:'Classical Quarterly 31 (1981)',role:'‘시시포스 단편’의 크리티아스 귀속 옹호.',warn:'쪽수 대조 전'},
+ {id:'cicero_nd',lang:'src',t:'M. Tulli Ciceronis De natura deorum',a:'Marcus Tullius Cicero',o:'ed. A. S. Pease, Cambridge, MA: Harvard University Press, 1955–1958 (2 vols.)',role:'세 학파의 신학 논쟁과 주석.',warn:'—'},
+ {id:'longsedley1987',lang:'en',t:'The Hellenistic Philosophers',a:'A. A. Long, D. N. Sedley',o:'Cambridge: Cambridge University Press, 1987 (2 vols.)',role:'에피쿠로스파·스토아파·아카데미아의 원전 자료와 해설. 에피쿠로스의 신들을 생각의 구성물로 읽었다.',warn:'—'},
+ {id:'fishsanders2011',lang:'en',t:'Epicurus and the Epicurean Tradition',a:'Jeffrey Fish, Kirk R. Sanders (eds.)',o:'Cambridge: Cambridge University Press, 2011',role:'세들리 「에피쿠로스의 신학적 본유론」과 콘스탄 「에피쿠로스의 신들」.',warn:'—'},
+ {id:'schofield1986',lang:'en',t:'Cicero For and Against Divination',a:'Malcolm Schofield',o:'Journal of Roman Studies 76 (1986): 47–65',role:'키케로 대화편의 방법과 판단.',warn:'쪽수 대조 전'},
+ {id:'origen_cc',lang:'src',t:'Origenis Contra Celsum libri VIII',a:'Origenes',o:'ed. M. Marcovich, Leiden: Brill, 2001 (Supplements to Vigiliae Christianae 54)',role:'켈수스의 『참된 말』을 인용한 반박서의 비판 교감본.',warn:'—'},
+ {id:'chadwick1953',lang:'src',t:'Origen: Contra Celsum',a:'Henry Chadwick (tr.)',o:'Cambridge: Cambridge University Press, 1953',role:'영역과 서론. 켈수스의 연대를 177–180년 무렵으로 잡았다.',warn:'—'},
+ {id:'wilken1984',lang:'en',t:'The Christians as the Romans Saw Them',a:'Robert Louis Wilken',o:'New Haven: Yale University Press, 1984',role:'켈수스·포르피리오스·율리아누스의 비판을 로마 사회의 반응으로 읽었다.',warn:'—'},
+ {id:'philoponus_aet',lang:'src',t:'De aeternitate mundi contra Proclum',a:'Ioannes Philoponus',o:'ed. H. Rabe, Leipzig: Teubner, 1899',role:'프로클로스의 세계 영원성 논증에 대한 반박.',warn:'—'},
+ {id:'sorabji1983',lang:'en',t:'Time, Creation and the Continuum',a:'Richard Sorabji',o:'London: Duckworth, 1983',role:'필로포노스의 무한 논변과 그 영향.',warn:'—'},
+ {id:'sorabji1987',lang:'en',t:'Philoponus and the Rejection of Aristotelian Science',a:'Richard Sorabji (ed.)',o:'London: Duckworth, 1987',role:'필로포노스 연구 논집. 심플리키오스의 반박에 관한 장 포함.',warn:'—'},
  {id:'scotus_ord',lang:'src',t:'Ordinatio, liber primus, distinctio secunda',a:'Ioannes Duns Scotus',o:'Opera omnia, vol. 2 (Civitas Vaticana: Typis Polyglottis Vaticanis, 1950)',role:'무한한 존재의 증명(제1부 제1–2문).',warn:'바티칸 판 권수 대조 전'},
  {id:'ockham_quodl',lang:'src',t:'Quodlibeta septem',a:'Guillelmus de Ockham',o:'Opera theologica IX, ed. J. C. Wey (St. Bonaventure, NY: Franciscan Institute, 1980)',role:'첫 임의 토론 제1문: 신이 하나뿐이라는 것은 자연 이성으로 증명되는가.',warn:'편자·연도 대조 전'},
  {id:'derijk1994',lang:'src',t:'Nicholas of Autrecourt: His Correspondence with Master Giles and Bernard of Arezzo',a:'L. M. de Rijk (ed.)',o:'Leiden: Brill, 1994 (Studien und Texte zur Geistesgeschichte des Mittelalters 42)',role:'편지의 비판 교감본과 영역, 아비뇽 재판 기록과 단죄 명제.',warn:'—'},
@@ -19,6 +41,12 @@ export const BOOKS = [
  {id:'altmann1973',lang:'en',t:'Moses Mendelssohn: A Biographical Study',a:'Alexander Altmann',o:'University, AL: University of Alabama Press; Philadelphia: Jewish Publication Society; London: Routledge & Kegan Paul, 1973',role:'멘델스존의 생애와 범신론 논쟁.',warn:'공동 출판사 표기 대조 전'}
 ];
 export const BK = {
+ ph01:[['dk','21·80·84·88'],['plato_oct','『법률』 10권'],['mayhew2008','전체'],['sedley2007','『법률』 장'],['dihle1977','갈림'],['kahn1997','갈림'],['sutton1981','갈림']],
+ ph02:[['plato_oct','『국가』·『티마이오스』·『법률』'],['cornford1937','전체'],['vlastos1939','갈림'],['sedley2007','『티마이오스』 장']],
+ ph03:[['ross1924','12권 주석'],['berti2000','갈림'],['jaeger1923','갈림']],
+ ph04:[['cicero_nd','전체'],['longsedley1987','에피쿠로스·스토아 신학 절'],['fishsanders2011','갈림'],['schofield1986','갈림']],
+ ph05:[['origen_cc','전체'],['chadwick1953','서론'],['wilken1984','켈수스 장']],
+ ph06:[['philoponus_aet','전체'],['sorabji1983','전체'],['sorabji1987','전체']],
  ph14:[['scotus_ord','제1권 제2구분'],['ockham_quodl','첫 임의 토론 제1문'],['derijk1994','편지와 재판 기록'],['weinberg1948','전체'],['adams1987','신의 존재 장'],['gilson1938','갈림']],
  ph26:[['kant_aa','AA 2·3·5·6·8'],['wood1970','전체'],['vaihinger1911','갈림'],['jacobi1785','1787년 부록은 별도'],['beiser1987','칸트와 범신론 논쟁']],
  ph28:[['jacobi1785','전체'],['mendelssohn1785','전체'],['mendelssohn1786','전체'],['herder1787','전체'],['kant_aa','AA 8 「방향」'],['beiser1987','제2–4장'],['allison1966','갈림'],['altmann1973','갈림']]
