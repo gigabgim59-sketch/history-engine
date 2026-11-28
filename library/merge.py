@@ -104,7 +104,7 @@ out = (SHELL
 left = re.findall(r'__[A-Z_]{3,}__', out.replace('<!--__LIBFONTS__-->', ''))
 if left: raise SystemExit('채우지 않은 자리: ' + ', '.join(sorted(set(left))))
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
-open(OUT, 'w', encoding='utf-8').write(out)
+open(OUT, 'w', encoding='utf-8', newline='').write(out)
 print(f'서가: {N}권({n} 권), 묶음 {len(grps)}, 문서 {len(docs)}, {len(out)//1024//1024}MB → {OUT}')
 missing_pdf = [b['id'] for b in books if not b.get('pdf')]
 if missing_pdf: print('주의: PDF 버튼이 없는 책', missing_pdf)

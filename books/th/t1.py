@@ -22,7 +22,7 @@ with sync_playwright() as p:
     for w in (390, 1280):
         pg = b.new_page(viewport={'width': w, 'height': 900}); errs = []
         pg.on('pageerror', lambda e: errs.append(str(e)))
-        pg.goto('file://' + html); pg.wait_for_timeout(500)
+        pg.goto(__import__('pathlib').Path(html).as_uri()); pg.wait_for_timeout(500)
         tabs = pg.evaluate("[...document.querySelectorAll('#tabs a[data-v]')].filter(a=>!a.hidden).map(a=>a.getAttribute('href'))")
         for h in hashes + [t for t in tabs if t not in hashes] + ['#/end']:
             pg.evaluate("h=>{location.hash=h}", h); pg.wait_for_timeout(350)

@@ -50,5 +50,5 @@ mf = math_face(html, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'n
 if mf: faces.append(mf); total += len(mf)
 style = '<style>' + ''.join(faces) + '</style>'
 html = html.replace('<!--__FONTS__-->', style)
-open(html_path, 'w', encoding='utf-8').write(html)
+open(html_path, 'w', encoding='utf-8', newline='').write(html)
 print('faces', len(faces), 'font KB', total // 1024)

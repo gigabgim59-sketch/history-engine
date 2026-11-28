@@ -8,8 +8,9 @@ from fontTools import subset
 from fontTools.pens.cu2quPen import Cu2QuPen
 from fontTools.pens.ttGlyphPen import TTGlyphPen
 
-SRC = {400: '/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc',
-       700: '/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc'}
+_FD = os.environ.get('NOTO_SERIF_DIR') or '/usr/share/fonts/opentype/noto'  # 리눅스 밖에서는 글꼴 폴더를 환경 변수로 준다(DEFECTS E-24)
+SRC = {400: os.path.join(_FD, 'NotoSerifCJK-Regular.ttc'),
+       700: os.path.join(_FD, 'NotoSerifCJK-Bold.ttc')}
 EXTRA = ''.join(chr(c) for c in range(0x20, 0x7f)) + '·…‘’“”–—「」『』〈〉《》()[]〔〕%‰°×÷±→←↑↓§'
 
 

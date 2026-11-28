@@ -9,11 +9,11 @@ got = {}
 for m in re.finditer(r'<script type="application/octet-stream" id="d-([a-z]{2})\.([ig])">(.*?)</script>', s, re.S):
     i, v, b = m.groups(); h = gzip.decompress(base64.b64decode(b.strip())).decode('utf-8')
     fn = f'build/{i}.html' if v == 'i' else f'build/{i}.guide.html'
-    open(os.path.join(HERE, fn), 'w', encoding='utf-8').write(h); got.setdefault(i, {})[v] = 'library/' + fn
+    open(os.path.join(HERE, fn), 'w', encoding='utf-8', newline='').write(h); got.setdefault(i, {})[v] = 'library/' + fn
 reg = json.load(open(os.path.join(HERE, 'books.json'), encoding='utf-8'))
 for b in reg['books']:
     if b['id'] in got:
         b.setdefault('html', got[b['id']]['i'])
         if 'g' in got[b['id']]: b.setdefault('guideHtml', got[b['id']]['g'])
-json.dump(reg, open(os.path.join(HERE, 'books.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+json.dump(reg, open(os.path.join(HERE, 'books.json'), 'w', encoding='utf-8', newline=''), ensure_ascii=False, indent=1)
 print('꺼낸 책', len(got), sorted(got))

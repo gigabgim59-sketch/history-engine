@@ -9,7 +9,7 @@
 5. 차례에 쪽수를 넣어 다시 짜고, 쪽수가 그대로인지 확인한다.
 6. 북마크를 '제1부 …', '1. …' 이름으로 다시 달고 제목 정보를 넣는다(P-03).
 """
-import json, os, re, subprocess, sys
+import json, os, pathlib, re, subprocess, sys
 from playwright.sync_api import sync_playwright
 from pypdf import PdfReader, PdfWriter
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -34,14 +34,14 @@ def make(state):
     h = open('print/book.html', encoding='utf-8').read()
     text = re.sub(r'<[^>]+>', '', h)
     h = h.replace('/*__FONTS__*/', faces(text) + math_face(h, os.path.join(HERE, '..', 'node_modules')), 1)
-    open('print/book.html', 'w', encoding='utf-8').write(h)
+    open('print/book.html', 'w', encoding='utf-8', newline='').write(h)
     return json.load(open('print/seq.json', encoding='utf-8'))
 
 
 def render(out):
     with sync_playwright() as p:
         b = p.chromium.launch(); pg = b.new_page()
-        pg.goto('file://' + os.path.join(ROOT, 'print/book.html')); pg.wait_for_timeout(400)
+        pg.goto(pathlib.Path(ROOT, 'print', 'book.html').as_uri()); pg.wait_for_timeout(400)  # Windows 경로에서도 맞는 file URI(DEFECTS E-24)
         pg.pdf(path=out, prefer_css_page_size=True, print_background=True, outline=True, tagged=True)
         b.close()
 
