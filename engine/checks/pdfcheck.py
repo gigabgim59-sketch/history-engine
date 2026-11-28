@@ -3,10 +3,10 @@
 import sys, subprocess, re
 from pypdf import PdfReader
 f = sys.argv[1]; bad = []; note = []
-txt = subprocess.run(['pdftotext', '-layout', f, '-'], capture_output=True, text=True).stdout
+txt = subprocess.run(['pdftotext', '-enc', 'UTF-8', '-layout', f, '-'], capture_output=True, text=True, encoding='utf-8', errors='replace').stdout  # Windows 기본 인코딩에서도(DEFECTS E-26)
 mk = re.findall(r'§[A-Za-z0-9_]+§', txt)
 if mk: bad.append(f'숨은 표지 {len(mk)}개')
-fonts = subprocess.run(['pdffonts', f], capture_output=True, text=True).stdout
+fonts = subprocess.run(['pdffonts', f], capture_output=True, text=True, encoding='utf-8', errors='replace').stdout
 t3 = [l.split()[0] for l in fonts.splitlines()[2:] if 'Type 3' in l]
 if t3: bad.append(f'Type 3 글꼴 {len(t3)}개 ({", ".join(sorted(set(t3))[:3])})')
 r = PdfReader(f)

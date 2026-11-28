@@ -27,7 +27,7 @@ WARNED = False
 
 def make(state):
     json.dump(state, open(STP, 'w'), ensure_ascii=False)
-    r = subprocess.run(['node', os.path.join(HERE, 'make.mjs'), SRC], capture_output=True, text=True)
+    r = subprocess.run(['node', os.path.join(HERE, 'make.mjs'), SRC], capture_output=True, text=True, encoding='utf-8', errors='replace')  # Windows 기본 인코딩(cp949)에서 깨지지 않게(DEFECTS E-26)
     if r.returncode: sys.exit(r.stdout + r.stderr)
     global WARNED
     if r.stderr.strip() and not WARNED: print(r.stderr.strip()); WARNED = True
@@ -60,7 +60,7 @@ def starts(pdf, seq):
 
 
 def page_lines(pdf):
-    t = subprocess.run(['pdftotext', '-layout', pdf, '-'], capture_output=True, text=True).stdout
+    t = subprocess.run(['pdftotext', '-enc', 'UTF-8', '-layout', pdf, '-'], capture_output=True, text=True, encoding='utf-8', errors='replace').stdout  # DEFECTS E-26
     return [[l for l in pg.splitlines() if l.strip() and not re.fullmatch(r'\s*\d+\s*', l)] for pg in t.split('\f')]
 
 
