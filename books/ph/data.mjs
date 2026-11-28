@@ -73,5 +73,5 @@ export const THREAD_EV = {
  ari:['ph03','ph06','ph11','ph12','ph13','ph14','ph15'],
  sce:['ph01','ph04','ph09','ph10','ph14','ph17','ph20','ph22','ph24','ph25','ph26'],
  rat:['ph04','ph16','ph17','ph18','ph19','ph22','ph23','ph26','ph27','ph28','ph29','ph31','ph32','ph33'],
- cri:['ph01','ph04','ph17','ph18','ph21','ph33']
+ cri:['ph01','ph04','ph17','ph18','ph21','ph33','ph34','ph38','ph39','ph41']
 };
